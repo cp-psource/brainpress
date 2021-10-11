@@ -39,7 +39,7 @@
  */
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-require 'psource/plugin-update-checker/psource-plugin-updater.php';
+require 'psource/psource-plugin-update/psource-plugin-updater.php';
 $MyUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	'https://n3rds.work//wp-update-server/?action=get_metadata&slug=brainpress', 
 	__FILE__, 

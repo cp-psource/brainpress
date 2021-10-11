@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: BrainPress
- * Version:     2.3.4
+ * Version:     2.3.5
  * Description: BrainPress vereinfacht die Online-Ausbildung mit Kursseiten, Paywalls, Social Sharing und einer interaktiven Lernumgebung, mit der mehr Schüler miteinander verbunden werden können.
  * Author:      WMS N@W
  * Author URI:  https://n3rds.work
@@ -59,7 +59,7 @@ class BrainPress {
 	 *
 	 * @var string
 	 */
-	public static $version = '2.3.4';
+	public static $version = '2.3.5';
 
 	/**
 	 * Plugin name, this reflects the Pro/Standard version.

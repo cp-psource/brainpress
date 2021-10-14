@@ -310,7 +310,7 @@ class BrainPress_View_Admin_Setting_BasicCertificate {
 	public static function default_certificate_content() {
 		$msg = __(
 			'<h2>%1$s %2$s</h2>
-			hat erfolgreichden den Kurs 
+			hat erfolgreich den den Kurs 
 
 			<h3>%3$s</h3>
 			

@@ -31,7 +31,7 @@ class BrainPress_Helper_Extension {
 			<thead>
 				<tr>
 					<th>' . esc_html__( 'Plugin', 'brainpress' ) . '</th>
-					<th>' . esc_html__( 'Source', 'brainpress' ) . '</th>
+					<th>' . esc_html__( 'Quelle', 'brainpress' ) . '</th>
 					<th>' . esc_html__( 'Status', 'brainpress' ) . '</th>
 					<th>' . esc_html__( 'Aktion', 'brainpress' ) . '</th>
 				</tr>
@@ -46,7 +46,7 @@ class BrainPress_Helper_Extension {
 			$activated = $installed ? is_plugin_active( $plugin['base_path'] ) : false;
 
 			if ( $installed && $activated ) {
-				$status = 'Installed/Activated';
+				$status = 'Installiert/Aktiviert';
 				if ( current_user_can( 'manage_options' ) ) {
 
 					$action = '<form method="post">

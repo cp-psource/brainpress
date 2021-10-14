@@ -45,6 +45,10 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 
 == ChangeLog ==
 
+= 2.3.6 = DerN3rd =
+
+* Noch ein paar Stings übersetzt und angepasst
+
 = 2.3.5 = DerN3rd =
 
 * DSGVO neu integriert

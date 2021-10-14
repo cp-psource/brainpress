@@ -66,7 +66,7 @@ function brainpress_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 ) {
-		$title .= " $sep " . sprintf( __( 'Page %s', 'brainpress' ), max( $paged, $page ) );
+		$title .= " $sep " . sprintf( __( 'Seite %s', 'brainpress' ), max( $paged, $page ) );
 	}
 
 	return $title;

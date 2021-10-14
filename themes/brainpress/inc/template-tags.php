@@ -1,28 +1,28 @@
 <?php
 /**
- * Custom template tags for this theme.
+ * Benutzerdefinierte Vorlagen-Tags für dieses Thema.
  *
- * Eventually, some of the functionality here could be replaced by core features.
+ * Irgendwann könnten einige der Funktionen hier durch Kernfunktionen ersetzt werden.
  *
  * @package BrainPress
  */
 if ( ! function_exists( 'brainpress_paging_nav' ) ) :
 
 	/**
-	 * Display navigation to next/previous set of posts when applicable.
+	 * Zeige ggf. die Navigation zum nächsten/vorherigen Satz von Beiträgen an.
 	 *
 	 * @return void
 	 */
 	function brainpress_paging_nav() {
 		global $wp_query;
 
-		// Don't print empty markup if there's only one page.
+		// Kein leeres Markup drucken, wenn nur eine Seite vorhanden ist.
 		if ( $wp_query->max_num_pages < 2 ) {
 			return;
 		}
 		?>
 		<nav class="navigation paging-navigation" role="navigation">
-			<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'brainpress' ); ?></h1>
+			<h1 class="screen-reader-text"><?php _e( 'Beitragsnavigation', 'brainpress' ); ?></h1>
 			<div class="nav-links">
 
 				<?php if ( get_next_posts_link() ) : ?>
@@ -30,7 +30,7 @@ if ( ! function_exists( 'brainpress_paging_nav' ) ) :
 					<?php
 					next_posts_link(
 						sprintf(
-							__( '%s&larr;%s Older posts', 'brainpress' ),
+							__( '%s&larr;%s Ältere Beiträge', 'brainpress' ),
 							'<span class="meta-nav">',
 							'</span>'
 						)
@@ -44,7 +44,7 @@ if ( ! function_exists( 'brainpress_paging_nav' ) ) :
 					<?php
 					previous_posts_link(
 						sprintf(
-							__( 'Newer posts %s&rarr;%s', 'brainpress' ),
+							__( 'Neuere Beiträge %s&rarr;%s', 'brainpress' ),
 							'<span class="meta-nav">',
 							'</span>'
 						)
@@ -90,7 +90,7 @@ if ( ! function_exists( 'brainpress_post_nav' ) ) :
 				previous_post_link(
 					'%link',
 					sprintf(
-						_x( '%s&larr;%s %%title', 'Previous post link', 'brainpress' ),
+						_x( '%s&larr;%s %%title', 'Link zum vorherigen Beitrag', 'brainpress' ),
 						'<span class="meta-nav">',
 						'</span>'
 					)
@@ -98,7 +98,7 @@ if ( ! function_exists( 'brainpress_post_nav' ) ) :
 				next_post_link(
 					'%link',
 					sprintf(
-						_x( '%%title %s&rarr;%s', 'Next post link', 'brainpress' ),
+						_x( '%%title %s&rarr;%s', 'Link zum nächsten Beitrag', 'brainpress' ),
 						'<span class="meta-nav">',
 						'</span>'
 					)
@@ -130,7 +130,7 @@ if ( ! function_exists( 'brainpress_comment' ) ) :
 					esc_html_e( 'Pingback:', 'brainpress' );
 					comment_author_link();
 					edit_comment_link(
-						__( 'Edit', 'brainpress' ),
+						__( 'Bearbeiten', 'brainpress' ),
 						'<span class="edit-link">',
 						'</span>'
 					);
@@ -150,7 +150,7 @@ if ( ! function_exists( 'brainpress_comment' ) ) :
 								echo get_avatar( $comment, $args['avatar_size'] );
 							}
 							printf(
-								esc_html__( '%s says:', 'brainpress' ) . '</span>',
+								esc_html__( '%s sagte:', 'brainpress' ) . '</span>',
 								sprintf(
 									'<cite class="fn">%s</cite>',
 									get_comment_author_link()
@@ -164,7 +164,7 @@ if ( ! function_exists( 'brainpress_comment' ) ) :
 								<time datetime="<?php comment_time( 'c' ); ?>">
 									<?php
 									printf(
-										_x( '%1$s at %2$s', '1: date, 2: time', 'brainpress' ),
+										_x( '%1$s um %2$s', '1: date, 2: time', 'brainpress' ),
 										get_comment_date(),
 										get_comment_time()
 									);
@@ -173,7 +173,7 @@ if ( ! function_exists( 'brainpress_comment' ) ) :
 							</a>
 							<?php
 							edit_comment_link(
-								esc_html__( 'Edit', 'brainpress' ),
+								esc_html__( 'Bearbeiten', 'brainpress' ),
 								'<span class="edit-link">',
 								'</span>'
 							);
@@ -182,7 +182,7 @@ if ( ! function_exists( 'brainpress_comment' ) ) :
 
 						<?php if ( '0' == $comment->comment_approved ) : ?>
 							<p class="comment-awaiting-moderation">
-								<?php esc_html_e( 'Your comment is awaiting moderation.', 'brainpress' ); ?>
+								<?php esc_html_e( 'Dein Beitrag wartet auf die Moderation.', 'brainpress' ); ?>
 							</p>
 						<?php endif; ?>
 					</footer><!-- .comment-meta -->
@@ -231,7 +231,7 @@ if ( ! function_exists( 'brainpress_discussion_comment' ) ) :
 					_e( 'Pingback:', 'brainpress' );
 					comment_author_link();
 					edit_comment_link(
-						__( 'Edit', 'brainpress' ),
+						__( 'Bearbeiten', 'brainpress' ),
 						'<span class="edit-link">',
 						'</span>'
 					);
@@ -247,7 +247,7 @@ if ( ! function_exists( 'brainpress_discussion_comment' ) ) :
 					<footer class="comment-meta">
 						<?php if ( '0' == $comment->comment_approved ) : ?>
 							<p class="comment-awaiting-moderation">
-							<?php esc_html_e( 'Your comment is awaiting moderation.', 'brainpress' ); ?>
+							<?php esc_html_e( 'Dein Beitrag wartet auf die Moderation.', 'brainpress' ); ?>
 							</p>
 						<?php endif; ?>
 					</footer><!-- .comment-meta -->
@@ -258,7 +258,7 @@ if ( ! function_exists( 'brainpress_discussion_comment' ) ) :
 							<time>
 								<?php
 								printf(
-									_x( '%1$s, %2$s ago', '1: author, 2: time of comment', 'brainpress' ),
+									_x( '%1$s, vor %2$s', '1: author, 2: time of comment', 'brainpress' ),
 									comment_author(),
 									human_time_diff(
 										get_comment_time( 'U' ),
@@ -270,7 +270,7 @@ if ( ! function_exists( 'brainpress_discussion_comment' ) ) :
 						</a>
 						<?php
 						edit_comment_link(
-							__( 'Edit', 'brainpress' ),
+							__( 'Bearbeiten', 'brainpress' ),
 							'<span class="edit-link">',
 							'</span>'
 						);
@@ -302,7 +302,7 @@ endif; // ends check for brainpress_comment()
 if ( ! function_exists( 'brainpress_posted_on' ) ) :
 
 	/**
-	 * Prints HTML with meta information for the current post-date/time and author.
+	 * Druckt HTML mit Metainformationen für das aktuelle Post-Datum/-Uhrzeit und Autor.
 	 */
 	function brainpress_posted_on() {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
@@ -319,7 +319,7 @@ if ( ! function_exists( 'brainpress_posted_on' ) ) :
 		);
 
 		printf(
-			__( '<span class="posted-on">Posted on %1$s</span><span class="byline"> by %2$s</span>', 'brainpress' ),
+			__( '<span class="posted-on">Veröffentlicht am %1$s</span><span class="byline"> am %2$s</span>', 'brainpress' ),
 			sprintf(
 				'<a href="%1$s" rel="bookmark">%2$s</a>',
 				esc_url( get_permalink() ),

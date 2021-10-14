@@ -49,6 +49,7 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 
 * Noch ein paar Stings übersetzt und angepasst
 * JS Script für Fortschrittsanzeigen erneuert
+* Font Awesome Free 5.15.4
 
 = 2.3.5 = DerN3rd =
 

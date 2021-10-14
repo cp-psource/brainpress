@@ -111,15 +111,15 @@ class BrainPress_Admin_Controller_Unit {
 						<label>'. esc_html__( 'Fortschritt zur nächsten Einheit', 'brainpress' ) . '</label>
 						<label><input id="force_current_unit_completion" type="checkbox" value="on" name="meta_force_current_unit_completion" <%= unit_force_completion_checked %> /><span>'.
 				sprintf( '%s <em>%s</em> %s',
-					esc_html__( 'Benutzer muss', 'brainpress' ),
-					esc_html__( 'antworten', 'brainpress' ),
-					esc_html__( 'alle erforderlichen Bewertungen erfüllen und alle Seiten anzeigen, um auf die nächste Einheit zuzugreifen', 'brainpress' )
+					esc_html__( 'Benutzer muss alle erforderlichen Bewertungen', 'brainpress' ),
+					esc_html__( 'erfüllen', 'brainpress' ),
+					esc_html__( 'und alle Seiten durchgegangen sein, um auf die nächste Einheit zuzugreifen', 'brainpress' )
 				) . '</span></label>
 						<label><input id="force_current_unit_successful_completion" type="checkbox" value="on" name="meta_force_current_unit_successful_completion" <%= unit_force_successful_completion_checked %>><span>'.
-			sprintf( '%s <em>%s</em> %s',
+			sprintf( '%s %s <em>%s</em>',
 				esc_html__( 'Benutzer muss auch', 'brainpress' ),
-				esc_html__( 'bestehen', 'brainpress' ),
-				esc_html__( 'alle erforderlichen Bewertungen', 'brainpress' )
+				esc_html__( 'alle erforderlichen Bewertungen', 'brainpress' ),
+				esc_html__( 'bestehen', 'brainpress' )
 			) . '</span></label>
 					</div>
 				</div>

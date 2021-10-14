@@ -81,9 +81,9 @@
 					<input type="hidden" name="invite_instructor_type="facilitator" />
 				<?php endif; ?>
 
-				<label for="invite_instructor_first_name"><?php _e( 'First Name', 'brainpress' ); ?></label>
+				<label for="invite_instructor_first_name"><?php _e( 'Vorname', 'brainpress' ); ?></label>
 				<input type="text" name="invite_instructor_first_name" placeholder="<?php esc_attr_e( 'Vorname', 'brainpress' ); ?>"/>
-				<label for="invite_instructor_last_name"><?php _e( 'Last Name', 'brainpress' ); ?></label>
+				<label for="invite_instructor_last_name"><?php _e( 'Nachname', 'brainpress' ); ?></label>
 				<input type="text" name="invite_instructor_last_name" placeholder="<?php esc_attr_e( 'Familienname', 'brainpress' ); ?>" />
 				<label for="invite_instructor_email"><?php _e( 'E-Mail', 'brainpress' ); ?></label>
 				<input type="text" name="invite_instructor_email" placeholder="<?php echo esc_attr( $placeholder ); ?>" />

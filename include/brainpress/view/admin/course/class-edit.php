@@ -643,10 +643,10 @@ class BrainPress_View_Admin_Course_Edit {
 			} else if ( $can_assign_facilitator ) {
 				$content .= '<input type="hidden" name="invite_instructor_type="facilitator" />';
 			}
-			$content .= '<label for="invite_instructor_first_name">' . esc_html__( 'First Name', 'brainpress' ) . '</label>
-							<input type="text" name="invite_instructor_first_name" placeholder="' . esc_attr__( 'First Name', 'brainpress' ) . '"/>
-							<label for="invite_instructor_last_name">' . esc_html__( 'Last Name', 'brainpress' ) . '</label>
-							<input type="text" name="invite_instructor_last_name" placeholder="' . esc_attr__( 'Last Name', 'brainpress' ) . '"/>
+			$content .= '<label for="invite_instructor_first_name">' . esc_html__( 'Vorname', 'brainpress' ) . '</label>
+							<input type="text" name="invite_instructor_first_name" placeholder="' . esc_attr__( 'Vorname', 'brainpress' ) . '"/>
+							<label for="invite_instructor_last_name">' . esc_html__( 'Nachname', 'brainpress' ) . '</label>
+							<input type="text" name="invite_instructor_last_name" placeholder="' . esc_attr__( 'Nachname', 'brainpress' ) . '"/>
 							<label for="invite_instructor_email">' . esc_html__( 'E-Mail', 'brainpress' ) . '</label>
 							<input type="text" name="invite_instructor_email" placeholder="' . esc_attr( $placeholder ) . '"/>
 

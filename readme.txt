@@ -48,6 +48,7 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 = 2.3.6 = DerN3rd =
 
 * Noch ein paar Stings übersetzt und angepasst
+* JS Script für Fortschrittsanzeigen erneuert
 
 = 2.3.5 = DerN3rd =
 

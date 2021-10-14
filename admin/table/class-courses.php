@@ -69,7 +69,7 @@ class BrainPress_Admin_Table_Courses extends WP_Posts_List_Table {
 
 	public function get_columns() {
 		$columns = array(
-			'title' => __( 'Title', 'brainpress' ),
+			'title' => __( 'Kurs-Titel', 'brainpress' ),
 		);
 
 		if ( ! empty( $this->student_id ) ) {
@@ -78,7 +78,7 @@ class BrainPress_Admin_Table_Courses extends WP_Posts_List_Table {
 				array(
 					'date_enrolled' => __( 'Einschreibungsdatum', 'brainpress' ),
 					'last_login' => __( 'Letzte Akitivtät', 'brainpress' ),
-					'average' => __( 'Average', 'brainpress' ),
+					'average' => __( 'Durchschnitt', 'brainpress' ),
 					'certificate' => __( 'Zertifikat', 'brainpress' ),
 				)
 			);

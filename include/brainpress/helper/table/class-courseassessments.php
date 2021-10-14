@@ -188,7 +188,7 @@ class BrainPress_Helper_Table_CourseAssessments extends BrainPress_Helper_Table_
 
 		$actions = array(
 			'id' => sprintf( '<span>%s</span>', esc_html( sprintf( __( 'ID: %d', 'brainpress' ), $item->ID ) ) ),
-			'profile' => sprintf( '<a href="%s">%s</a>', $profile_link, esc_html__( 'Student Profil', 'brainpress' ) ),
+			'profile' => sprintf( '<a href="%s">%s</a>', $profile_link, esc_html__( 'Studenten Profil', 'brainpress' ) ),
 			'workbook' => sprintf( '<a href="%s">%s</a>', $workbook_link, esc_html__( 'Arbeitsmappe', 'brainpress' ) ),
 		);
 

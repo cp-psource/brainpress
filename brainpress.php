@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: BrainPress
- * Version:     2.3.5
+ * Version:     2.3.6
  * Description: BrainPress vereinfacht die Online-Ausbildung mit Kursseiten, Paywalls, Social Sharing und einer interaktiven Lernumgebung, mit der mehr Schüler miteinander verbunden werden können.
  * Author:      WMS N@W
  * Author URI:  https://n3rds.work
@@ -18,8 +18,8 @@
  *
  * @copyright WMS N@W (https://n3rds.work/)
  *
- * Authors: WPMU DEV
- * Contributors: DerN3rd (WMS N@W) Rheinard Korf (Incsub), Paul Menard
+ * Authors: WMS N@W
+ * Contributors: DerN3rd (WMS N@W) 
  *
  * @license https://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2 (GPL-2.0)
  *
@@ -59,7 +59,7 @@ class BrainPress {
 	 *
 	 * @var string
 	 */
-	public static $version = '2.3.5';
+	public static $version = '2.3.6';
 
 	/**
 	 * Plugin name, this reflects the Pro/Standard version.

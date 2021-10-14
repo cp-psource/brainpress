@@ -49,7 +49,7 @@ class BrainPress_Admin_Controller_Unit {
 						<div id="sticky-wrapper" class="sticky-wrapper sticky-wrapper-tabs">
 							<div class="tabs"></div>' .
 							( $can_create_units ?
-							'<div class="sticky-buttons"><div class="button button-add-new-unit"><i class="fa fa-plus-square"></i> ' . __( 'Neue Einheit hinzufügen', 'brainpress' ) . '</div></div>' : '' )
+							'<div class="sticky-buttons"><div class="button button-add-new-unit"><i class="fa fa-plus-square"></i> ' . __( 'Neue Einheit', 'brainpress' ) . '</div></div>' : '' )
 						. '</div>
 					</div>
 					<div class="tab-content tab-content-vertical unit-builder-content">

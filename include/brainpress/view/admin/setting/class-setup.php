@@ -67,7 +67,7 @@ class BrainPress_View_Admin_Setting_Setup {
 ?>
 		<br/>
 <?php
-		printf( __( '%s hat auch PSeCommerce installiert - aber nicht aktiviert.', 'brainpress' ), BrainPress::$name );
+		printf( __( '%s hat auch PSeCommerce mit dabei - Falls Du Kurse verkaufen möchtest, dann installiere es einfach über das BrainPress Dashboard.', 'brainpress' ), BrainPress::$name );
 ?>
 		<br/>
 		<?php _e( 'Für diejenigen unter Euch, die Ihre fantastischen Kurse verkaufen möchten, musst Du ein Zahlungsgateway aktivieren und einrichten. Aber dazu später mehr.', 'brainpress' ); ?>

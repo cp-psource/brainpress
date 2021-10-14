@@ -192,7 +192,7 @@ class BrainPress_Helper_JavaScript {
 			$localize_array['unit_builder_templates'] = BrainPress_Helper_UI_Module::get_template( true );
 			$localize_array['unit_builder_module_types'] = BrainPress_Helper_UI_Module::get_types();
 			$localize_array['unit_builder_module_labels'] = BrainPress_Helper_UI_Module::get_labels();
-			$localize_array['unit_builder_delete_module_confirm'] = __( 'Bitte bestätige, dass Sie dieses Modul und mögliche Antworten der Studenten entfernen möchtest.', 'brainpress' );
+			$localize_array['unit_builder_delete_module_confirm'] = __( 'Bitte bestätige, dass Du dieses Modul und mögliche Antworten der Studenten entfernen möchtest.', 'brainpress' );
 			$localize_array['unit_builder_delete_page_confirm'] = __( 'Bitte bestätige, dass Du diese Seite entfernen möchtes. Alle Module werden auf die erste verfügbare Seite verschoben (oder Du kannst sie zuerst auf anderen Seiten ablegen, bevor Du diese Seite löschst)..', 'brainpress' );
 			$localize_array['unit_builder_delete_unit_confirm'] = __( 'Bitte bestätige, dass Du diese Einheit und alle seine Module und Studentenantworten entfernen möchten.', 'brainpress' );
 			$localize_array['unit_builder_new_unit_title'] = __( 'Einheit ohne Titel', 'brainpress' );

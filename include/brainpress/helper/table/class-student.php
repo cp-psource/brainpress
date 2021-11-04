@@ -117,7 +117,7 @@ class BrainPress_Helper_Table_Student extends WP_Users_List_Table {
 					$last_activity_kind = 'login';
 				}
 				if ( empty( $last_activity ) ) {
-					return sprintf( '<small>%s</small>', __( '[never]', 'brainpress' ) );
+					return sprintf( '<small>%s</small>', __( '[niemals]', 'brainpress' ) );
 				}
 				$return = date_i18n( $date_format . ' ' . $time_format, BrainPress_Data_Course::strtotime( $last_activity ) );
 				$return .= '<br /><small>';

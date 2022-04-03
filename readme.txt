@@ -47,6 +47,10 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 
 = 2.3.6 = DerN3rd =
 
+* Fix: Kommentare in Kursen
+
+= 2.3.6 = DerN3rd =
+
 * Noch ein paar Stings übersetzt und angepasst
 * JS Script für Fortschrittsanzeigen erneuert
 * Font Awesome Free 5.15.4

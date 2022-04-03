@@ -897,24 +897,27 @@ class BrainPress_Data_Discussion {
 			return $allcaps;
 		}
 		//if ( 2 > sizeof( $args ) ) {
-		if ( 2 > isset( $args ) ) {
+		if ( 2 > sizeof( $args ) ) {
 			return $allcaps;
 		}
-		$comment = get_comment( $args[2] );
-		if ( ! is_a( $comment, 'WP_Comment' ) ) {
-			return $allcaps;
-		}
-		$discussion = get_post( $comment->comment_post_ID );
-		$is_correct_post_type = self::is_correct_post_type( $discussion );
-		if ( ! $is_correct_post_type ) {
-			return $allcaps;
-		}
-		$can_update_discusssion = BrainPress_Data_Capabilities::can_update_discussion( $discussion, $args[1] );
+		if (isset($args[2])) {
+			$comment = get_comment( $args[2] );
+			if ( ! is_a( $comment, 'WP_Comment' ) ) {
+				return $allcaps;
+			}
+		
+			$discussion = get_post( $comment->comment_post_ID );
+			$is_correct_post_type = self::is_correct_post_type( $discussion );
+			if ( ! $is_correct_post_type ) {
+				return $allcaps;
+			}
+			$can_update_discusssion = BrainPress_Data_Capabilities::can_update_discussion( $discussion, $args[1] );
 
-		if ( ! $can_update_discusssion ) {
+			if ( ! $can_update_discusssion ) {
+				return $allcaps;
+			}
+			$allcaps['edit_others_discussions'] = 1;
 			return $allcaps;
 		}
-		$allcaps['edit_others_discussions'] = 1;
-		return $allcaps;
 	}
 }

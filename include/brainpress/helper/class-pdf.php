@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright Incsub ( http://incsub.com/ )
+ * @copyright psource ( http://psource.com/ )
  *
  * @license http://opensource.org/licenses/GPL-2.0 GNU General Public License, version 2 ( GPL-2.0 )
  *

@@ -116,7 +116,7 @@ class BrainPress_Helper_Integration_WooCommerce {
 		/**
 		 * redirect product to course
 		 */
-		/* This action is documented in WordPress file: /wp-includes/template-loader.php */
+		/* This action is documented in ClassicPress file: /wp-includes/template-loader.php */
 		add_action(
 			'template_redirect',
 			array( __CLASS__, 'redirect_to_product' )
@@ -124,7 +124,7 @@ class BrainPress_Helper_Integration_WooCommerce {
 		/**
 		 * replace product link to course link
 		 */
-		/* This filter is documented in WordPress file: /wp-includes/link-template.php */
+		/* This filter is documented in ClassicPress file: /wp-includes/link-template.php */
 		add_filter(
 			'post_type_link',
 			array( __CLASS__, 'change_product_link_to_course_link' ),

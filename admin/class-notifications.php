@@ -2,7 +2,7 @@
 /**
  * Course Notification Controller
  *
- * @package WordPress
+ * @package ClassicPress
  * @subpackage BrainPress
  **/
 class BrainPress_Admin_Notifications extends BrainPress_Admin_Controller_Menu {

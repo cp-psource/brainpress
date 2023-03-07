@@ -2,7 +2,7 @@
 /**
  * Core plugin file.
  *
- * @package WordPress
+ * @package ClassicPress
  * @subpackage BrainPress
  */
 
@@ -26,7 +26,7 @@ class BrainPress_Core {
 		BrainPress_Data_Capabilities::init();
 
 		/**
-		 * Initialise BrainPress Post Formats (post types not available until after WordPress 'init' action)
+		 * Initialise BrainPress Post Formats (post types not available until after ClassicPress 'init' action)
 		 *
 		 * Custom Post Types can be prefixed by setting BRAINPRESS_CPT_PREFIX in wp-config.php.
 		 * Warning: Doing this will make previous courses inaccessible. Do this early if you want

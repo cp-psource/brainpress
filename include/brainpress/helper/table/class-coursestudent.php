@@ -4,7 +4,7 @@
  *******************************************************************************
  * The WP_List_Table class isn't automatically available to plugins, so we need
  * to check if it's available and load it if necessary. In this tutorial, we are
- * going to use the WP_List_Table class directly from WordPress core.
+ * going to use the WP_List_Table class directly from ClassicPress core.
  *
  * IMPORTANT:
  * Please note that the WP_List_Table class technically isn't an official API,
@@ -18,7 +18,7 @@
  * class to avoid conflicts with core.
  *
  * Since I will be keeping this tutorial up-to-date for the foreseeable future,
- * I am going to work with the copy of the class provided in WordPress core.
+ * I am going to work with the copy of the class provided in ClassicPress core.
  */
 if ( ! class_exists( 'WP_Users_List_Table' ) ) {
 	require_once( ABSPATH . 'wp-admin/includes/class-wp-users-list-table.php' );

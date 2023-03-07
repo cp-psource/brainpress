@@ -4,7 +4,7 @@
  *
  * Use to manage the student's course information/data.
  *
- * @package WordPress
+ * @package ClassicPress
  * @subpackage BrainPress
  **/
 class BrainPress_Data_Student {

@@ -17,7 +17,7 @@ class BrainPress_View_Admin_Setting_Slugs extends BrainPress_View_Admin_Setting_
 		self::$slug = 'slugs';
 		$tabs[ self::$slug ] = array(
 			'title' => __( 'Slugs', 'brainpress' ),
-			'description' => sprintf( __( 'Ein Slug sind ein paar Wörter, die einen Beitrag oder eine Seite beschreiben. Slugs sind normalerweise eine URL-freundliche Version des Post-Titels (der automatisch von WordPress generiert wurde), aber ein Slug kann beliebig sein. Slugs sollen mit %s verwendet werden, da sie den Inhalt der URL beschreiben. Post Slug ersetzt den Platzhalter %s in einer benutzerdefinierten Permalink-Struktur.', 'brainpress' ), '<a href="options-permalink.php">Permalinks</a>', '<strong>"%posttitle%"</strong>' ),
+			'description' => sprintf( __( 'Ein Slug sind ein paar Wörter, die einen Beitrag oder eine Seite beschreiben. Slugs sind normalerweise eine URL-freundliche Version des Post-Titels (der automatisch von ClassicPress generiert wurde), aber ein Slug kann beliebig sein. Slugs sollen mit %s verwendet werden, da sie den Inhalt der URL beschreiben. Post Slug ersetzt den Platzhalter %s in einer benutzerdefinierten Permalink-Struktur.', 'brainpress' ), '<a href="options-permalink.php">Permalinks</a>', '<strong>"%posttitle%"</strong>' ),
 			'order' => 3,
 		);
 

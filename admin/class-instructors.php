@@ -2,7 +2,7 @@
 /**
  * Instructors Class
  *
- * @package WordPress
+ * @package ClassicPress
  * @subpackage BrainPress
  **/
 class BrainPress_Admin_Instructors extends BrainPress_Admin_Controller_Menu {

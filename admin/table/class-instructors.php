@@ -4,7 +4,7 @@
  *
  * This class extends WP_Users_List_Table to manage course instructors.
  *
- * @package WordPress
+ * @package ClassicPress
  * @subpackage BrainPress
  **/
 if ( ! class_exists( 'WP_Users_List_Table' ) ) {

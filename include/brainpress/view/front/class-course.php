@@ -616,7 +616,7 @@ class BrainPress_View_Front_Course {
 	}
 
 	/**
-	 * Prevent WordPress from doing a rel = canonical redirect.
+	 * Prevent ClassicPress from doing a rel = canonical redirect.
 	 *
 	 * Canonical redirect is an SEO action that prevents duplicate content
 	 * page penalties. However, many BrainPress theme pages have virtual
@@ -1350,7 +1350,7 @@ class BrainPress_View_Front_Course {
 	 * Returns the custom page title for our Virtual Pages.
 	 *
 	 * @since  2.0.0
-	 * @param  string $title Default title by WordPress.
+	 * @param  string $title Default title by ClassicPress.
 	 * @return string Custom page title.
 	 */
 	public static function the_title( $title ) {

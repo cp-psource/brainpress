@@ -52,7 +52,7 @@ class BrainPress_Helper_Legacy {
 	 * @since 2.0.5
 	 *
 	 * @param string $function    The function that was called.
-	 * @param string $version     The version of WordPress that deprecated the function.
+	 * @param string $version     The version of ClassicPress that deprecated the function.
 	 * @param string $replacement Optional. The function that should have been called. Default null.
 	 */
 	public static function deprecated_function( $function, $version, $replacement = null ) {

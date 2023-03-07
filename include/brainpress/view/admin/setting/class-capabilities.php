@@ -32,14 +32,14 @@ class BrainPress_View_Admin_Setting_Capabilities {
 			/*
 			 * Instructors can be allowed to access the Settings submenu.
 			 * But the "Instructor Capabilities" tab is only available to
-			 * WordPress admins, so instructors cannot edit their own caps...
+			 * ClassicPress admins, so instructors cannot edit their own caps...
 			 */
 			$tabs['capabilities'] = array(
 				'title' => __( 'Kursleiterfähigkeiten', 'brainpress' ),
 				'description' => sprintf(
 					'%s %s',
 					__( 'Hier kannst Du entscheiden, was Deine Kursleiter auf Deiner Seite tun können. Dies sind spezielle Funktionen, die nur für BrainPress relevant sind.', 'brainpress' ),
-					__( 'HINWEIS: Aus Sicherheitsgründen ist diese Seite nur für WordPress-Administratoren verfügbar!', 'brainpress' )
+					__( 'HINWEIS: Aus Sicherheitsgründen ist diese Seite nur für ClassicPress-Administratoren verfügbar!', 'brainpress' )
 				),
 				'order' => 30,
 			);
@@ -146,7 +146,7 @@ class BrainPress_View_Admin_Setting_Capabilities {
 		$is_psecommerce_active = apply_filters( 'brainpress_is_psecommerce_active', false );
 		if ( $is_psecommerce_active ) {
 			$options['wordpress'] = array(
-				'title' => __( 'Gewähre Standard-WordPress-Funktionen', 'brainpress' ),
+				'title' => __( 'Gewähre Standard-ClassicPress-Funktionen', 'brainpress' ),
 				'items' => self::_instructor_capabilities_posts_and_pages(),
 			);
 		}

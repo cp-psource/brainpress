@@ -58,7 +58,7 @@ class BrainPress_View_Admin_Setting_General {
 		' . wp_nonce_field( 'update-brainpress-options', '_wpnonce', true, false ) . '
 				<!-- SLUGS -->
 				<h3 class="hndle" style="cursor:auto;"><span>' . esc_html__( 'Slugs', 'brainpress' ) . '</span></h3>
-				<p class="description">' . sprintf( __( 'Ein Slug ist ein paar Wörter, die einen Beitrag oder eine Seite beschreiben. Slugs sind normalerweise eine URL-freundliche Version des Post-Titels (der automatisch von WordPress generiert wurde), aber ein Slug kann beliebig sein. Slugs sollen mit% s verwendet werden, da sie den Inhalt der URL beschreiben. Post Slug ersetzt den Platzhalter %s in einer benutzerdefinierten Permalink-Struktur.', 'brainpress' ), '<a href="options-permalink.php">permalinks</a>', '<strong>"%posttitle%"</strong>' ) . '</p>
+				<p class="description">' . sprintf( __( 'Ein Slug ist ein paar Wörter, die einen Beitrag oder eine Seite beschreiben. Slugs sind normalerweise eine URL-freundliche Version des Post-Titels (der automatisch von ClassicPress generiert wurde), aber ein Slug kann beliebig sein. Slugs sollen mit% s verwendet werden, da sie den Inhalt der URL beschreiben. Post Slug ersetzt den Platzhalter %s in einer benutzerdefinierten Permalink-Struktur.', 'brainpress' ), '<a href="options-permalink.php">permalinks</a>', '<strong>"%posttitle%"</strong>' ) . '</p>
 				<div class="inside">
 
 					<table class="form-table slug-settings">
@@ -290,7 +290,7 @@ class BrainPress_View_Admin_Setting_General {
 				</div>
 
 				<!-- WP LOGING REDIRECTION -->
-				<h3 class="hndle" style="cursor:auto;"><span>' . esc_html__( 'WordPress Login Umleitung', 'brainpress' ) . '</span></h3>
+				<h3 class="hndle" style="cursor:auto;"><span>' . esc_html__( 'ClassicPress Login Umleitung', 'brainpress' ) . '</span></h3>
 				<div class="inside">
 					<table class="form-table">
 						<tbody>

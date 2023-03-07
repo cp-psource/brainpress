@@ -5,7 +5,7 @@
  * Description: BrainPress vereinfacht die Online-Ausbildung mit Kursseiten, Paywalls, Social Sharing und einer interaktiven Lernumgebung, mit der mehr Schüler miteinander verbunden werden können.
  * Author:      WMS N@W
  * Author URI:  https://n3rds.work
- * Plugin URI:  https://n3rds.work/piestingtal_source/ps-brainpress-wordpress-lms-online-akademie-plugin//
+ * Plugin URI:  https://n3rds.work/piestingtal_source/ps-brainpress-classicpress-lms-online-akademie-plugin/
  * License:     GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: brainpress

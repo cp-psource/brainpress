@@ -1,5 +1,5 @@
 /*! BrainPress - v2.2.2
- * https://n3rds.work/piestingtal_source/ps-brainpress-wordpress-lms-online-akademie-plugin//
+ * https://n3rds.work/piestingtal_source/ps-brainpress-classicpress-lms-online-akademie-plugin/
  * Copyright (c) 2019; * Licensed GPLv2+ */
 /*global _brainpress*/
 /*global pwsL10n*/
@@ -79,7 +79,7 @@ var BrainPress = BrainPress || {};
 	 *
 	 * @param tag The tag specified by do_action()
 	 * @param callback The callback function to call when do_action() is called
-	 * @param priority The order in which to call the callbacks. Default: 10 (like WordPress)
+	 * @param priority The order in which to call the callbacks. Default: 10 (like ClassicPress)
 	 */
 	BrainPress.add_action = function( tag, callback, priority ) {
 		if ( undefined === priority ) {
@@ -96,7 +96,7 @@ var BrainPress = BrainPress || {};
 	 *
 	 * @param tag The tag specified by apply_filters()
 	 * @param callback The callback function to call when apply_filters() is called
-	 * @param priority Priority of filter to apply. Default: 10 (like WordPress)
+	 * @param priority Priority of filter to apply. Default: 10 (like ClassicPress)
 	 */
 	BrainPress.add_filter = function( tag, callback, priority ) {
 		if ( undefined === priority ) {

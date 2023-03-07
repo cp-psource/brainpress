@@ -2,7 +2,7 @@
 /**
  * Admin reports controller
  *
- * @package WordPress
+ * @package ClassicPress
  * @subpackage BrainPress
  **/
 class BrainPress_Admin_Reports extends BrainPress_Admin_Controller_Menu {

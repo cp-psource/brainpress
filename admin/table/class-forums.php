@@ -2,7 +2,7 @@
 /**
  * A sub-class of WP_Posts_List_Table
  *
- * @package WordPress
+ * @package ClassicPress
  * @subpackage BrainPress
  **/
 class BrainPress_Admin_Table_Forums extends BrainPress_Admin_Table_Notifications {

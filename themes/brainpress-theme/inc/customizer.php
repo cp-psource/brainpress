@@ -2,7 +2,7 @@
 /**
  * BrainPress Theme Customizer
  *
- * @package WordPress
+ * @package ClassicPress
  * @subpackage BrainPress_Theme
  **/
 class BrainPress_Theme_Customizer {

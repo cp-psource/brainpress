@@ -6,7 +6,7 @@ class BrainPress_Admin_Controller_Course {
 	/**
 	 * Delete a course and it's units and modules
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb ClassicPress database abstraction object.
 	 *
 	 * @param (int) $course_id		The course ID to delete.
 	 **/

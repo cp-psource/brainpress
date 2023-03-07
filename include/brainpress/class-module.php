@@ -4,7 +4,7 @@
  *
  * @since 2.0.0
  *
- * @package WordPress
+ * @package ClassicPress
  * @subpackage BrainPress
  **/
 class BrainPress_Module {

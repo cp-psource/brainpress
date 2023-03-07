@@ -2,7 +2,7 @@
 /**
  * Course Calendar Widget
  *
- * @package WordPress
+ * @package ClassicPress
  * @subpackage BrainPress
  **/
 class BrainPress_Widget_Calendar extends WP_Widget {

@@ -30,7 +30,7 @@ add_action( 'after_setup_theme', 'brainpress_setup' );
 if ( ! function_exists( 'brainpress_setup' ) ) :
 
 	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
+	 * Sets up theme defaults and registers support for various ClassicPress features.
 	 *
 	 * Note that this function is hooked into the after_setup_theme hook, which
 	 * runs before the init hook. The init hook is too late for some features, such
@@ -63,7 +63,7 @@ if ( ! function_exists( 'brainpress_setup' ) ) :
 		// Add custom logo support
 		add_theme_support( 'custom-logo' );
 
-		// Setup the WordPress core custom background feature.
+		// Setup the ClassicPress core custom background feature.
 		add_theme_support(
 			'custom-background',
 			apply_filters(

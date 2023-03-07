@@ -4,7 +4,7 @@
  *
  * This class extends WP_Users_List_Table to manage courses students.
  *
- * @package WordPress
+ * @package ClassicPress
  * @subpackage BrainPress
  **/
 class BrainPress_Admin_Table_Students extends BrainPress_Admin_Table_Instructors {

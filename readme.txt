@@ -13,7 +13,7 @@ BrainPress vereinfacht die Online-Ausbildung mit Kursseiten, Paywalls, Social Sh
 
 == Description ==
 
-Denkst Du darüber nach, Tutorials oder Klassen auf Deiner WordPress-Seite zu teilen oder zu verkaufen? Erstelle, förder und verkaufe Dein Wissen ganz einfach mit PS BrainPress.
+Denkst Du darüber nach, Tutorials oder Klassen auf Deiner ClassicPress-Seite zu teilen oder zu verkaufen? Erstelle, förder und verkaufe Dein Wissen ganz einfach mit PS BrainPress.
 Einfaches Online-Lernen
 PS BrainPress vereinfacht die Online-Ausbildung mit Kursseiten, Paywalls, Social Sharing und einer interaktiven Lernumgebung, mit der mehr Studenten miteinander verbunden werden können.
 
@@ -28,7 +28,7 @@ PS BrainPress vereinfacht die Online-Ausbildung mit Kursseiten, Paywalls, Social
 
 = Finde mehr Piestingtal.Source =
 
-Wirf einen Blick in unser [PSOURCE Sortiment](https://n3rds.work/psource_kategorien/psource-plugins/) und hole noch mehr aus Deinem WordPress/ClassicPress!
+Wirf einen Blick in unser [PSOURCE Sortiment](https://n3rds.work/psource_kategorien/psource-plugins/) und hole noch mehr aus Deinem ClassicPress/ClassicPress!
 
 Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswork-digalize-das-piestingtal/newsletter-management/) über unsere Piestingtal.Source informiert!
 

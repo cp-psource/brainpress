@@ -17,7 +17,7 @@ endif; // End header image check.
 add_action( 'after_setup_theme', 'brainpress_custom_header_setup' );
 
 /**
- * Setup the WordPress core custom header feature.
+ * Setup the ClassicPress core custom header feature.
  *
  * @uses brainpress_header_style()
  * @uses brainpress_admin_header_style()

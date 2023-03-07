@@ -350,7 +350,7 @@ class BrainPress_View_Admin_Setting_Shortcodes {
 			'parameters' => array(
 				'required' => array(
 					'course_id' => array(
-						'content' => __( 'Wenn außerhalb der WordPress-Schleife.', 'brainpress' ),
+						'content' => __( 'Wenn außerhalb der ClassicPress-Schleife.', 'brainpress' ),
 					),
 					'show' => array(
 						'content' => __( 'Alle Felder, die Du anzeigen möchtest.', 'brainpress' ),
@@ -421,7 +421,7 @@ class BrainPress_View_Admin_Setting_Shortcodes {
 			'parameters' => array(
 				'required' => array(
 					'course_id' => array(
-						'content' => __( 'Wenn außerhalb der WordPress-Schleife.', 'brainpress' ),
+						'content' => __( 'Wenn außerhalb der ClassicPress-Schleife.', 'brainpress' ),
 					),
 				),
 				'optional' => array(
@@ -460,7 +460,7 @@ class BrainPress_View_Admin_Setting_Shortcodes {
 			'parameters' => array(
 				'required' => array(
 					'course_id' => array(
-						'content' => __( 'Wenn außerhalb der WordPress-Schleife.', 'brainpress' ),
+						'content' => __( 'Wenn außerhalb der ClassicPress-Schleife.', 'brainpress' ),
 					),
 				),
 			),
@@ -488,7 +488,7 @@ class BrainPress_View_Admin_Setting_Shortcodes {
 			'parameters' => array(
 				'required' => array(
 					'course_id' => array(
-						'content' => __( 'Wenn außerhalb der WordPress-Schleife.', 'brainpress' ),
+						'content' => __( 'Wenn außerhalb der ClassicPress-Schleife.', 'brainpress' ),
 					),
 				),
 				'optional' => array(
@@ -521,7 +521,7 @@ class BrainPress_View_Admin_Setting_Shortcodes {
 			'parameters' => array(
 				'required' => array(
 					'course_id' => array(
-						'content' => __( 'Wenn außerhalb der WordPress-Schleife.', 'brainpress' ),
+						'content' => __( 'Wenn außerhalb der ClassicPress-Schleife.', 'brainpress' ),
 					),
 				),
 				'optional' => array(
@@ -567,7 +567,7 @@ class BrainPress_View_Admin_Setting_Shortcodes {
 			'parameters' => array(
 				'required' => array(
 					'course_id' => array(
-						'content' => __( 'Wenn außerhalb der WordPress-Schleife.', 'brainpress' ),
+						'content' => __( 'Wenn außerhalb der ClassicPress-Schleife.', 'brainpress' ),
 					),
 				),
 				'optional' => array(
@@ -618,7 +618,7 @@ class BrainPress_View_Admin_Setting_Shortcodes {
 			'parameters' => array(
 				'required' => array(
 					'course_id' => array(
-						'content' => __( 'Wenn außerhalb der WordPress-Schleife.', 'brainpress' ),
+						'content' => __( 'Wenn außerhalb der ClassicPress-Schleife.', 'brainpress' ),
 					),
 				),
 				'optional' => array(
@@ -677,7 +677,7 @@ class BrainPress_View_Admin_Setting_Shortcodes {
 			'parameters' => array(
 				'required' => array(
 					'course_id' => array(
-						'content' => __( 'Wenn außerhalb der WordPress-Schleife.', 'brainpress' ),
+						'content' => __( 'Wenn außerhalb der ClassicPress-Schleife.', 'brainpress' ),
 					),
 				),
 				'optional' => array(
@@ -727,13 +727,13 @@ class BrainPress_View_Admin_Setting_Shortcodes {
 			'parameters' => array(
 				'required' => array(
 					'course_id' => array(
-						'content' => __( 'Wenn außerhalb der WordPress-Schleife.', 'brainpress' ),
+						'content' => __( 'Wenn außerhalb der ClassicPress-Schleife.', 'brainpress' ),
 					),
 				),
 				'optional' => array(
 					'date_format' => array(
 						'content' => __( 'Datumsformat im PHP-Stil.', 'brainpress' ),
-						'default' => __( 'WordPress-Einstellung.', 'brainpress' ),
+						'default' => __( 'ClassicPress-Einstellung.', 'brainpress' ),
 					),
 					'label' => array(
 						'content' => __( 'Beschriftung, die für die Ausgabe angezeigt werden soll. Setze die Beschriftung auf "", um die Beschriftung vollständig auszublenden.', 'brainpress' ),
@@ -782,7 +782,7 @@ class BrainPress_View_Admin_Setting_Shortcodes {
 			'parameters' => array(
 				'required' => array(
 					'course_id' => array(
-						'content' => __( 'Wenn außerhalb der WordPress-Schleife.', 'brainpress' ),
+						'content' => __( 'Wenn außerhalb der ClassicPress-Schleife.', 'brainpress' ),
 					),
 				),
 				'optional' => array(
@@ -850,7 +850,7 @@ class BrainPress_View_Admin_Setting_Shortcodes {
 			'parameters' => array(
 				'required' => array(
 					'course_id' => array(
-						'content' => __( 'Wenn außerhalb der WordPress-Schleife.', 'brainpress' ),
+						'content' => __( 'Wenn außerhalb der ClassicPress-Schleife.', 'brainpress' ),
 					),
 				),
 				'optional' => array(
@@ -913,7 +913,7 @@ class BrainPress_View_Admin_Setting_Shortcodes {
 			'parameters' => array(
 				'required' => array(
 					'course_id' => array(
-						'content' => __( 'Wenn außerhalb der WordPress-Schleife.', 'brainpress' ),
+						'content' => __( 'Wenn außerhalb der ClassicPress-Schleife.', 'brainpress' ),
 					),
 				),
 				'optional' => array(
@@ -974,7 +974,7 @@ class BrainPress_View_Admin_Setting_Shortcodes {
 			'parameters' => array(
 				'required' => array(
 					'course_id' => array(
-						'content' => __( 'Wenn außerhalb der WordPress-Schleife.', 'brainpress' ),
+						'content' => __( 'Wenn außerhalb der ClassicPress-Schleife.', 'brainpress' ),
 					),
 				),
 				'optional' => array(
@@ -1025,7 +1025,7 @@ class BrainPress_View_Admin_Setting_Shortcodes {
 			'parameters' => array(
 				'required' => array(
 					'course_id' => array(
-						'content' => __( 'Wenn außerhalb der WordPress-Schleife.', 'brainpress' ),
+						'content' => __( 'Wenn außerhalb der ClassicPress-Schleife.', 'brainpress' ),
 					),
 				),
 				'optional' => array(
@@ -1072,7 +1072,7 @@ class BrainPress_View_Admin_Setting_Shortcodes {
 			'parameters' => array(
 				'required' => array(
 					'course_id' => array(
-						'content' => __( 'Wenn außerhalb der WordPress-Schleife.', 'brainpress' ),
+						'content' => __( 'Wenn außerhalb der ClassicPress-Schleife.', 'brainpress' ),
 					),
 				),
 				'optional' => array(
@@ -1114,7 +1114,7 @@ class BrainPress_View_Admin_Setting_Shortcodes {
 			'parameters' => array(
 				'required' => array(
 					'course_id' => array(
-						'content' => __( 'Wenn außerhalb der WordPress-Schleife.', 'brainpress' ),
+						'content' => __( 'Wenn außerhalb der ClassicPress-Schleife.', 'brainpress' ),
 					),
 				),
 				'optional' => array(
@@ -1153,7 +1153,7 @@ class BrainPress_View_Admin_Setting_Shortcodes {
 			'parameters' => array(
 				'required' => array(
 					'course_id' => array(
-						'content' => __( 'Wenn außerhalb der WordPress-Schleife.', 'brainpress' ),
+						'content' => __( 'Wenn außerhalb der ClassicPress-Schleife.', 'brainpress' ),
 					),
 				),
 				'optional' => array(
@@ -1192,7 +1192,7 @@ class BrainPress_View_Admin_Setting_Shortcodes {
 			'parameters' => array(
 				'required' => array(
 					'course_id' => array(
-						'content' => __( 'Wenn außerhalb der WordPress-Schleife.', 'brainpress' ),
+						'content' => __( 'Wenn außerhalb der ClassicPress-Schleife.', 'brainpress' ),
 					),
 				),
 				'optional' => array(
@@ -1253,7 +1253,7 @@ class BrainPress_View_Admin_Setting_Shortcodes {
 			'parameters' => array(
 				'required' => array(
 					'course_id' => array(
-						'content' => __( 'Wenn außerhalb der WordPress-Schleife.', 'brainpress' ),
+						'content' => __( 'Wenn außerhalb der ClassicPress-Schleife.', 'brainpress' ),
 					),
 				),
 				'optional' => array(
@@ -1340,7 +1340,7 @@ class BrainPress_View_Admin_Setting_Shortcodes {
 			'parameters' => array(
 				'required' => array(
 					'course_id' => array(
-						'content' => __( 'Wenn außerhalb der WordPress-Schleife.', 'brainpress' ),
+						'content' => __( 'Wenn außerhalb der ClassicPress-Schleife.', 'brainpress' ),
 					),
 				),
 			),
@@ -1368,7 +1368,7 @@ class BrainPress_View_Admin_Setting_Shortcodes {
 			'parameters' => array(
 				'required' => array(
 					'course_id' => array(
-						'content' => __( 'Wenn außerhalb der WordPress-Schleife.', 'brainpress' ),
+						'content' => __( 'Wenn außerhalb der ClassicPress-Schleife.', 'brainpress' ),
 					),
 				),
 				'optional' => array(
@@ -1491,7 +1491,7 @@ class BrainPress_View_Admin_Setting_Shortcodes {
 						'default' => 'false',
 					),
 					'status' => array(
-						'content' => __( 'Der Status der anzuzeigenden Kurse (verwendet den WordPress-Status).', 'brainpress' ),
+						'content' => __( 'Der Status der anzuzeigenden Kurse (verwendet den ClassicPress-Status).', 'brainpress' ),
 						'default' => __( 'veröffentlicht', 'brainpress' ),
 					),
 					'student_msg' => array(
@@ -1555,7 +1555,7 @@ class BrainPress_View_Admin_Setting_Shortcodes {
 			'parameters' => array(
 				'required' => array(
 					'course_id' => array(
-						'content' => __( 'Wenn außerhalb der WordPress-Schleife.', 'brainpress' ),
+						'content' => __( 'Wenn außerhalb der ClassicPress-Schleife.', 'brainpress' ),
 					),
 				),
 				'optional' => array(
@@ -1604,7 +1604,7 @@ class BrainPress_View_Admin_Setting_Shortcodes {
 			'parameters' => array(
 				'required' => array(
 					'course_id' => array(
-						'content' => __( 'Wenn außerhalb der WordPress-Schleife.', 'brainpress' ),
+						'content' => __( 'Wenn außerhalb der ClassicPress-Schleife.', 'brainpress' ),
 					),
 				),
 				'optional' => array(
@@ -1833,7 +1833,7 @@ class BrainPress_View_Admin_Setting_Shortcodes {
 									$content .= __( 'Standard ist Koma (<em>,</em>)', 'brainpress' );
 								break;
 								case 'WP':
-										$content .= sprintf( __( 'Standard: <em>%s</em>.', 'brainpress' ), __( 'WordPress Settings' ) );
+										$content .= sprintf( __( 'Standard: <em>%s</em>.', 'brainpress' ), __( 'ClassicPress Settings' ) );
 								break;
 								case 'empty':
 										$content .= sprintf( __( 'Standard: <em>%s</em>.', 'brainpress' ), __( 'empty string' ) );

@@ -7,7 +7,7 @@
  *
  * @since  2.0.0
  *
- * @package WordPress
+ * @package ClassicPress
  * @subpackage BrainPress
  */
 class BrainPress_Data_VirtualPage {
@@ -280,7 +280,7 @@ class BrainPress_Data_VirtualPage {
 
 		/*
 		Set to 0 (not -1; WP uses absint() to sanitize the value).
-		This prevents WordPress from displaying any comments.
+		This prevents ClassicPress from displaying any comments.
 		*/
 		$virtual_post->comment_count = 0;
 
@@ -309,7 +309,7 @@ class BrainPress_Data_VirtualPage {
 	 * Set the comments template to an empty file.
 	 *
 	 * @since  2.0.0
-	 * @param  string $template The default template filename from WordPress.
+	 * @param  string $template The default template filename from ClassicPress.
 	 * @return string The new template filename.
 	 */
 	public function virtual_comments( $template ) {
@@ -324,7 +324,7 @@ class BrainPress_Data_VirtualPage {
 	 * Returns the contents for filter `the_title`
 	 *
 	 * @since  2.0.0
-	 * @param  string $title Default page title by WordPress.
+	 * @param  string $title Default page title by ClassicPress.
 	 * @param  int    $id Page that is processed.
 	 * @return string Modified page title.
 	 */

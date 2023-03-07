@@ -2387,7 +2387,7 @@ msgid "Der Kursleiter ist keinem Kurs zugeordnet."
 msgstr ""
 
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1494
-msgid "Der Status der anzuzeigenden Kurse (verwendet den WordPress-Status)."
+msgid "Der Status der anzuzeigenden Kurse (verwendet den ClassicPress-Status)."
 msgstr ""
 
 #: admin/table/class-students.php:227
@@ -3343,7 +3343,7 @@ msgstr ""
 msgid ""
 "Ein Slug ist ein paar Wörter, die einen Beitrag oder eine Seite beschreiben. "
 "Slugs sind normalerweise eine URL-freundliche Version des Post-Titels (der "
-"automatisch von WordPress generiert wurde), aber ein Slug kann beliebig sein."
+"automatisch von ClassicPress generiert wurde), aber ein Slug kann beliebig sein."
 " Slugs sollen mit% s verwendet werden, da sie den Inhalt der URL beschreiben."
 " Post Slug ersetzt den Platzhalter %s in einer benutzerdefinierten Permalink-"
 "Struktur."
@@ -3354,7 +3354,7 @@ msgstr ""
 msgid ""
 "Ein Slug sind ein paar Wörter, die einen Beitrag oder eine Seite beschreiben."
 " Slugs sind normalerweise eine URL-freundliche Version des Post-Titels (der "
-"automatisch von WordPress generiert wurde), aber ein Slug kann beliebig sein."
+"automatisch von ClassicPress generiert wurde), aber ein Slug kann beliebig sein."
 " Slugs sollen mit %s verwendet werden, da sie den Inhalt der URL beschreiben."
 " Post Slug ersetzt den Platzhalter %s in einer benutzerdefinierten Permalink-"
 "Struktur."
@@ -4483,7 +4483,7 @@ msgid "Gesendete Nachrichten Slug"
 msgstr ""
 
 #: include/brainpress/view/admin/setting/class-capabilities.php:149
-msgid "Gewähre Standard-WordPress-Funktionen"
+msgid "Gewähre Standard-ClassicPress-Funktionen"
 msgstr ""
 
 #: include/brainpress/helper/ui/class-module.php:316
@@ -4862,7 +4862,7 @@ msgstr ""
 
 #: include/brainpress/view/admin/setting/class-capabilities.php:42
 msgid ""
-"HINWEIS: Aus Sicherheitsgründen ist diese Seite nur für WordPress-"
+"HINWEIS: Aus Sicherheitsgründen ist diese Seite nur für ClassicPress-"
 "Administratoren verfügbar!"
 msgstr ""
 
@@ -5358,7 +5358,7 @@ msgstr ""
 
 #: include/brainpress/helper/extension/class-tcpdf.php:20
 msgid ""
-"Komplette TCPDF-Bibliothek mit zusätzlichen Schriftarten (WordPress.org)"
+"Komplette TCPDF-Bibliothek mit zusätzlichen Schriftarten (ClassicPress.org)"
 msgstr ""
 
 #: include/brainpress/view/admin/setting/class-general.php:17
@@ -9184,7 +9184,7 @@ msgstr ""
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1371
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1558
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1607
-msgid "Wenn außerhalb der WordPress-Schleife."
+msgid "Wenn außerhalb der ClassicPress-Schleife."
 msgstr ""
 
 #: include/brainpress/view/admin/setting/class-psecommerce.php:109
@@ -9389,11 +9389,11 @@ msgid "WooCommerce Produkt ID: %d"
 msgstr ""
 
 #: include/brainpress/view/admin/setting/class-general.php:293
-msgid "WordPress Login Umleitung"
+msgid "ClassicPress Login Umleitung"
 msgstr ""
 
 #: include/brainpress/view/admin/setting/class-shortcodes.php:736
-msgid "WordPress-Einstellung."
+msgid "ClassicPress-Einstellung."
 msgstr ""
 
 #: include/brainpress/view/admin/assessment/class-list.php:799

@@ -2,7 +2,7 @@
 /**
  * CourePress Hooks
  *
- * @package WordPress
+ * @package ClassicPress
  * @subpackage BrainPress
  **/
 class BrainPress_Hooks {

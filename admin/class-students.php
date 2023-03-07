@@ -2,7 +2,7 @@
 /**
  * Admin Students
  *
- * @package WordPress
+ * @package ClassicPress
  * @subpackage BrainPress
  **/
 class BrainPress_Admin_Students extends BrainPress_Admin_Controller_Menu {

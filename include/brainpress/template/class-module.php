@@ -2,7 +2,7 @@
 /**
  * Use to print the different modules.
  *
- * @package WordPress
+ * @package ClassicPress
  * @subpackage BrainPress
  **/
 class BrainPress_Template_Module {

@@ -17,7 +17,7 @@ class BrainPress_Helper_Extension_TCPDF {
 			'slug' => 'CP_TCPDF',
 			'base_path' => self::$base_path['free'],
 			'source' => 'downloads.wordpress.org/plugin/tcpdf.zip',
-			'source_message' => __( 'Komplette TCPDF-Bibliothek mit zusätzlichen Schriftarten (WordPress.org)', 'brainpress' ),
+			'source_message' => __( 'Komplette TCPDF-Bibliothek mit zusätzlichen Schriftarten (ClassicPress.org)', 'brainpress' ),
 			'external_url' => 'https://wordpress.org/plugins/tcpdf/',
 			'external' => 'yes',
 			'protocol' => 'https',

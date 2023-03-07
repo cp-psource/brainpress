@@ -2,7 +2,7 @@
 /**
  * Courses Table
  *
- * @package WordPress
+ * @package ClassicPress
  * @subpackage BrainPress
  **/
 if ( ! class_exists( 'WP_Posts_List_Table' ) ) {

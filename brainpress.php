@@ -6,6 +6,7 @@
  * Author:      WMS N@W
  * Author URI:  https://n3rds.work
  * Plugin URI:  https://n3rds.work/piestingtal_source/ps-brainpress-classicpress-lms-online-akademie-plugin/
+ * Donate link: https://n3rds.work/spendenaktionen/unterstuetze-unsere-psource-free-werke/
  * License:     GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: brainpress
@@ -40,7 +41,8 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 require 'psource/psource-plugin-update/psource-plugin-updater.php';
-$MyUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+use Psource\PluginUpdateChecker\v5\PucFactory;
+$MyUpdateChecker = PucFactory::buildUpdateChecker(
 	'https://n3rds.work//wp-update-server/?action=get_metadata&slug=brainpress', 
 	__FILE__, 
 	'brainpress' 

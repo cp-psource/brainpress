@@ -1,7 +1,7 @@
 === BrainPress ===
 Contributors: DerN3rd (WMS N@W)
 Donate link: https://n3rds.work/spendenaktionen/unterstuetze-unsere-psource-free-werke/
-Tags: multisite, suche, netzwerksuche
+Tags: classicpress-plugin, lms
 Requires at least: 4.9
 Tested up to: 4.9
 Stable tag: 2.3.6
@@ -11,18 +11,23 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 BrainPress vereinfacht die Online-Ausbildung mit Kursseiten, Paywalls, Social Sharing und einer interaktiven Lernumgebung, mit der mehr Schüler miteinander verbunden werden können.
 
+BrainPress simplifies online education with course sites, paywalls, social sharing, and an interactive learning environment that helps connect more students.
+
 == Description ==
 
 Denkst Du darüber nach, Tutorials oder Klassen auf Deiner ClassicPress-Seite zu teilen oder zu verkaufen? Erstelle, förder und verkaufe Dein Wissen ganz einfach mit PS BrainPress.
 Einfaches Online-Lernen
 PS BrainPress vereinfacht die Online-Ausbildung mit Kursseiten, Paywalls, Social Sharing und einer interaktiven Lernumgebung, mit der mehr Studenten miteinander verbunden werden können.
 
+Are you considering sharing or selling tutorials or classes on your ClassicPress site? Create, promote and sell your knowledge easily with PS BrainPress.
+Easy online learning
+PS BrainPress simplifies online education with course sites, paywalls, social sharing, and an interactive learning environment that helps connect more students.
+
 [POWERED BY PSOURCE](https://n3rds.work/psource_kategorien/psource-plugins/)
 
 [Projektseite](https://n3rds.work/piestingtal_source/ps-brainpress-wordpress-lms-online-akademie-plugin/)
-[Handbuch](https://n3rds.work/docs/brainpress-plugin-handbuch/)
-[Supportforum](https://n3rds.work/forums/forum/psource-support-foren/brainpress-supportforum/)
-[GitHub](https://github.com/piestingtal-source/brainpress)
+[Supportforum](https://n3rds.work/forum/brainpress-forum/)
+[GitHub](https://github.com/cp-psource/brainpress)
 
 == Mehr PSOURCE ==
 

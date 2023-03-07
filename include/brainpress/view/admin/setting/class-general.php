@@ -359,7 +359,7 @@ class BrainPress_View_Admin_Setting_General {
 										<div class="tooltip-before"></div>
 										<div class="tooltip-button">&times;</div>
 										<div class="tooltip-content">
-											' . __( '"Priorität" - Verwenden Sie den folgenden Medientyp, den anderen als Fallback.', 'brainpress' ) . '
+											' . __( '"Priorität" - Verwende den folgenden Medientyp, den anderen als Fallback.', 'brainpress' ) . '
 										</div>
 									</div>
 								</th>

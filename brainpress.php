@@ -313,6 +313,11 @@ class BrainPress {
 		return self::$file;
 	}
 
-
 }
+
+// Load brainpress-reorder-pages plugin
+function load_brainpress_reorder_pages() {
+	require_once( plugin_dir_path( __FILE__ ) . 'include/brainpress-reorder-pages/brainpress-reorder-pages.php' );
+}
+add_action( 'plugins_loaded', 'load_brainpress_reorder_pages' );
 

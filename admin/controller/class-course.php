@@ -553,7 +553,7 @@ class BrainPress_Admin_Controller_Course {
 						$success = true;
 						$json_data['message']['info'] = sprintf(
 							_n(
-								'%d email have been sent successfully.',
+								'%d E-Mail wurde erfolgreich gesendet.',
 								'%d emails have been sent successfully.',
 								$count,
 								'brainpress'

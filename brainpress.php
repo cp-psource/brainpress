@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: BrainPress
- * Version:     2.3.6
+ * Version:     2.3.7
  * Description: BrainPress vereinfacht die Online-Ausbildung mit Kursseiten, Paywalls, Social Sharing und einer interaktiven Lernumgebung, mit der mehr Schüler miteinander verbunden werden können.
  * Author:      WMS N@W
  * Author URI:  https://n3rds.work
- * Plugin URI:  https://n3rds.work/piestingtal_source/ps-brainpress-classicpress-lms-online-akademie-plugin/
+ * Plugin URI:  https://n3rds.work/cp_psource/brainpress-lms-fuer-classicpress/
  * Donate link: https://n3rds.work/spendenaktionen/unterstuetze-unsere-psource-free-werke/
  * License:     GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -61,7 +61,7 @@ class BrainPress {
 	 *
 	 * @var string
 	 */
-	public static $version = '2.3.6';
+	public static $version = '2.3.7';
 
 	/**
 	 * Plugin name, this reflects the Pro/Standard version.

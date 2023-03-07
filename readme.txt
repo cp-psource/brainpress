@@ -4,7 +4,7 @@ Donate link: https://n3rds.work/spendenaktionen/unterstuetze-unsere-psource-free
 Tags: classicpress-plugin, lms
 Requires at least: 4.9
 Tested up to: 4.9
-Stable tag: 2.3.6
+Stable tag: 2.3.7
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -25,7 +25,7 @@ PS BrainPress simplifies online education with course sites, paywalls, social sh
 
 [POWERED BY PSOURCE](https://n3rds.work/psource_kategorien/psource-plugins/)
 
-[Projektseite](https://n3rds.work/piestingtal_source/ps-brainpress-wordpress-lms-online-akademie-plugin/)
+[Projektseite](https://n3rds.work/cp_psource/brainpress-lms-fuer-classicpress/)
 [Supportforum](https://n3rds.work/forum/brainpress-forum/)
 [GitHub](https://github.com/cp-psource/brainpress)
 
@@ -50,12 +50,17 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 
 == ChangeLog ==
 
+= 2.3.7 = DerN3rd =
+
+* WordPress->ClassicPress
+* Translation-Ready
+* Links fixed
+* PSOURCE Updater 1.1
+* Reorder sections
+
 = 2.3.6 = DerN3rd =
 
 * Fix: Kommentare in Kursen
-
-= 2.3.6 = DerN3rd =
-
 * Noch ein paar Stings übersetzt und angepasst
 * JS Script für Fortschrittsanzeigen erneuert
 * Font Awesome Free 5.15.4

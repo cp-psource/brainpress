@@ -577,7 +577,7 @@ class BrainPress_Data_Course {
 		);
 	}
 
-	public static function update_setting( $course_id, $key = true, $value ) {
+	public static function update_setting($course_id, $value, $key=true) {
 		$settings = get_post_meta( $course_id, 'course_settings', true );
 
 		if ( empty( $settings ) ) {

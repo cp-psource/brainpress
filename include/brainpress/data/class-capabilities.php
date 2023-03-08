@@ -196,7 +196,7 @@ class BrainPress_Data_Capabilities {
 	 *
 	 * @since 1.2.3.3
 	 */
-	public static function restore_capabilities( $user_login = false, $user ) {
+	public static function restore_capabilities( $user, $user_login = false ) {
 		if ( user_can( $user, 'manage_options' ) ) {
 			self::assign_admin_capabilities( $user );
 		} else {

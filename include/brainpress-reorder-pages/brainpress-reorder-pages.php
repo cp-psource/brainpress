@@ -123,7 +123,7 @@ function ema_modal_window_admin_style($hook) {
 		$querystring = "";
 		foreach($queryarr as $var => $val) {
 			if(substr($var, 0, 3) != 'ema') {
-				$querystring .= "&$var=$val";
+				$querystring .= '&' . http_build_query(array($var => $val));
 			}
 		}
 		if(substr($querystring, 0 , 1 ) == '&') {

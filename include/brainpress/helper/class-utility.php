@@ -151,12 +151,17 @@ class BrainPress_Helper_Utility {
 			$path = explode( '/', $path_input );
 		}
 		$key = array_shift( $path );
+		//var_dump($key);
+		$key = strval( $key );
 		if ( empty( $path ) ) {
 			if ( empty( $key ) ) {
 				$key = count( $a );
 			}
 			$a[ $key ] = $value;
 			return $a;
+		}
+		if ( empty( $key ) ) { // add this check
+			$key = count( $a );
 		}
 		if ( ! isset( $a[ $key ] ) || ! is_array( $a[ $key ] ) ) {
 			$a[ $key ] = array();

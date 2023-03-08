@@ -50,7 +50,11 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 
 == ChangeLog ==
 
-= 2.3.7 = DerN3rd =
+= 2.3.7 =
+
+* Fix: Array to string conversion
+
+= 2.3.7 =
 
 * WordPress->ClassicPress
 * Translation-Ready
@@ -58,20 +62,20 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 * PSOURCE Updater 1.1
 * Reorder sections
 
-= 2.3.6 = DerN3rd =
+= 2.3.6 =
 
 * Fix: Kommentare in Kursen
 * Noch ein paar Stings übersetzt und angepasst
 * JS Script für Fortschrittsanzeigen erneuert
 * Font Awesome Free 5.15.4
 
-= 2.3.5 = DerN3rd =
+= 2.3.5 =
 
 * DSGVO neu integriert
 * Anpassungen PSeCommerce
 * Text Overhaul
 * PSource Updater v1.1 integriert
 
-= 2.3.4 = DerN3rd =
+= 2.3.4  =
 
 * Release 

@@ -133,7 +133,7 @@ function ema_modal_window_admin_style($hook) {
 		// put the redirect URL together
 		$url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://".$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME']."?$querystring";
 		
-	// ---------------------- check the parameters ---------------------------	
+		// ---------------------- check the parameters ---------------------------	
 		// recognize the reorder command
 		
 		if($test && !array_key_exists('emaarray', $_GET)) $test = false;

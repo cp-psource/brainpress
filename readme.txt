@@ -53,6 +53,7 @@ Halte Dich mit unserem [Newsletter](https://n3rds.work/webmasterservice-n3rdswor
 = 2.3.7 =
 
 * Fix: Array to string conversion
+* Fix: Attempt to read property "ID" on string
 
 = 2.3.7 =
 

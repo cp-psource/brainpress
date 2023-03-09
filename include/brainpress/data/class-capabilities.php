@@ -197,17 +197,21 @@ class BrainPress_Data_Capabilities {
 	 * @since 1.2.3.3
 	 */
 	public static function restore_capabilities( $user, $user_login = false ) {
-		if ( user_can( $user, 'manage_options' ) ) {
-			self::assign_admin_capabilities( $user );
-		} else {
-			$count = BrainPress_Data_Instructor::get_course_count( $user->ID );
+		if ( ! is_a( $user, 'WP_User' ) ) {
+			return;
+			}
+		
+			if ( user_can( $user, 'manage_options' ) ) {
+				self::assign_admin_capabilities( $user );
+			} else {
+				$count = BrainPress_Data_Instructor::get_course_count( $user->ID );
 			if ( ! empty( $count ) ) {
 				self::assign_instructor_capabilities( $user->ID );
 			} else {
 				self::remove_instructor_capabilities( $user->ID );
 			}
-
-			// Add facilitator role
+		
+			 // Add facilitator role
 			$facilitated_courses = BrainPress_Data_Facilitator::get_facilitated_courses( $user->ID, array( 'any' ), true, 0, 1 );
 			if ( ! empty( $facilitated_courses ) ) {
 				self::assign_facilitator_capabilities( $user->ID );

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BrainPress\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-07 10:21+0000\n"
-"PO-Revision-Date: 2023-03-08 16:43+0000\n"
+"PO-Revision-Date: 2023-03-12 09:19+0000\n"
 "Last-Translator: \n"
 "Language-Team: English (United States)\n"
 "Language: en_US\n"
@@ -76,61 +76,119 @@ msgid ""
 "com/us/webapps/mpp/ua/privacy-full\">PayPal Privacy Policy</a> für mehr "
 "Informationen an.\n"
 msgstr ""
+"We collect information about you during registration for our courses or when "
+"you check out on our website.\n"
+"\n"
+"<h3>What we collect and store</h3>\n"
+"\n"
+"While you visit our website, we track the following:\n"
+"\n"
+"<ul>\n"
+"     <li>Courses you have enrolled in.</li>\n"
+"     <li>course, your answers, comments, files.</li>\n"
+"</ul>\n"
+"\n"
+"When you shop with us, you will be asked to provide information such as your "
+"name, billing address, shipping address, email address, phone number, credit "
+"card/payment details, and optional account information such as a username "
+"and password. We use this information to\n"
+"<ul>\n"
+"\t<li>Sending information about your account and order.</li>\n"
+"\t<li>Respond to your requests, including refunds and complaints.</li>\n"
+"\t<li>Processing payments and preventing fraud.</li>\n"
+"</ul>\n"
+"\n"
+"When you create an account, we store your name, address, email address and "
+"phone number, which is used to complete the checkout for future orders.\n"
+"\n"
+"We will store order information for XXX years for tax and accounting "
+"purposes. This includes your name, email address, billing and shipping "
+"addresses.\n"
+"\n"
+"We also save comments or ratings if you choose to leave them.\n"
+"\n"
+"<h3>Who on our team has access</h3>\n"
+"\n"
+"Members of our team have access to the information you provide to us. Admins,"
+" Instructors, and Moderators can access:\n"
+"<ul>\n"
+"\t<li>Customer information such as name, email address and billing.</li>\n"
+"</ul>\n"
+"\n"
+"Our team members have access to this information to fulfill orders, process "
+"refunds, and provide you with support.\n"
+"\n"
+"<h3>What we share with others</h3>\n"
+"\n"
+"<h4>Payments</h4>\n"
+"We accept payments through PayPal. When processing payments, some of your "
+"data will be forwarded to PayPal, including information necessary to process "
+"or support the payment, such as the purchase amount and billing information."
+"\n"
+"Please see the <a href=\"https://www.paypal.com/us/webapps/mpp/ua/privacy-"
+"full\">PayPal Privacy Policy</a> for more information."
 
 #: include/brainpress/view/admin/course/class-edit.php:853
 msgid " & sssCourse Cost"
-msgstr ""
+msgstr "& sssCourse Cost"
 
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1521
 #, php-format
 msgid " <a href=\"%s\">alle verfügbaren Kurse anzeigen.</a>"
-msgstr ""
+msgstr "<a href=\"%s\">Show all available courses.</a>"
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1127
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1135
 msgid " [ENTWURF]"
-msgstr ""
+msgstr "[DRAFT]"
 
 #: include/brainpress/helper/extension/class-psecommerce.php:143
 #, php-format
 msgid " Aktualisiere jetzt Dein %s!"
-msgstr ""
+msgstr "Update your %s now!"
 
 #: include/brainpress/view/admin/student/class-workbook.php:85
 msgid " habe mich noch nicht für Kurse eingeschrieben."
-msgstr ""
-
-#: include/brainpress/view/admin/course/class-edit.php:1932
-msgid "!"
-msgstr ""
+msgstr "I haven't enrolled in any courses yet."
 
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1651
 msgid "\"no\""
-msgstr ""
+msgstr "\"no\""
 
+#: include/brainpress/view/admin/setting/class-general.php:362
 #: include/brainpress/view/admin/setting/class-general.php:417
 msgid ""
 "\"Priorität\" - Verwende den folgenden Medientyp, den anderen als Fallback."
-msgstr ""
-
-#: include/brainpress/view/admin/setting/class-general.php:362
-msgid ""
-"\"Priorität\" - Verwende den folgenden Medientyp, den anderen als Fallback."
-msgstr ""
+msgstr "\"Priority\" - Use the following media type, the other as a fallback."
 
 #: themes/brainpress-theme/content.php:80
 msgid "% Kommentare"
 msgstr ""
 
-#: admin/controller/class-course.php:555
-#: include/brainpress/view/admin/course/class-edit.php:1733
+#. translators: 1: PHP function name, 2: version number
+#: include/brainpress/helper/class-legacy.php:73
+#, php-format
+msgid ""
+"%1$s is <strong>deprecated</strong> since version %2$s with no alternative "
+"available."
+msgstr ""
+
+#. translators: 1: PHP function name, 2: version number, 3: alternative function name
+#: include/brainpress/helper/class-legacy.php:70
+#, php-format
+msgid ""
+"%1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead."
+msgstr ""
+
+#: admin/controller/class-course.php:556
+#: include/brainpress/view/admin/course/class-edit.php:1734
 #, php-format
 msgid "%d E-Mail wurde erfolgreich gesendet."
 msgid_plural "%d emails have been sent successfully."
 msgstr[0] ""
 msgstr[1] ""
 
-#: include/brainpress/helper/class-upgrade.php:57
-#: include/brainpress/helper/class-upgrade.php:102
+#: include/brainpress/helper/class-upgrade.php:58
+#: include/brainpress/helper/class-upgrade.php:103
 #, php-format
 msgid "%d Kurs zum Migrieren gefunden. Kurs-ID: %s."
 msgid_plural "%d Kurse zum Migrieren gefunden. Kurs-IDs: %s."
@@ -152,6 +210,34 @@ msgstr ""
 msgid "%d von %d erforderlichen Elementen abgeschlossen."
 msgstr ""
 
+#: include/brainpress/helper/class-ui.php:652
+#, php-format
+msgid "%s %s"
+msgid_plural "%s %ss"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/table/class-comments.php:299
+#, php-format
+msgid "%s approved comment"
+msgid_plural "%s approved comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/table/class-comments.php:298
+#, php-format
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: include/brainpress/data/class-course.php:2354
+#, php-format
+msgid "%s Day"
+msgid_plural "%s Days"
+msgstr[0] ""
+msgstr[1] ""
+
 #: include/brainpress/view/admin/setting/class-setup.php:70
 #, php-format
 msgid ""
@@ -163,6 +249,20 @@ msgstr ""
 #, php-format
 msgid "%s hat ein paar Dinge getan, um dich auf den Weg zu bringen."
 msgstr ""
+
+#: include/brainpress/helper/table/class-courseassessments.php:509
+#, php-format
+msgid "%s item"
+msgid_plural "%s items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/table/class-comments.php:300
+#, php-format
+msgid "%s pending comment"
+msgid_plural "%s pending comments"
+msgstr[0] ""
+msgstr[1] ""
 
 #: themes/brainpress-theme/inc/template-tags.php:153
 #, php-format
@@ -202,14 +302,14 @@ msgid "&infin; Tage"
 msgstr ""
 
 #: include/brainpress/data/class-discussion.php:599
-#: include/brainpress/widget/class-calendar.php:77
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1389
+#: include/brainpress/widget/class-calendar.php:77
 msgid "&laquo; Bisherige"
 msgstr ""
 
-#: include/brainpress/template/class-unit.php:285
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1508
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1516
 #: include/brainpress/data/shortcode/class-template.php:462
+#: include/brainpress/template/class-unit.php:285
 msgid "&laquo; Zurück"
 msgstr ""
 
@@ -227,24 +327,28 @@ msgstr ""
 #: include/brainpress/data/shortcode/class-course.php:979
 #, php-format
 msgid "(%d Plätze frei)"
-msgstr ""
+msgstr "(%d places available)"
 
 #: include/brainpress/view/admin/setting/class-shortcodes.php:937
 #, php-format
 msgid "(%d Plätze übrig)"
-msgstr ""
+msgstr "(%d places left)"
 
 #: include/brainpress/helper/class-pagination.php:206
 #, php-format
 msgid "(%s Seiten)"
-msgstr ""
+msgstr "(%s pages)"
 
 #: include/brainpress/helper/setting/class-email.php:327
 #, php-format
 msgid "* Du kannst %s Mail-Token für Deine Betreffzeile verwenden. "
 msgstr ""
 
-#. Used between list items, there is a space after the comma.
+#: include/brainpress/data/shortcode/class-student.php:126
+msgid "**"
+msgstr ""
+
+#. translators: Used between list items, there is a space after the comma.
 #: themes/brainpress-theme/content-course-overview.php:113
 #: themes/brainpress-theme/content-course.php:72
 #: themes/brainpress-theme/content-course.php:82
@@ -253,32 +357,32 @@ msgstr ""
 #: themes/brainpress-theme/content.php:54
 #: themes/brainpress-theme/content.php:64
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: include/brainpress/widget/class-calendar.php:64
 #: include/brainpress/widget/class-structure.php:41
 msgid "- momentaner -"
-msgstr ""
+msgstr "- current -"
 
 #: include/brainpress/view/admin/student/class-workbook.php:241
 msgid "--"
-msgstr ""
+msgstr "--"
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:2083
+#: include/brainpress/data/shortcode/class-coursetemplate.php:2091
 msgid "-- Allgemein --"
-msgstr ""
+msgstr "-- Generally --"
 
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1468
 msgid "-1"
-msgstr ""
+msgstr "-1"
 
 #: include/brainpress/view/admin/setting/class-shortcodes.php:433
 msgid "."
-msgstr ""
+msgstr "."
 
 #: include/brainpress/helper/class-javascript.php:160
 msgid ".+@.+"
-msgstr ""
+msgstr ".+@.+"
 
 #: include/brainpress/view/admin/setting/class-general.php:77
 msgid "/deine-kategorie/"
@@ -297,7 +401,7 @@ msgstr ""
 msgid "0 Einheiten im Kurs"
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:2163
+#: include/brainpress/data/shortcode/class-coursetemplate.php:2171
 msgid "0 Kurseinheiten noch vorbereitet. Bitte versuche es später erneut."
 msgstr ""
 
@@ -327,6 +431,12 @@ msgstr ""
 msgid "<a href=\"%s\">Siehe verfügbare Kurse.</a>"
 msgstr ""
 
+#: include/brainpress/view/admin/setting/class-shortcodes.php:577
+msgid ""
+"<a href=\"https://codex.wordpress.org/Formatting_Date_and_Time\">"
+"Dokumentation zur Datums- und Uhrzeitformatierung</a>."
+msgstr ""
+
 #: include/brainpress/view/admin/setting/class-general.php:224
 msgid ""
 "<div>Füge dem <strong>Hauptmenü</strong> Standardmenüelemente von BrainPress "
@@ -335,7 +445,7 @@ msgid ""
 "</div>"
 msgstr ""
 
-#: include/brainpress/view/admin/setting/class-basiccertificate.php:311
+#: include/brainpress/view/admin/setting/class-basiccertificate.php:312
 #, php-format
 msgid ""
 "<h2>%1$s %2$s</h2>\n"
@@ -388,16 +498,16 @@ msgstr ""
 #: include/brainpress/view/admin/setting/class-basiccertificate.php:338
 #, php-format
 msgid "[%s] Herzliche Glückwünsche. Du hast deinen Kurs bestanden."
-msgstr ""
+msgstr "[%s] Congratulations. You passed your course."
 
 #: admin/view/steps/step-2.php:104
 #: include/brainpress/view/admin/course/class-edit.php:424
 msgid "[DRAFT] "
-msgstr ""
+msgstr "[DRAFT] "
 
 #: include/brainpress/helper/table/class-student.php:120
 msgid "[niemals]"
-msgstr ""
+msgstr "[never]"
 
 #: include/brainpress/helper/setting/class-email.php:92
 msgid "[UNIT_TITLE] ist nun verfügbar"
@@ -408,17 +518,17 @@ msgid "Ab in den Müll"
 msgstr ""
 
 #: admin/class-assessment.php:45 admin/class-assessment.php:768
-#: themes/brainpress-theme/page-add-new-discussion.php:85
+#: include/brainpress/data/shortcode/class-student.php:507
+#: include/brainpress/data/shortcode/class-student.php:529
 #: include/brainpress/helper/class-javascript.php:256
 #: include/brainpress/helper/class-javascript.php:502
 #: include/brainpress/template/class-communication.php:278
-#: include/brainpress/data/shortcode/class-student.php:507
-#: include/brainpress/data/shortcode/class-student.php:529
+#: themes/brainpress-theme/page-add-new-discussion.php:85
 msgid "Abbrechen"
 msgstr ""
 
 #: admin/class-edit.php:333
-#: include/brainpress/data/shortcode/class-coursetemplate.php:166
+#: include/brainpress/data/shortcode/class-coursetemplate.php:174
 msgid "Abgeschlossen"
 msgstr ""
 
@@ -427,7 +537,7 @@ msgstr ""
 msgid "abgeschlossen"
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1560
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1568
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1426
 msgid "Abgeschlossene Kurse"
 msgstr ""
@@ -595,7 +705,7 @@ msgstr ""
 msgid "Aktualisiert seine eigenen veröffentlichten Diskussionen"
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1562
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1570
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1435
 msgid "Aktuelle Kurse"
 msgstr ""
@@ -642,8 +752,8 @@ msgid "Alle Felder benötigt."
 msgstr ""
 
 #: include/brainpress/class-userlogin.php:80
-#: themes/brainpress-theme/part-contact.php:21
 #: include/brainpress/helper/class-javascript.php:477
+#: themes/brainpress-theme/part-contact.php:21
 msgid "Alle Felder sind erforderlich."
 msgstr ""
 
@@ -661,8 +771,22 @@ msgstr ""
 msgid "Alle Kurse"
 msgstr ""
 
+#: include/brainpress/data/class-course.php:134
+msgid "Alle Kurskategorien"
+msgstr ""
+
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1612
 msgid "Alle Kursmodule anzeigen."
+msgstr ""
+
+#: include/brainpress/data/class-course.php:3567
+#: include/brainpress/data/class-course.php:3573
+msgid "Alle registrierten Benutzer"
+msgstr ""
+
+#: include/brainpress/data/class-course.php:3568
+#: include/brainpress/data/class-course.php:3574
+msgid "Alle registrierten Benutzer mit einem Passcode"
 msgstr ""
 
 #: include/brainpress/view/admin/course/class-student.php:103
@@ -696,6 +820,13 @@ msgstr ""
 
 #: include/brainpress/view/admin/course/class-edit.php:811
 msgid "Allow course discussion"
+msgstr ""
+
+#. translators: %s: post link
+#. translators: %s: comment link
+#: admin/view/comment-edit.php:90 admin/view/comment-edit.php:105
+#, php-format
+msgid "Als Antwort auf: %s"
 msgstr ""
 
 #: admin/table/class-instructors.php:108 admin/table/class-instructors.php:215
@@ -741,7 +872,7 @@ msgstr ""
 msgid "Anmelden"
 msgstr ""
 
-#: include/brainpress/helper/class-utility.php:1397
+#: include/brainpress/helper/class-utility.php:1402
 msgid "Anmelden/Abmelden"
 msgstr ""
 
@@ -760,9 +891,9 @@ msgid ""
 msgstr ""
 
 #: admin/table/class-forums.php:186 admin/table/class-reports.php:97
+#: include/brainpress/data/shortcode/class-student.php:117
 #: include/brainpress/helper/class-javascript.php:344
 #: include/brainpress/helper/class-javascript.php:474
-#: include/brainpress/data/shortcode/class-student.php:117
 #: include/brainpress/view/admin/course/class-student.php:214
 #: include/brainpress/view/admin/student/class-workbook.php:224
 msgid "Ansehen"
@@ -809,13 +940,17 @@ msgstr ""
 msgid "Antwort hinzufügen"
 msgstr ""
 
+#: themes/brainpress-theme/comments-discussion.php:77
+msgid "Antwort verwerfen"
+msgstr ""
+
 #: include/brainpress/template/class-module-old.php:841
 #: include/brainpress/template/class-module-old.php:911
 msgid "Antwort: "
 msgstr ""
 
 #: admin/class-reports.php:293 admin/table/class-reports.php:94
-#: include/brainpress/data/shortcode/class-coursetemplate.php:2051
+#: include/brainpress/data/shortcode/class-coursetemplate.php:2059
 #: include/brainpress/data/shortcode/class-student.php:112
 #: include/brainpress/helper/table/class-reportstudent.php:43
 #: include/brainpress/helper/ui/class-module.php:358
@@ -888,16 +1023,24 @@ msgstr ""
 msgid "Anzeigename"
 msgstr ""
 
+#: admin/table/class-comments.php:157 admin/table/class-comments.php:160
+msgid "Approve"
+msgstr ""
+
+#: admin/table/class-comments.php:157 admin/table/class-comments.php:160
+msgid "Approve this comment"
+msgstr ""
+
 #: include/brainpress/view/admin/class-upgrade.php:45
 msgid "Arbeiten..."
 msgstr ""
 
 #: admin/table/class-courses.php:114
-#: include/brainpress/template/class-course.php:123
 #: include/brainpress/data/shortcode/class-unit.php:157
 #: include/brainpress/helper/table/class-courseassessments.php:192
 #: include/brainpress/helper/table/class-coursestudent.php:267
 #: include/brainpress/helper/table/class-student.php:44
+#: include/brainpress/template/class-course.php:123
 #: include/brainpress/view/front/class-course.php:1180
 msgid "Arbeitsmappe"
 msgstr ""
@@ -958,6 +1101,18 @@ msgstr ""
 msgid "Assessments/BrainPress"
 msgstr ""
 
+#: include/brainpress/view/admin/setting/class-setup.php:91
+msgid "asset/img/quick-setup/step-1.jpg"
+msgstr ""
+
+#: include/brainpress/view/admin/setting/class-setup.php:109
+msgid "asset/img/quick-setup/step-2.jpg"
+msgstr ""
+
+#: include/brainpress/view/admin/setting/class-setup.php:139
+msgid "asset/img/quick-setup/step-3.jpg"
+msgstr ""
+
 #: include/brainpress/view/admin/course/class-edit.php:545
 #: include/brainpress/view/admin/course/class-edit.php:591
 msgid "Assign"
@@ -987,12 +1142,16 @@ msgstr ""
 msgid "Auf diese Benachrichtigung hochgeladen"
 msgstr ""
 
-#: psource/psource-plugin-update/Puc/v4p10/Plugin/Ui.php:128
-msgid "Auf Updates prüfen"
+#: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:130
+msgid "Auf neuere Version prüfen"
 msgstr ""
 
 #: include/brainpress/view/admin/setting/class-general.php:523
 msgid "Aufsteigend"
+msgstr ""
+
+#: include/brainpress/data/class-course.php:184
+msgid "Ausgewählte Studenten wurden erfolgreich aus dem Kurs zurückgezogen."
 msgstr ""
 
 #: admin/view/steps/step-1.php:44
@@ -1018,11 +1177,11 @@ msgid "Ausrichtung"
 msgstr ""
 
 #: admin/class-assessment.php:741
+#: include/brainpress/data/shortcode/class-student.php:120
+#: include/brainpress/data/shortcode/class-student.php:246
 #: include/brainpress/helper/class-javascript.php:159
 #: include/brainpress/template/class-course.php:239
 #: include/brainpress/template/class-module.php:192
-#: include/brainpress/data/shortcode/class-student.php:120
-#: include/brainpress/data/shortcode/class-student.php:246
 msgid "Ausstehend"
 msgstr ""
 
@@ -1072,7 +1231,7 @@ msgstr ""
 msgid "Back"
 msgstr ""
 
-#: include/brainpress/helper/class-utility.php:749
+#: include/brainpress/helper/class-utility.php:754
 msgid "Back to Course"
 msgstr ""
 
@@ -1103,23 +1262,24 @@ msgstr ""
 
 #: admin/class-courses.php:283 admin/table/class-forums.php:159
 #: admin/table/class-notifications.php:181
-#: themes/brainpress-theme/content-course-overview.php:148
-#: themes/brainpress-theme/content-discussion.php:57
-#: themes/brainpress-theme/content-page.php:30
-#: themes/brainpress-theme/content-single.php:72
-#: themes/brainpress-theme/content.php:88
 #: include/brainpress/data/class-certificate.php:53
+#: include/brainpress/data/class-course.php:28
 #: include/brainpress/data/class-discussion.php:20
 #: include/brainpress/data/class-module.php:38
 #: include/brainpress/data/class-notification.php:18
 #: include/brainpress/data/class-unit.php:31
 #: include/brainpress/template/class-communication.php:205
+#: include/brainpress/view/admin/course/class-student.php:213
+#: include/brainpress/view/admin/student/class-workbook.php:40
+#: themes/brainpress-theme/content-course-overview.php:148
+#: themes/brainpress-theme/content-discussion.php:57
+#: themes/brainpress-theme/content-page.php:30
+#: themes/brainpress-theme/content-single.php:72
+#: themes/brainpress-theme/content.php:88
 #: themes/brainpress-theme/inc/template-tags.php:133
 #: themes/brainpress-theme/inc/template-tags.php:176
 #: themes/brainpress-theme/inc/template-tags.php:234
 #: themes/brainpress-theme/inc/template-tags.php:273
-#: include/brainpress/view/admin/course/class-student.php:213
-#: include/brainpress/view/admin/student/class-workbook.php:40
 msgid "Bearbeiten"
 msgstr ""
 
@@ -1140,12 +1300,12 @@ msgstr ""
 msgid "Beginne zu lernen"
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1179
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1187
 #, php-format
 msgid "Beginnt %s"
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1566
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1574
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1451
 msgid "Beginnt bald"
 msgstr ""
@@ -1272,8 +1432,8 @@ msgstr ""
 
 #: include/brainpress/data/class-notification.php:13
 #: include/brainpress/data/shortcode/class-unit.php:146
-#: include/brainpress/view/front/class-course.php:1206
 #: include/brainpress/view/admin/setting/class-capabilities.php:135
+#: include/brainpress/view/front/class-course.php:1206
 msgid "Benachrichtigungen"
 msgstr ""
 
@@ -1339,8 +1499,6 @@ msgstr ""
 msgid "Benutzerdefiniertes Zertifikat"
 msgstr ""
 
-#: include/brainpress/template/class-student.php:220
-#: include/brainpress/view/registration-form.php:51
 #: include/brainpress/data/shortcode/class-template.php:1445
 #: include/brainpress/data/shortcode/class-template.php:1547
 #: include/brainpress/helper/table/class-courseassessments.php:126
@@ -1348,7 +1506,9 @@ msgstr ""
 #: include/brainpress/helper/table/class-instructor.php:87
 #: include/brainpress/helper/table/class-reportstudent.php:40
 #: include/brainpress/helper/table/class-student.php:81
+#: include/brainpress/template/class-student.php:220
 #: include/brainpress/view/front/class-student.php:265
+#: include/brainpress/view/registration-form.php:51
 msgid "Benutzername"
 msgstr ""
 
@@ -1480,16 +1640,16 @@ msgid ""
 "absteigende Reihenfolge."
 msgstr ""
 
-#: include/brainpress/template/class-student.php:230
-#: include/brainpress/view/registration-form.php:84
 #: include/brainpress/data/shortcode/class-template.php:1473
+#: include/brainpress/template/class-student.php:230
 #: include/brainpress/view/front/class-student.php:269
+#: include/brainpress/view/registration-form.php:84
 msgid "Bestätige das Passwort"
 msgstr ""
 
-#: include/brainpress/view/registration-form.php:89
 #: include/brainpress/data/shortcode/class-template.php:1481
 #: include/brainpress/view/front/class-student.php:271
+#: include/brainpress/view/registration-form.php:89
 msgid "Bestätige die Verwendung eines schwachen Passworts"
 msgstr ""
 
@@ -1498,8 +1658,8 @@ msgid "Bestätige die Verwendung eines schwachen Passworts."
 msgstr ""
 
 #: include/brainpress/class-email.php:140
-#: themes/brainpress-theme/part-contact.php:82
 #: include/brainpress/view/admin/setting/class-email.php:83
+#: themes/brainpress-theme/part-contact.php:82
 msgid "Betreff"
 msgstr ""
 
@@ -1517,9 +1677,9 @@ msgid "Beurteilbar"
 msgstr ""
 
 #: admin/class-assessment.php:764 include/brainpress/data/class-module.php:682
-#: include/brainpress/template/class-module.php:1133
 #: include/brainpress/data/shortcode/class-student.php:113
 #: include/brainpress/helper/table/class-courseassessments.php:129
+#: include/brainpress/template/class-module.php:1133
 #: include/brainpress/view/admin/student/class-workbook.php:151
 msgid "Bewertung"
 msgstr ""
@@ -1834,7 +1994,7 @@ msgstr ""
 msgid "Bottom"
 msgstr ""
 
-#. Name of the plugin
+#. Plugin Name of the plugin/theme
 msgid "BrainPress"
 msgstr ""
 
@@ -1892,7 +2052,7 @@ msgstr ""
 msgid "BrainPress Kursleiter"
 msgstr ""
 
-#: include/brainpress/helper/class-utility.php:1384
+#: include/brainpress/helper/class-utility.php:1389
 msgid "BrainPress Menü"
 msgstr ""
 
@@ -1912,7 +2072,7 @@ msgstr ""
 msgid "BrainPress Upgrade"
 msgstr ""
 
-#. Description of the plugin
+#. Description of the plugin/theme
 msgid ""
 "BrainPress vereinfacht die Online-Ausbildung mit Kursseiten, Paywalls, "
 "Social Sharing und einer interaktiven Lernumgebung, mit der mehr Schüler "
@@ -1935,6 +2095,10 @@ msgstr ""
 
 #: include/brainpress/view/admin/assessment/class-report.php:272
 msgid "Bulk Reporting"
+msgstr ""
+
+#: admin/class-notifications.php:399 admin/controller/class-menu.php:436
+msgid "Cancel"
 msgstr ""
 
 #: include/brainpress/view/admin/course/class-edit.php:1161
@@ -1971,15 +2135,50 @@ msgstr ""
 msgid "Class Size"
 msgstr ""
 
+#: include/brainpress/view/admin/setting/class-general.php:293
+msgid "ClassicPress Login Umleitung"
+msgstr ""
+
+#: include/brainpress/view/admin/setting/class-shortcodes.php:1836
+msgid "ClassicPress Settings"
+msgstr ""
+
+#: include/brainpress/view/admin/setting/class-shortcodes.php:736
+msgid "ClassicPress-Einstellung."
+msgstr ""
+
 #: include/brainpress/view/admin/course/class-unitbuilder.php:213
 msgid "Click to add module elements to the unit"
+msgstr ""
+
+#: admin/view/comment-edit.php:36
+msgid "Comment"
 msgstr ""
 
 #: themes/brainpress-theme/comments-discussion.php:54
 msgid "Comment navigation"
 msgstr ""
 
-#: themes/brainpress-theme/comments.php:33
+#: admin/view/comment-edit.php:53
+msgid "Comment status"
+msgstr ""
+
+#: admin/view/comment-edit.php:54
+msgctxt "comment status"
+msgid "Approved"
+msgstr ""
+
+#: admin/view/comment-edit.php:55
+msgctxt "comment status"
+msgid "Pending"
+msgstr ""
+
+#: admin/view/comment-edit.php:56
+msgctxt "comment status"
+msgid "Spam"
+msgstr ""
+
+#: themes/brainpress-theme/comments.php:34
 #, php-format
 msgctxt "comments title"
 msgid "Ein Gedanke zu &ldquo;%2$s&rdquo;"
@@ -2117,6 +2316,12 @@ msgstr ""
 msgid "CSS-Klasse für ungültige Anmeldung."
 msgstr ""
 
+#: include/brainpress/helper/class-ui.php:679
+#: include/brainpress/helper/table/class-courseassessments.php:563
+#: include/brainpress/helper/table/class-courseassessments.php:566
+msgid "Current Page"
+msgstr ""
+
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1526
 msgid ""
 "Das Anzeigen eines Rückzugslinks ist zulässig, funktioniert jedoch nur, wenn "
@@ -2137,7 +2342,7 @@ msgstr ""
 msgid "Das Upgrade ist abgeschlossen."
 msgstr ""
 
-#: include/brainpress/helper/class-utility.php:1401
+#: include/brainpress/helper/class-utility.php:1406
 #: include/brainpress/helper/integration/class-psecommerce.php:1105
 #: include/brainpress/helper/setting/class-email.php:384
 #: include/brainpress/helper/setting/class-email.php:545
@@ -2145,6 +2350,10 @@ msgstr ""
 #: include/brainpress/view/front/class-student.php:53
 #: include/brainpress/view/front/class-student.php:62
 msgid "Dashboard"
+msgstr ""
+
+#: admin/view/comment-edit.php:73
+msgid "Date and time"
 msgstr ""
 
 #: include/brainpress/helper/ui/class-module.php:309
@@ -2157,8 +2366,6 @@ msgstr ""
 
 #: admin/class-assessment.php:801
 #: include/brainpress/template/class-module-old.php:971
-#: include/brainpress/template/class-module-old.php:971
-#: include/brainpress/template/class-module.php:977
 #: include/brainpress/template/class-module.php:977
 msgid "Datei hochladen"
 msgstr ""
@@ -2298,6 +2505,12 @@ msgstr ""
 msgid "Deine E-Mail"
 msgstr ""
 
+#: include/brainpress/data/class-course.php:3616
+msgid ""
+"Deine eingereichte Arbeitsmappe wird überprüft, und Du wirst von mir "
+"erfahren, ob Du bestanden oder nicht bestanden hast."
+msgstr ""
+
 #: include/brainpress/data/class-module.php:642
 msgid "Deine Einreichung wartet auf die Beurteilung des Kursleiters."
 msgstr ""
@@ -2341,6 +2554,10 @@ msgstr ""
 msgid "Delete Feedback"
 msgstr ""
 
+#: admin/view/comment-edit.php:130
+msgid "Delete Permanently"
+msgstr ""
+
 #: include/brainpress/view/admin/course/class-unitbuilder.php:169
 msgid "Delete Section"
 msgstr ""
@@ -2349,7 +2566,7 @@ msgstr ""
 msgid "Delete Unit"
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1568
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1576
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1459
 msgid "Dem Kursleiter sind noch keine Kurse zugewiesen."
 msgstr ""
@@ -2359,13 +2576,17 @@ msgstr ""
 msgid "Den Kurs findest Du in Deinem <a href=\"%s\">Dashboard</a>"
 msgstr ""
 
-#: themes/brainpress-theme/single-instructor.php:27
 #: include/brainpress/view/front/class-instructor.php:44
+#: themes/brainpress-theme/single-instructor.php:27
 msgid "Der angeforderte Kursleiter existiert nicht."
 msgstr ""
 
 #: include/brainpress/view/front/class-facilitator.php:46
 msgid "Der angeforderte Moderator existiert nicht"
+msgstr ""
+
+#: include/brainpress/data/class-course.php:183
+msgid "Der ausgewählte Student wurde erfolgreich vom Kurs zurückgezogen."
 msgstr ""
 
 #: include/brainpress/view/front/class-enrollmentpopup.php:450
@@ -2392,6 +2613,10 @@ msgstr ""
 msgid "Der Student ist für keinen Kurs eingeschrieben."
 msgstr ""
 
+#: include/brainpress/data/class-course.php:180
+msgid "Der Student wurde erfolgreich zur Klasse hinzugefügt."
+msgstr ""
+
 #: include/brainpress/helper/class-upgrade.php:711
 msgid "Der Studentenfortschritt muss nicht aktualisiert werden."
 msgstr ""
@@ -2414,26 +2639,34 @@ msgstr ""
 msgid "Der Titel, der für den vorgestellten Kurs angezeigt werden soll."
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1431
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1439
 msgid "Derzeit keine Einheiten im Kurs. Bitte versuche es später erneut."
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1424
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1432
 msgid ""
 "Derzeit keine sichtbaren Einheiten im Kurs. Bitte versuche es später erneut."
 msgstr ""
 
-#: themes/brainpress-theme/content-course.php:60
-#: include/brainpress/widget/class-featuredcourse.php:128
 #: include/brainpress/data/shortcode/class-coursetemplate.php:87
 #: include/brainpress/data/shortcode/class-template.php:213
+#: include/brainpress/widget/class-featuredcourse.php:128
+#: themes/brainpress-theme/content-course.php:60
 msgid "Details"
+msgstr ""
+
+#: include/brainpress/data/class-course.php:509
+msgid "Deutsch"
 msgstr ""
 
 #: admin/view/import.php:37
 msgid ""
 "Die Auflistung der Kommentare muss ebenfalls im Export enthalten sein, damit "
 "dies funktioniert."
+msgstr ""
+
+#: include/brainpress/data/class-course.php:182
+msgid "Die ausgewählte Klasse wurde erfolgreich gelöscht."
 msgstr ""
 
 #: include/brainpress/view/admin/setting/class-shortcodes.php:284
@@ -2737,6 +2970,7 @@ msgstr ""
 msgid "Diese Einheit hat keine Aktivitäten."
 msgstr ""
 
+#: include/brainpress/data/class-course.php:2859
 #: include/brainpress/helper/class-message.php:200
 #, php-format
 msgid "Diese Einheit ist ab %s verfügbar"
@@ -2750,13 +2984,13 @@ msgstr ""
 msgid "Diese Einheit ist verfügbar ab"
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1137
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1145
 msgid ""
 "Diese Einheit ist verfügbar, Du musst jedoch alle ERFORDERLICHEN Module vor "
 "dieser Einheit abschließen."
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1181
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1189
 msgid "Diese Einheit ist zum geplanten Startdatum verfügbar."
 msgstr ""
 
@@ -2853,6 +3087,22 @@ msgstr ""
 msgid "Dieser Kurs hat keine Diskussionen."
 msgstr ""
 
+#: themes/brainpress-theme/archive-notifications.php:88
+msgid ""
+"Dieser Kurs hat noch keine Benachrichtigungen. Bitte schaue später noch "
+"einmal vorbei."
+msgstr ""
+
+#: themes/brainpress-theme/archive-discussions.php:118
+msgid ""
+"Dieser Kurs hat noch keine Diskussionen. Starte eine, stelle eine Frage!"
+msgstr ""
+
+#: themes/brainpress-theme/archive-unit-grades.php:46
+msgid ""
+"Dieser Kurs hat noch keine Einheiten. Bitte schaue später noch einmal vorbei."
+msgstr ""
+
 #: include/brainpress/class-module.php:34
 #: include/brainpress/template/class-module-old.php:526
 #: include/brainpress/template/class-module-old.php:687
@@ -2867,8 +3117,17 @@ msgid ""
 "Dieser Kurs ist abgeschlossen, Du kannst keine Antworten mehr einreichen."
 msgstr ""
 
+#: include/brainpress/data/class-course.php:2801
+msgid "Dieser Kurs ist bereits geschlossen."
+msgstr ""
+
 #: include/brainpress/helper/integration/class-woocommerce.php:634
 msgid "Dieser Kurs ist bereits im Warenkorb."
+msgstr ""
+
+#: include/brainpress/data/class-course.php:2790
+#, php-format
+msgid "Dieser Kurs wird am %s geöffnet"
 msgstr ""
 
 #: include/brainpress/helper/class-upgrade.php:223
@@ -2890,8 +3149,8 @@ msgid "Dieses Modul existiert nicht."
 msgstr ""
 
 #: include/brainpress/data/class-discussion.php:16
-#: include/brainpress/template/class-communication.php:196
 #: include/brainpress/helper/ui/class-module.php:323
+#: include/brainpress/template/class-communication.php:196
 msgid "Diskussion"
 msgstr ""
 
@@ -2905,9 +3164,9 @@ msgstr ""
 
 #: admin/class-forums.php:80 include/brainpress/data/class-discussion.php:15
 #: include/brainpress/data/shortcode/class-unit.php:153
+#: include/brainpress/view/admin/setting/class-capabilities.php:139
 #: include/brainpress/view/front/class-course.php:1103
 #: include/brainpress/view/front/class-course.php:1128
-#: include/brainpress/view/admin/setting/class-capabilities.php:139
 msgid "Diskussionen"
 msgstr ""
 
@@ -2953,6 +3212,7 @@ msgstr ""
 msgid "Downloadquelle"
 msgstr ""
 
+#: admin/controller/class-menu.php:410
 #: include/brainpress/view/admin/course/class-unitbuilder.php:80
 #: include/brainpress/view/admin/course/class-unitbuilder.php:203
 msgid "Draft"
@@ -2973,7 +3233,7 @@ msgstr ""
 msgid "Du bist derzeit nicht für diesen Kurs angemeldet!"
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1836
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1844
 msgid "Du bist für keinen Kurs eingeschrieben."
 msgstr ""
 
@@ -2987,14 +3247,21 @@ msgstr ""
 msgid "Du bist in keinem Kurs eingeschrieben. %s"
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1577
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1585
 #, php-format
 msgid ""
 "Du bist in keinem Kurs eingeschrieben. <a href=\"%s\">Siehe verfügbare Kurse."
 "</a>"
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1580
+#: include/brainpress/view/admin/setting/class-shortcodes.php:1520
+#, php-format
+msgid ""
+"Du bist in keinem Kurs eingeschrieben.<br />Hier sind einige, die Dir "
+"gefallen könnten, oder %s"
+msgstr ""
+
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1588
 #, php-format
 msgid ""
 "Du bist in keinem Kurs eingeschrieben.<br />Hier sind einige, die Dir "
@@ -3020,6 +3287,10 @@ msgstr ""
 #: include/brainpress/data/class-module.php:670
 #: include/brainpress/template/class-module.php:1123
 msgid "Du hast das Quiz erfolgreich bestanden. Hier sind Deine Ergebnisse."
+msgstr ""
+
+#: include/brainpress/data/class-course.php:3615
+msgid "Du hast den Kurs abgeschlossen!"
 msgstr ""
 
 #: include/brainpress/data/shortcode/class-template.php:872
@@ -3144,18 +3415,25 @@ msgstr[1] ""
 msgid "Du musst alle erforderlichen Module ausfüllen!"
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1280
+#: include/brainpress/data/class-course.php:2914
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1288
 msgid "Du musst alle ERFORDERLICHEN Module vor diesem Abschnitt abschließen."
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1354
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1362
 msgid ""
 "Du musst alle ERFORDERLICHEN Module vor diesem Modul abgeschlossen haben."
 msgstr ""
 
-#: include/brainpress/template/class-unit.php:471
+#: include/brainpress/data/class-course.php:2943
+#: include/brainpress/data/class-course.php:2966
+msgid "Du musst alle ERFORDERLICHEN Module vor diesem Modul abschließen."
+msgstr ""
+
+#: include/brainpress/data/class-course.php:2884
 #: include/brainpress/data/shortcode/class-unit.php:226
 #: include/brainpress/data/shortcode/class-unit.php:229
+#: include/brainpress/template/class-unit.php:471
 msgid "Du musst alle ERFORDERLICHEN Module vor dieser Einheit abschließen."
 msgstr ""
 
@@ -3179,7 +3457,7 @@ msgstr ""
 msgid "Du musst dich anmelden, um diese Einladung zu bestätigen."
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1168
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1176
 msgid "Du musst die ERFORDERLICHE Einheit vor dieser Einheit ausfüllen."
 msgstr ""
 
@@ -3219,8 +3497,8 @@ msgid "Durchschnitt"
 msgstr ""
 
 #: admin/table/class-reports.php:95 admin/table/class-students.php:102
-#: include/brainpress/template/class-course.php:40
 #: include/brainpress/helper/table/class-reportstudent.php:44
+#: include/brainpress/template/class-course.php:40
 msgid "Durchschnittlich"
 msgstr ""
 
@@ -3248,13 +3526,13 @@ msgid "Durchsuche"
 msgstr ""
 
 #: admin/view/steps/step-3.php:88
-#: include/brainpress/template/class-student.php:215
-#: include/brainpress/view/registration-form.php:62
 #: include/brainpress/data/shortcode/class-template.php:1455
-#: include/brainpress/view/front/class-student.php:263
+#: include/brainpress/template/class-student.php:215
 #: include/brainpress/view/admin/course/class-edit.php:650
 #: include/brainpress/view/admin/course/class-student.php:38
 #: include/brainpress/view/admin/course/class-student.php:71
+#: include/brainpress/view/front/class-student.php:263
+#: include/brainpress/view/registration-form.php:62
 msgid "E-Mail"
 msgstr ""
 
@@ -3291,6 +3569,15 @@ msgstr ""
 msgid "e.g. 7"
 msgstr ""
 
+#: admin/class-notifications.php:380 admin/controller/class-menu.php:419
+#: admin/table/class-comments.php:150 admin/view/comment-edit.php:71
+msgid "Edit"
+msgstr ""
+
+#: admin/view/comment-edit.php:22
+msgid "Edit Comment"
+msgstr ""
+
 #: include/brainpress/view/admin/course/class-edit.php:32
 msgid "Edit Course"
 msgstr ""
@@ -3299,8 +3586,24 @@ msgstr ""
 msgid "Edit Course/BrainPress"
 msgstr ""
 
+#: admin/view/comment-edit.php:71
+msgid "Edit date and time"
+msgstr ""
+
 #: include/brainpress/view/admin/assessment/class-list.php:787
 msgid "Edit Feedback"
+msgstr ""
+
+#: admin/controller/class-menu.php:419
+msgid "Edit status"
+msgstr ""
+
+#: admin/table/class-comments.php:150
+msgid "Edit this comment"
+msgstr ""
+
+#: admin/class-notifications.php:380
+msgid "Edit visibility"
 msgstr ""
 
 #: include/brainpress/view/admin/course/class-edit.php:1219
@@ -3380,6 +3683,12 @@ msgstr ""
 msgid "Eingereicht"
 msgstr ""
 
+#. translators: %s: comment date
+#: admin/view/comment-edit.php:67
+#, php-format
+msgid "Eingereicht am: %s"
+msgstr ""
+
 #: admin/class-notifications.php:466
 #: include/brainpress/view/admin/course/class-student.php:193
 msgid "Eingeschrieben"
@@ -3428,6 +3737,14 @@ msgstr ""
 msgid "Einheit Einstellungen"
 msgstr ""
 
+#: include/brainpress/data/class-course.php:179
+msgid "Einheit erfolgreich aktualisiert."
+msgstr ""
+
+#: include/brainpress/data/class-course.php:177
+msgid "Einheit erfolgreich gelöscht"
+msgstr ""
+
 #: include/brainpress/data/shortcode/class-student.php:122
 msgid "Einheit gelesen"
 msgstr ""
@@ -3464,12 +3781,12 @@ msgstr ""
 
 #: admin/class-courses.php:92 admin/class-courses.php:192
 #: admin/class-courses.php:286 include/brainpress/data/class-unit.php:26
-#: include/brainpress/helper/class-setting.php:388
-#: include/brainpress/data/shortcode/class-coursetemplate.php:2217
+#: include/brainpress/data/shortcode/class-coursetemplate.php:2225
 #: include/brainpress/data/shortcode/class-template.php:573
 #: include/brainpress/data/shortcode/class-unit.php:136
-#: include/brainpress/view/front/class-course.php:1228
+#: include/brainpress/helper/class-setting.php:388
 #: include/brainpress/view/admin/setting/class-capabilities.php:119
+#: include/brainpress/view/front/class-course.php:1228
 msgid "Einheiten"
 msgstr ""
 
@@ -3517,6 +3834,10 @@ msgstr ""
 msgid "Einheitenliste"
 msgstr ""
 
+#: include/brainpress/data/class-course.php:176
+msgid "Einheitenstatus erfolgreich geändert"
+msgstr ""
+
 #: include/brainpress/view/admin/course/class-student.php:72
 msgid "Einladen"
 msgstr ""
@@ -3539,6 +3860,7 @@ msgstr ""
 msgid "Einladung entfernen"
 msgstr ""
 
+#: include/brainpress/data/class-course.php:185
 #: include/brainpress/data/class-facilitator.php:227
 #: include/brainpress/data/class-instructor.php:551
 msgid "Einladung erfolgreich gesendet."
@@ -3590,8 +3912,8 @@ msgstr ""
 
 #: include/brainpress/data/shortcode/class-template.php:1202
 #: include/brainpress/data/shortcode/class-template.php:1312
-#: include/brainpress/view/front/class-instructor.php:97
 #: include/brainpress/view/admin/setting/class-pages.php:88
+#: include/brainpress/view/front/class-instructor.php:97
 msgid "Einloggen"
 msgstr ""
 
@@ -3782,10 +4104,10 @@ msgid "Email"
 msgstr ""
 
 #: include/brainpress/class-userlogin.php:60
-#: themes/brainpress-theme/part-contact.php:24
 #: include/brainpress/template/class-student.php:176
 #: include/brainpress/view/front/class-enrollmentpopup.php:467
 #: include/brainpress/view/front/class-student.php:237
+#: themes/brainpress-theme/part-contact.php:24
 msgid "Email Adresse ist nicht gültig."
 msgstr ""
 
@@ -3804,10 +4126,10 @@ msgstr ""
 msgid "Empfohlene Medien"
 msgstr ""
 
-#: include/brainpress/widget/class-featuredcourse.php:20
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1450
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1458
 #: include/brainpress/view/admin/setting/class-shortcodes.php:166
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1564
+#: include/brainpress/widget/class-featuredcourse.php:20
 msgid "Empfohlener Kurs"
 msgstr ""
 
@@ -3826,6 +4148,10 @@ msgstr ""
 
 #: include/brainpress/view/admin/setting/class-shortcodes.php:225
 msgid "empty"
+msgstr ""
+
+#: include/brainpress/view/admin/setting/class-shortcodes.php:1839
+msgid "empty string"
 msgstr ""
 
 #: include/brainpress/view/admin/course/class-edit.php:717
@@ -3886,6 +4212,11 @@ msgstr ""
 msgid "Entschuldigung, diese E-Mail Adresse wird bereits verwendet!"
 msgstr ""
 
+#: include/brainpress/data/class-course.php:535
+#: include/brainpress/data/class-course.php:3626
+msgid "Entschuldigung, Du hast diesen Kurs nicht bestanden!"
+msgstr ""
+
 #: admin/class-assessment.php:968 admin/controller/class-menu.php:375
 #: admin/controller/class-unit.php:76 admin/controller/class-unit.php:199
 msgid "Entwurf"
@@ -3903,6 +4234,10 @@ msgstr ""
 msgid "Erfolg!"
 msgstr ""
 
+#: include/brainpress/data/class-course.php:186
+msgid "Erfolgreich als Kursleiter hinzugefügt."
+msgstr ""
+
 #: include/brainpress/data/class-discussion.php:461
 msgid "Erfolgreich Deabonniert"
 msgstr ""
@@ -3915,10 +4250,10 @@ msgstr ""
 msgid "Erfolgreich eingeschrieben."
 msgstr ""
 
+#: include/brainpress/helper/ui/class-module.php:341
 #: include/brainpress/template/class-module-old.php:91
 #: include/brainpress/template/class-module.php:463
 #: include/brainpress/template/class-module.php:467
-#: include/brainpress/helper/ui/class-module.php:341
 msgid "Erforderlich"
 msgstr ""
 
@@ -4016,10 +4351,6 @@ msgid ""
 "veröffentlichen und Deinen Studenten beim Lernen zuzusehen"
 msgstr ""
 
-#: psource/psource-plugin-update/Puc/v4p10/Vcs/PluginUpdateChecker.php:98
-msgid "Es ist kein Änderungsprotokoll verfügbar."
-msgstr ""
-
 #: themes/brainpress-theme/404.php:26
 msgid ""
 "Es sieht so aus, als wäre an dieser Stelle nichts gefunden worden. "
@@ -4036,6 +4367,12 @@ msgstr ""
 
 #: include/brainpress/view/admin/class-upgrade.php:28
 msgid "Es sind keine Kurse zu aktualisieren."
+msgstr ""
+
+#: include/brainpress/data/class-course.php:3627
+msgid ""
+"Es tut mir leid zu sagen, dass Du COURSE_NAME nicht bestanden hast. Viel "
+"Glück beim nächsten Mal!"
 msgstr ""
 
 #: include/brainpress/template/class-unit.php:90
@@ -4146,8 +4483,8 @@ msgid "Failed Page"
 msgstr ""
 
 #: include/brainpress/data/class-module.php:681
-#: include/brainpress/template/class-module.php:1132
 #: include/brainpress/data/shortcode/class-student.php:124
+#: include/brainpress/template/class-module.php:1132
 msgid "Falsch"
 msgstr ""
 
@@ -4165,6 +4502,11 @@ msgstr ""
 
 #: themes/brainpress-theme/inc/customizer.php:51
 msgid "Farbe der Hauptnavigationslinks"
+msgstr ""
+
+#: include/brainpress/data/class-course.php:530
+#: include/brainpress/data/class-course.php:3614
+msgid "Fast fertig!"
 msgstr ""
 
 #: include/brainpress/view/admin/course/class-edit.php:330
@@ -4208,18 +4550,28 @@ msgstr ""
 msgid "Fetching students..."
 msgstr ""
 
-#: admin/table/class-forums.php:206 admin/table/class-instructors.php:150
+#: admin/table/class-comments.php:231 admin/table/class-forums.php:206
+#: admin/table/class-instructors.php:150
 #: admin/table/class-notifications.php:340 admin/table/class-reports.php:206
 msgid "Filter"
+msgstr ""
+
+#: admin/table/class-comments.php:222
+msgid "Filter nach Kurs"
 msgstr ""
 
 #: include/brainpress/widget/class-featuredcourse.php:89
 msgid "Finde mehr heraus"
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1451
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1459
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1568
 msgid "Finde mehr heraus."
+msgstr ""
+
+#: include/brainpress/helper/class-ui.php:661
+#: include/brainpress/helper/table/class-courseassessments.php:545
+msgid "First page"
 msgstr ""
 
 #: include/brainpress/view/admin/course/class-edit.php:359
@@ -4437,6 +4789,10 @@ msgstr ""
 msgid "Generiere ein einheitliches Kurs-/standortweites Reporting"
 msgstr ""
 
+#: themes/brainpress-theme/archive-unit-grades.php:40
+msgid "Gesamt"
+msgstr ""
+
 #: include/brainpress/template/class-grades.php:30
 msgid "Gesamt:"
 msgstr ""
@@ -4527,6 +4883,15 @@ msgstr ""
 
 #: include/brainpress/template/class-communication.php:137
 msgid "Gilt für:"
+msgstr ""
+
+#: include/brainpress/data/class-course.php:533
+#: include/brainpress/data/class-course.php:3620
+msgid "Glückwunsch, Du hast bestanden!"
+msgstr ""
+
+#: admin/view/comment-edit.php:8
+msgid "Go back"
 msgstr ""
 
 #: include/brainpress/view/admin/assessment/assessment-page.php:53
@@ -4698,7 +5063,7 @@ msgid ""
 "Das %7$s Team"
 msgstr ""
 
-#: include/brainpress/helper/setting/class-email.php:616
+#: include/brainpress/helper/setting/class-email.php:617
 #, php-format
 msgid ""
 "Hi %1$s %2$s,\n"
@@ -4784,7 +5149,7 @@ msgid ""
 "Das %6$s Team"
 msgstr ""
 
-#: include/brainpress/view/admin/setting/class-basiccertificate.php:344
+#: include/brainpress/view/admin/setting/class-basiccertificate.php:345
 #, php-format
 msgid ""
 "Hi %1$s,\n"
@@ -4809,7 +5174,7 @@ msgid ""
 "Das %4$s Team"
 msgstr ""
 
-#: include/brainpress/view/admin/setting/class-basiccertificate.php:356
+#: include/brainpress/view/admin/setting/class-basiccertificate.php:357
 #, php-format
 msgid ""
 "Hi %1$s,\n"
@@ -4852,6 +5217,11 @@ msgstr ""
 
 #: admin/view/steps/step-7.php:87
 msgid "Hintergrundbild auswählen"
+msgstr ""
+
+#: themes/brainpress-theme/comments-discussion.php:76
+#, php-format
+msgid "Hinterlasse eine Antwort zu %s"
 msgstr ""
 
 #: themes/brainpress-theme/content.php:78
@@ -4905,20 +5275,13 @@ msgid ""
 "HTML-Tag zum Umschließen des Etiketts (ohne Klammern, z.B. <em>h3</em>)."
 msgstr ""
 
-#. Author URI of the plugin
+#. Author URI of the plugin/theme
 msgid "https://n3rds.work"
 msgstr ""
 
+#. Plugin URI of the plugin/theme
 #: admin/class-edit.php:957
-msgid ""
-"https://n3rds.work/piestingtal_source/ps-brainpress-wordpress-lms-online-"
-"akademie-plugin/"
-msgstr ""
-
-#. URI of the plugin
-msgid ""
-"https://n3rds.work/piestingtal_source/ps-brainpress-wordpress-lms-online-"
-"akademie-plugin//"
+msgid "https://n3rds.work/cp_psource/brainpress-lms-fuer-classicpress/"
 msgstr ""
 
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1204
@@ -5085,6 +5448,10 @@ msgstr ""
 msgid "instructor@email.com"
 msgstr ""
 
+#: admin/view/comment-edit.php:8
+msgid "Invalid comment ID."
+msgstr ""
+
 #: include/brainpress/view/front/class-facilitator.php:185
 msgid "Invalid invitation."
 msgstr ""
@@ -5112,6 +5479,10 @@ msgstr ""
 #: themes/brainpress-theme/archive.php:49
 #, php-format
 msgid "Jahr: %s"
+msgstr ""
+
+#: include/brainpress/data/discussion/class-cron.php:38
+msgid "Jede Viertelstunde"
 msgstr ""
 
 #: include/brainpress/data/shortcode/class-course.php:884
@@ -5236,12 +5607,17 @@ msgstr ""
 msgid "Keine Einheiten im Papierkorb gefunden"
 msgstr ""
 
+#: include/brainpress/data/class-course.php:32
 #: themes/brainpress-theme/content-none.php:16
 msgid "Keine Kurse gefunden"
 msgstr ""
 
 #: admin/view/instructor-courses.php:44
 msgid "Keine Kurse gefunden!"
+msgstr ""
+
+#: include/brainpress/data/class-course.php:33
+msgid "Keine Kurse im Papierkorb gefunden"
 msgstr ""
 
 #: include/brainpress/helper/table/class-instructor.php:97
@@ -5402,11 +5778,12 @@ msgstr ""
 
 #: admin/table/class-forums.php:127 admin/table/class-notifications.php:146
 #: admin/view/instructor-courses.php:23
+#: include/brainpress/data/class-course.php:24
+#: include/brainpress/helper/integration/class-woocommerce.php:515
 #: include/brainpress/template/class-communication.php:254
 #: include/brainpress/template/class-course.php:38
 #: include/brainpress/widget/class-calendar.php:62
 #: include/brainpress/widget/class-structure.php:39
-#: include/brainpress/helper/integration/class-woocommerce.php:515
 msgid "Kurs"
 msgstr ""
 
@@ -5428,6 +5805,11 @@ msgstr ""
 msgid "Kurs ansehen"
 msgstr ""
 
+#: include/brainpress/data/class-course.php:30
+#: include/brainpress/data/class-course.php:34
+msgid "Kurs anzeigen"
+msgstr ""
+
 #: include/brainpress/view/admin/setting/class-general.php:111
 #: include/brainpress/view/admin/setting/class-slugs.php:79
 msgid "Kurs Arbeitsmappe Slug"
@@ -5435,6 +5817,10 @@ msgstr ""
 
 #: admin/table/class-reports.php:201
 msgid "Kurs auswählen"
+msgstr ""
+
+#: include/brainpress/data/class-course.php:27
+msgid "Kurs bearbeiten"
 msgstr ""
 
 #: include/brainpress/view/admin/setting/class-shortcodes.php:150
@@ -5447,6 +5833,10 @@ msgstr ""
 
 #: include/brainpress/view/admin/setting/class-shortcodes.php:142
 msgid "Kurs Empfohlenes Video"
+msgstr ""
+
+#: include/brainpress/data/class-course.php:175
+msgid "Kurs erfolgreich aktualisiert."
 msgstr ""
 
 #: admin/view/import.php:16
@@ -5483,7 +5873,7 @@ msgstr ""
 msgid "KURS TEILEN"
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1845
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1853
 msgid "Kurs verwalten"
 msgstr ""
 
@@ -5496,7 +5886,8 @@ msgstr ""
 msgid "Kurs voll"
 msgstr ""
 
-#: admin/view/assessments.php:32 admin/view/student-assessment.php:37
+#: admin/class-forums.php:372 admin/view/assessments.php:32
+#: admin/view/student-assessment.php:37
 #: include/brainpress/view/admin/student/class-workbook.php:89
 msgid "Kurs wählen"
 msgstr ""
@@ -5587,10 +5978,10 @@ msgstr ""
 #: include/brainpress/data/shortcode/class-course.php:1499
 #: include/brainpress/data/shortcode/class-template.php:210
 #: include/brainpress/data/shortcode/class-unit.php:164
-#: include/brainpress/view/front/class-facilitator.php:132
-#: include/brainpress/view/front/class-instructor.php:125
 #: include/brainpress/view/admin/setting/class-shortcodes.php:78
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1278
+#: include/brainpress/view/front/class-facilitator.php:132
+#: include/brainpress/view/front/class-instructor.php:125
 msgid "Kursdetails"
 msgstr ""
 
@@ -5616,22 +6007,23 @@ msgid "Kursdiskussionen Slug"
 msgstr ""
 
 #: admin/table/class-instructors.php:119 admin/table/class-students.php:96
-#: admin/view/export.php:66 themes/brainpress-theme/single-instructor.php:46
-#: include/brainpress/helper/class-utility.php:1393
-#: include/brainpress/widget/class-featuredcourse.php:60
-#: include/brainpress/data/shortcode/class-coursetemplate.php:2203
-#: include/brainpress/data/shortcode/class-coursetemplate.php:2213
+#: admin/view/export.php:66 include/brainpress/data/class-course.php:35
+#: include/brainpress/data/shortcode/class-coursetemplate.php:2211
+#: include/brainpress/data/shortcode/class-coursetemplate.php:2221
 #: include/brainpress/data/shortcode/class-template.php:388
+#: include/brainpress/helper/class-utility.php:1398
 #: include/brainpress/helper/table/class-instructor.php:90
 #: include/brainpress/helper/table/class-student.php:85
 #: include/brainpress/view/admin/class-instructor.php:119
-#: include/brainpress/view/front/class-course.php:1307
-#: include/brainpress/view/front/class-general.php:42
 #: include/brainpress/view/admin/course/class-student.php:181
 #: include/brainpress/view/admin/setting/class-capabilities.php:111
 #: include/brainpress/view/admin/setting/class-shortcodes.php:74
 #: include/brainpress/view/admin/student/class-profile.php:15
 #: include/brainpress/view/admin/student/class-workbook.php:30
+#: include/brainpress/view/front/class-course.php:1307
+#: include/brainpress/view/front/class-general.php:42
+#: include/brainpress/widget/class-featuredcourse.php:60
+#: themes/brainpress-theme/single-instructor.php:46
 msgid "Kurse"
 msgstr ""
 
@@ -5679,7 +6071,7 @@ msgstr ""
 msgid "Kurse Slug"
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1571
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1579
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1472
 msgid "Kurse verwalten"
 msgstr ""
@@ -5728,9 +6120,17 @@ msgstr ""
 msgid "Kursende"
 msgstr ""
 
-#: include/brainpress/widget/class-calendar.php:32
 #: include/brainpress/view/admin/setting/class-shortcodes.php:158
+#: include/brainpress/widget/class-calendar.php:32
 msgid "Kurskalender"
+msgstr ""
+
+#: include/brainpress/data/class-course.php:132
+msgid "Kurskategorie"
+msgstr ""
+
+#: include/brainpress/data/class-course.php:136
+msgid "Kurskategorie aktualisieren"
 msgstr ""
 
 #: include/brainpress/view/admin/setting/class-general.php:74
@@ -5742,10 +6142,16 @@ msgstr ""
 msgid "Kurskategorie: "
 msgstr ""
 
+#: include/brainpress/data/class-course.php:131
+#: include/brainpress/data/class-course.php:139
+#: include/brainpress/view/admin/setting/class-capabilities.php:115
 #: include/brainpress/widget/class-categories.php:18
 #: include/brainpress/widget/class-categories.php:51
-#: include/brainpress/view/admin/setting/class-capabilities.php:115
 msgid "Kurskategorien"
+msgstr ""
+
+#: include/brainpress/data/class-course.php:135
+msgid "Kurskategorien bearbeiten"
 msgstr ""
 
 #: include/brainpress/view/admin/setting/class-shortcodes.php:122
@@ -5757,7 +6163,6 @@ msgid "Kurskosten"
 msgstr ""
 
 #: admin/class-instructors.php:29 admin/view/instructors.php:2
-#: themes/brainpress-theme/content-course-overview.php:87
 #: admin/view/steps/step-3.php:16 admin/view/steps/step-3.php:71
 #: include/brainpress/data/shortcode/class-instructor.php:67
 #: include/brainpress/data/shortcode/class-instructor.php:68
@@ -5765,6 +6170,7 @@ msgstr ""
 #: include/brainpress/view/admin/class-instructor.php:12
 #: include/brainpress/view/admin/setting/class-capabilities.php:123
 #: include/brainpress/view/admin/setting/class-pages.php:106
+#: themes/brainpress-theme/content-course-overview.php:87
 msgid "Kursleiter"
 msgstr ""
 
@@ -5789,8 +6195,8 @@ msgstr ""
 msgid "Kursleiter Liste"
 msgstr ""
 
-#: themes/brainpress-theme/single-instructor.php:26
 #: include/brainpress/view/front/class-instructor.php:47
+#: themes/brainpress-theme/single-instructor.php:26
 msgid "Kursleiter nicht gefunden."
 msgstr ""
 
@@ -5872,10 +6278,10 @@ msgid "Kursstatus"
 msgstr ""
 
 #: admin/view/steps/step-2.php:59
-#: include/brainpress/widget/class-structure.php:19
-#: include/brainpress/data/shortcode/class-coursetemplate.php:556
+#: include/brainpress/data/shortcode/class-coursetemplate.php:564
 #: include/brainpress/view/admin/setting/class-shortcodes.php:170
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1633
+#: include/brainpress/widget/class-structure.php:19
 msgid "Kursstruktur"
 msgstr ""
 
@@ -6011,6 +6417,11 @@ msgstr ""
 msgid "Last Active"
 msgstr ""
 
+#: include/brainpress/helper/class-ui.php:705
+#: include/brainpress/helper/table/class-courseassessments.php:591
+msgid "Last page"
+msgstr ""
+
 #: include/brainpress/data/class-student.php:1878
 msgid "Laufend"
 msgstr ""
@@ -6027,6 +6438,12 @@ msgstr ""
 
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1660
 msgid "Lehrplan"
+msgstr ""
+
+#: admin/class-forums.php:33 admin/class-forums.php:40
+#: admin/class-notifications.php:28 admin/view/student-assessment.php:5
+#: include/brainpress/helper/class-utility.php:1261
+msgid "Leider darfst Du nicht auf diese Seite zugreifen."
 msgstr ""
 
 #: admin/class-edit.php:709
@@ -6087,8 +6504,9 @@ msgstr ""
 msgid "LinkedIn"
 msgstr ""
 
-#: themes/brainpress-theme/archive.php:64 admin/view/steps/step-7.php:124
+#: admin/view/steps/step-7.php:124
 #: include/brainpress/view/admin/setting/class-basiccertificate.php:250
+#: themes/brainpress-theme/archive.php:64
 msgid "Links"
 msgstr ""
 
@@ -6140,8 +6558,8 @@ msgid "Loginseite"
 msgstr ""
 
 #: admin/view/steps/step-7.php:95
-#: themes/brainpress-theme/inc/customizer.php:118
 #: include/brainpress/view/admin/setting/class-basiccertificate.php:190
+#: themes/brainpress-theme/inc/customizer.php:118
 msgid "Logo"
 msgstr ""
 
@@ -6175,7 +6593,7 @@ msgstr ""
 msgid "Lösche %s Kurse, bitte warte!"
 msgstr ""
 
-#. %s: post title
+#. translators: %s: post title
 #: admin/class-courses.php:371
 #, php-format
 msgid "Lösche &#8220;%s&#8221; unwiederruflich"
@@ -6226,6 +6644,11 @@ msgstr ""
 
 #: include/brainpress/view/admin/setting/class-capabilities.php:262
 msgid "Löscht jede Diskussion"
+msgstr ""
+
+#. translators: Publish box date format, see https://secure.php.net/date
+#: admin/view/comment-edit.php:62
+msgid "M j, Y @ H:i"
 msgstr ""
 
 #: include/brainpress/view/admin/setting/class-shortcodes.php:254
@@ -6322,8 +6745,8 @@ msgstr ""
 msgid "Meist genutzte Kategorien"
 msgstr ""
 
-#: include/brainpress/view/registration-form.php:106
 #: include/brainpress/data/shortcode/class-student.php:518
+#: include/brainpress/view/registration-form.php:106
 msgid "Melde dich in deinem Konto an"
 msgstr ""
 
@@ -6389,7 +6812,7 @@ msgid ""
 "</em> hinzugefügt werden."
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1365
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1373
 msgid "Mod"
 msgstr ""
 
@@ -6413,7 +6836,7 @@ msgstr ""
 msgid "Moderatoren"
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1564
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1572
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1443
 msgid "Moderierte Kurse"
 msgstr ""
@@ -6490,6 +6913,10 @@ msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
+#: admin/view/comment-edit.php:130
+msgid "Move to Trash"
+msgstr ""
+
 #: include/brainpress/helper/class-pdf.php:152
 msgid "MSung Light (Traditional Chinese)"
 msgstr ""
@@ -6525,19 +6952,19 @@ msgstr ""
 msgid "Nach Erstelldatum"
 msgstr ""
 
-#: admin/view/student-profile.php:26 admin/view/steps/step-3.php:86
-#: include/brainpress/template/class-student.php:210
-#: include/brainpress/view/registration-form.php:40
+#: admin/view/steps/step-3.php:86 admin/view/student-profile.php:26
 #: include/brainpress/data/shortcode/class-template.php:1434
 #: include/brainpress/helper/table/class-coursestudent.php:189
 #: include/brainpress/helper/table/class-reportstudent.php:42
+#: include/brainpress/template/class-student.php:210
 #: include/brainpress/view/admin/class-instructor.php:196
-#: include/brainpress/view/front/class-student.php:261
 #: include/brainpress/view/admin/course/class-edit.php:648
 #: include/brainpress/view/admin/course/class-edit.php:649
 #: include/brainpress/view/admin/course/class-student.php:38
 #: include/brainpress/view/admin/course/class-student.php:70
 #: include/brainpress/view/admin/student/class-workbook.php:24
+#: include/brainpress/view/front/class-student.php:261
+#: include/brainpress/view/registration-form.php:40
 msgid "Nachname"
 msgstr ""
 
@@ -6600,6 +7027,10 @@ msgstr ""
 msgid "Neue Einheit"
 msgstr ""
 
+#: include/brainpress/data/class-course.php:178
+msgid "Neue Einheit erfolgreich hinzugefügt!"
+msgstr ""
+
 #: include/brainpress/data/class-unit.php:29
 msgid "Neue Einheit erstellen"
 msgstr ""
@@ -6608,12 +7039,24 @@ msgstr ""
 msgid "Neue Einschreibung in Deinen Kurs"
 msgstr ""
 
+#: include/brainpress/data/class-course.php:181
+msgid "Neue Klasse wurde erfolgreich hinzugefügt."
+msgstr ""
+
+#: include/brainpress/data/class-course.php:137
+msgid "Neue Kurskategorie hinzufügen"
+msgstr ""
+
 #: include/brainpress/data/shortcode/class-template.php:1167
 msgid "Neue Nachricht"
 msgstr ""
 
 #: include/brainpress/view/admin/setting/class-general.php:195
 msgid "Neue Nachrichten Slug"
+msgstr ""
+
+#: include/brainpress/data/class-course.php:26
+msgid "Neuen Kurs erstellen"
 msgstr ""
 
 #: admin/class-edit.php:515
@@ -6630,6 +7073,19 @@ msgstr ""
 
 #: include/brainpress/data/discussion/class-email.php:81
 msgid "Neuer Kommentar: "
+msgstr ""
+
+#: include/brainpress/data/class-course.php:25
+#: include/brainpress/data/class-course.php:29
+msgid "Neuer Kurs"
+msgstr ""
+
+#: include/brainpress/data/class-course.php:174
+msgid "Neuer Kurs erfolgreich hinzugefügt!"
+msgstr ""
+
+#: include/brainpress/data/class-course.php:138
+msgid "Neuer Name der Kurskategorie"
 msgstr ""
 
 #: themes/brainpress-theme/inc/template-tags.php:47
@@ -6688,9 +7144,14 @@ msgstr ""
 msgid "New Course"
 msgstr ""
 
+#: include/brainpress/helper/class-ui.php:694
+#: include/brainpress/helper/table/class-courseassessments.php:580
+msgid "Next page"
+msgstr ""
+
 #: admin/class-assessment.php:816
-#: include/brainpress/template/class-module.php:199
 #: include/brainpress/data/shortcode/class-student.php:405
+#: include/brainpress/template/class-module.php:199
 msgid "Nicht bewertbar"
 msgstr ""
 
@@ -6699,12 +7160,12 @@ msgid "Nicht bewertet"
 msgstr ""
 
 #: admin/table/class-courses.php:165
-#: themes/brainpress-theme/content-course.php:60
-#: include/brainpress/template/class-course.php:104
 #: include/brainpress/data/shortcode/class-coursetemplate.php:85
 #: include/brainpress/data/shortcode/class-coursetemplate.php:93
+#: include/brainpress/template/class-course.php:104
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1270
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1302
+#: themes/brainpress-theme/content-course.php:60
 msgid "Nicht verfügbar"
 msgstr ""
 
@@ -6725,12 +7186,20 @@ msgstr ""
 msgid "No answer!"
 msgstr ""
 
+#: admin/table/class-comments.php:317
+msgid "No approved comments"
+msgstr ""
+
 #: include/brainpress/view/admin/assessment/class-report.php:193
 msgid "No assessable items in this course."
 msgstr ""
 
 #: include/brainpress/view/admin/assessment/class-report.php:176
 msgid "No assessable items."
+msgstr ""
+
+#: admin/table/class-comments.php:305 admin/table/class-comments.php:317
+msgid "No comments"
 msgstr ""
 
 #: include/brainpress/view/admin/course/class-edit.php:1638
@@ -6758,6 +7227,12 @@ msgstr ""
 msgid "Not yet submitted"
 msgstr ""
 
+#: include/brainpress/data/shortcode/class-coursetemplate.php:2024
+#: include/brainpress/data/shortcode/class-unit.php:269
+msgctxt "noun"
+msgid "Comment"
+msgstr ""
+
 #: include/brainpress/view/admin/course/class-edit.php:798
 msgid "Number of students"
 msgstr ""
@@ -6774,8 +7249,12 @@ msgstr ""
 msgid "Nur Einheitenliste"
 msgstr ""
 
-#: include/brainpress/widget/class-calendar.php:80
+#: include/brainpress/data/class-course.php:3563
+msgid "Nur manuell hinzugefügt"
+msgstr ""
+
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1385
+#: include/brainpress/widget/class-calendar.php:80
 msgid "Nächste &raquo;"
 msgstr ""
 
@@ -6805,8 +7284,8 @@ msgstr ""
 msgid "Offenes Ende"
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1287
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1289
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1295
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1297
 #: include/brainpress/helper/ui/class-module.php:374
 #: include/brainpress/helper/ui/class-module.php:391
 #: include/brainpress/helper/ui/class-module.php:408
@@ -6827,6 +7306,7 @@ msgstr ""
 msgid "Ohne Titel"
 msgstr ""
 
+#: admin/class-notifications.php:398 admin/controller/class-menu.php:435
 #: include/brainpress/helper/class-javascript.php:501
 msgid "OK"
 msgstr ""
@@ -6881,6 +7361,18 @@ msgstr ""
 msgid "Page Title"
 msgstr ""
 
+#: include/brainpress/helper/table/class-courseassessments.php:572
+#, php-format
+msgctxt "paging"
+msgid "%1$s of %2$s"
+msgstr ""
+
+#: include/brainpress/helper/class-ui.php:685
+#, php-format
+msgctxt "paging"
+msgid "%1$s von %2$s"
+msgstr ""
+
 #: include/brainpress/helper/integration/class-woocommerce.php:435
 msgid "Parent Course"
 msgstr ""
@@ -6912,12 +7404,12 @@ msgstr ""
 msgid "Passing Grade: "
 msgstr ""
 
-#: include/brainpress/template/class-student.php:225
-#: include/brainpress/view/registration-form.php:73
 #: include/brainpress/data/shortcode/class-template.php:1296
 #: include/brainpress/data/shortcode/class-template.php:1464
 #: include/brainpress/data/shortcode/class-template.php:1551
+#: include/brainpress/template/class-student.php:225
 #: include/brainpress/view/front/class-student.php:267
+#: include/brainpress/view/registration-form.php:73
 msgid "Passwort"
 msgstr ""
 
@@ -6964,6 +7456,10 @@ msgstr ""
 msgid "PDFA ZapfDingbats"
 msgstr ""
 
+#: admin/controller/class-menu.php:405
+msgid "Pending Review"
+msgstr ""
+
 #: include/brainpress/view/admin/setting/class-setup.php:171
 msgid "Permalinks einrichten"
 msgstr ""
@@ -7002,6 +7498,10 @@ msgstr ""
 msgid "Please Assign Instructor"
 msgstr ""
 
+#: include/brainpress/view/admin/course/class-edit.php:1932
+msgid "Please check your inbox at "
+msgstr ""
+
 #: include/brainpress/helper/class-javascript.php:355
 msgid "Please type a comment."
 msgstr ""
@@ -7014,7 +7514,7 @@ msgstr ""
 msgid "Plugin installieren ..."
 msgstr ""
 
-#: brainpress.php:108
+#: brainpress.php:110
 msgctxt "plugin name"
 msgid "BrainPress"
 msgstr ""
@@ -7046,6 +7546,30 @@ msgstr ""
 msgid "Posteingang"
 msgstr ""
 
+#: admin/table/class-notifications.php:410
+#, php-format
+msgctxt "posts"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/table/class-notifications.php:390
+#, php-format
+msgctxt "posts"
+msgid "Mine <span class=\"count\">(%s)</span>"
+msgid_plural "Mine <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/table/class-notifications.php:461
+#, php-format
+msgctxt "posts"
+msgid "Sticky <span class=\"count\">(%s)</span>"
+msgid_plural "Sticky <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
 #: include/brainpress/view/admin/course/class-edit.php:1077
 msgid "Pre-Completion Page"
 msgstr ""
@@ -7066,6 +7590,11 @@ msgstr ""
 msgid "Preview"
 msgstr ""
 
+#: include/brainpress/helper/class-ui.php:673
+#: include/brainpress/helper/table/class-courseassessments.php:556
+msgid "Previous page"
+msgstr ""
+
 #: include/brainpress/helper/ui/class-module.php:723
 msgid "Primärdatei"
 msgstr ""
@@ -7083,17 +7612,21 @@ msgstr ""
 msgid "Priorität"
 msgstr ""
 
-#: include/brainpress/widget/class-featuredcourse.php:74
 #: include/brainpress/view/admin/setting/class-general.php:371
 #: include/brainpress/view/admin/setting/class-general.php:426
+#: include/brainpress/widget/class-featuredcourse.php:74
 msgid "Prioritätsmodus (Standard)"
+msgstr ""
+
+#: admin/controller/class-menu.php:396
+msgid "Privately Published"
 msgstr ""
 
 #: include/brainpress/view/admin/setting/class-general.php:321
 msgid "Privatsphäre"
 msgstr ""
 
-#: include/brainpress/helper/class-utility.php:1405
+#: include/brainpress/helper/class-utility.php:1410
 #: include/brainpress/helper/table/class-instructor.php:40
 #: include/brainpress/helper/table/class-student.php:43
 #: include/brainpress/view/admin/class-instructor.php:180
@@ -7144,6 +7677,10 @@ msgstr ""
 msgid "Publish Course"
 msgstr ""
 
+#: admin/controller/class-menu.php:399
+msgid "Published"
+msgstr ""
+
 #: include/brainpress/helper/class-extension.php:34
 msgid "Quelle"
 msgstr ""
@@ -7183,6 +7720,11 @@ msgstr ""
 msgid "Registriert"
 msgstr ""
 
+#: include/brainpress/data/class-course.php:3569
+#: include/brainpress/data/class-course.php:3575
+msgid "Registrierte Benutzer, die die erforderlichen Kurse abgeschlossen haben"
+msgstr ""
+
 #: include/brainpress/data/shortcode/class-course.php:892
 #: include/brainpress/view/admin/setting/class-shortcodes.php:886
 msgid "Registrierte Benutzer."
@@ -7220,6 +7762,10 @@ msgstr ""
 msgid "Required"
 msgstr ""
 
+#: admin/view/assessments.php:65
+msgid "Reset"
+msgstr ""
+
 #: include/brainpress/view/admin/assessment/assessment-modules.php:17
 msgid "Revalidate user submission"
 msgstr ""
@@ -7239,8 +7785,8 @@ msgid "Richte Zahlungsgateways für bezahlte Kurse ein"
 msgstr ""
 
 #: include/brainpress/data/class-module.php:680
-#: include/brainpress/template/class-module.php:1131
 #: include/brainpress/data/shortcode/class-student.php:123
+#: include/brainpress/template/class-module.php:1131
 msgid "Richtig"
 msgstr ""
 
@@ -7282,6 +7828,10 @@ msgstr ""
 msgid "Schaltflächentitel"
 msgstr ""
 
+#: admin/controller/class-menu.php:402
+msgid "Scheduled"
+msgstr ""
+
 #: include/brainpress/view/admin/setting/class-general.php:580
 msgid "schema.org"
 msgstr ""
@@ -7306,7 +7856,7 @@ msgstr ""
 msgid "Schreibe eine Antwort"
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:2012
+#: include/brainpress/data/shortcode/class-coursetemplate.php:2020
 msgid "Schreibe eine Antwort oder einen Kommentar"
 msgstr ""
 
@@ -7444,6 +7994,10 @@ msgstr ""
 msgid "Seitenumbrüche wurden aktualisiert."
 msgstr ""
 
+#: include/brainpress/helper/table/class-courseassessments.php:438
+msgid "Select All"
+msgstr ""
+
 #: include/brainpress/view/admin/assessment/assessment-page.php:26
 #: include/brainpress/view/admin/assessment/class-list.php:218
 #: include/brainpress/view/admin/assessment/class-report.php:244
@@ -7498,9 +8052,9 @@ msgstr ""
 msgid "Sende Quizantworten"
 msgstr ""
 
-#: themes/brainpress-theme/part-contact.php:91
-#: include/brainpress/data/shortcode/class-coursetemplate.php:2010
+#: include/brainpress/data/shortcode/class-coursetemplate.php:2018
 #: include/brainpress/view/admin/course/class-student.php:156
+#: themes/brainpress-theme/part-contact.php:91
 msgid "Senden"
 msgstr ""
 
@@ -7515,7 +8069,7 @@ msgstr ""
 #: include/brainpress/template/class-communication.php:197
 msgctxt "separator between \"Discussion\" text and title"
 msgid ": "
-msgstr ""
+msgstr ": "
 
 #: themes/brainpress-theme/content-course-overview.php:118
 #: themes/brainpress-theme/content-single.php:53
@@ -7574,6 +8128,10 @@ msgstr ""
 #: include/brainpress/view/admin/assessment/assessment-page.php:45
 #: include/brainpress/view/admin/assessment/class-list.php:238
 msgid "Show graded students only"
+msgstr ""
+
+#: admin/table/class-comments.php:184
+msgid "Show more details"
 msgstr ""
 
 #: include/brainpress/view/admin/course/class-unitbuilder.php:184
@@ -7641,9 +8199,13 @@ msgstr ""
 msgid "Sofort verfügbar"
 msgstr ""
 
-#: include/brainpress/helper/class-utility.php:702
+#: include/brainpress/helper/class-utility.php:707
 #: include/brainpress/view/admin/course/class-edit.php:1747
 msgid "Something went wrong."
+msgstr ""
+
+#: admin/view/comment-edit.php:11
+msgid "Sorry, you are not allowed to edit this comment."
 msgstr ""
 
 #: include/brainpress/view/admin/setting/class-general.php:493
@@ -7701,6 +8263,13 @@ msgid ""
 "unten ausgewählt ist."
 msgstr ""
 
+#: include/brainpress/data/class-course.php:2419
+#, php-format
+msgctxt ""
+"Standardtitel für einen duplizierten Kurs. Variable ist Originaltitel."
+msgid "%s Kopie"
+msgstr ""
+
 #: include/brainpress/view/admin/class-instructor.php:150
 #: include/brainpress/view/admin/course/class-student.php:194
 #: include/brainpress/view/admin/student/class-profile.php:73
@@ -7742,6 +8311,7 @@ msgstr ""
 
 #: admin/class-courses.php:96 admin/table/class-forums.php:129
 #: admin/table/class-notifications.php:148 admin/table/class-students.php:103
+#: admin/view/comment-edit.php:45
 #: include/brainpress/helper/class-extension.php:35
 #: include/brainpress/helper/class-setting.php:391
 #: include/brainpress/template/class-course.php:41
@@ -7759,6 +8329,10 @@ msgstr ""
 
 #: include/brainpress/view/admin/setting/class-capabilities.php:180
 msgid "Status der eigenen Kurse ändern"
+msgstr ""
+
+#: admin/controller/class-menu.php:391
+msgid "Status:"
 msgstr ""
 
 #: include/brainpress/helper/ui/class-module.php:359
@@ -8005,6 +8579,10 @@ msgstr ""
 msgid "Suche Diskussionen"
 msgstr ""
 
+#: include/brainpress/data/class-course.php:31
+msgid "Suche Kurse"
+msgstr ""
+
 #: admin/table/class-instructors.php:160
 msgid "Suche Kursleiter"
 msgstr ""
@@ -8021,6 +8599,10 @@ msgstr ""
 msgid "Suche nach einer gezippten Datei"
 msgstr ""
 
+#: include/brainpress/data/class-course.php:133
+msgid "Suche nach Kurskategorien"
+msgstr ""
+
 #: admin/table/class-students.php:123
 msgid "Suche Studenten"
 msgstr ""
@@ -8032,6 +8614,10 @@ msgstr ""
 #: themes/brainpress-theme/search.php:23
 #, php-format
 msgid "Suchergebnisse für: %s"
+msgstr ""
+
+#: admin/controller/class-menu.php:469
+msgid "Support"
 msgstr ""
 
 #: include/brainpress/helper/class-pdf.php:104
@@ -8079,7 +8665,7 @@ msgstr ""
 msgid "Tagged %1$s"
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1927
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1935
 msgid "Teilen"
 msgstr ""
 
@@ -8276,22 +8862,24 @@ msgid ""
 "certficates."
 msgstr ""
 
-#: psource/psource-plugin-update/Puc/v4p10/Plugin/Ui.php:213
+#: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:221
 #, php-format
 msgctxt "the plugin title"
-msgid "Das %s-Plugin ist laut PSource Server auf dem neuesten Stand."
+msgid ""
+"Entschuldige, es konnte nicht festgestellt werden, ob Updates für %s "
+"verfügbar sind."
 msgstr ""
 
-#: psource/psource-plugin-update/Puc/v4p10/Plugin/Ui.php:215
+#: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:219
 #, php-format
 msgctxt "the plugin title"
-msgid "Eine neue Version des %s-Plugins ist auf dem PSource Server verfügbar."
+msgid "Im PSOURCE REPO ist eine <b>neuere Version von %s</b> verfügbar!."
 msgstr ""
 
-#: psource/psource-plugin-update/Puc/v4p10/Plugin/Ui.php:217
+#: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:217
 #, php-format
 msgctxt "the plugin title"
-msgid "Es konnte nicht festgestellt werden, ob Updates für %s verfügbar sind."
+msgid "Keine neuere Version von %s im PSOURCE REPO gefunden."
 msgstr ""
 
 #: admin/table/class-forums.php:126
@@ -8332,12 +8920,22 @@ msgstr ""
 msgid "There are no students found."
 msgstr ""
 
+#: psource/psource-plugin-update/Puc/v5p0/Vcs/PluginUpdateChecker.php:98
+msgid "There is no changelog available."
+msgstr ""
+
 #: include/brainpress/view/admin/course/class-edit.php:732
 msgid "These are the dates that students will be able to enroll in a course."
 msgstr ""
 
 #: include/brainpress/view/admin/course/class-edit.php:703
 msgid "These are the dates that the course will be available to students"
+msgstr ""
+
+#: admin/view/comment-edit.php:14
+msgid ""
+"This comment is in the Trash. Please move it out of the Trash if you want to "
+"edit it."
 msgstr ""
 
 #: include/brainpress/view/admin/course/class-edit.php:706
@@ -8381,12 +8979,12 @@ msgstr ""
 msgid "Times-Roman"
 msgstr ""
 
+#: include/brainpress/helper/ui/class-module.php:336
+#: include/brainpress/view/admin/course/class-student.php:191
 #: include/brainpress/widget/class-calendar.php:58
 #: include/brainpress/widget/class-featuredcourse.php:56
 #: include/brainpress/widget/class-latestcourse.php:30
 #: include/brainpress/widget/class-structure.php:35
-#: include/brainpress/helper/ui/class-module.php:336
-#: include/brainpress/view/admin/course/class-student.php:191
 msgid "Titel"
 msgstr ""
 
@@ -8464,10 +9062,19 @@ msgstr ""
 msgid "Unable to add facilitator!"
 msgstr ""
 
+#: admin/table/class-comments.php:155 admin/table/class-comments.php:161
+msgid "Unapprove"
+msgstr ""
+
+#: admin/table/class-comments.php:155 admin/table/class-comments.php:161
+msgid "Unapprove this comment"
+msgstr ""
+
 #: include/brainpress/view/admin/setting/class-shortcodes.php:646
 msgid "Unbefristet"
 msgstr ""
 
+#: include/brainpress/data/class-course.php:2354
 #: include/brainpress/data/shortcode/class-course.php:643
 #: include/brainpress/data/shortcode/class-course.php:815
 #: include/brainpress/view/admin/setting/class-shortcodes.php:791
@@ -8487,9 +9094,9 @@ msgstr ""
 msgid "Unbekannte Stundenaktion."
 msgstr ""
 
-#: psource/psource-plugin-update/Puc/v4p10/Plugin/Ui.php:223
+#: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:227
 #, php-format
-msgid "Unbekannter Update-Status \"%s\""
+msgid "Unbekannter PSOURCE-UPDATTER-Status \"%s\""
 msgstr ""
 
 #: admin/table/class-courses.php:133
@@ -8497,7 +9104,7 @@ msgstr ""
 msgid "Unbekanntes Einschreibedatum."
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:771
+#: include/brainpress/data/shortcode/class-coursetemplate.php:779
 #, php-format
 msgid "Unbenannte Seite %s"
 msgstr ""
@@ -8621,9 +9228,13 @@ msgstr ""
 msgid "Unvollständig"
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1567
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1575
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1455
 msgid "Unvollständige Kurse"
+msgstr ""
+
+#: admin/view/comment-edit.php:133
+msgid "Update"
 msgstr ""
 
 #: admin/class-upgrade.php:25 admin/view/upgrade.php:2
@@ -8683,6 +9294,11 @@ msgid ""
 "completed the course but require final assessment from instructors."
 msgstr ""
 
+#: include/brainpress/view/admin/course/class-edit.php:1073
+#, php-format
+msgid "Use these tokens to display actual course details: %s"
+msgstr ""
+
 #: include/brainpress/view/admin/course/class-edit.php:1159
 msgid "Use this field to override general course certificate setting."
 msgstr ""
@@ -8718,12 +9334,12 @@ msgstr ""
 msgid "Verfügbar nach"
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1173
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1181
 msgctxt "Verfügbares Datum der Einheit mit Jahr für die zukünftige Einheit."
 msgid "M d, Y"
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1173
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1181
 msgctxt "Verfügbares Datum der Einheit ohne Jahr für zukünftige Einheit."
 msgid "M d"
 msgstr ""
@@ -8732,7 +9348,7 @@ msgstr ""
 msgid "Verfügbarkeit der Einheit"
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1574
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1582
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1487
 msgid "Vergangene Kurse"
 msgstr ""
@@ -8747,7 +9363,6 @@ msgid ""
 "wie Vimeo stellen dies pro Video ein."
 msgstr ""
 
-#. %1$s: smiley.
 #: themes/brainpress-theme/404.php:59
 #, php-format
 msgid "Versuch in den monatlichen Archiven nachzusehen. %1$s"
@@ -8960,6 +9575,10 @@ msgstr ""
 msgid "View All"
 msgstr ""
 
+#: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:56
+msgid "View details"
+msgstr ""
+
 #: include/brainpress/view/admin/setting/class-general.php:32
 msgid "Virtuelle Seite verwenden"
 msgstr ""
@@ -9017,7 +9636,7 @@ msgstr ""
 msgid "Voraussetzung Erforderlich"
 msgstr ""
 
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1579
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1587
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1515
 msgid "Vorgeschlagene Kurse"
 msgstr ""
@@ -9034,28 +9653,28 @@ msgstr ""
 msgid "Vorlage zum Senden von Feedback von Kursleitern an Studenten."
 msgstr ""
 
-#: admin/view/student-profile.php:22 admin/view/steps/step-3.php:84
-#: admin/view/steps/step-3.php:85
-#: include/brainpress/template/class-student.php:205
-#: include/brainpress/view/registration-form.php:29
+#: admin/view/steps/step-3.php:84 admin/view/steps/step-3.php:85
+#: admin/view/student-profile.php:22
 #: include/brainpress/data/shortcode/class-template.php:1423
 #: include/brainpress/helper/table/class-coursestudent.php:188
 #: include/brainpress/helper/table/class-reportstudent.php:41
+#: include/brainpress/template/class-student.php:205
 #: include/brainpress/view/admin/class-instructor.php:192
-#: include/brainpress/view/front/class-student.php:259
 #: include/brainpress/view/admin/course/class-edit.php:646
 #: include/brainpress/view/admin/course/class-edit.php:647
 #: include/brainpress/view/admin/course/class-student.php:37
 #: include/brainpress/view/admin/course/class-student.php:69
 #: include/brainpress/view/admin/student/class-workbook.php:20
+#: include/brainpress/view/front/class-student.php:259
+#: include/brainpress/view/registration-form.php:29
 msgid "Vorname"
 msgstr ""
 
 #: admin/controller/class-unit.php:128 admin/controller/class-unit.php:192
 #: admin/controller/class-unit.php:193 admin/view/steps/step-7.php:62
-#: include/brainpress/data/shortcode/class-coursetemplate.php:547
-#: include/brainpress/data/shortcode/class-coursetemplate.php:901
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1355
+#: include/brainpress/data/shortcode/class-coursetemplate.php:555
+#: include/brainpress/data/shortcode/class-coursetemplate.php:909
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1363
 #: include/brainpress/view/admin/setting/class-basiccertificate.php:82
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1625
 msgid "Vorschau"
@@ -9107,9 +9726,9 @@ msgstr ""
 msgid "Weiter"
 msgstr ""
 
-#: include/brainpress/template/class-unit.php:284
-#: include/brainpress/data/shortcode/class-coursetemplate.php:1507
+#: include/brainpress/data/shortcode/class-coursetemplate.php:1515
 #: include/brainpress/data/shortcode/class-template.php:463
+#: include/brainpress/template/class-unit.php:284
 msgid "Weiter &raquo;"
 msgstr ""
 
@@ -9119,6 +9738,11 @@ msgstr ""
 
 #: include/brainpress/data/class-discussion.php:600
 msgid "Weitere &raquo;"
+msgstr ""
+
+#: psource/psource-plugin-update/Puc/v5p0/Plugin/Ui.php:79
+#, php-format
+msgid "Weitere Informationen zu %s"
 msgstr ""
 
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1266
@@ -9311,8 +9935,8 @@ msgstr ""
 msgid "Wenn true oder \"yes\" ist, wechsele den Kontext zu \"dashboard\".."
 msgstr ""
 
-#: themes/brainpress-theme/content-course-overview.php:40
 #: include/brainpress/data/shortcode/class-course.php:888
+#: themes/brainpress-theme/content-course-overview.php:40
 msgid "Wer kann sich einschreiben?: "
 msgstr ""
 
@@ -9330,7 +9954,7 @@ msgstr ""
 msgid "Wiederherstellen"
 msgstr ""
 
-#. %s: post title
+#. translators: %s: post title
 #: admin/class-courses.php:354
 #, php-format
 msgid "Wiederherstellen von &#8220;%s&#8221; vom Papierkorb"
@@ -9363,13 +9987,13 @@ msgstr ""
 msgid "Wird sich nicht ändern, wenn leer."
 msgstr ""
 
-#. %s: post title
+#. translators: %s: post title
 #: admin/class-courses.php:362
 #, php-format
 msgid "Wirf &#8220;%s&#8221; auf den Müll"
 msgstr ""
 
-#. Author of the plugin
+#. Author of the plugin/theme
 msgid "WMS N@W"
 msgstr ""
 
@@ -9386,12 +10010,8 @@ msgstr ""
 msgid "WooCommerce Produkt ID: %d"
 msgstr ""
 
-#: include/brainpress/view/admin/setting/class-general.php:293
-msgid "ClassicPress Login Umleitung"
-msgstr ""
-
-#: include/brainpress/view/admin/setting/class-shortcodes.php:736
-msgid "ClassicPress-Einstellung."
+#: include/brainpress/data/class-course.php:3621
+msgid "Woohoo! Du hast COURSE_NAME bestanden!"
 msgstr ""
 
 #: include/brainpress/view/admin/assessment/class-list.php:799
@@ -9403,7 +10023,7 @@ msgstr ""
 msgid "Wählbar"
 msgstr ""
 
-#: include/brainpress/helper/class-utility.php:1434
+#: include/brainpress/helper/class-utility.php:1439
 msgid "Wähle Alle"
 msgstr ""
 
@@ -9786,8 +10406,8 @@ msgstr ""
 
 #: admin/table/class-courses.php:82
 #: include/brainpress/data/class-certificate.php:49
-#: include/brainpress/template/class-course.php:45
 #: include/brainpress/data/shortcode/class-unit.php:176
+#: include/brainpress/template/class-course.php:45
 msgid "Zertifikat"
 msgstr ""
 
@@ -9892,7 +10512,7 @@ msgstr ""
 msgid "Zum Inhalt springen"
 msgstr ""
 
-#: include/brainpress/helper/class-utility.php:1437
+#: include/brainpress/helper/class-utility.php:1442
 msgid "Zum Menü hinzufügen"
 msgstr ""
 
@@ -9901,11 +10521,11 @@ msgid "Zurück"
 msgstr ""
 
 #: admin/table/class-students.php:113 admin/table/class-students.php:173
-#: include/brainpress/template/class-course.php:133
 #: include/brainpress/data/shortcode/class-course.php:1497
 #: include/brainpress/data/shortcode/class-template.php:259
 #: include/brainpress/helper/table/class-courseassessments.php:215
 #: include/brainpress/helper/table/class-coursestudent.php:290
+#: include/brainpress/template/class-course.php:133
 msgid "Zurückziehen"
 msgstr ""
 
@@ -9981,7 +10601,7 @@ msgstr ""
 msgid "Öffentlich"
 msgstr ""
 
-#: themes/brainpress-theme/content-course-overview.php:66
 #: include/brainpress/data/shortcode/class-template.php:368
+#: themes/brainpress-theme/content-course-overview.php:66
 msgid "Über diesen Kurs"
 msgstr ""

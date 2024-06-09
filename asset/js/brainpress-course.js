@@ -332,7 +332,7 @@ BrainPress.Events = BrainPress.Events || _.extend( {}, Backbone.Events );
 		}
 
 		// Slide Accordion into Position
-		$( '#course-setup-steps .step-title' ).bind( 'click', function() {
+		$( '#course-setup-steps .step-title' ).on('click', function() {
 			var self = jQuery( this );
 			var step = parseInt( self.attr( 'class' ).match( /step-\d{1,10}/g )[ 0 ].trim().split( '-' ).pop() );
 			var pre_step = 1 < ( step - 1 ) ? step - 1 : 1;
@@ -385,13 +385,13 @@ BrainPress.Events = BrainPress.Events || _.extend( {}, Backbone.Events );
 			} );
 		}
 
-		$( '.date' ).click( function() {
+		$( '.date' ).on('click', function() {
 			if ( !$( this ).parents( 'div' ).hasClass( 'disabled' ) ) {
 				$( this ).find( '.dateinput' ).datepicker( 'show' );
 			}
 		} );
 
-		$( '[name="meta_enrollment_open_ended"]' ).change( function() {
+		$( '[name="meta_enrollment_open_ended"]' ).on('change', function() {
 			if ( this.checked ) {
 				$( this ).parents( '.enrollment-dates' ).find( '.start-date' ).addClass( 'disabled' );
 				$( this ).parents( '.enrollment-dates' ).find( '.start-date input' ).attr( 'disabled', 'disabled' );
@@ -405,7 +405,7 @@ BrainPress.Events = BrainPress.Events || _.extend( {}, Backbone.Events );
 			}
 		} );
 
-		$( '[name="meta_course_open_ended"]' ).change( function() {
+		$( '[name="meta_course_open_ended"]' ).on('change', function() {
 			if ( this.checked ) {
 				$( this ).parents( '.course-dates' ).find( '.end-date' ).addClass( 'disabled' );
 				$( this ).parents( '.course-dates' ).find( '.end-date input' ).attr( 'disabled', 'disabled' );
@@ -419,7 +419,7 @@ BrainPress.Events = BrainPress.Events || _.extend( {}, Backbone.Events );
 		// Spinners
 		$( '.spinners' ).spinner();
 
-		$( '[name="meta_class_limited"]' ).change( function() {
+		$( '[name="meta_class_limited"]' ).on('change', function() {
 			if ( this.checked ) {
 				$( this ).parents( '.class-size' ).find( '.num-students' ).removeClass( 'disabled' );
 				$( this ).parents( '.class-size' ).find( '.num-students input' ).removeAttr( 'disabled' );
@@ -708,7 +708,7 @@ BrainPress.Events = BrainPress.Events || _.extend( {}, Backbone.Events );
 
 		// INSTRUCTOR INVITATIONS
 		// Submit Invite on 'Return/Enter'
-		$( '.instructor-invite input' ).keypress( function( event ) {
+		$( '.instructor-invite input' ).on('keydown', function( event ) {
 			if ( event.which === 13 ) {
 				switch ( $( this ).attr( 'name' ) ) {
 					case 'invite_instructor_first_name':
@@ -843,7 +843,7 @@ BrainPress.Events = BrainPress.Events || _.extend( {}, Backbone.Events );
 
 		// INSTRUCTOR INVITATIONS
 		// Submit Invite on 'Return/Enter'
-		$( '.brainpress_course_invite_student_wrapper input' ).keypress( function( ev ) {
+		$( '.brainpress_course_invite_student_wrapper input' ).on('keydown', function( ev ) {
 			if ( ev.which === 13 ) {
 				switch ( $( this ).attr( 'name' ) ) {
 					case 'invite-firstname':
@@ -1826,7 +1826,7 @@ BrainPress.Events = BrainPress.Events || _.extend( {}, Backbone.Events );
 
 		// Get setup marker and advance accordion.
 		var setup_marker = jQuery( '#course-setup-steps .step-title .status.setup_marker' );
-		setup_marker.click();
+		setup_marker.trigger('click');
 
 		// Trigger basic certificate
 		$( '[name="meta_basic_certificate"]' ).each(toggleCertificatePreview);
@@ -1847,10 +1847,10 @@ BrainPress.Events = BrainPress.Events || _.extend( {}, Backbone.Events );
 		/**
 		 * Notification & Forum
 		 */
-		$( ".course-edit-notification .save-post-status, .course-edit-forums .save-post-status").click( function( event ) {
+		$( ".course-edit-notification .save-post-status, .course-edit-forums .save-post-status").on('click', function( event ) {
 			$( "#post-status-display" ).html( $( "option:selected", $( "#post-status-select" ) ).text() );
 		});
-		$( ".course-edit-notification input[type=submit], .course-edit-forums input[type=submit]" ).click( function( event ) {
+		$( ".course-edit-notification input[type=submit], .course-edit-forums input[type=submit]" ).on('click', function( event ) {
 			var is_notification = $('.course-edit-notification').length > 0;
 			var is_forum = $('.course-edit-forums').length > 0;
 			var errors = [];
@@ -1903,7 +1903,7 @@ BrainPress.Events = BrainPress.Events || _.extend( {}, Backbone.Events );
 		/**
 		 * Visibility aka reciever
 		 */
-		$( "#course_id" ).change( function( event ) {
+		$( "#course_id" ).on('change', function( event ) {
 			if ( "all" === $( "option:selected", $(this) ).val() ) {
 				$( "#post-visibility-display" ).html( $("#misc-publishing-actions").data("no-options") );
 				$( "#visibility a.edit-visibility" ).hide();
@@ -1912,7 +1912,7 @@ BrainPress.Events = BrainPress.Events || _.extend( {}, Backbone.Events );
 				$( "#visibility a.edit-visibility" ).show();
 			}
 		});
-		$( ".course-edit-notification .save-post-visibility" ).click( function( event ) {
+		$( ".course-edit-notification .save-post-visibility" ).on('click', function( event ) {
 			$( "#post-visibility-display" ).html( $( "input:checked", $( "#visibility" ) ).data( "info" ) );
 		});
 

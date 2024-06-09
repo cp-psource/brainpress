@@ -1195,7 +1195,7 @@ var BrainPress = BrainPress || {};
 				*/
 			} );
 
-			$(document).click(function() {
+			$(document).on('click', function() {
 				$('.link-popup .popup-link').removeClass( 'open' );
 				$('.popup .popup-before[display!="none"], .popup .popup-button[display!="none"], .popup .popup-content[display!="none"]').parent().fadeOut(100);
 			});

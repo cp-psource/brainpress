@@ -138,14 +138,14 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 		 * Disable metabox containers. It looks ugly on units and students tabs.
 		 **/
 		static function disable_style() {
-?>
+		?>
             <style>
             #postbox-container-1,
             #postbox-container-2 {
             display: none;
             }
             </style>
-<?php
+		<?php
 		}
 
 		static function preview_post_link( $preview_link, $post ) {

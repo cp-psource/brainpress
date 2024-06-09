@@ -1872,7 +1872,7 @@ var BrainPress = BrainPress || {};
 	/**
 	 * bind arrows on course module page
 	 */
-	$(document).keydown( function( e ) {
+	$(document).on('keydown', function( e ) {
 		/**
 		 * Avoid to change module if CTRL, ALT, META or Shift is pressed.
 		 */

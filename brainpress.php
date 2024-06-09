@@ -5,7 +5,7 @@
  * Description: BrainPress vereinfacht die Online-Ausbildung mit Kursseiten, Paywalls, Social Sharing und einer interaktiven Lernumgebung, mit der mehr Schüler miteinander verbunden werden können.
  * Author:      PSOURCE
  * Author URI:  https://github.com/cp-psource
- * Plugin URI:  https://github.com/cp-psourcecp_psource/brainpress-lms-fuer-classicpress/
+ * Plugin URI:  https://cp-psource.github.io/brainpress/
  * License:     GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: brainpress

@@ -954,7 +954,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 			echo '</p>';
 			printf(
 				'<p><a href="%s" class="button-primary">%s</a></p>',
-				esc_url( __( 'https://n3rds.work/cp_psource/brainpress-lms-fuer-classicpress/', 'brainpress' ) ),
+				esc_url( __( 'https://github.com/cp-psourcecp_psource/brainpress-lms-fuer-classicpress/', 'brainpress' ) ),
 				esc_html__( 'Hol Dir die neueste Version von BrainPress', 'brainpress' )
 			);
 		}

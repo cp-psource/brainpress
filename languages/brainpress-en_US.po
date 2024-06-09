@@ -5276,12 +5276,12 @@ msgid ""
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://n3rds.work"
+msgid "https://github.com/cp-psource"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
 #: admin/class-edit.php:957
-msgid "https://n3rds.work/cp_psource/brainpress-lms-fuer-classicpress/"
+msgid "https://github.com/cp-psourcecp_psource/brainpress-lms-fuer-classicpress/"
 msgstr ""
 
 #: include/brainpress/view/admin/setting/class-shortcodes.php:1204
@@ -9994,7 +9994,7 @@ msgid "Wirf &#8220;%s&#8221; auf den Müll"
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "WMS N@W"
+msgid "PSOURCE"
 msgstr ""
 
 #: include/brainpress/view/admin/setting/class-woocommerce.php:40

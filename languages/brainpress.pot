@@ -592,7 +592,7 @@ msgstr ""
 
 #. Plugin URI of the plugin/theme
 #: admin/class-edit.php:957
-msgid "https://n3rds.work/cp_psource/brainpress-lms-fuer-classicpress/"
+msgid "https://github.com/cp-psourcecp_psource/brainpress-lms-fuer-classicpress/"
 msgstr ""
 
 #: admin/class-edit.php:958
@@ -10552,9 +10552,9 @@ msgid ""
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "WMS N@W"
+msgid "PSOURCE"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://n3rds.work"
+msgid "https://github.com/cp-psource"
 msgstr ""

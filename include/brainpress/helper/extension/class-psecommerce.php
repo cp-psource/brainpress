@@ -22,7 +22,7 @@ class BrainPress_Helper_Extension_PSeCommerce {
 
 	public static function add_to_extensions_list( $plugins ) {
 		$download_source = 'n3rds.work\/wp-update-server\/?action=download&slug=psecommerce';
-		$external_url = 'https://n3rds.work/piestingtal_source/psecommerce-shopsystem/';
+		$external_url = 'https://github.com/cp-psourcepiestingtal_source/psecommerce-shopsystem/';
 		$source_message = __( 'PSource Server', 'brainpress' );
 		$is_link = false;
 		$base_path = self::$base_path['free'];

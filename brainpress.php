@@ -3,10 +3,9 @@
  * Plugin Name: BrainPress
  * Version:     2.3.7
  * Description: BrainPress vereinfacht die Online-Ausbildung mit Kursseiten, Paywalls, Social Sharing und einer interaktiven Lernumgebung, mit der mehr Schüler miteinander verbunden werden können.
- * Author:      WMS N@W
- * Author URI:  https://n3rds.work
- * Plugin URI:  https://n3rds.work/cp_psource/brainpress-lms-fuer-classicpress/
- * Donate link: https://n3rds.work/spendenaktionen/unterstuetze-unsere-psource-free-werke/
+ * Author:      PSOURCE
+ * Author URI:  https://github.com/cp-psource
+ * Plugin URI:  https://github.com/cp-psourcecp_psource/brainpress-lms-fuer-classicpress/
  * License:     GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: brainpress
@@ -17,10 +16,10 @@
 /**
  * Copyright notice.
  *
- * @copyright WMS N@W (https://n3rds.work/)
+ * @copyright PSOURCE (https://github.com/cp-psource)
  *
- * Authors: WMS N@W
- * Contributors: DerN3rd (WMS N@W) 
+ * Authors: PSOURCE
+ * Contributors: DerN3rd (PSOURCE) 
  *
  * @license https://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2 (GPL-2.0)
  *
@@ -40,13 +39,24 @@
  */
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-require 'psource/psource-plugin-update/psource-plugin-updater.php';
-use Psource\PluginUpdateChecker\v5\PucFactory;
-$MyUpdateChecker = PucFactory::buildUpdateChecker(
-	'https://n3rds.work//wp-update-server/?action=get_metadata&slug=brainpress', 
-	__FILE__, 
-	'brainpress' 
+/**
+ * @@@@@@@@@@@@@@@@@ PS UPDATER 1.3 @@@@@@@@@@@
+ **/
+require 'psource/psource-plugin-update/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+ 
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+	'https://github.com/cp-psource/brainpress',
+	__FILE__,
+	'brainpress'
 );
+ 
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('master');
+
+/**
+ * @@@@@@@@@@@@@@@@@ ENDE PS UPDATER 1.3 @@@@@@@@@@@
+ **/
 
 // Launch BrainPress.
 BrainPress::init();

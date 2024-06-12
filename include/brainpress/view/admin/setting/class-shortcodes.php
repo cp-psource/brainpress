@@ -1862,12 +1862,12 @@ class BrainPress_View_Admin_Setting_Shortcodes {
 		}
 		if ( isset( $data['examples'] ) && is_array( $data['examples'] ) && ! empty( $data['examples'] ) ) {
 			$content .= '<div class="cp-shortcode-examples">';
-			$content .= sprintf( '<p class="cp-shortcode-subheading">%s</p>', esc_attr__( 'Beispiele:', 'brainpress' ) );
+			$content .= sprintf( '<p class="cp-shortcode-subheading">%s</p>', esc_attr__( 'Examples:', 'cp' ) );
 			$content .= '<code>';
-			$content .= join( $data['examples'], '<br />' );
+			$content .= join( '<br />', $data['examples'] ); // Corrected line
 			$content .= '</code>';
-					$content .= '</div>';
+			$content .= '</div>';
 		}
-			return $content;
+		return $content;
 	}
 }

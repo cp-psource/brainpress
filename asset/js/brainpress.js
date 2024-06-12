@@ -181,7 +181,7 @@ var BrainPress = BrainPress || {};
 		var merged = array1;
 
 		$.each( array2, function( key, value ) {
-			if ( $.isArray( value ) && $.isArray( merged [ key ] ) ) {
+			if ( Array.isArray( value ) && Array.isArray( merged [ key ] ) ) {
 				merged[ key ] = BrainPress.utility.merge_distinct( merged[ key ], value );
 			} else {
 				merged[ key ] = value;

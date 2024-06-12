@@ -339,7 +339,7 @@ var BrainPress = BrainPress || {};
 				inputs = target.find( 'input' )
 			;
 			inputs.attr( 'readonly', ! is_checked );
-		}).change();
+		}).trigger('change');
 	};
 
 	BrainPress.Helpers.Module.quiz.render_component = function( module ) {

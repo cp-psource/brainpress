@@ -141,7 +141,7 @@ span.ema-unit-name {
 
 .ema-modal-header-btn.ema-modal-trigger {
     z-index: 200;
-    position: absolute;
+    position: inherit;
     left: -20px;
     top: 820px;
 }

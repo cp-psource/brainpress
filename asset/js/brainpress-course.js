@@ -1119,7 +1119,7 @@ BrainPress.Events = BrainPress.Events || _.extend( {}, Backbone.Events );
 			$( '.step-title.step-' + data.last_step ).find( '.status' ).removeClass( 'save-attention' );
 			$( '.step-title.step-' + data.last_step ).find( '.status' ).removeClass( 'save-process' );
 			if ( data.next_step !== data.last_step ) {
-				$( '.step-title.step-' + data.next_step ).click();
+				$( '.step-title.step-' + data.next_step ).trigger('click');
 			}
 
 			var buttons = $( '.step-content.step-' + data.last_step ).find( '.course-step-buttons' )[0];

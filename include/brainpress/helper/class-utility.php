@@ -152,7 +152,8 @@ class BrainPress_Helper_Utility {
 		}
 		$key = array_shift( $path );
 		//var_dump($key);
-		$key = strval( $key );
+		$key = array_shift( $path );
+		$key = is_array($key) ? implode('_', $key) : strval($key);
 		if ( empty( $path ) ) {
 			if ( empty( $key ) ) {
 				$key = count( $a );

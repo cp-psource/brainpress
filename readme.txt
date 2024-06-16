@@ -4,7 +4,7 @@ Donate link: https://github.com/cp-psourcespendenaktionen/unterstuetze-unsere-ps
 Tags: classicpress-plugin, lms
 Requires at least: 4.9
 Tested up to: 4.9
-Stable tag: 2.3.7
+Stable tag: 2.3.8
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -75,10 +75,12 @@ Make a [donation by bank transfer or PayPal](https://github.com/cp-psourcespende
 
 == ChangeLog ==
 
-= 2.3.7 =
+= 2.3.8 =
 
 * Fix: Array to string conversion
 * Fix: Attempt to read property "ID" on string
+* MarketPress Integration
+* PhP8/jQuery3 Fixes
 
 = 2.3.7 =
 

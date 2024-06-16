@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: BrainPress
- * Version:     2.3.7
+ * Version:     2.3.8
  * Description: BrainPress vereinfacht die Online-Ausbildung mit Kursseiten, Paywalls, Social Sharing und einer interaktiven Lernumgebung, mit der mehr Schüler miteinander verbunden werden können.
  * Author:      PSOURCE
  * Author URI:  https://github.com/cp-psource
@@ -71,7 +71,7 @@ class BrainPress {
 	 *
 	 * @var string
 	 */
-	public static $version = '2.3.7';
+	public static $version = '2.3.8';
 
 	/**
 	 * Plugin name, this reflects the Pro/Standard version.

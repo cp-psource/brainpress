@@ -186,10 +186,10 @@ class BrainPress_Upgrade {
 		$settings = BrainPress_Helper_Utility::set_array_value( $settings, 'email/new_order/content', $value );
 
 		// MP
-		$value = is_plugin_active( 'psecommerce/psecommerce.php' );
-		$settings = BrainPress_Helper_Utility::set_array_value( $settings, 'psecommerce/enabled', $value );
+		$value = is_plugin_active( 'marketpress/marketpress.php' );
+		$settings = BrainPress_Helper_Utility::set_array_value( $settings, 'marketpress/enabled', $value );
 		$value = get_option( 'redirect_mp_to_course', false );
-		$settings = BrainPress_Helper_Utility::set_array_value( $settings, 'psecommerce/redirect', $value );
+		$settings = BrainPress_Helper_Utility::set_array_value( $settings, 'marketpress/redirect', $value );
 
 		// WooCommerce Integration
 		$settings = BrainPress_Helper_Utility::set_array_value( $settings, 'woocommerce/enabled', get_option( 'use_woo', 0 ) );

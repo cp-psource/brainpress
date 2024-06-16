@@ -30,11 +30,11 @@ BrainPress wird mit einem eigenen Theme geliefert – gestaltet und sofort einsa
 
 ![Bild](https://github.com/cp-psourcewp-content/uploads/2024/01/cp-features-735x470.jpg)
 
-  Durch die Integration von PSeCommerce und WooCommerce kannst Du Deine Kurse über jedes der über 100 Zahlungsgateways verkaufen.
+  Durch die Integration von MarketPress und WooCommerce kannst Du Deine Kurse über jedes der über 100 Zahlungsgateways verkaufen.
 
-### PSeCommerce & WooCommerce
+### MarketPress & WooCommerce
 
-Erstelle und verwalte die nächste große Academy, Tuts+ oder Lynda mit integriertem PSeCommerce und WooCommerce. Beginne mit der Annahme von Zahlungen mit einer der über 100 verfügbaren Zahlungsoptionen.
+Erstelle und verwalte die nächste große Academy, Tuts+ oder Lynda mit integriertem MarketPress und WooCommerce. Beginne mit der Annahme von Zahlungen mit einer der über 100 verfügbaren Zahlungsoptionen.
 
  
 
@@ -173,17 +173,17 @@ Beginnen wir mit dem Hinzufügen eines Kurses. Gehe zu _BrainPress > Neuer Kurs_
 
 ![BrainPress - New Course - Enrollment](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-New-Course-Enrollment.png)
 
- Tick the '_This is a Paid Course_' option to display payment options. For payments, BrainPress Pro integrates with both [PSeCommerce](https://premium.wpmudev.org/project/e-commerce/ "PSeCommerce ClassicPress e-Commerce") and [WooCommerce](https://wordpress.org/plugins/woocommerce/). Please note that currently, only one of them (either PSeCommerce or WooCommerce) should be activated, activating both at the same time may cause conflicts. For PSeCommerce integration, the first time the above payment option is selected, you'll be presented with a message about PSeCommerce, like so: 
+ Tick the '_This is a Paid Course_' option to display payment options. For payments, BrainPress Pro integrates with both [MarketPress](https://premium.wpmudev.org/project/e-commerce/ "MarketPress ClassicPress e-Commerce") and [WooCommerce](https://wordpress.org/plugins/woocommerce/). Please note that currently, only one of them (either MarketPress or WooCommerce) should be activated, activating both at the same time may cause conflicts. For MarketPress integration, the first time the above payment option is selected, you'll be presented with a message about MarketPress, like so: 
 
-![BrainPress Pro - Activate PSeCommerce](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Pro-1.2.5.4-Payment-settings-Activate-PSeCommerce.png)
+![BrainPress Pro - Activate MarketPress](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Pro-1.2.5.4-Payment-settings-Activate-MarketPress.png)
 
- Click the _Begin Activating PSeCommerce_ link to begin the PSeCommerce activation process and expose the payment options. Or for WooCommerce integration, simply ensure that WooCommerce is installed and activated, then tick the '_Use WooCommerce to sell courses_' setting at _BrainPress Pro > Settings_. You can optionally select to redirect WooCommerce product posts to a parent course as well. 
+ Click the _Begin Activating MarketPress_ link to begin the MarketPress activation process and expose the payment options. Or for WooCommerce integration, simply ensure that WooCommerce is installed and activated, then tick the '_Use WooCommerce to sell courses_' setting at _BrainPress Pro > Settings_. You can optionally select to redirect WooCommerce product posts to a parent course as well. 
 
 ![BrainPress Pro - Settings - WooCommerce Integration](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Pro-1.2.5.4-WooCommerce-Settings.png)
 
  WooCommerce settings at BrainPress Pro > Settings
 
-   With either PSeCommerce or WooCommerce installed and activated, and with the settings configured as above, you'll then see payment options for your Course. 
+   With either MarketPress or WooCommerce installed and activated, and with the settings configured as above, you'll then see payment options for your Course. 
 
 ![BrainPress - New Course - Enrollment - This is a paid course](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-New-Course-Enrollment-This-is-a-paid-course.png)
 
@@ -191,7 +191,7 @@ Beginnen wir mit dem Hinzufügen eines Kurses. Gehe zu _BrainPress > Neuer Kurs_
 *   Enter the _Price_.
 *   Tick the '_Enabled Sale Price_' option to specify that this course on sale.
 *   Enter a _Sale Price_ to be used with the above option.
-*   If you're using PSeCommerce, you'll have an option to _Edit Payment Gateways_ where you'll be presented with a pop-up dialog and will be able to select and configure the payment gateways.
+*   If you're using MarketPress, you'll have an option to _Edit Payment Gateways_ where you'll be presented with a pop-up dialog and will be able to select and configure the payment gateways.
 
 ![BrainPress Pro - Payment Gateways](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Pro-1.2.1.9-Payment-Gateways.png)
 

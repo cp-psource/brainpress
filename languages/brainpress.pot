@@ -503,7 +503,7 @@ msgstr ""
 
 #: admin/class-edit.php:623
 msgid ""
-"Bitte wende Dich an Deinen Administrator, um PSeCommerce für Deine Seite zu "
+"Bitte wende Dich an Deinen Administrator, um MarketPress für Deine Seite zu "
 "aktivieren."
 msgstr ""
 
@@ -511,22 +511,22 @@ msgstr ""
 #, php-format
 msgid ""
 "Um mit dem Verkauf Deines Kurses zu beginnen, bitte <a "
-"href=\"%s\">Installiere und aktiviere PSeCommerce</a>."
+"href=\"%s\">Installiere und aktiviere MarketPress</a>."
 msgstr ""
 
 #: admin/class-edit.php:631
 #, php-format
 msgid ""
 "Um mit dem Verkauf Deines Kurses zu beginnen, bitte <a href=\"%s\">Setup "
-"komplettieren</a> für PSeCommerce."
+"komplettieren</a> für MarketPress."
 msgstr ""
 
 #: admin/class-edit.php:636
-msgid "Die Vollversion von PSeCommerce wurde mit BrainPress gebündelt."
+msgid "Die Vollversion von MarketPress wurde mit BrainPress gebündelt."
 msgstr ""
 
 #: admin/class-edit.php:647
-msgid "Verkaufe Deine Kurse online mit PSeCommerce."
+msgid "Verkaufe Deine Kurse online mit MarketPress."
 msgstr ""
 
 #: admin/class-edit.php:650
@@ -4786,7 +4786,7 @@ msgid "Anmelden/Abmelden"
 msgstr ""
 
 #: include/brainpress/helper/class-utility.php:1406
-#: include/brainpress/helper/integration/class-psecommerce.php:1105
+#: include/brainpress/helper/integration/class-marketpress.php:1105
 #: include/brainpress/helper/setting/class-email.php:384
 #: include/brainpress/helper/setting/class-email.php:545
 #: include/brainpress/view/front/class-general.php:59
@@ -4811,36 +4811,36 @@ msgstr ""
 msgid "Zum Menü hinzufügen"
 msgstr ""
 
-#: include/brainpress/helper/extension/class-psecommerce.php:26
+#: include/brainpress/helper/extension/class-marketpress.php:26
 msgid "PSource Server"
 msgstr ""
 
-#: include/brainpress/helper/extension/class-psecommerce.php:130
-msgid "Installiere das PSeCommerce-Plugin, um Kurse zu verkaufen."
+#: include/brainpress/helper/extension/class-marketpress.php:130
+msgid "Installiere das MarketPress-Plugin, um Kurse zu verkaufen."
 msgstr ""
 
-#: include/brainpress/helper/extension/class-psecommerce.php:131
-msgid "Installiere PSeCommerce"
+#: include/brainpress/helper/extension/class-marketpress.php:131
+msgid "Installiere MarketPress"
 msgstr ""
 
-#: include/brainpress/helper/extension/class-psecommerce.php:133
-#: include/brainpress/view/admin/setting/class-psecommerce.php:43
-msgid "PSeCommerce"
+#: include/brainpress/helper/extension/class-marketpress.php:133
+#: include/brainpress/view/admin/setting/class-marketpress.php:43
+msgid "MarketPress"
 msgstr ""
 
-#: include/brainpress/helper/extension/class-psecommerce.php:134
+#: include/brainpress/helper/extension/class-marketpress.php:134
 #, php-format
 msgid "Aktiviere %s um mit den Verkauf von Kursen zu beginnen."
 msgstr ""
 
-#: include/brainpress/helper/extension/class-psecommerce.php:142
+#: include/brainpress/helper/extension/class-marketpress.php:142
 #, php-format
 msgid ""
 "Wenn Du eine ältere Version des %s-Plugins verwendest, benötigst Du aus "
 "Kompatibilitätsgründen die neueste Version."
 msgstr ""
 
-#: include/brainpress/helper/extension/class-psecommerce.php:143
+#: include/brainpress/helper/extension/class-marketpress.php:143
 #, php-format
 msgid " Aktualisiere jetzt Dein %s!"
 msgstr ""
@@ -4850,72 +4850,72 @@ msgid ""
 "Komplette TCPDF-Bibliothek mit zusätzlichen Schriftarten (ClassicPress.org)"
 msgstr ""
 
-#: include/brainpress/helper/integration/class-psecommerce.php:370
-msgid "PSeCommerce Produkt Einstellungen"
+#: include/brainpress/helper/integration/class-marketpress.php:370
+msgid "MarketPress Produkt Einstellungen"
 msgstr ""
 
-#: include/brainpress/helper/integration/class-psecommerce.php:372
+#: include/brainpress/helper/integration/class-marketpress.php:372
 msgid ""
-"Dein Kurs wird ein neues Produkt in PSeCommerce sein. Gib unten die "
+"Dein Kurs wird ein neues Produkt in MarketPress sein. Gib unten die "
 "Zahlungseinstellungen Deines Kurses ein."
 msgstr ""
 
-#: include/brainpress/helper/integration/class-psecommerce.php:375
+#: include/brainpress/helper/integration/class-marketpress.php:375
 #: include/brainpress/helper/integration/class-woocommerce.php:191
 msgid "Voller Preis"
 msgstr ""
 
-#: include/brainpress/helper/integration/class-psecommerce.php:381
+#: include/brainpress/helper/integration/class-marketpress.php:381
 #: include/brainpress/helper/integration/class-woocommerce.php:197
 msgid "Angebotspreis"
 msgstr ""
 
-#: include/brainpress/helper/integration/class-psecommerce.php:387
+#: include/brainpress/helper/integration/class-marketpress.php:387
 #: include/brainpress/helper/integration/class-woocommerce.php:203
 msgid "Aktiviere Angebotspreis"
 msgstr ""
 
-#: include/brainpress/helper/integration/class-psecommerce.php:391
+#: include/brainpress/helper/integration/class-marketpress.php:391
 #: include/brainpress/helper/integration/class-woocommerce.php:207
 msgid "Kurs SKU:"
 msgstr ""
 
-#: include/brainpress/helper/integration/class-psecommerce.php:393
+#: include/brainpress/helper/integration/class-marketpress.php:393
 #: include/brainpress/helper/integration/class-woocommerce.php:209
 #, php-format
 msgid "z.B. %s0001"
 msgstr ""
 
-#: include/brainpress/helper/integration/class-psecommerce.php:396
+#: include/brainpress/helper/integration/class-marketpress.php:396
 msgid "Automatisch generierte Lagerbestandseinheiten (SKUs)"
 msgstr ""
 
-#: include/brainpress/helper/integration/class-psecommerce.php:404
+#: include/brainpress/helper/integration/class-marketpress.php:404
 #, php-format
-msgid "PSeCommerce Produkt ID: %d"
+msgid "MarketPress Produkt ID: %d"
 msgstr ""
 
-#: include/brainpress/helper/integration/class-psecommerce.php:875
+#: include/brainpress/helper/integration/class-marketpress.php:875
 #: include/brainpress/helper/setting/class-email.php:71
 msgid "Bestellbestätigung"
 msgstr ""
 
-#: include/brainpress/helper/integration/class-psecommerce.php:1048
+#: include/brainpress/helper/integration/class-marketpress.php:1048
 #: include/brainpress/helper/integration/class-woocommerce.php:706
 msgid "Kurs zum Warenkorb hinzufügen."
 msgstr ""
 
-#: include/brainpress/helper/integration/class-psecommerce.php:1052
+#: include/brainpress/helper/integration/class-marketpress.php:1052
 #: include/brainpress/helper/integration/class-woocommerce.php:711
 msgid "Du kannst diesen Kurs jetzt in den Warenkorb legen."
 msgstr ""
 
-#: include/brainpress/helper/integration/class-psecommerce.php:1057
+#: include/brainpress/helper/integration/class-marketpress.php:1057
 #, php-format
 msgid "Zeige Kurs: %s"
 msgstr ""
 
-#: include/brainpress/helper/integration/class-psecommerce.php:1096
+#: include/brainpress/helper/integration/class-marketpress.php:1096
 #, php-format
 msgid ""
 "Vielen Dank für Deine Bestellung %1$s,\n"
@@ -6878,29 +6878,29 @@ msgstr ""
 #: include/brainpress/view/admin/course/class-edit.php:956
 #, php-format
 msgid ""
-"<p>To start selling your course, please install and activate PSeCommerce "
+"<p>To start selling your course, please install and activate MarketPress "
 "here:</p>\n"
-"\t\t\t\t\t\t\t\t<a href=\"%s\">Activate PSeCommerce</a>"
+"\t\t\t\t\t\t\t\t<a href=\"%s\">Activate MarketPress</a>"
 msgstr ""
 
 #: include/brainpress/view/admin/course/class-edit.php:959
 msgid ""
-"<p>Please contact your administrator to enable PSeCommerce for your site.</p>"
+"<p>Please contact your administrator to enable MarketPress for your site.</p>"
 msgstr ""
 
 #: include/brainpress/view/admin/course/class-edit.php:963
 msgid ""
-"<p>The full version of PSeCommerce has been bundled with BrainPress.</p>"
+"<p>The full version of MarketPress has been bundled with BrainPress.</p>"
 msgstr ""
 
 #: include/brainpress/view/admin/course/class-edit.php:965
 msgid ""
-"<p>You can use the free or premium version of PSeCommerce to sell your "
+"<p>You can use the free or premium version of MarketPress to sell your "
 "courses.</p>"
 msgstr ""
 
 #: include/brainpress/view/admin/course/class-edit.php:975
-msgid "Sell your courses online with PSeCommerce."
+msgid "Sell your courses online with MarketPress."
 msgstr ""
 
 #: include/brainpress/view/admin/course/class-edit.php:976
@@ -7639,7 +7639,7 @@ msgid "Ändert den Status jeder Diskussion"
 msgstr ""
 
 #: include/brainpress/view/admin/setting/class-capabilities.php:270
-msgid "Seiten bearbeiten (erforderlich für PSeCommerce)"
+msgid "Seiten bearbeiten (erforderlich für MarketPress)"
 msgstr ""
 
 #: include/brainpress/view/admin/setting/class-capabilities.php:271
@@ -8126,48 +8126,48 @@ msgstr ""
 msgid "Wähle eine Seite aus, auf der der Registrierungsprozess angezeigt wird."
 msgstr ""
 
-#: include/brainpress/view/admin/setting/class-psecommerce.php:44
-msgid "Ermögliche die Integration von PSeCommerce, um Kurse zu verkaufen ..."
+#: include/brainpress/view/admin/setting/class-marketpress.php:44
+msgid "Ermögliche die Integration von MarketPress, um Kurse zu verkaufen ..."
 msgstr ""
 
-#: include/brainpress/view/admin/setting/class-psecommerce.php:73
-msgid "Verwende PSeCommerce, um Kurse zu verkaufen"
+#: include/brainpress/view/admin/setting/class-marketpress.php:73
+msgid "Verwende MarketPress, um Kurse zu verkaufen"
 msgstr ""
 
-#: include/brainpress/view/admin/setting/class-psecommerce.php:75
+#: include/brainpress/view/admin/setting/class-marketpress.php:75
 msgid ""
-"Wenn diese Option aktiviert ist, wird PSeCommerce für den Verkauf von Kursen "
+"Wenn diese Option aktiviert ist, wird MarketPress für den Verkauf von Kursen "
 "verwendet"
 msgstr ""
 
-#: include/brainpress/view/admin/setting/class-psecommerce.php:85
+#: include/brainpress/view/admin/setting/class-marketpress.php:85
 msgid ""
-"Leite den PSeCommerce-Produktbeitrag zu einem übergeordneten Kursbeitrag um"
+"Leite den MarketPress-Produktbeitrag zu einem übergeordneten Kursbeitrag um"
 msgstr ""
 
-#: include/brainpress/view/admin/setting/class-psecommerce.php:87
+#: include/brainpress/view/admin/setting/class-marketpress.php:87
 msgid ""
 "Wenn diese Option aktiviert ist, werden Besucher, die versuchen, auf einen "
-"einzelnen Beitrag von PSeCommerce zuzugreifen, automatisch auf einen "
+"einzelnen Beitrag von MarketPress zuzugreifen, automatisch auf einen "
 "einzelnen Beitrag eines übergeordneten Kurses umgeleitet."
 msgstr ""
 
-#: include/brainpress/view/admin/setting/class-psecommerce.php:92
+#: include/brainpress/view/admin/setting/class-marketpress.php:92
 #: include/brainpress/view/admin/setting/class-woocommerce.php:89
 msgid "Wenn der Kurs unbezahlt ist, dann:"
 msgstr ""
 
-#: include/brainpress/view/admin/setting/class-psecommerce.php:98
-#: include/brainpress/view/admin/setting/class-psecommerce.php:115
-msgid "Wechsle auf Entwurf des zugehörigen PSeCommerce-Produkts."
+#: include/brainpress/view/admin/setting/class-marketpress.php:98
+#: include/brainpress/view/admin/setting/class-marketpress.php:115
+msgid "Wechsle auf Entwurf des zugehörigen MarketPress-Produkts."
 msgstr ""
 
-#: include/brainpress/view/admin/setting/class-psecommerce.php:103
-#: include/brainpress/view/admin/setting/class-psecommerce.php:120
-msgid "Lösche das zugehörige PSeCommerce-Produkt."
+#: include/brainpress/view/admin/setting/class-marketpress.php:103
+#: include/brainpress/view/admin/setting/class-marketpress.php:120
+msgid "Lösche das zugehörige MarketPress-Produkt."
 msgstr ""
 
-#: include/brainpress/view/admin/setting/class-psecommerce.php:109
+#: include/brainpress/view/admin/setting/class-marketpress.php:109
 #: include/brainpress/view/admin/setting/class-woocommerce.php:106
 msgid "Wenn der Kurs gelöscht ist, dann:"
 msgstr ""
@@ -8201,7 +8201,7 @@ msgstr ""
 #: include/brainpress/view/admin/setting/class-setup.php:70
 #, php-format
 msgid ""
-"%s hat auch PSeCommerce mit dabei - Falls Du Kurse verkaufen möchtest, dann "
+"%s hat auch MarketPress mit dabei - Falls Du Kurse verkaufen möchtest, dann "
 "installiere es einfach über das BrainPress Dashboard."
 msgstr ""
 
@@ -9564,7 +9564,7 @@ msgstr ""
 
 #: include/brainpress/view/admin/setting/class-woocommerce.php:72
 msgid ""
-"Wenn diese Option aktiviert ist, wird WooCommerce anstelle von PSeCommerce "
+"Wenn diese Option aktiviert ist, wird WooCommerce anstelle von MarketPress "
 "für den Verkauf von Kursen verwendet"
 msgstr ""
 

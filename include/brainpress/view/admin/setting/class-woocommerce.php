@@ -69,7 +69,7 @@ class BrainPress_View_Admin_Setting_WooCommerce {
 								value="1" />
 							<?php esc_html_e( 'Verwende WooCommerce, um Kurse zu verkaufen', 'brainpress' ); ?>
 						</label>
-						<p class="description"><?php _e( 'Wenn diese Option aktiviert ist, wird WooCommerce anstelle von PSeCommerce für den Verkauf von Kursen verwendet', 'brainpress' ) ?></p>
+						<p class="description"><?php _e( 'Wenn diese Option aktiviert ist, wird WooCommerce anstelle von MarketPress für den Verkauf von Kursen verwendet', 'brainpress' ) ?></p>
 						</td>
 					</tr>
 					<tr>

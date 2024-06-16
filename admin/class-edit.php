@@ -583,14 +583,14 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 			 */
 			$is_payment_available = false;
 			$filters_to_check = array(
-				'brainpress_is_psecommerce_active',
+				'brainpress_is_marketpress_active',
 				'brainpress_is_woocommerce_active',
 			);
 			foreach ( $filters_to_check as $filter ) {
 				if ( $is_payment_available ) {
 					continue;
 				}
-				$is_payment_available = apply_filters( 'brainpress_is_psecommerce_active', $is_payment_available );
+				$is_payment_available = apply_filters( 'brainpress_is_marketpress_active', $is_payment_available );
 			}
 			if ( ! $is_payment_available ) {
 				$disable_payment = false;
@@ -600,7 +600,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 			$is_paid_course = ! empty( self::$settings['payment_paid_course'] );
 			//$data_course = new BrainPress_Data_Course();
 			$data_instructor = new BrainPress_Data_Instructor();
-			$mp_class = new Brainpress_Helper_Extension_PSeCommerce();
+			$mp_class = new Brainpress_Helper_Extension_MarketPress();
 			$utility_class = new BrainPress_Helper_Utility();
 
 			$install_url = add_query_arg(
@@ -615,25 +615,25 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 				array(
 					'post_type' => self::$post_type,
 					'page' => 'brainpress_settings',
-					'tab' => 'psecommerce',
+					'tab' => 'marketpress',
 				),
 				admin_url( 'edit.php' )
 			);
 
-			$install_message = __( 'Bitte wende Dich an Deinen Administrator, um PSeCommerce für Deine Seite zu aktivieren.', 'brainpress' );
+			$install_message = __( 'Bitte wende Dich an Deinen Administrator, um MarketPress für Deine Seite zu aktivieren.', 'brainpress' );
 			$install_message2 = '';
 			$installed = $mp_class->installed();
 
 			if ( current_user_can( 'install_plugins' ) || current_user_can( 'activate_plugins ' ) ) {
-				$install_message = __( 'Um mit dem Verkauf Deines Kurses zu beginnen, bitte <a href="%s">Installiere und aktiviere PSeCommerce</a>.', 'brainpress' );
+				$install_message = __( 'Um mit dem Verkauf Deines Kurses zu beginnen, bitte <a href="%s">Installiere und aktiviere MarketPress</a>.', 'brainpress' );
 
 				if ( $installed && $mp_class->activated() ) {
-					$install_message = __( 'Um mit dem Verkauf Deines Kurses zu beginnen, bitte <a href="%s">Setup komplettieren</a> für PSeCommerce.', 'brainpress' );
+					$install_message = __( 'Um mit dem Verkauf Deines Kurses zu beginnen, bitte <a href="%s">Setup komplettieren</a> für MarketPress.', 'brainpress' );
 					$install_url = $mp_url;
 				}
 
 				if ( false === $installed ) {
-					$install_message2 = __( 'Die Vollversion von PSeCommerce wurde mit BrainPress gebündelt.', 'brainpress' );
+					$install_message2 = __( 'Die Vollversion von MarketPress wurde mit BrainPress gebündelt.', 'brainpress' );
 				}
 			}
 			$install_message = sprintf( $install_message, esc_url_raw( $install_url ) );
@@ -644,7 +644,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 			$payment_message = sprintf(
 				'<div class="payment-message %1$s"><h4>%2$s</h4>%3$s%4$s<p>%5$s: WooCommerce</p></div>',
 				esc_attr( $is_paid_course ? '' : 'hidden' ),
-				__( 'Verkaufe Deine Kurse online mit PSeCommerce.', 'brainpress' ),
+				__( 'Verkaufe Deine Kurse online mit MarketPress.', 'brainpress' ),
 				! empty( $install_message2 ) ? sprintf( '<p>%s</p>', $install_message2 ) : '',
 				! empty( $install_message ) ? sprintf( '<p>%s</p>', $install_message ) : '',
 				__( 'Andere unterstützte Plugins', 'brainpress' )

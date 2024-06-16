@@ -5,7 +5,7 @@ class BrainPress_Helper_Extension {
 	private static $plugins = array();
 
 	public static function init() {
-		$plugins = array( 'PSeCommerce', 'CP_TCPDF' );
+		$plugins = array( 'MarketPress', 'CP_TCPDF' );
 		foreach ( $plugins as $plugin ) {
 			if ( method_exists( 'BrainPress_Helper_Extension_' . $plugin, 'init' ) ) {
 				call_user_func( 'BrainPress_Helper_Extension_' . $plugin . '::init' );

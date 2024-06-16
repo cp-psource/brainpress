@@ -69,7 +69,7 @@ class BrainPress_Hooks {
 		add_action( 'wp_ajax_update_discussion', array( 'BrainPress_Data_Discussion', 'ajax_update' ) );
 
 		// MP Notice
-		add_action( 'admin_notices', array( 'BrainPress_Helper_Extension_PSeCommerce', 'mp_notice' ) );
+		add_action( 'admin_notices', array( 'BrainPress_Helper_Extension_MarketPress', 'mp_notice' ) );
 
 		// Admin class
 		add_filter( 'admin_body_class', array( __CLASS__, 'admin_classes' ) );

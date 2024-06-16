@@ -7,9 +7,9 @@
  */
 
 /**
- * Integrates PSeCommerce with BrainPress.
+ * Integrates MarketPress with BrainPress.
  */
-class BrainPress_Helper_Integration_PSeCommerce {
+class BrainPress_Helper_Integration_MarketPress {
 
 	private static $updated = false;
 	public static $is_active = false;
@@ -32,15 +32,15 @@ class BrainPress_Helper_Integration_PSeCommerce {
 			array( __CLASS__, 'add_settings_to_js_brainpress' )
 		);
 
-		// If PSeCommerce is not activated just exit.
-		if ( ! BrainPress_Helper_Extension_PSeCommerce::activated() ) {
+		// If MarketPress is not activated just exit.
+		if ( ! BrainPress_Helper_Extension_MarketPress::activated() ) {
 			return false;
 		}
-		if ( ! BrainPress_Core::get_setting( 'psecommerce/enabled' ) ) {
+		if ( ! BrainPress_Core::get_setting( 'marketpress/enabled' ) ) {
 			return false;
 		}
 		self::$is_active = true;
-		add_filter( 'brainpress_is_psecommerce_active', '__return_true' );
+		add_filter( 'brainpress_is_marketpress_active', '__return_true' );
 
 		// Enable Payment Support
 		add_filter(
@@ -75,7 +75,7 @@ class BrainPress_Helper_Integration_PSeCommerce {
 			10, 2
 		);
 
-		// If for whatever reason the course gets updated in PSeCommerce,
+		// If for whatever reason the course gets updated in MarketPress,
 		// reflect those changes in the course.
 		add_action(
 			'post_updated',
@@ -127,7 +127,7 @@ class BrainPress_Helper_Integration_PSeCommerce {
 		/**
 		 * Enroll upon pay
 		 *
-		 * Reference to order ID, will need to get the actual product using the PSeCommerce Order class
+		 * Reference to order ID, will need to get the actual product using the MarketPress Order class
 		 */
 		add_action(
 			'mp_order_order_paid',
@@ -367,9 +367,9 @@ class BrainPress_Helper_Integration_PSeCommerce {
 		$mp_content = '
 			<div class="wide">
 				<label>' .
-					esc_html__( 'PSeCommerce Produkt Einstellungen', 'brainpress' ) .
+					esc_html__( 'MarketPress Produkt Einstellungen', 'brainpress' ) .
 					'</label>
-				<p class="description">' . esc_html__( 'Dein Kurs wird ein neues Produkt in PSeCommerce sein. Gib unten die Zahlungseinstellungen Deines Kurses ein.', 'brainpress' ) . '</p>
+				<p class="description">' . esc_html__( 'Dein Kurs wird ein neues Produkt in MarketPress sein. Gib unten die Zahlungseinstellungen Deines Kurses ein.', 'brainpress' ) . '</p>
 
 				<label class="normal required">
 					' . esc_html__( 'Voller Preis', 'brainpress' ) . '
@@ -401,7 +401,7 @@ class BrainPress_Helper_Integration_PSeCommerce {
 		if ( $product_id ) {
 			// Add MP product ID as indication.
 			$mp_content .= '
-				<label class="description">' . sprintf( __( 'PSeCommerce Produkt ID: %d', 'brainpress' ), $product_id ) . '</label>
+				<label class="description">' . sprintf( __( 'MarketPress Produkt ID: %d', 'brainpress' ), $product_id ) . '</label>
 			';
 		}
 
@@ -599,7 +599,7 @@ class BrainPress_Helper_Integration_PSeCommerce {
 	 */
 	public static function update_course_when_deleting_product( $product_id ) {
 		/**
-		 * if we do not use PSeCommerce, then we should not use this function
+		 * if we do not use MarketPress, then we should not use this function
 		 */
 		if ( ! self::$is_active ) {
 			return;
@@ -632,7 +632,7 @@ class BrainPress_Helper_Integration_PSeCommerce {
 	 */
 	public static function update_product_when_deleting_course( $course_id ) {
 		/**
-		 * if we do not use PSeCommerce, then we should not use this function
+		 * if we do not use MarketPress, then we should not use this function
 		 */
 		if ( ! self::$is_active ) {
 			return;
@@ -655,7 +655,7 @@ class BrainPress_Helper_Integration_PSeCommerce {
 		if ( empty( $product_id ) ) {
 			return;
 		}
-		$delete = brainpress_core::get_setting( 'psecommerce/delete', 'change_status' );
+		$delete = brainpress_core::get_setting( 'marketpress/delete', 'change_status' );
 		if ( 'delete' == $delete ) {
 			wp_delete_post( $product_id );
 		} else {
@@ -705,7 +705,7 @@ class BrainPress_Helper_Integration_PSeCommerce {
 			return;
 		}
 		/**
-		 * if we do not use PSeCommerce, then we should not use this function
+		 * if we do not use MarketPress, then we should not use this function
 		 */
 		if ( ! self::$is_active ) {
 			return;
@@ -848,7 +848,7 @@ class BrainPress_Helper_Integration_PSeCommerce {
 	}
 
 	/**
-	 * Function add PSeCommerce Cart URL to javascript configuration.
+	 * Function add MarketPress Cart URL to javascript configuration.
 	 *
 	 * @since 2.0.0
 	 *
@@ -856,7 +856,7 @@ class BrainPress_Helper_Integration_PSeCommerce {
 	 */
 	public static function add_cart_url( $localize_array ) {
 		if ( function_exists( 'mp_store_page_url' ) ) {
-			$localize_array['psecommerce_cart_url'] = mp_store_page_url( 'cart', false );
+			$localize_array['marketpress_cart_url'] = mp_store_page_url( 'cart', false );
 		}
 		return $localize_array;
 	}
@@ -867,7 +867,7 @@ class BrainPress_Helper_Integration_PSeCommerce {
 	 *
 	 * @since  1.0.0
 	 * @param  string $subject Default subject.
-	 * @param  object $order PSeCommerce order.
+	 * @param  object $order MarketPress order.
 	 * @return string Email subject.
 	 */
 	public static function order_notification_subject( $subject, $order ) {
@@ -927,7 +927,7 @@ class BrainPress_Helper_Integration_PSeCommerce {
 	 *
 	 * @since  1.0.0
 	 * @param  string $content Default email body.
-	 * @param  object $order PSeCommerce order.
+	 * @param  object $order MarketPress order.
 	 * @return string Email body.
 	 */
 	public static function order_email_body( $content, $order ) {
@@ -939,7 +939,7 @@ class BrainPress_Helper_Integration_PSeCommerce {
 		$course_name = $course->post_title;
 
 		$tracking_url = apply_filters(
-			'wpml_psecommerce_tracking_url',
+			'wpml_marketpress_tracking_url',
 			mp_orderstatus_link( false, true ) . $order->post_title . '/'
 		);
 
@@ -1030,7 +1030,7 @@ class BrainPress_Helper_Integration_PSeCommerce {
 	 */
 	public static function add_to_cart_template( $atts ) {
 		/**
-		 * if we do not use PSeCommerce, then we should not use this function
+		 * if we do not use MarketPress, then we should not use this function
 		 */
 		if ( ! self::$is_active ) {
 			return;
@@ -1067,15 +1067,15 @@ class BrainPress_Helper_Integration_PSeCommerce {
 	}
 
 	/**
-	 * Return the course-ID that is linked with the specified PSeCommerce order.
+	 * Return the course-ID that is linked with the specified MarketPress order.
 	 * If the order is not related to BrainPress then return is false.
 	 *
 	 * @since  1.0.0
-	 * @param  int $order_id PSeCommerce order-ID.
+	 * @param  int $order_id MarketPress order-ID.
 	 * @return int Course-ID or false.
 	 */
 	private static function _get_order_course_id( $order_id ) {
-		$mp = PSeCommerce::get_instance();
+		$mp = MarketPress::get_instance();
 
 		if ( empty( $mp ) ) { return false; }
 		$order = new MP_Order( $order_id );
@@ -1145,7 +1145,7 @@ Dein %5$s Team', 'brainpress' ), 'CUSTOMER_NAME', '<a href="COURSE_ADDRESS">COUR
 	 * @param array $localize_array Array of settings.
 	 */
 	public static function add_settings_to_js_brainpress( $localize_array ) {
-		$localize_array['psecommerce_is_used'] = self::$is_active? 'yes' : 'no';
+		$localize_array['marketpress_is_used'] = self::$is_active? 'yes' : 'no';
 		return $localize_array;
 	}
 
@@ -1165,7 +1165,7 @@ Dein %5$s Team', 'brainpress' ), 'CUSTOMER_NAME', '<a href="COURSE_ADDRESS">COUR
 		/**
 		 * only when redirect option is on.
 		 */
-		$use_redirect = BrainPress_Core::get_setting( 'psecommerce/redirect', false );
+		$use_redirect = BrainPress_Core::get_setting( 'marketpress/redirect', false );
 		if ( ! $use_redirect ) {
 			return;
 		}
@@ -1216,7 +1216,7 @@ Dein %5$s Team', 'brainpress' ), 'CUSTOMER_NAME', '<a href="COURSE_ADDRESS">COUR
 		/**
 		 * only when redirect option is on.
 		 */
-		$use_redirect = BrainPress_Core::get_setting( 'psecommerce/redirect', false );
+		$use_redirect = BrainPress_Core::get_setting( 'marketpress/redirect', false );
 		if ( ! $use_redirect ) {
 			return $url;
 		}
@@ -1228,7 +1228,7 @@ Dein %5$s Team', 'brainpress' ), 'CUSTOMER_NAME', '<a href="COURSE_ADDRESS">COUR
 	}
 
 	/**
-	 * add "psecommerce-course" class to body tag if course is paid.
+	 * add "marketpress-course" class to body tag if course is paid.
 	 *
 	 * @since 2.0.0
 	 *
@@ -1243,7 +1243,7 @@ Dein %5$s Team', 'brainpress' ), 'CUSTOMER_NAME', '<a href="COURSE_ADDRESS">COUR
 			global $post;
 			$is_paid = BrainPress_Data_Course::is_paid_course( $post->ID );
 			if ( $is_paid ) {
-				$classes[] = 'psecommerce-course';
+				$classes[] = 'marketpress-course';
 			}
 		}
 
@@ -1256,7 +1256,7 @@ Dein %5$s Team', 'brainpress' ), 'CUSTOMER_NAME', '<a href="COURSE_ADDRESS">COUR
 	 *
 	 * @since 2.0.3
 	 *
-	 * @param MP_Order $order PSeCommerce order object.
+	 * @param MP_Order $order MarketPress order object.
 	 */
 	public static function enroll_student_when_order_is_paid( $order ) {
 		$order_status = $order->__get( 'post_status' );

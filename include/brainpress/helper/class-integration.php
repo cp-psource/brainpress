@@ -45,8 +45,8 @@ class BrainPress_Helper_Integration {
 	public static function get_plugins() {
 		if ( null === self::$plugins ) {
 			self::$plugins = array();
-			self::$plugins['psecommerce'] = array(
-				'class' => 'BrainPress_Helper_Integration_PSeCommerce',
+			self::$plugins['marketpress'] = array(
+				'class' => 'BrainPress_Helper_Integration_MarketPress',
 				'method' => 'init',
 			);
 

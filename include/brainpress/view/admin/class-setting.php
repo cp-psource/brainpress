@@ -13,7 +13,7 @@ class BrainPress_View_Admin_Setting {
 		'BasicCertificate',
 		'Shortcodes',
 		'Extensions',
-		'PSeCommerce',
+		'MarketPress',
 		'WooCommerce',
 		'Setup',
 		'Update',

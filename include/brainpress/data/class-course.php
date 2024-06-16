@@ -1211,11 +1211,11 @@ class BrainPress_Data_Course {
 			$is_paid = cp_is_true( $is_paid );
 		}
 		/**
-		 * Check for supported integration: PSeCommerce
+		 * Check for supported integration: MarketPress
 		 */
-		if ( $is_paid && class_exists( 'BrainPress_Helper_Integration_PSeCommerce' ) ) {
+		if ( $is_paid && class_exists( 'BrainPress_Helper_Integration_MarketPress' ) ) {
 			if ( defined( 'MP_VERSION' ) && MP_VERSION ) {
-				$is_paid = BrainPress_Helper_Integration_PSeCommerce::$is_active;
+				$is_paid = BrainPress_Helper_Integration_MarketPress::$is_active;
 				$is_paid = cp_is_true( $is_paid );
 				return $is_paid;
 			}

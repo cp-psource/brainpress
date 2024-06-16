@@ -828,7 +828,7 @@ var BrainPress = BrainPress || {};
 		//$( '.view-response' ).link_popup( { link_text:  '<span class="dashicons dashicons-visibility"></span>' });
 		$( '.workbook-table .view-response' ).link_popup( { link_text:  '<span class="dashicons dashicons-visibility"></span>', offset_x: -160 });
 		$( '.workbook-table .feedback' ).link_popup( { link_text:  '<span class="dashicons dashicons-admin-comments"></span>' });
-		bind_psecommerce_add_to_cart_button();
+		bind_marketpress_add_to_cart_button();
 
 		/**
 		 * close message
@@ -1020,8 +1020,8 @@ var BrainPress = BrainPress || {};
 	/**
 	 * MP add to cart
 	 */
-	function bind_psecommerce_add_to_cart_button() {
-		if ( undefined === _brainpress.psecommerce_is_used || 'no' === _brainpress.psecommerce_is_used ) {
+	function bind_marketpress_add_to_cart_button() {
+		if ( undefined === _brainpress.marketpress_is_used || 'no' === _brainpress.marketpress_is_used ) {
 			return;
 		}
 		$('body.single-course button.mp_button-addcart').on( 'click', function() {
@@ -1034,8 +1034,8 @@ var BrainPress = BrainPress || {};
 					cart_action: 'add_item'
 				}
 			}).done( function(data) {
-				if ( data.success && undefined !== _brainpress.psecommerce_cart_url ) {
-					window.location.assign( _brainpress.psecommerce_cart_url );
+				if ( data.success && undefined !== _brainpress.marketpress_cart_url ) {
+					window.location.assign( _brainpress.marketpress_cart_url );
 				}
 			});
 			return false;

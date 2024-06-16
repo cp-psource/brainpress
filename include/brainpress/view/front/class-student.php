@@ -34,9 +34,9 @@ class BrainPress_View_Front_Student {
 		/** This filter is documented in * include/brainpress/helper/integration/class-woocommerce.php */
 		$is_user_purchased_course = apply_filters( 'brainpress_is_user_purchased_course', false, $course, $student_id );
 
-		if ( $is_paid && isset( $course->details->psecommerce_product ) && '' != $course->details->psecommerce_product && $brainpress->psecommerce_active ) {
+		if ( $is_paid && isset( $course->details->marketpress_product ) && '' != $course->details->marketpress_product && $brainpress->marketpress_active ) {
 			$course_price = 1; //forces user to purchase course / show purchase form
-			$course->is_user_purchased_course( $course->details->psecommerce_product, $student_id );
+			$course->is_user_purchased_course( $course->details->marketpress_product, $student_id );
 		}
 
 		if ( 'passcode' == $course->details->enroll_type ) {
@@ -56,7 +56,7 @@ class BrainPress_View_Front_Student {
 						_e( 'Während des Einschreibungsprozesses ist ein Fehler aufgetreten. Bitte versuche es später noch einmal.', 'brainpress' );
 					}
 				} else {
-					if ( $course->is_user_purchased_course( $course->details->psecommerce_product, $student_id ) ) {
+					if ( $course->is_user_purchased_course( $course->details->marketpress_product, $student_id ) ) {
 						//Enroll student in
 						if ( BrainPress_Data_Course::enroll_student( $student_id, $course_id ) ) {
 							printf( __( 'Herzlichen Glückwunsch, Du hast dich erfolgreich für den Kurs "%s" eingeschrieben! Überprüfe Dein %s für weitere Informationen.', 'brainpress' ), '<strong>' . $course->details->post_title . '</strong>', '<a href="' . $this->get_student_dashboard_slug( true ) . '">' . __( 'Dashboard', 'brainpress' ) . '</a>' );
@@ -64,7 +64,7 @@ class BrainPress_View_Front_Student {
 							_e( 'Während des Einschreibungsprozesses ist ein Fehler aufgetreten. Bitte versuche es später noch einmal.', 'brainpress' );
 						}
 					} else {
-						$course->show_purchase_form( $course->details->psecommerce_product );
+						$course->show_purchase_form( $course->details->marketpress_product );
 					}
 				}
 			} else {

@@ -98,7 +98,7 @@ Make a [donation by bank transfer or PayPal](https://github.com/cp-psourcespende
 = 2.3.5 =
 
 * DSGVO neu integriert
-* Anpassungen PSeCommerce
+* Anpassungen MarketPress
 * Text Overhaul
 * PSource Updater v1.1 integriert
 

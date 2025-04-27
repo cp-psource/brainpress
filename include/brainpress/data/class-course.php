@@ -935,20 +935,22 @@ class BrainPress_Data_Course {
 							$module
 						);
 					}
-					ksort( $items[ $unit->ID ]['pages'], SORT_NUMERIC );
+					if ( isset( $items[ $unit->ID ]['pages'] ) && is_array( $items[ $unit->ID ]['pages'] ) ) {
+						ksort( $items[ $unit->ID ]['pages'], SORT_NUMERIC );
+					}
 				}
 			}
 		}
 
 		// Fix legacy orphaned posts and page titles
 		foreach ( $items as $post_id => $unit ) {
-			if ( ! isset( $unit['unit'] ) ) {
+			if ( ! isset( $unit->unit ) ) {
 				unset( $items[ $post_id ] );
 			}
 
 			// Fix broken page titles
 			$page_titles = get_post_meta( $post_id, 'page_title', true );
-			if ( empty( $page_titles ) && ! empty( $unit['pages'] ) ) {
+			if ( empty( $page_titles ) && ! empty( $unit->pages ) ) {
 				$page_titles = array();
 				$page_visible = array();
 				foreach ( $unit['pages'] as $key => $page ) {

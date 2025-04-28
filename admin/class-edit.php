@@ -54,7 +54,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 
 			self::$post_type = $post_type = self::$data_course->get_post_type_name();
 
-			if ( $post->post_type != $post_type ) {
+			if ( ! is_object( $post ) || $post->post_type != $post_type ) {
 				return;
 			}
 

@@ -26,7 +26,7 @@ class BrainPress_Hooks {
 
 		// Edit Course
 		add_filter( 'post_updated_messages', array( 'BrainPress_Admin_Edit', 'updated_messages' ) );
-		add_action( 'dbx_post_advanced', array( 'BrainPress_Admin_Edit', 'init_hooks' ) );
+		add_action('add_meta_boxes', array('BrainPress_Admin_Edit', 'init_hooks'));
 
 		// Enable TinyMCE for course pages.
 		add_filter( 'user_can_richedit', array( 'BrainPress_Admin_Edit', 'enable_tinymce' ) );

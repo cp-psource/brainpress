@@ -43,7 +43,10 @@ if ( ! function_exists( 'brainpress_setup' ) ) :
 		 * If you're building a theme based on BrainPress, use a find and replace
 		 * to change 'brainpress' to the name of your theme in all the template files
 		 */
-		load_theme_textdomain( 'brainpress', get_template_directory() . '/languages' );
+		// Load theme textdomain for translations.
+		add_action( 'init', function() {
+			load_theme_textdomain( 'brainpress', get_template_directory() . '/languages' );
+		} );
 
 		// Let WP handl <title> tag.
 		add_theme_support( 'title-tag' );

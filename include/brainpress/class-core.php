@@ -254,15 +254,15 @@ class BrainPress_Core {
 					'option' => 'slugs/module',
 				),
 				'unit' => array(
-					'default' => 'units',
+					'default' => 'einheiten',
 					'option' => 'slugs/units',
 				),
 				'notification' => array(
-					'default' => 'notifications',
+					'default' => 'benachrichtigungen',
 					'option' => 'slugs/notifications',
 				),
 				'discussion' => array(
-					'default' => 'discussions',
+					'default' => 'diskussion',
 					'option' => 'slugs/discussions',
 				),
 				'discussion_new' => array(

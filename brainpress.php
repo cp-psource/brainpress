@@ -117,7 +117,9 @@ class BrainPress {
 		/**
 		 * Translate plugin name
 		 */
-		self::$name = 'BrainPress';
+		add_action( 'init', function() {
+			self::$name = _x( 'BrainPress', 'plugin name', 'brainpress' ); // Translated by grunt.
+		} );
 		// Initialise the autoloader.
 		spl_autoload_register( array( __CLASS__, 'class_loader' ) );
 

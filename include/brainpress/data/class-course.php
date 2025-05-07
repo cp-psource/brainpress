@@ -11,7 +11,7 @@ class BrainPress_Data_Course {
 	private static $email_type;
 	public static $last_course_category = '';
 	public static $last_course_subpage = '';
-	public static $previewability = [];
+	public static $previewability = false;
 	public static $structure_visibility = false;
 	private static $current = array();
 

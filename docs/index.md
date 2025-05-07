@@ -330,285 +330,285 @@ Seiten können verwendet werden, um Abschnitte des Einheitinhalts zu trennen.
 *   Gib einen Namen für die Seite in das Feld _Seitenbeschriftung_ ein.
 *   Aktiviere die Option '_Seitenbeschriftung in Einheit anzeigen_', damit die Beschriftung dieser Seite angezeigt wird, wenn Teilnehmer die Seite im Frontend ansehen.
 
-##### Build Page
+##### Seite erstellen
 
-This sub-section provides a number of elements you can use to build the Page. 
+In diesem Abschnitt findest Du eine Reihe von Elementen, die Du verwenden kannst, um die Seite zu gestalten.
 
-![BrainPress - Course - Units - Build Page](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Course-Units-Build-Page.png)
+![BrainPress - Kurs - Einheiten - Seite erstellen](assets/images/BrainPress-Course-Units-Build-Page.png)
 
- Simply click any of the element icons and you'll see a sub-section added below that you can use to configure the settings. Let's take a quick look through each.
+Klicke einfach auf eines der Element-Icons, und ein Unterabschnitt wird unten hinzugefügt, den Du konfigurieren kannst. Lass uns die einzelnen Elemente kurz durchgehen:
 
-*   _Text_ - used for basic text information
+*   _Text_ – für einfache Texteingaben
 
-![BrainPress - Course - Units - Elements - Text](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Course-Units-Elements-Text.png)
+![BrainPress - Kurs - Einheiten - Elemente - Text](assets/images/BrainPress-Course-Units-Elements-Text.png)
 
-*   _Image_ - for adding images
+*   _Bild_ – um Bilder hinzuzufügen
 
-![BrainPress - Course - Units - Elements - Image](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Course-Units-Elements-Image.png)
+![BrainPress - Kurs - Einheiten - Elemente - Bild](assets/images/BrainPress-Course-Units-Elements-Image.png)
 
-*   _Video_ - to add video content
+*   _Video_ – um Videoinhalte einzubinden
 
-![BrainPress - Course - Units - Elements - Video](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Course-Units-Elements-Video.png)
+![BrainPress - Kurs - Einheiten - Elemente - Video](assets/images/BrainPress-Course-Units-Elements-Video.png)
 
-*   _File Download_ - to provide a file for Students to download
+*   _Datei-Download_ – um eine Datei für Studenten zum Herunterladen bereitzustellen
 
-![BrainPress - Course - Units - Elements - File Download](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Course-Units-Elements-File-Download.png)
+![BrainPress - Kurs - Einheiten - Elemente - Datei-Download](assets/images/BrainPress-Course-Units-Elements-File-Download.png)
 
-*   _Section Break_ - to visually separate sections
+*   _Abschnittstrennung_ – um Abschnitte optisch zu trennen
 
-![BrainPress - Course - Units - Elements - Section Break](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Course-Units-Elements-Section-Break-compressor.png)
+![BrainPress - Kurs - Einheiten - Elemente - Abschnittstrennung](assets/images/BrainPress-Course-Units-Elements-Section-Break-compressor.png)
 
-*   _Multiple choice_ - easily add a multiple-choice quiz
+*   _Multiple Choice_ – um ein Multiple-Choice-Quiz hinzuzufügen
 
-![BrainPress - Course - Units - Elements - Multiple Choice](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Course-Units-Elements-Multiple-Choice1.png)
+![BrainPress - Kurs - Einheiten - Elemente - Multiple Choice](assets/images/BrainPress-Course-Units-Elements-Multiple-Choice1.png)
 
-*   _File Upload_ - allows Students to upload a file for the Instructor
+*   _Datei-Upload_ – ermöglicht es Studenten, eine Datei für den Dozenten hochzuladen
 
-![BrainPress - Course - Units - Elements - File Upload](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Course-Units-Elements-File-Upload1.png)
+![BrainPress - Kurs - Einheiten - Elemente - Datei-Upload](assets/images/BrainPress-Course-Units-Elements-File-Upload1.png)
 
-*   _Single Choice_ - create a single-choice quiz for Students
+*   _Einzelauswahl_ – um ein Quiz mit einer Einzelauswahl zu erstellen
 
-![BrainPress - Course - Units - Elements - Single Choice](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Course-Units-Elements-Single-Choice1.png)
+![BrainPress - Kurs - Einheiten - Elemente - Einzelauswahl](assets/images/BrainPress-Course-Units-Elements-Single-Choice1.png)
 
-*   _Answer Field_ - ask a question and provide a single or multiple line field for Students to answer.
+*   _Antwortfeld_ – stelle eine Frage und biete ein einzeiliges oder mehrzeiliges Feld für die Antworten der Studenten an
 
-![BrainPress - Course - Units - Elements - Answer Field](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Course-Units-Elements-Answer-Field1.png)
+![BrainPress - Kurs - Einheiten - Elemente - Antwortfeld](assets/images/BrainPress-Course-Units-Elements-Answer-Field1.png)
 
- At the bottom of the page bottom, you'll see a couple more buttons and another toggle switch. 
+Am unteren Ende der Seite findest Du noch ein paar weitere Buttons und einen Umschalter.
 
-![BrainPress - Course - Units - Save and Preview](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Course-Units-Save-and-Preview.png)
+![BrainPress - Kurs - Einheiten - Speichern und Vorschau](assets/images/BrainPress-Course-Units-Save-and-Preview.png)
 
-*   Click the _Save_ button to Save your changes to the Unit.
-*   Click the _Preview_ button to take a look at the Unit in the site's front-end.
-*   Use the toggle switch to change to _Draft_ or _Live_ mode.
+*   Klicke auf den Button _Speichern_, um Deine Änderungen an der Einheit zu sichern.
+*   Klicke auf den Button _Vorschau_, um die Einheit im Frontend der Seite anzusehen.
+*   Nutze den Umschalter, um zwischen _Entwurf_ und _Live_-Modus zu wechseln.
+### Dozenten
 
-### Instructors
+Kurse brauchen Dozenten – schauen wir uns an, wie Du sie unter _BrainPress Pro > Dozenten_ hinzufügen und bearbeiten kannst.
 
-Courses need instructors so lets see how to add and edit them at _BrainPress Pro > Instructors_. 
+![BrainPress - Dozenten-Menü](assets/images/BrainPress-Instructors-menu1.png)
 
-![BrainPress - Instructors menu](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Instructors-menu1.png)
+Hier findest Du eine Liste aller Dozenten, die Du eingerichtet hast. Dozenten sind im Grunde ClassicPress-Benutzer, die als Dozenten für einen Kurs zugewiesen wurden.
 
- Here, you'll find a list of all the Instructors you've configured. Instructors are basically ClassicPress users who are designated as Instructors for a course. 
+![BrainPress - Dozenten](assets/images/BrainPress-Instructors.png)
 
-![BrainPress - Instructors](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Instructors.png)
+*   Du kannst ganz einfach im Abschnitt _Dozenten durchsuchen_ nach Dozenten suchen.
+*   Klicke auf den Button _Neu hinzufügen_, um einen neuen Dozenten hinzuzufügen. Das führt Dich zur Seite _Benutzer > Neu hinzufügen_ in ClassicPress, wo Du neue Benutzer hinzufügen kannst.
+*   Klicke auf die Option _Löschen_, um einen bestimmten Dozenten zu entfernen.
 
-*   You can easily search through the Instructors using the _Search Instructors_ section.
-*   Click the 'Add New' button to add a new _Instructor_. This will take you to the _Users > Add New_ page in ClassicPress, where you'll be able to add new users.
-*   Click the Delete option to delete a particular _Instructor_.
+Auf Geräten mit großem Bildschirm siehst Du auch ein Dropdown-Menü für Massenaktionen.
 
-When viewing on wide screen devices, you'll be also see a Bulk Actions drop-down. 
+![BrainPress - Dozenten - Massenaktionen](assets/images/BrainPress-Instructors-Bulk-actions.png)
 
-![BrainPress - Instructors - Bulk actions](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Instructors-Bulk-actions.png)
+Um _Massenaktionen_ zu nutzen, markiere einfach die Dozenten, die Du bearbeiten möchtest, wähle eine der Aktionen aus dem Dropdown-Menü aus und klicke auf _Anwenden_. Die verfügbaren Massenaktionen sind:
 
- To utilize _Bulk Actions_, simply tick the Instructors you'd like to edit, select one of the actions from the drop-down and click _Apply_. The Bulk Actions available are as follows:
+*   Löschen
+*   Von allen Kursen entfernen
 
-*   Delete
-*   Unassign from all courses
+Ein Klick auf die Option _Profil_ bringt Dich zur Profilseite des Dozenten.
 
-Clicking the Profile option will take you to the Instructor's profile page. 
+![BrainPress - Dozenten - Profil - Kurse](assets/images/BrainPress-Instructors-Profile-Courses.png)
 
-![BrainPress - Instructors - Profile - Courses](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Instructors-Profile-Courses.png)
+Hier siehst Du eine Liste aller _Kurse_, mit denen der Dozent verbunden ist, sowie Links zu jedem Kurs.
 
- You'll see a list of all the _Courses_ the Instructor is associated with along with links to each. 
+![BrainPress - Dozenten - Profil](assets/images/BrainPress-Instructors-Profile1.png)
 
-![BrainPress - Instructors - Profile](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Instructors-Profile1.png)
+Außerdem gibt es einen kleinen Profilbereich mit zusätzlichen Details und einem Link _Profil bearbeiten_, der Dich zur Benutzerbearbeitungsseite für das Benutzerkonto dieses Dozenten führt.
 
- You'll also see a small Profile section with additional details and an '_Edit Profile_' link to go to the user editor page for this Instructor's user account.
+### Studenten
 
-### Students
+Kurse brauchen auch Studenten – schauen wir uns an, wie Du sie unter _BrainPress Pro > Studenten_ hinzufügen und bearbeiten kannst.
 
-Courses also need students, so lets see how to add and edit them at _BrainPress Pro > Students_. 
+![BrainPress - Studenten-Menü](assets/images/BrainPress-Students-menu1.png)
 
-![BrainPress - Students menu](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Students-menu1.png)
+Hier findest Du eine Liste aller Studenten, die im System eingerichtet sind. Studenten sind im Grunde ClassicPress-Benutzer, die in einem Kurs eingeschrieben sind.
 
- Here, you'll find a list of all the Students listed in the system configured. Students are basically any ClassicPress user who is enrolled in a course. 
+![BrainPress - Studenten](assets/images/BrainPress-Students.png)
 
-![BrainPress - Students](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Students.png)
+*   Du kannst ganz einfach im Abschnitt _Studenten durchsuchen_ nach Studenten suchen.
+*   Klicke auf den Button _Neu hinzufügen_, um einen neuen Studenten hinzuzufügen. Das führt Dich zur Seite _Benutzer > Neu hinzufügen_ in ClassicPress, wo Du neue Benutzer hinzufügen kannst.
+*   Klicke auf die Option _Löschen_, um einen bestimmten Studenten zu entfernen.
 
-*   You can easily search through the Students using the _Search Students_ section.
-*   Click the '_Add New_' button to add a new Student. This will take you to the _Users > Add New_ page in ClassicPress, where you'll be able to add new users.
-*   Click the _Delete_ option to delete a particular _Student_.
+Auf Geräten mit großem Bildschirm siehst Du auch ein Dropdown-Menü für Massenaktionen.
 
-When viewing on wide screen devices, you'll be also see a Bulk Actions drop-down. 
+![BrainPress - Studenten - Massenaktionen](assets/images/BrainPress-Students-Bulk-Actions.png)
 
-![BrainPress - Students - Bulk Actions](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Students-Bulk-Actions.png)
+Um _Massenaktionen_ zu nutzen, markiere einfach die Studenten, die Du bearbeiten möchtest, wähle eine der Aktionen aus dem Dropdown-Menü aus und klicke auf _Anwenden_. Die verfügbaren Massenaktionen für Studenten sind:
 
- To utilize _Bulk Actions_, simply tick the Students you'd like to edit, select one of the actions from the drop-down and click _Apply_. The Bulk Actions available for Students are as follows:
+*   Löschen
+*   Von allen Kursen abmelden
 
-*   Delete
-*   Withdraw from all courses
+Ein Klick auf die Option _Profil_ bringt Dich zur Profilseite des Studenten. Hier siehst Du eine Liste aller _Kurse_, in denen der Student eingeschrieben ist, sowie Links zu jedem Kurs. Außerdem gibt es einen kleinen Profilbereich mit zusätzlichen Details und einem Link _Profil bearbeiten_, der Dich zur Benutzerbearbeitungsseite für das Benutzerkonto dieses Studenten führt.
+### Einstellungen
 
-Clicking the _Profile_ option will take you to the Student's profile page. You'll see a list of all the _Courses_ the Student is enrolled in along with links to each. You'll also see a small Profile section with additional details and an '_Edit Profile_' link to go to the user editor page for this Student's user account.
+Lass uns die Einstellungen des Plugins unter _BrainPress Pro > Einstellungen_ durchgehen.
 
-### Settings
+![BrainPress - Einstellungsmenü](assets/images/BrainPress-Settings-menu.png)
 
-Let's go through the plugin's settings at _BrainPress Pro > Settings_. 
+Hier findest Du eine Reihe von Unterabschnitten, um verschiedene Aspekte des Plugins anzupassen.
 
-![BrainPress - Settings menu](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Settings-menu.png)
+![BrainPress - Einstellungs-Unterabschnitte](assets/images/BrainPress-Settings-sub-sections.png)
 
- Here's you'll see a number of sub-sections for customizing various aspects of the plugin. 
+Schauen wir uns diese Unterabschnitte an, beginnend mit den allgemeinen Einstellungen.
 
-![BrainPress - Settings sub-sections](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Settings-sub-sections.png)
+##### Allgemein
 
- Let's take a look at these sub-sections, starting with the General settings.
+Die allgemeinen Einstellungen beinhalten mehrere Unterabschnitte, der erste davon ermöglicht es Dir, die URL-Slugs anzupassen.
 
-##### General
+![BrainPress - Einstellungen - Slugs](assets/images/BrainPress-Settings-Slugs.png)
 
-The General settings includes several sub-sections itself, the first being for options to customize the url slugs. 
+Die verfügbaren Slugs zur Anpassung, zusammen mit den Standardwerten, sind:
 
-![BrainPress - Settings - Slugs](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Settings-Slugs.png)
+*   _Kurs-Slug_ http://deineseite.com/_kurse_/
+*   _Einheiten-Slug_ http://deineseite.com/mein-kurs/_einheiten_/
+*   _Kurs-Benachrichtigungen-Slug_ http://deineseite.com/mein-kurs/_benachrichtigungen_/
+*   _Kurs-Diskussionen-Slug_ http://deineseite.com/mein-kurs/_diskussion_/
+*   _Neue Kurs-Diskussionen-Slug_ http://deineseite.com/mein-kurs/diskussion/_neue_diskussion_hinzufügen_/
+*   _Kurs-Bewertungen-Slug_ http://deineseite.com/mein-kurs/_bewertungen_/
+*   _Kurs-Arbeitsbuch-Slug_ http://deineseite.com/mein-kurs/_arbeitsbuch_/
+*   _Einschreibungsprozess-Seite_ http://deineseite.com/_einschreibungsprozess_/
+*   _Login-Seite_ http://deineseite.com/_student-login_/
+*   _Anmeldeseite_ http://deineseite.com/_kurse-anmeldung_/
+*   _Studenten-Dashboard-Seite_ http://deineseite.com/_kurse-dashboard_/
+*   _Studenten-Einstellungen-Seite_ http://deineseite.com/_einstellungen_/
+*   _Dozentenprofil-Slug_ http://deineseite.com/_dozent_/
 
- The slugs available for customization, along with default values, are as follows:
+Weiter unten auf der Seite findest Du zusätzliche Einstellungen.
 
-*   _Course Slug_ http://yoursite.com/_courses_/
-*   _Units Slug_ http://yoursite.com/my-course/_units_/
-*   _Course Notifications Slug_ http://yoursite.com/my-course/_notifications_/
-*   _Course Discussions Slug_ http://yoursite.com/my-course/_discussion_/
-*   _Course New Discussions Slug_ http://yoursite.com/my-course/discussion/_add_new_discussion_/
-*   _Course Grades Slug_ http://yoursite.com/my-course/_grades_/
-*   _Course Workbook Slug_ http://yoursite.com/my-course/_workbook_/
-*   _Enrollment Process_ page http://yoursite.com/_enrollment-process_/
-*   _Login page_ http://yoursite.com/_student-login_/
-*   _Sign Up page_ http://yoursite.com/_courses-signup_/
-*   _Student Dashboard page_ http://yoursite.com/_courses-dashboard_/
-*   _Student Settings page_ http://yoursite.com/_settings_/
-*   _Instructor profile slug_ http://yoursite.com/_instructor_/
+![BrainPress - Einstellungen - Weitere](assets/images/BrainPress-Settings-Others.png)
 
-Further down the page, you'll see additional settings. 
+Passe die Einstellungen nach Deinen Bedürfnissen an und drücke den Button _Änderungen speichern_, um alles zu sichern.
 
-![BrainPress - Settings - Others](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Settings-Others.png)
+##### E-Mail-Einstellungen
 
- Adjust the settings as you need and press the _Save Changes_ button to save.
+Im Unterabschnitt E-Mail-Einstellungen kannst Du den Inhalt der Benachrichtigungs-E-Mails des Plugins anpassen.
 
-##### E-Mail Settings
+![BrainPress - Einstellungen - E-Mail](assets/images/BrainPress-Settings-E-mail.png)
 
-Through the E-Mail Settings sub-section, you can customize the contents of the notification e-mails used by the plugin. 
+Folgende E-Mails kannst Du konfigurieren, zusammen mit Codes, die Du im Inhalt verwenden kannst, um dynamische Werte einzufügen:
 
-![BrainPress - Settings - E-mail](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Settings-E-mail.png)
+*   _E-Mail zur Benutzerregistrierung_ – Verfügbare Codes: STUDENT_FIRST_NAME, BLOG_NAME, LOGIN_ADDRESS, COURSES_ADDRESS, WEBSITE_ADDRESS
+*   _Bestätigungs-E-Mail zur Kurseinschreibung_ – Verfügbare Codes: STUDENT_FIRST_NAME, BLOG_NAME, LOGIN_ADDRESS, COURSES_ADDRESS, WEBSITE_ADDRESS, COURSE_ADDRESS
+*   _Einladung eines Studenten zu einem Kurs_ – Verfügbare Codes: STUDENT_FIRST_NAME, COURSE_NAME, COURSE_EXCERPT, COURSE_ADDRESS, WEBSITE_ADDRESS
+*   _Einladung eines Studenten mit Passcode zu einem Kurs_ – Verfügbare Codes: STUDENT_FIRST_NAME, COURSE_NAME, COURSE_EXCERPT, COURSE_ADDRESS, WEBSITE_ADDRESS, PASSCODE
+*   _Einladung eines Dozenten_ – Verfügbare Codes: INSTRUCTOR_FIRST_NAME, INSTRUCTOR_LAST_NAME, INSTRUCTOR_EMAIL, CONFIRMATION_LINK, COURSE_NAME, COURSE_EXCERPT, COURSE_ADDRESS, WEBSITE_ADDRESS, WEBSITE_NAME
 
- The following are the various e-mails you can configure, along with codes you can use within the content to provide dynamic values:
+Vergiss nicht, den Button _Änderungen speichern_ zu drücken, wenn Du fertig bist.
 
-*   _User Registration E-mail_ - codes available: STUDENT_FIRST_NAME, BLOG_NAME, LOGIN_ADDRESS, COURSES_ADDRESS, WEBSITE_ADDRESS
-*   _Course Enrollment Confirmation E-mail_ - codes available: STUDENT_FIRST_NAME, BLOG_NAME, LOGIN_ADDRESS, COURSES_ADDRESS, WEBSITE_ADDRESS, COURSE_ADDRESS
-*   _Student Invitation to a Course E-mail_ - codes available: STUDENT_FIRST_NAME, COURSE_NAME, COURSE_EXCERPT, COURSE_ADDRESS, WEBSITE_ADDRESS
-*   _Student Invitation with a Passcode to a Course E-mail_ - codes available: STUDENT_FIRST_NAME, COURSE_NAME, COURSE_EXCERPT, COURSE_ADDRESS, WEBSITE_ADDRESS, PASSCODE
-*   _Instructor Invitation E-mail_ - codes available: INSTRUCTOR_FIRST_NAME, INSTRUCTOR_LAST_NAME, INSTRUCTOR_EMAIL, CONFIRMATION_LINK, COURSE_NAME, COURSE_EXCERPT, COURSE_ADDRESS, WEBSITE_ADDRESS, WEBSITE_NAME
+![BrainPress - Einstellungen - Änderungen speichern](assets/images/BrainPress-Settings-Save-Changes-button.png)
 
-Be sure to press the _Save Changes_ button when you're done making changes. 
+##### Fähigkeiten der Dozenten
 
-![BrainPress - Settings - Save Changes button](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Settings-Save-Changes-button.png)
+Dozenten haben spezielle Fähigkeiten, die es ihnen ermöglichen, Kurse zu erstellen. Lass uns diese Fähigkeiten mal genauer anschauen.
 
-##### Instructor Capabilities
+![BrainPress - Einstellungen - Fähigkeiten der Dozenten](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Settings-Instructor-Capabilities.png)
 
-Instructors have special capabilities to allow them to create Courses. Let's have a look through those capabilities. 
+Die Fähigkeiten sind in folgende Unterabschnitte unterteilt:
 
-![BrainPress - Settings - Instructor Capabilities](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Settings-Instructor-Capabilities.png)
+_Allgemein_
 
- Capabilities are divided into sub-sections, as follows: _General_
+* Zugriff auf das Plugin-Menü
+* Zugriff auf den Menüpunkt „Kurse“
+* Zugriff auf den Menüpunkt „Dozenten“
+* Zugriff auf den Menüpunkt „Studenten“
+* Bewertungen
+* Berichte
+* Benachrichtigungen
+* Zugriff auf den Menüpunkt „Einstellungen“
 
-*   Access to plugin menu
-*   Access to the Courses menu item
-*   Access to the Intructors menu item
-*   Access to the Students menu item
-*   Assessment
-*   Reports
-*   Notifications
-*   Access to the Settings menu item
+_Kurse_
 
-_Courses_
+* Neue Kurse erstellen
+* Alle zugewiesenen Kurse bearbeiten
+* Nur eigene Kurse bearbeiten
+* Alle zugewiesenen Kurse löschen
+* Nur eigene Kurse löschen
+* Status aller zugewiesenen Kurse ändern
+* Status nur eigener Kurse ändern
 
-*   Create new courses
-*   Update any assigned course
-*   Update courses made by the instructor only
-*   Delete any assigned course
-*   Delete courses made by the instructor only
-*   Change status of any assigned course
-*   Change status of courses made by the instructor only
+_Einheiten_
 
-_Units_
+* Neue Kurseinheiten erstellen
+* Einheiten in allen Kursen ansehen (auch von anderen Dozenten)
+* Alle Einheiten (in zugewiesenen Kursen) bearbeiten
+* Nur eigene Einheiten bearbeiten
+* Alle Einheiten (in zugewiesenen Kursen) löschen
+* Nur eigene Kurseinheiten löschen
+* Status aller Einheiten (in zugewiesenen Kursen) ändern
+* Status nur eigener Kurseinheiten ändern
 
-*   Create new course units
-*   View units in every course ( can view from other Instructors as well )
-*   Update any unit (within assigned courses)
-*   Update units made by the instructor only
-*   Delete any unit (within assigned courses)
-*   Delete course units made by the instructor only
-*   Change status of any unit (within assigned courses)
-*   Change statuses of course units made by the instructor only
+_Dozenten_
 
-_Instructors_
+* Dozenten zu jedem Kurs zuweisen
+* Dozenten nur zu eigenen Kursen zuweisen
 
-*   Assign instructors to any course
-*   Assign instructors to courses made by the instructor only
+_Studenten_
 
-_Students_
+* Studenten zu jedem Kurs einladen
+* Studenten nur zu eigenen Kursen einladen
+* Studenten von jedem Kurs abmelden
+* Studenten nur von eigenen Kursen abmelden
+* Studenten zu jedem Kurs hinzufügen
+* Studenten nur zu eigenen Kursen hinzufügen
+* Studenten nur zu Kursen hinzufügen, die dem Dozenten zugewiesen sind
+* Neue Benutzer mit der Rolle „Student“ im Blog hinzufügen
+* Massen-E-Mails an Studenten senden
+* Massen-E-Mails nur an Studenten in eigenen Kursen senden
+* Studenten löschen (löscht ALLE zugehörigen Kursdaten)
 
-*   Invite students to any course
-*   Invite students to courses made by the instructor only
-*   Withdraw students from any course
-*   Withdraw students from courses made by the instructor only
-*   Add students to any course
-*   Add students to courses made by the instructor only
-*   Add students to courses assigned to the instructor only
-*   Add new users with Student role to the blog
-*   Send bulk e-mail to students
-*   Send bulk e-mail to students within a course made by the instructor only
-*   Delete Students (deletes ALL associated course records)
+_Benachrichtigungen_
 
-_Notifications_
+* Neue Benachrichtigungen erstellen
+* Neue Benachrichtigungen nur für eigene Kurse erstellen
+* Neue Benachrichtigungen nur für zugewiesene Kurse erstellen
+* Alle Benachrichtigungen bearbeiten
+* Nur eigene Benachrichtigungen bearbeiten
+* Alle Benachrichtigungen löschen
+* Nur eigene Benachrichtigungen löschen
+* Status aller Benachrichtigungen ändern
+* Status nur eigener Benachrichtigungen ändern
 
-*   Create new notifications
-*   Create new notifications for courses created by the instructor only
-*   Create new notifications for courses assigned to the instructor only
-*   Update every notification
-*   Update notifications made by the instructor only
-*   Delete every notification
-*   Delete notifications made by the instructor only
-*   Change status of every notification
-*   Change statuses of notifications made by the instructor only
+Einfach die gewünschten Fähigkeiten anhaken und dann auf den Button _Änderungen speichern_ klicken, um alles zu sichern.
 
-Simply tick the Capabilities you want to allow, then click the _Save Changes_ button to save. 
-
-![BrainPress - Settings - Save Changes button](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Settings-Save-Changes-button.png)
+![BrainPress - Einstellungen - Änderungen speichern](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Settings-Save-Changes-button.png)
 
 ##### Shortcodes
 
-BrainPress Pro provides scores of shortcodes that you can use within your site's content areas to provide plugin features as needed. 
+BrainPress Pro bietet zahlreiche Shortcodes, die du in den Inhaltsbereichen deiner Website verwenden kannst, um Plugin-Funktionen nach Bedarf bereitzustellen.
 
-![BrainPress - Settings - Shortcodes](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Settings-Shortcodes.png)
+![BrainPress - Einstellungen - Shortcodes](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Settings-Shortcodes.png)
 
- This page shows detailed information to help with the shortcodes but here's a list of all the shortcodes with some helpful info:
+Hier findest du eine detaillierte Übersicht, die dir bei den Shortcodes hilft. Hier ist eine Liste aller Shortcodes mit einigen hilfreichen Infos:
 
-*   _Instructors List_ [course_instructors] Display a list or count of Instructors ( gravatar, name and link to profile page )
-*   _Instructor Avatar_ [course_instructor_avatar] Display an instructor’s avatar.
-*   _Instructor Profile URL_ [instructor_profile_url] Returns the URL to the instructor profile.
-*   _Course Details_ [course] This shortcode allows you to display details about your course. Note: All the same information can be retrieved by using the specific course shortcodes following.
-*   _Course Title_ [course_title] Displays the course title.
-*   _Course Summary_ [course_summary] Displays the course summary/excerpt.
-*   _Course Description_ [course_description] Displays the longer course description (post content).
-*   _Course Start Date_ [course_start] Shows the course start date.
-*   _Course End Date_ [course_end] Shows the course end date.
-*   _Course Dates_ [course_dates] Displays the course start and end date range. Typically as [course_start] - [course_end].
-*   _Course Enrollment Start_ [course_enrollment_start] Displays the course enrollment start date.
-*   _Course Enrollment End_ [course_enrollment_end] Shows the course enrollment end date.
-*   _Course Enrollment Dates_ [course_enrollment_dates] Displays the course enrollment start and end date range. Typically as [course_enrollment_start] - [course_enrollment_end].
-*   _Coure Enrollment Type_ [course_enrollment_type] Shows the type of enrollment (manual, prerequisite, passcode or anyone).
-*   _Course Class Size_ [course_class_size] Shows the course class size, limits and remaining seats.
-*   _Course Cost_ [course_cost] Shows the pricing for the course or free for unpaid courses.
-*   _Course Language_ [course_language] Displays the language of the course (if set).
-*   _Course List Image_ [course_list_image] Displays the course list image. (See [course_media])
-*   _Course Featured Video_ [course_featured_video] Embeds a video player with the course’s featured video. (See [course_media])
-*   _Course Thumbnail_ [course_thumbnail] Shows the course thumbnail image that is generated from list image. (See [course_media])
-*   _Course Media_ [course_media] Displays either the list image or the featured video (with the other option as possible fallback).
-*   _Course Join Button_ [course_join_button] Shows the Join/Signup/Enroll button for the course. What it displays is dependent on the course settings and the user’s status/enrollment. See the attributes for possible button labels.
-*   _Course Action Links_ [course_action_links] Shows "Course Details" and "Withdraw" links to students.
-*   _Course Calendar_ [course_calendar] Shows the course calendar (bounds are restricted by course start and end dates). Will always attempt to show today’s date on a calendar first.
-*   _Course List_ [course_list] Displays a listing of courses. Can be for all courses or restricted by instructors or students (only one or the other, if both specified only students will be used).
-*   _Featured Course_ [course_featured] Shows a featured course.
-*   _Course Structure_ [course_structure] Displays a tree view of the course structure.
-*   _Course Signup/Login Page_ [course_signup] Shows a custom login or signup page for front-end user registration and login. Note: This is already part of BrainPress and can be set in BrainPress Settings. Links to default pages can be found in Appearance > Menus > BrainPress.
-*   _Student Dashboard Template_ [courses_student_dashboard] Loads the student dashboard template.
-*   _Student Settings Template_ [courses_student_settings] Loads the student settings template.
+*   _Dozentenliste_ [course_instructors] Zeigt eine Liste oder Anzahl von Dozenten an (Gravatar, Name und Link zur Profilseite).
+*   _Dozenten-Avatar_ [course_instructor_avatar] Zeigt den Avatar eines Dozenten an.
+*   _Dozenten-Profil-URL_ [instructor_profile_url] Gibt die URL zum Dozentenprofil zurück.
+*   _Kursdetails_ [course] Dieser Shortcode zeigt Details zu deinem Kurs an. Hinweis: Alle Informationen können auch mit den spezifischen Kurs-Shortcodes unten abgerufen werden.
+*   _Kurstitel_ [course_title] Zeigt den Kurstitel an.
+*   _Kurszusammenfassung_ [course_summary] Zeigt die Kurszusammenfassung/Auszug an.
+*   _Kursbeschreibung_ [course_description] Zeigt die längere Kursbeschreibung (Post-Inhalt) an.
+*   _Kursstartdatum_ [course_start] Zeigt das Startdatum des Kurses an.
+*   _Kursenddatum_ [course_end] Zeigt das Enddatum des Kurses an.
+*   _Kursdaten_ [course_dates] Zeigt den Zeitraum von Start- bis Enddatum des Kurses an. Typischerweise als [course_start] - [course_end].
+*   _Einschreibungsstart_ [course_enrollment_start] Zeigt das Startdatum der Kurseinschreibung an.
+*   _Einschreibungsende_ [course_enrollment_end] Zeigt das Enddatum der Kurseinschreibung an.
+*   _Einschreibungszeitraum_ [course_enrollment_dates] Zeigt den Zeitraum von Start- bis Enddatum der Einschreibung an. Typischerweise als [course_enrollment_start] - [course_enrollment_end].
+*   _Einschreibungsart_ [course_enrollment_type] Zeigt die Art der Einschreibung (manuell, Voraussetzung, Passcode oder für alle).
+*   _Klassengröße_ [course_class_size] Zeigt die Klassengröße, Begrenzungen und verbleibenden Plätze an.
+*   _Kurskosten_ [course_cost] Zeigt die Kosten für den Kurs oder "kostenlos" für unbezahlte Kurse an.
+*   _Kurssprache_ [course_language] Zeigt die Sprache des Kurses an (falls festgelegt).
+*   _Kurslistenbild_ [course_list_image] Zeigt das Kurslistenbild an. (Siehe [course_media])
+*   _Kurs-Feature-Video_ [course_featured_video] Betten einen Videoplayer mit dem Feature-Video des Kurses ein. (Siehe [course_media])
+*   _Kurs-Thumbnail_ [course_thumbnail] Zeigt das Thumbnail-Bild des Kurses an, das aus dem Listenbild generiert wird. (Siehe [course_media])
+*   _Kursmedien_ [course_media] Zeigt entweder das Listenbild oder das Feature-Video an (mit der anderen Option als möglichem Fallback).
+*   _Kursbeitritts-Button_ [course_join_button] Zeigt den Beitreten-/Anmelden-/Einschreibungs-Button für den Kurs an. Was angezeigt wird, hängt von den Kurseinstellungen und dem Status/Einschreibung des Nutzers ab. Siehe die Attribute für mögliche Button-Beschriftungen.
+*   _Kursaktions-Links_ [course_action_links] Zeigt "Kursdetails" und "Abmelden"-Links für Studenten an.
+*   _Kurskalender_ [course_calendar] Zeigt den Kurskalender an (Begrenzungen durch Start- und Enddatum des Kurses). Versucht immer, zuerst das heutige Datum im Kalender anzuzeigen.
+*   _Kursliste_ [course_list] Zeigt eine Liste von Kursen an. Kann für alle Kurse oder eingeschränkt auf Dozenten oder Studenten sein (nur eines von beiden, wenn beides angegeben ist, wird nur Studenten verwendet).
+*   _Feature-Kurs_ [course_featured] Zeigt einen hervorgehobenen Kurs an.
+*   _Kursstruktur_ [course_structure] Zeigt eine Baumansicht der Kursstruktur an.
+*   _Kursanmeldung/Login-Seite_ [course_signup] Zeigt eine benutzerdefinierte Login- oder Anmeldeseite für die Frontend-Benutzerregistrierung und -anmeldung an. Hinweis: Dies ist bereits Teil von BrainPress und kann in den BrainPress-Einstellungen festgelegt werden. Links zu Standardseiten findest du unter Design > Menüs > BrainPress.
+*   _Studenten-Dashboard-Template_ [courses_student_dashboard] Lädt das Studenten-Dashboard-Template.
+*   _Studenten-Einstellungen-Template_ [courses_student_settings] Lädt das Studenten-Einstellungen-Template.
 
 ##### View Setup Guide
 

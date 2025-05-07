@@ -133,201 +133,202 @@ Beginnen wir mit dem Hinzufügen eines Kurses. Gehe zu _BrainPress > Neuer Kurs_
 
   Du siehst eine Reihe von Unterabschnitten, die einen 6-stufigen Prozess umfassen. Gehen wir sie alle durch.
 
-##### Step 1 - Course Overview
+##### Schritt 1 - Kursübersicht
 
-![BrainPress - New Course - Course Overview](assets/images/BrainPress-New-Course-Course-Overview.png)
+![BrainPress - Neuer Kurs - Kursübersicht](assets/images/BrainPress-New-Course-Course-Overview.png)
 
-*   Enter a _Course Name_.
-*   Enter a _Course Excerpt_, or a short overview of the course.
-*   Optionally, upload or link to an _Listing Image_ to be used for the course display in the front-end.
-*   Enter a _Course Language_.
-*   Click the _Next_ button to continue to the next step.
+*   Gib einen _Kursnamen_ ein.
+*   Füge eine _Kurzbeschreibung_ des Kurses hinzu.
+*   Optional: Lade ein _Listenbild_ hoch oder verlinke es, das für die Kursanzeige im Frontend verwendet wird.
+*   Gib die _Kurssprache_ an.
+*   Klicke auf den _Weiter_-Button, um zum nächsten Schritt zu gelangen.
 
-##### Step 2 - Course Description
+##### Schritt 2 - Kursbeschreibung
 
-![BrainPress - New Course - Course Description](assets/images/BrainPress-New-Course-Course-Description.png)
+![BrainPress - Neuer Kurs - Kursbeschreibung](assets/images/BrainPress-New-Course-Course-Description.png)
 
-*   Optionally, you can upload or link to a _Featured Video_, to be displayed when users view the course details in the Course Overview page.
-*   Enter a _Course Description_, a detailed description of the course. You'll have the full power of the ClassicPress visual editor for customizing the description.
-*   In the _Course Structure_ section, you'll have options for customizing the course structure. You'll also see a list of units, which will be empty initially. You'll be able to add and edit units later.
-*   Tick the '_Show the Course Overview structure and Preview Options_' to display the units listing in the Course Overview page. This information will otherwise only be available for students enrolled in the course.
-*   Tick the '_Display Time Estimates for Units and Lessons_' to show a time estimate option when editing the units.
-*   Click the _Previous_ button to go back to the previous section or the _Next_ button to continue to the next step.
+*   Optional: Lade ein _Vorgestelltes Video_ hoch oder verlinke es, das auf der Kursdetailseite in der Kursübersicht angezeigt wird.
+*   Gib eine _Kursbeschreibung_ ein – eine detaillierte Beschreibung des Kurses. Du kannst den visuellen Editor von ClassicPress voll nutzen, um die Beschreibung anzupassen.
+*   Im Abschnitt _Kursstruktur_ kannst Du die Kursstruktur anpassen. Hier siehst Du auch eine Liste der Einheiten, die anfangs leer ist. Du kannst später Einheiten hinzufügen und bearbeiten.
+*   Aktiviere die Option '_Kursübersichtsstruktur und Vorschauoptionen anzeigen_', um die Einheitenliste auf der Kursübersichtsseite anzuzeigen. Diese Informationen sind sonst nur für eingeschriebene Teilnehmer sichtbar.
+*   Aktiviere die Option '_Zeitschätzungen für Einheiten und Lektionen anzeigen_', um eine Zeitschätzungsoption beim Bearbeiten der Einheiten einzublenden.
+*   Klicke auf den _Zurück_-Button, um zum vorherigen Abschnitt zu gelangen, oder auf den _Weiter_-Button, um zum nächsten Schritt zu gelangen.
 
-##### Step 3 - Instructors
+##### Schritt 3 - Dozenten
 
-![BrainPress - New Course - Instructors](assets/images/BrainPress-New-Course-Instructors.png)
+![BrainPress - Neuer Kurs - Dozenten](assets/images/BrainPress-New-Course-Instructors.png)
 
-*   You can assign as many instructors as you like in the _Course Instructors_ section. You'll be able to choose from any of the users in your standard ClassicPress Users list.
-*   Easily send an email invite through the _Invite New Instruction_ section. Simply enter a _First Name_, _Last Name_ and _E-Mail_ address then press _Send Invite_.
-*   Click the _Previous_ button to go back to the previous section or the _Next_ button to continue to the next step.
+*   Du kannst im Abschnitt _Kursdozenten_ so viele Dozenten zuweisen, wie Du möchtest. Wähle einfach aus der Liste der Standard-ClassicPress-Benutzer aus.
+*   Lade neue Dozenten ganz einfach per E-Mail ein. Gib im Abschnitt _Neuen Dozenten einladen_ einfach einen _Vorname_, _Nachname_ und eine _E-Mail-Adresse_ ein und klicke auf _Einladung senden_.
+*   Klicke auf den _Zurück_-Button, um zum vorherigen Abschnitt zu gelangen, oder auf den _Weiter_-Button, um zum nächsten Schritt zu gelangen.
 
-##### Step 4 - Course Dates
+##### Schritt 4 - Kursdaten
 
-![BrainPress - New Course - Course Dates](assets/images/BrainPress-New-Course-Course-Dates.png)
+![BrainPress - Neuer Kurs - Kursdaten](assets/images/BrainPress-New-Course-Course-Dates.png)
 
-*   Enter the dates your course will be available within the _Course Dates_ section. Or tick the '_This course has no end date_' option.
-*   Otherwise you can select the _Start Date_ and _End Date_ using the pop-up date picker.
-*   Similarly, in the _Enrollment Dates_ section, tick the '_Users can enroll at any time_' option to allow enrollment any time.
-*   Otherwise you can again select the _Start Date_ and _End Date_ using the pop-up date picker.
-*   Click the _Previous_ button to go back to the previous section or the _Next_ button to continue to the next step.
+*   Gib im Abschnitt _Kursdaten_ die Daten ein, an denen Dein Kurs verfügbar sein soll. Oder aktiviere die Option '_Dieser Kurs hat kein Enddatum_'.
+*   Alternativ kannst Du das _Startdatum_ und _Enddatum_ mit dem Pop-up-Datumswähler auswählen.
+*   Im Abschnitt _Einschreibedaten_ kannst Du ebenfalls die Option '_Benutzer können sich jederzeit einschreiben_' aktivieren, um eine Einschreibung jederzeit zu ermöglichen.
+*   Alternativ kannst Du auch hier das _Startdatum_ und _Enddatum_ mit dem Pop-up-Datumswähler auswählen.
+*   Klicke auf den _Zurück_-Button, um zum vorherigen Abschnitt zu gelangen, oder auf den _Weiter_-Button, um zum nächsten Schritt zu gelangen.
 
-##### Step 5 - Classes, Discussions and Workbooks
+##### Schritt 5 - Klassen, Diskussionen und Arbeitsbücher
 
-![BrainPress - New Course - Classes, Discussion and Workbooks](assets/images/BrainPress-New-Course-Classes.png)
+![BrainPress - Neuer Kurs - Klassen, Diskussionen und Arbeitsbücher](assets/images/BrainPress-New-Course-Classes.png)
 
-*   To limit the class size, tick the '_Limit class size_' option end enter a value for the limit.
-*   Tick the '_Allow Course Discussion_' option to allow open discussion between students and instructors.
-*   Tick the '_Show student Workbook_' option to allow students to see their progress.
-*   Click the _Previous_ button to go back to the previous section or the _Next_ button to continue to the next step.
+*   Um die Klassengröße zu begrenzen, aktiviere die Option '_Klassengröße begrenzen_' und gib einen Wert für die Begrenzung ein.
+*   Aktiviere die Option '_Kursdiskussion erlauben_', um offene Diskussionen zwischen Studenten und Dozenten zu ermöglichen.
+*   Aktiviere die Option '_Studenten-Arbeitsbuch anzeigen_', damit Studenten ihren Fortschritt sehen können.
+*   Klicke auf den _Zurück_-Button, um zum vorherigen Abschnitt zu gelangen, oder auf den _Weiter_-Button, um zum nächsten Schritt zu gelangen.
 
-##### Step 6 - Enrollment and Course Cost
+##### Schritt 6 - Einschreibung und Kurskosten
 
-![BrainPress - New Course - Enrollment](assets/images/BrainPress-New-Course-Enrollment.png)
+![BrainPress - Neuer Kurs - Einschreibung](assets/images/BrainPress-New-Course-Enrollment.png)
 
- Tick the '_This is a Paid Course_' option to display payment options. For payments, BrainPress Pro integrates with both [MarketPress](https://cp-psource.github.io/marketpress/ "MarketPress ClassicPress e-Commerce") and [WooCommerce](https://wordpress.org/plugins/woocommerce/). Please note that currently, only one of them (either MarketPress or WooCommerce) should be activated, activating both at the same time may cause conflicts. For MarketPress integration, the first time the above payment option is selected, you'll be presented with a message about MarketPress, like so: 
+Aktiviere die Option "_Dies ist ein kostenpflichtiger Kurs_", um Zahlungsoptionen anzuzeigen. Für Zahlungen integriert sich BrainPress Pro sowohl mit [MarketPress](https://cp-psource.github.io/marketpress/ "MarketPress ClassicPress e-Commerce") als auch mit [WooCommerce](https://wordpress.org/plugins/woocommerce/). Beachte bitte, dass derzeit nur eines der beiden Plugins (entweder MarketPress oder WooCommerce) aktiviert sein sollte, da die gleichzeitige Aktivierung beider Plugins zu Konflikten führen kann. 
 
-![BrainPress Pro - Activate MarketPress](assets/images/BrainPress-Pro-1.2.5.4-Payment-settings-Activate-MarketPress.png)
+Für die MarketPress-Integration wird dir beim ersten Aktivieren der oben genannten Zahlungsoption eine Nachricht zu MarketPress angezeigt, wie hier:
 
- Click the _Begin Activating MarketPress_ link to begin the MarketPress activation process and expose the payment options. Or for WooCommerce integration, simply ensure that WooCommerce is installed and activated, then tick the '_Use WooCommerce to sell courses_' setting at _BrainPress Pro > Settings_. You can optionally select to redirect WooCommerce product posts to a parent course as well. 
+![BrainPress Pro - MarketPress aktivieren](assets/images/BrainPress-Pro-1.2.5.4-Payment-settings-Activate-MarketPress.png)
 
-![BrainPress Pro - Settings - WooCommerce Integration](assets/images/BrainPress-Pro-1.2.5.4-WooCommerce-Settings.png)
+Klicke auf den Link "_MarketPress aktivieren_", um den Aktivierungsprozess zu starten und die Zahlungsoptionen freizuschalten. Für die WooCommerce-Integration stelle sicher, dass WooCommerce installiert und aktiviert ist, und aktiviere dann die Einstellung "_WooCommerce verwenden, um Kurse zu verkaufen_" unter _BrainPress Pro > Einstellungen_. Optional kannst du auch einstellen, dass WooCommerce-Produktseiten zu einem übergeordneten Kurs weiterleiten.
 
- WooCommerce settings at BrainPress Pro > Settings
+![BrainPress Pro - Einstellungen - WooCommerce-Integration](assets/images/BrainPress-Pro-1.2.5.4-WooCommerce-Settings.png)
 
-   With either MarketPress or WooCommerce installed and activated, and with the settings configured as above, you'll then see payment options for your Course. 
+WooCommerce-Einstellungen unter BrainPress Pro > Einstellungen
 
-![BrainPress - New Course - Enrollment - This is a paid course](assets/images/BrainPress-New-Course-Enrollment-This-is-a-paid-course.png)
+Mit entweder MarketPress oder WooCommerce installiert und aktiviert sowie den oben konfigurierten Einstellungen werden dir dann Zahlungsoptionen für deinen Kurs angezeigt.
 
-*   Tick the '_Automatically generate Stock Keeping Unit_' option to have BrainPress Pro automatically create a unique SKU. Otherwise you can enter a _SKU_ value yourself.
-*   Enter the _Price_.
-*   Tick the '_Enabled Sale Price_' option to specify that this course on sale.
-*   Enter a _Sale Price_ to be used with the above option.
-*   If you're using MarketPress, you'll have an option to _Edit Payment Gateways_ where you'll be presented with a pop-up dialog and will be able to select and configure the payment gateways.
+![BrainPress - Neuer Kurs - Einschreibung - Dies ist ein kostenpflichtiger Kurs](assets/images/BrainPress-New-Course-Enrollment-This-is-a-paid-course.png)
 
-![BrainPress Pro - Payment Gateways](assets/images/BrainPress-Pro-1.2.1.9-Payment-Gateways.png)
+* Aktiviere die Option "_Automatisch eine Artikelnummer (SKU) generieren_", damit BrainPress Pro automatisch eine eindeutige SKU erstellt. Alternativ kannst du selbst einen SKU-Wert eingeben.
+* Gib den _Preis_ ein.
+* Aktiviere die Option "_Reduzierter Preis aktiviert_", um anzugeben, dass dieser Kurs im Angebot ist.
+* Gib einen _Angebotspreis_ ein, der mit der obigen Option verwendet wird.
+* Wenn du MarketPress verwendest, hast du die Möglichkeit, die _Zahlungsgateways zu bearbeiten_. Dabei wird ein Pop-up-Dialog angezeigt, in dem du die Zahlungsgateways auswählen und konfigurieren kannst.
 
- Once you're done configuring the payment settings, you can click the _Previous_ button to go back to the previous section. Or click the _Done_ button to complete the course creation process and save the new course.
+![BrainPress Pro - Zahlungsgateways](assets/images/BrainPress-Pro-1.2.1.9-Payment-Gateways.png)
 
-### Courses
+Wenn du die Zahlungseinstellungen fertig konfiguriert hast, kannst du auf die Schaltfläche "_Zurück_" klicken, um zum vorherigen Abschnitt zu gelangen, oder auf "_Fertig_", um den Kurs-Erstellungsprozess abzuschließen und den neuen Kurs zu speichern.
+### Kurse
 
-Let's have a look through the Courses at _BrainPress Pro > Courses_. 
+Schauen wir uns die Kurse unter _BrainPress Pro > Kurse_ an.
 
-![BrainPress - Courses menu](assets/images/BrainPress-Courses-menu1.png)
+![BrainPress - Kurse-Menü](assets/images/BrainPress-Courses-menu1.png)
 
- You'll see a list of all the Courses you've created. 
+Hier findest Du eine Liste aller Kurse, die Du erstellt hast.
 
-![BrainPress - Courses](assets/images/BrainPress-Courses.png)
+![BrainPress - Kurse](assets/images/BrainPress-Courses.png)
 
-*   User the _Search Courses_ section to search through the existing courses.
-*   Click the _Delete_ icon to delete a course.
-*   Clicking the name of the course will take you to the edit section for the course. And clicking the Students link will take you to the Students tab of the edit page.
+* Nutze den Bereich _Kurse durchsuchen_, um nach bestehenden Kursen zu suchen.
+* Klicke auf das _Löschen_-Symbol, um einen Kurs zu entfernen.
+* Wenn Du auf den Namen eines Kurses klickst, gelangst Du zum Bearbeitungsbereich des Kurses. Ein Klick auf den Link _Studenten_ bringt Dich direkt zum Tab _Studenten_ der Bearbeitungsseite.
 
-On wide-screen devices, you'll see a few extra options in the list. 
+Auf Geräten mit großem Bildschirm siehst Du ein paar zusätzliche Optionen in der Liste.
 
-![BrainPress - Courses - other options](assets/images/BrainPress-Courses-other-options.png)
+![BrainPress - Kurse - weitere Optionen](assets/images/BrainPress-Courses-other-options.png)
 
- You'll see a _Published_ column where you can easily publish or unpublish a course. 
+Es gibt eine Spalte _Veröffentlicht_, in der Du Kurse ganz einfach veröffentlichen oder zurückziehen kannst.
 
-![BrainPress - Courses - Bulk Actions](assets/images/BrainPress-Courses-Bulk-Actions.png)
+![BrainPress - Kurse - Massenaktionen](assets/images/BrainPress-Courses-Bulk-Actions.png)
 
- You'll also see a Bulk Actions drop-down. You can tick any courses in the list, select an option from the drop-down and click Apply to apply an action to all the ticked courses. The available Bulk Actions are as follows:
+Außerdem gibt es ein Dropdown-Menü für Massenaktionen. Du kannst mehrere Kurse in der Liste markieren, eine Aktion aus dem Dropdown-Menü auswählen und auf _Anwenden_ klicken, um die Aktion auf alle markierten Kurse anzuwenden. Die verfügbaren Massenaktionen sind:
 
-*   Publish
-*   Unpublish
-*   Delete
+* Veröffentlichen
+* Zurückziehen
+* Löschen
 
-You can also hover your mouse over any course in the list to see a quick list of links. 
+Wenn Du mit der Maus über einen Kurs in der Liste fährst, siehst Du eine Schnellübersicht mit Links.
 
-![BrainPress - Courses - hover links](assets/images/BrainPress-Courses-hover-links.png)
+![BrainPress - Kurse - Hover-Links](assets/images/BrainPress-Courses-hover-links.png)
 
- Those links are as follows:
+Diese Links sind:
 
-*   _Edit_ - quickly get to the Course Overview page for this course
-*   _Units_ - go to the Units page
-*   _Students_ - go to the Students tab
-*   _View Course_ - view the course in the site's front-end
-*   _View Units_ - view the units through the site's front-end
+* _Bearbeiten_ – bringt Dich schnell zur Kursübersicht für diesen Kurs.
+* _Einheiten_ – führt Dich zur Seite _Einheiten_.
+* _Studenten_ – öffnet den Tab _Studenten_.
+* _Kurs ansehen_ – zeigt den Kurs im Frontend der Seite an.
+* _Einheiten ansehen_ – zeigt die Einheiten im Frontend der Seite an.
 
-Let's have a look at the Course Overview for the course we created earlier by clicking the _Edit_ link.
+Schauen wir uns die Kursübersicht für den Kurs an, den wir zuvor erstellt haben, indem wir auf den Link _Bearbeiten_ klicken.
 
-##### Course Overview
+##### Kursübersicht
 
-Here, you'll see a number of tabs (_Course Overview_, _Units_ and _Students_) along with some other options. 
+Hier siehst Du eine Reihe von Tabs (_Kursübersicht_, _Einheiten_ und _Studenten_) sowie einige andere Optionen.
 
-![BrainPress - Course - Course Overview](assets/images/BrainPress-Course-Course-Overview1.png)
+![BrainPress - Kurs - Kursübersicht](assets/images/BrainPress-Course-Course-Overview1.png)
 
-*   You'll see an accordion list of the various _Steps_ created earlier. Click on any of them to expose the settings for each.
-*   Quickly publish the course using the _Publish Course_ switch.
-*   Click the _Preview_ button to see a preview of the Course in the site's front-end.
+*   Du siehst eine Akkordeon-Liste der verschiedenen _Schritte_, die Du zuvor erstellt hast. Klicke auf einen Schritt, um die Einstellungen anzuzeigen.
+*   Veröffentliche den Kurs schnell mit dem _Kurs veröffentlichen_-Schalter.
+*   Klicke auf den _Vorschau_-Button, um eine Vorschau des Kurses im Frontend der Seite zu sehen.
 
-Let's go to the Students tab.
+Lass uns zum Tab "Studenten" wechseln.
 
-##### Students
+##### Studenten
 
-The _Students_ tab lets you quickly access the Students for this Course. 
+Im Tab _Studenten_ kannst Du schnell auf die Studenten dieses Kurses zugreifen.
 
-![BrainPress - Course - Students](assets/images/BrainPress-Course-Students.png)
+![BrainPress - Kurs - Studenten](assets/images/BrainPress-Course-Students.png)
 
-*   Easily add a student by selecting a name from the drop-down selector then pressing the _Add Student_ button.
-*   Click the _Withdraw_ icon to withdraw a Student from the course.
-*   Quickly invite a Student to this Course using the '_Invite a Student section_'. Enter a _First Name_, _Last Name_ and a valid _E-Mail_ address, then press _Invite_.
-*   Clicking on the _Profile_ icon will take you to a Student Profile page for the selected Student.
+*   Füge ganz einfach einen Studenten hinzu, indem Du einen Namen aus dem Dropdown-Menü auswählst und dann auf den Button _Student hinzufügen_ klickst.
+*   Klicke auf das _Abmelden_-Symbol, um einen Studenten vom Kurs abzumelden.
+*   Lade einen Studenten schnell zu diesem Kurs ein, indem Du im Abschnitt "_Student einladen_" einen _Vornamen_, _Nachnamen_ und eine gültige _E-Mail-Adresse_ eingibst und dann auf _Einladen_ klickst.
+*   Ein Klick auf das _Profil_-Symbol bringt Dich zur Profilseite des ausgewählten Studenten.
 
-##### Student Profile
+##### Studentenprofil
 
-![BrainPress - Course - Students - Profile](assets/images/BrainPress-Course-Students-Profile1.png)
+![BrainPress - Kurs - Studenten - Profil](assets/images/BrainPress-Course-Students-Profile1.png)
 
- Here, you'll see some basic details about the Student along with some helpful links and a list of Courses the Student is enrolled in.
+Hier siehst Du einige grundlegende Details über den Studenten sowie hilfreiche Links und eine Liste der Kurse, in die der Student eingeschrieben ist.
 
-*   Quickly email the Student by clicking their _Email_ address.
-*   Click the _Edit_ icon to edit this Student's user account.
-*   Click the _View Workbook_ button to go to the view this Student's Workbook. We'll go into more detail on this below.
-*   Click the Course title or the _Edit_ link next to it to go to the Course Overview page for the selected Course.
-*   Take a look at this Course through the site's front-end by clicking the arrow icon.
+*   Schreibe dem Studenten schnell eine E-Mail, indem Du auf seine _E-Mail-Adresse_ klickst.
+*   Klicke auf das _Bearbeiten_-Symbol, um das Benutzerkonto dieses Studenten zu bearbeiten.
+*   Klicke auf den Button _Arbeitsbuch anzeigen_, um das Arbeitsbuch dieses Studenten anzusehen. Mehr dazu weiter unten.
+*   Klicke auf den Kurstitel oder den _Bearbeiten_-Link daneben, um zur Kursübersichtsseite des ausgewählten Kurses zu gelangen.
+*   Schau Dir diesen Kurs im Frontend der Seite an, indem Du auf das Pfeil-Symbol klickst.
 
-Let's go back and have a look at the Units tab.
+Lass uns zurückgehen und den Tab "Einheiten" anschauen.
 
-##### Units
+##### Einheiten
 
-Units are the actual content of the Course. Lets go through the various options for adding and editing them. 
+Einheiten sind der eigentliche Inhalt des Kurses. Lass uns die verschiedenen Optionen zum Hinzufügen und Bearbeiten durchgehen.
 
-![BrainPress - Course - Units - Add New Unit](assets/images/BrainPress-Course-Units-Add-New-Unit.png)
+![BrainPress - Kurs - Einheiten - Neue Einheit hinzufügen](assets/images/BrainPress-Course-Units-Add-New-Unit.png)
 
- You'll see a list of existing _Units_ which you can click to edit the settings for. Hovering your mouse over a Unit will display an arrow icon to indicate you can drag it. You can re-order the Units by dragging and dropping them into place by this means. 
+Du siehst eine Liste der vorhandenen _Einheiten_, die du anklicken kannst, um die Einstellungen zu bearbeiten. Wenn du mit der Maus über eine Einheit fährst, wird ein Pfeilsymbol angezeigt, das darauf hinweist, dass du sie ziehen kannst. Du kannst die Einheiten durch Ziehen und Ablegen neu anordnen.
 
-![BrainPress - Course - Units - Re-order](assets/images/BrainPress-Course-Units-Re-order.png)
+![BrainPress - Kurs - Einheiten - Neu anordnen](assets/images/BrainPress-Course-Units-Re-order.png)
 
- Hover your mouse over a Course, then drag and drop to re-order it.
+Fahre mit der Maus über eine Einheit, dann ziehe und lasse sie los, um sie neu anzuordnen.
 
- Click the _Add New Unit_ button to add a Unit. 
+Klicke auf die Schaltfläche _Neue Einheit hinzufügen_, um eine Einheit hinzuzufügen.
 
-![BrainPress - Course - Units - Publish Course](assets/images/BrainPress-Course-Units-Publish-Course.png)
+![BrainPress - Kurs - Einheiten - Kurs veröffentlichen](assets/images/BrainPress-Course-Units-Publish-Course.png)
 
- In the upper right corner of this tab, you'll see a _Publish Course_ toggle switch that can be used to quickly publish/unpublish the Course. Below this, you'll see a number of sub-sections for editing the Unit.
+In der oberen rechten Ecke dieses Tabs findest du einen _Kurs veröffentlichen_-Schalter, mit dem du den Kurs schnell veröffentlichen oder zurückziehen kannst. Darunter siehst du mehrere Unterabschnitte zum Bearbeiten der Einheit.
 
-##### Unit Settings
+##### Einheitseinstellungen
 
-![BrainPress - Course - Units - Unit Settings](assets/images/BrainPress-Course-Units-Unit-Settings.png)
+![BrainPress - Kurs - Einheiten - Einheitseinstellungen](assets/images/BrainPress-Course-Units-Unit-Settings.png)
 
-*   Use the toggle switch in the upper right to switch the Unit to _Draft_ or _Live_ mode.
-*   Enter a title in the _Unit Title_ field.
-*   Enter a date for the _Unit Availability_. A drop-down selector will display to let you easily select a date.
-*   Tick the '_User needs to complete current unit in order to access the next one_' option to require the Student to complete this Unit before progressing.
-*   Click the _Save_ button to save your changes and the _Preview_ button to preview the Unit in your site's front-end.
-*   Click the _Delete Unit_ icon to delete this Unit.
+*   Nutze den Schalter in der oberen rechten Ecke, um die Einheit auf _Entwurf_ oder _Live_ zu setzen.
+*   Gib einen Titel in das Feld _Einheitstitel_ ein.
+*   Gib ein Datum für die _Einheitenverfügbarkeit_ ein. Ein Dropdown-Menü wird angezeigt, um dir die Auswahl eines Datums zu erleichtern.
+*   Aktiviere die Option '_Benutzer muss aktuelle Einheit abschließen, um auf die nächste zuzugreifen_', um zu verlangen, dass der Teilnehmer diese Einheit abschließt, bevor er weitermachen kann.
+*   Klicke auf die Schaltfläche _Speichern_, um deine Änderungen zu speichern, und auf _Vorschau_, um die Einheit im Frontend deiner Seite anzusehen.
+*   Klicke auf das Symbol _Einheit löschen_, um diese Einheit zu entfernen.
 
-##### Unit Pages
+##### Einheitsseiten
 
-Pages can be used to separate sections of Unit content. 
+Seiten können verwendet werden, um Abschnitte des Einheitinhalts zu trennen.
 
-![BrainPress - Course - Units - Unit Pages](assets/images/BrainPress-Course-Units-Unit-Pages.png)
+![BrainPress - Kurs - Einheiten - Einheitsseiten](assets/images/BrainPress-Course-Units-Unit-Pages.png)
 
-*   Select a Page by clicking one of the _Page numbers_.
-*   Add a Page by clicking the _+_ icon.
-*   Click the _Delete Page_ button to delete the selected Page.
-*   Enter a name for the Page in the _Page Label_ field.
-*   Tick the '_Show page label on unit_' option to have this Page's label displayed when Students view the Page in the front-end.
+*   Wähle eine Seite aus, indem du auf eine der _Seitennummern_ klickst.
+*   Füge eine Seite hinzu, indem du auf das _+_-Symbol klickst.
+*   Klicke auf die Schaltfläche _Seite löschen_, um die ausgewählte Seite zu entfernen.
+*   Gib einen Namen für die Seite in das Feld _Seitenbeschriftung_ ein.
+*   Aktiviere die Option '_Seitenbeschriftung in Einheit anzeigen_', damit die Beschriftung dieser Seite angezeigt wird, wenn Teilnehmer die Seite im Frontend ansehen.
 
 ##### Build Page
 

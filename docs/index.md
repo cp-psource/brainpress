@@ -239,7 +239,7 @@ On wide-screen devices, you'll see a few extra options in the list.
 
 You can also hover your mouse over any course in the list to see a quick list of links. 
 
-![BrainPress - Courses - hover links](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Courses-hover-links.png)
+![BrainPress - Courses - hover links](assets/images/BrainPress-Courses-hover-links.png)
 
  Those links are as follows:
 
@@ -255,7 +255,7 @@ Let's have a look at the Course Overview for the course we created earlier by cl
 
 Here, you'll see a number of tabs (_Course Overview_, _Units_ and _Students_) along with some other options. 
 
-![BrainPress - Course - Course Overview](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Course-Course-Overview1.png)
+![BrainPress - Course - Course Overview](assets/images/BrainPress-Course-Course-Overview1.png)
 
 *   You'll see an accordion list of the various _Steps_ created earlier. Click on any of them to expose the settings for each.
 *   Quickly publish the course using the _Publish Course_ switch.
@@ -267,7 +267,7 @@ Let's go to the Students tab.
 
 The _Students_ tab lets you quickly access the Students for this Course. 
 
-![BrainPress - Course - Students](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Course-Students.png)
+![BrainPress - Course - Students](assets/images/BrainPress-Course-Students.png)
 
 *   Easily add a student by selecting a name from the drop-down selector then pressing the _Add Student_ button.
 *   Click the _Withdraw_ icon to withdraw a Student from the course.
@@ -276,7 +276,7 @@ The _Students_ tab lets you quickly access the Students for this Course.
 
 ##### Student Profile
 
-![BrainPress - Course - Students - Profile](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Course-Students-Profile1.png)
+![BrainPress - Course - Students - Profile](assets/images/BrainPress-Course-Students-Profile1.png)
 
  Here, you'll see some basic details about the Student along with some helpful links and a list of Courses the Student is enrolled in.
 
@@ -292,23 +292,23 @@ Let's go back and have a look at the Units tab.
 
 Units are the actual content of the Course. Lets go through the various options for adding and editing them. 
 
-![BrainPress - Course - Units - Add New Unit](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Course-Units-Add-New-Unit.png)
+![BrainPress - Course - Units - Add New Unit](assets/images/BrainPress-Course-Units-Add-New-Unit.png)
 
  You'll see a list of existing _Units_ which you can click to edit the settings for. Hovering your mouse over a Unit will display an arrow icon to indicate you can drag it. You can re-order the Units by dragging and dropping them into place by this means. 
 
-![BrainPress - Course - Units - Re-order](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Course-Units-Re-order.png)
+![BrainPress - Course - Units - Re-order](assets/images/BrainPress-Course-Units-Re-order.png)
 
  Hover your mouse over a Course, then drag and drop to re-order it.
 
  Click the _Add New Unit_ button to add a Unit. 
 
-![BrainPress - Course - Units - Publish Course](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Course-Units-Publish-Course.png)
+![BrainPress - Course - Units - Publish Course](assets/images/BrainPress-Course-Units-Publish-Course.png)
 
  In the upper right corner of this tab, you'll see a _Publish Course_ toggle switch that can be used to quickly publish/unpublish the Course. Below this, you'll see a number of sub-sections for editing the Unit.
 
 ##### Unit Settings
 
-![BrainPress - Course - Units - Unit Settings](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Course-Units-Unit-Settings.png)
+![BrainPress - Course - Units - Unit Settings](assets/images/BrainPress-Course-Units-Unit-Settings.png)
 
 *   Use the toggle switch in the upper right to switch the Unit to _Draft_ or _Live_ mode.
 *   Enter a title in the _Unit Title_ field.
@@ -321,7 +321,7 @@ Units are the actual content of the Course. Lets go through the various option
 
 Pages can be used to separate sections of Unit content. 
 
-![BrainPress - Course - Units - Unit Pages](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Course-Units-Unit-Pages.png)
+![BrainPress - Course - Units - Unit Pages](assets/images/BrainPress-Course-Units-Unit-Pages.png)
 
 *   Select a Page by clicking one of the _Page numbers_.
 *   Add a Page by clicking the _+_ icon.

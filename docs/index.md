@@ -1,4 +1,16 @@
-# BrainPress
+---
+layout: psource-theme
+title: "BrainPress"
+---
+
+<h2 align="center" style="color:#38c2bb;">📚 BrainPress</h2>
+
+<div class="menu">
+  <a href="https://github.com/cp-psource/brainpress/discussions" style="color:#38c2bb;">💬 Forum</a>
+  <a href="https://github.com/cp-psource/brainpress/releases" style="color:#38c2bb;">⬇️ Download</a>
+  <a href="themes.html" style="color:#38c2bb;">🎨 Design</a>
+  <a href="readme-en.html" style="color:#38c2bb;">🌐 English</a>
+</div>
 
 ## Denkst Du darüber nach, Tutorials oder Kurse auf Deiner Webseite zu teilen oder zu verkaufen? Erstelle, bewerbe und verkaufe ganz einfach Dein Wissen mit BrainPress.
 

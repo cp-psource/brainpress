@@ -3,7 +3,7 @@ Contributors: DerN3rd (PSOURCE)
 Donate link: https://github.com/cp-psourcespendenaktionen/unterstuetze-unsere-psource-free-werke/
 Tags: classicpress-plugin, lms
 Requires at least: 4.9
-Tested up to: 4.9
+Tested up to: 6.8.1
 Stable tag: 2.3.8
 Requires PHP: 7.0
 License: GPLv2 or later

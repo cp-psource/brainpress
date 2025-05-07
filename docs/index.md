@@ -500,7 +500,7 @@ Vergiss nicht, den Button _Änderungen speichern_ zu drücken, wenn Du fertig bi
 
 Dozenten haben spezielle Fähigkeiten, die es ihnen ermöglichen, Kurse zu erstellen. Lass uns diese Fähigkeiten mal genauer anschauen.
 
-![BrainPress - Einstellungen - Fähigkeiten der Dozenten](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Settings-Instructor-Capabilities.png)
+![BrainPress - Einstellungen - Fähigkeiten der Dozenten](assets/images/BrainPress-Settings-Instructor-Capabilities.png)
 
 Die Fähigkeiten sind in folgende Unterabschnitte unterteilt:
 
@@ -569,13 +569,13 @@ _Benachrichtigungen_
 
 Einfach die gewünschten Fähigkeiten anhaken und dann auf den Button _Änderungen speichern_ klicken, um alles zu sichern.
 
-![BrainPress - Einstellungen - Änderungen speichern](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Settings-Save-Changes-button.png)
+![BrainPress - Einstellungen - Änderungen speichern](assets/images/BrainPress-Settings-Save-Changes-button.png)
 
 ##### Shortcodes
 
 BrainPress Pro bietet zahlreiche Shortcodes, die du in den Inhaltsbereichen deiner Website verwenden kannst, um Plugin-Funktionen nach Bedarf bereitzustellen.
 
-![BrainPress - Einstellungen - Shortcodes](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Settings-Shortcodes.png)
+![BrainPress - Einstellungen - Shortcodes](assets/images/BrainPress-Settings-Shortcodes.png)
 
 Hier findest du eine detaillierte Übersicht, die dir bei den Shortcodes hilft. Hier ist eine Liste aller Shortcodes mit einigen hilfreichen Infos:
 
@@ -612,7 +612,7 @@ Hier findest du eine detaillierte Übersicht, die dir bei den Shortcodes hilft. 
 
 ##### View Setup Guide
 
-![BrainPress - Settings - View Setup Guide](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Settings-View-Setup-Guide.png)
+![BrainPress - Settings - View Setup Guide](assets/images/BrainPress-Settings-View-Setup-Guide.png)
 
  This is just a quick link back to the welcome page, so you'll always have access to the 'Getting Started' section through this link.
 
@@ -620,11 +620,11 @@ Hier findest du eine detaillierte Übersicht, die dir bei den Shortcodes hilft. 
 
 BrainPress Pro works with any standard ClassicPress theme, but it also includes a built-in theme to help you get started. Lets switch to that theme at _Appearance > Themes_. 
 
-![BrainPress - Themes menu](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Themes-menu.png)
+![BrainPress - Themes menu](assets/images/BrainPress-Themes-menu.png)
 
  Locate the _BrainPress_ theme in the themes list. 
 
-![BrainPress - theme selection](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-theme-selection.png)
+![BrainPress - theme selection](assets/images/BrainPress-theme-selection.png)
 
  Click the _Activate_ button to activate it!
 
@@ -634,18 +634,18 @@ BrainPress Pro also includes a number of widgets for use in your theme's sidebar
 
 *   _Featured Course_ - displays a featured Course
 
-![BrainPress - Widgets - Featured Course](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Widgets-Featured-Course.png)
+![BrainPress - Widgets - Featured Course](assets/images/BrainPress-Widgets-Featured-Course.png)
 
 *   _Latest Courses_ - shows a list of recently published Courses
 
-![BrainPress - Widgets - Latest Courses](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Widgets-Latest-Courses.png)
+![BrainPress - Widgets - Latest Courses](assets/images/BrainPress-Widgets-Latest-Courses.png)
 
 ### The User Experience
 
 Lets take a look at the front-end experience from the user's standpoint! Here's an example of how it could look with the BrainPress theme when viewing the front page. 
 
-![BrainPress - front-end](https://premium.wpmudev.org/wp-content/uploads/2014/09/courselist.png)
+![BrainPress - front-end](assets/images/courselist.png)
 
  Clicking the _Details_ link or the Course's image takes you to the Details page for the selected Course. 
 
-![Your courses have never looked so good](https://premium.wpmudev.org/wp-content/uploads/2014/09/individualcourse.png)
+![Your courses have never looked so good](assets/images/individualcourse.png)

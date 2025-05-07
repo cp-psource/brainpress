@@ -18,7 +18,7 @@ title: "BrainPress"
 
 BrainPress macht Online-Lernen einfach mit Kursseiten, Paywalls, Social Sharing und einer interaktiven Lernumgebung, die dabei hilft, mehr Studenten miteinander zu verbinden.
 
-![Mache Deine Kurse interaktiv mit Video, Audio, Quiz und anderen herunterladbaren Medien.](https://github.com/cp-psourcewp-content/uploads/2020/05/BrainPress1.jpg)
+![Mache Deine Kurse interaktiv mit Video, Audio, Quiz und anderen herunterladbaren Medien.](assets/images/BrainPress1.jpeg)
 
   Gestalte Deine Kurse interaktiv mit Video, Audio, Quiz und anderen herunterladbaren Medien.
 
@@ -28,7 +28,7 @@ BrainPress macht Online-Lernen einfach mit Kursseiten, Paywalls, Social Sharing 
 
 BrainPress wird mit einem eigenen Theme geliefert – gestaltet und sofort einsatzbereit. Darüber hinaus erleichtern die enthaltenen Shortcodes und Widgets die Integration von BrainPress in Deine Lieblingsthemes.
 
-![Bild](https://github.com/cp-psourcewp-content/uploads/2024/01/cp-theme-735x470.jpg)
+![Bild](assets/images/cp-theme-735x470.jpg)
 
   Verwende das BrainPress-Design für vollständig gestaltete Einheiten direkt nach dem Auspacken.
 
@@ -36,11 +36,11 @@ BrainPress wird mit einem eigenen Theme geliefert – gestaltet und sofort einsa
 
  
 
-![Bild](https://github.com/cp-psourcewp-content/uploads/2024/01/CP_Elements.png)
+![Bild](assets/images/CP_Elements.png)
 
    Bette Video-, Audiodateien und Bilder ein, teile herunterladbare Projektdateien, erstelle Quizfragen, ermögliche Studenten, Kursarbeiten einzureichen und an Gruppendiskussionen teilzunehmen.
 
-![Bild](https://github.com/cp-psourcewp-content/uploads/2024/01/cp-features-735x470.jpg)
+![Bild](assets/images/cp-features-735x470.jpg)
 
   Durch die Integration von MarketPress und WooCommerce kannst Du Deine Kurse über jedes der über 100 Zahlungsgateways verkaufen.
 
@@ -50,7 +50,7 @@ Erstelle und verwalte die nächste große Academy, Tuts+ oder Lynda mit integrie
 
  
 
-![BrainPress erleichtert die Einrichtung und Verwaltung von Schülern, Kursen und Lehrern.](https://github.com/cp-psourcewp-content/uploads/2024/01/cp-steps-735x470-compressor.jpg)
+![BrainPress erleichtert die Einrichtung und Verwaltung von Schülern, Kursen und Lehrern.](assets/images/cp-steps-735x470-compressor.jpg)
 
   BrainPress erleichtert die Einrichtung und Verwaltung von Schülern, Kursen und Lehrern.
 
@@ -64,7 +64,7 @@ Verwalte Studenten, Dozenten und Kurse wie ein Profi mit automatischer Benotung 
 
 Tropffreisetzungseinheiten und Versenden von Benachrichtigungen, wenn neues Material verfügbar ist. Automatisierte und anpassbare Benachrichtigungen helfen sowohl Schülern als auch Lehrern, den Überblick über die Kommunikation zu behalten.
 
-![Benutzerdefinierte Folge-E-Mail-Benachrichtigungen schreiben.](https://github.com/cp-psourcewp-content/uploads/2024/01/cp-notifications-735x470.jpg)
+![Benutzerdefinierte Folge-E-Mail-Benachrichtigungen schreiben.](assets/images/cp-notifications-735x470.jpeg)
 
   Schreibe benutzerdefinierte Folge-E-Mail-Benachrichtigungen.
 
@@ -74,13 +74,13 @@ Tropffreisetzungseinheiten und Versenden von Benachrichtigungen, wenn neues Mate
 
 Stelle sicher, dass jede Frage beantwortet wird und die Aufgaben schnell bewertet werden – auch in den großen Kursen. Füge mehrere Dozenten und Kursleiter hinzu, um den Überblick über die Antworten zu behalten.
 
-![Beauftrage mehrere Moderatoren und Dozenten mit der Unterstützung Deiner Schüler.](https://github.com/cp-psourcewp-content/uploads/2024/01/cp-moderate-735x470-compressor.jpg)
+![Beauftrage mehrere Moderatoren und Dozenten mit der Unterstützung Deiner Schüler.](assets/images/cp-moderate-735x470-compressor.jpeg)
 
   Weise mehrere Moderatoren und Dozenten zu, die Deine Schüler unterstützen.
 
    
 
-![Erstelle alle Arten von Quizzen mit Mehrfachantworten, Einzelauswahl, Upload und auswählbaren Modulen.](https://github.com/cp-psourcewp-content/uploads/2024/01/cp-quiz-735x470.jpg)
+![Erstelle alle Arten von Quizzen mit Mehrfachantworten, Einzelauswahl, Upload und auswählbaren Modulen.](assets/images/cp-quiz-735x470.jpg)
 
   Erstelle alle Arten von Quizzen mit Mehrfachantworten, Einzelauswahl, Upload und auswählbaren Modulen.
 
@@ -90,7 +90,7 @@ BrainPress bietet mehr Möglichkeiten zur Bewertung Deiner Schüler: Mehrfachant
 
  
 
-![Erstelle benutzerdefinierte Zertifikate für jeden Kurs.](https://github.com/cp-psourcewp-content/uploads/2024/01/certificate-coursepress-1470x940-1.jpg)
+![Erstelle benutzerdefinierte Zertifikate für jeden Kurs.](assets/images/certificate-coursepress-1470x940-1.jpeg)
 
   Erstelle individuelle Zertifikate für jeden Kurs.
 
@@ -102,7 +102,7 @@ Mit BrainPress kannst Du für jeden Kurs individuell gestaltete, personalisierte
 
  
 
-![Bild](https://github.com/cp-psourcewp-content/uploads/2024/01/courses-large-1x-compressor-1.jpg)
+![Bild](assets/images/courses-large-1x-compressor-1.jpeg)
 
    BrainPress ist das komplette Learning Management System (LMS), das von Profis für Profis entwickelt wurde. Der Wissensaustausch war noch nie so einfach.
 
@@ -119,23 +119,23 @@ Melde Dichich bei Deinem Admin-Panel für ClassicPress oder Multisite an und akt
 
 Nach der Installation und Aktivierung wird in Deinem Dashboard ein neuer Menüpunkt angezeigt. _BrainPress_.
 
-![BrainPress – Menü](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Pro-Menu.png)
+![BrainPress – Menü](assets/images/BrainPress-Pro-Menu.png)
 
   Wenn Du auf diesen Menülink klickst, wirst Du mit einer Willkommensnachricht und kurzen Details begrüßt, die Dir den Einstieg in die Kurserstellung erleichtert.
 
-![BrainPress – Erste Schritte](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Getting-Started.png)
+![BrainPress – Erste Schritte](assets/images/BrainPress-Getting-Started.png)
 
 ### Einen neuen Kurs hinzufügen
 
 Beginnen wir mit dem Hinzufügen eines Kurses. Gehe zu _BrainPress > Neuer Kurs_.
 
-![BrainPress – Menü „Neuer Kurs“](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-New-Course-menu1.png)
+![BrainPress – Menü „Neuer Kurs“](assets/images/BrainPress-New-Course-menu1.png)
 
   Du siehst eine Reihe von Unterabschnitten, die einen 6-stufigen Prozess umfassen. Gehen wir sie alle durch.
 
 ##### Step 1 - Course Overview
 
-![BrainPress - New Course - Course Overview](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-New-Course-Course-Overview.png)
+![BrainPress - New Course - Course Overview](assets/images/BrainPress-New-Course-Course-Overview.png)
 
 *   Enter a _Course Name_.
 *   Enter a _Course Excerpt_, or a short overview of the course.
@@ -145,7 +145,7 @@ Beginnen wir mit dem Hinzufügen eines Kurses. Gehe zu _BrainPress > Neuer Kurs_
 
 ##### Step 2 - Course Description
 
-![BrainPress - New Course - Course Description](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-New-Course-Course-Description.png)
+![BrainPress - New Course - Course Description](assets/images/BrainPress-New-Course-Course-Description.png)
 
 *   Optionally, you can upload or link to a _Featured Video_, to be displayed when users view the course details in the Course Overview page.
 *   Enter a _Course Description_, a detailed description of the course. You'll have the full power of the ClassicPress visual editor for customizing the description.
@@ -156,7 +156,7 @@ Beginnen wir mit dem Hinzufügen eines Kurses. Gehe zu _BrainPress > Neuer Kurs_
 
 ##### Step 3 - Instructors
 
-![BrainPress - New Course - Instructors](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-New-Course-Instructors.png)
+![BrainPress - New Course - Instructors](assets/images/BrainPress-New-Course-Instructors.png)
 
 *   You can assign as many instructors as you like in the _Course Instructors_ section. You'll be able to choose from any of the users in your standard ClassicPress Users list.
 *   Easily send an email invite through the _Invite New Instruction_ section. Simply enter a _First Name_, _Last Name_ and _E-Mail_ address then press _Send Invite_.
@@ -164,7 +164,7 @@ Beginnen wir mit dem Hinzufügen eines Kurses. Gehe zu _BrainPress > Neuer Kurs_
 
 ##### Step 4 - Course Dates
 
-![BrainPress - New Course - Course Dates](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-New-Course-Course-Dates.png)
+![BrainPress - New Course - Course Dates](assets/images/BrainPress-New-Course-Course-Dates.png)
 
 *   Enter the dates your course will be available within the _Course Dates_ section. Or tick the '_This course has no end date_' option.
 *   Otherwise you can select the _Start Date_ and _End Date_ using the pop-up date picker.
@@ -174,7 +174,7 @@ Beginnen wir mit dem Hinzufügen eines Kurses. Gehe zu _BrainPress > Neuer Kurs_
 
 ##### Step 5 - Classes, Discussions and Workbooks
 
-![BrainPress - New Course - Classes, Discussion and Workbooks](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-New-Course-Classes.png)
+![BrainPress - New Course - Classes, Discussion and Workbooks](assets/images/BrainPress-New-Course-Classes.png)
 
 *   To limit the class size, tick the '_Limit class size_' option end enter a value for the limit.
 *   Tick the '_Allow Course Discussion_' option to allow open discussion between students and instructors.
@@ -183,21 +183,21 @@ Beginnen wir mit dem Hinzufügen eines Kurses. Gehe zu _BrainPress > Neuer Kurs_
 
 ##### Step 6 - Enrollment and Course Cost
 
-![BrainPress - New Course - Enrollment](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-New-Course-Enrollment.png)
+![BrainPress - New Course - Enrollment](assets/images/BrainPress-New-Course-Enrollment.png)
 
- Tick the '_This is a Paid Course_' option to display payment options. For payments, BrainPress Pro integrates with both [MarketPress](https://premium.wpmudev.org/project/e-commerce/ "MarketPress ClassicPress e-Commerce") and [WooCommerce](https://wordpress.org/plugins/woocommerce/). Please note that currently, only one of them (either MarketPress or WooCommerce) should be activated, activating both at the same time may cause conflicts. For MarketPress integration, the first time the above payment option is selected, you'll be presented with a message about MarketPress, like so: 
+ Tick the '_This is a Paid Course_' option to display payment options. For payments, BrainPress Pro integrates with both [MarketPress](https://cp-psource.github.io/marketpress/ "MarketPress ClassicPress e-Commerce") and [WooCommerce](https://wordpress.org/plugins/woocommerce/). Please note that currently, only one of them (either MarketPress or WooCommerce) should be activated, activating both at the same time may cause conflicts. For MarketPress integration, the first time the above payment option is selected, you'll be presented with a message about MarketPress, like so: 
 
-![BrainPress Pro - Activate MarketPress](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Pro-1.2.5.4-Payment-settings-Activate-MarketPress.png)
+![BrainPress Pro - Activate MarketPress](assets/images/BrainPress-Pro-1.2.5.4-Payment-settings-Activate-MarketPress.png)
 
  Click the _Begin Activating MarketPress_ link to begin the MarketPress activation process and expose the payment options. Or for WooCommerce integration, simply ensure that WooCommerce is installed and activated, then tick the '_Use WooCommerce to sell courses_' setting at _BrainPress Pro > Settings_. You can optionally select to redirect WooCommerce product posts to a parent course as well. 
 
-![BrainPress Pro - Settings - WooCommerce Integration](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Pro-1.2.5.4-WooCommerce-Settings.png)
+![BrainPress Pro - Settings - WooCommerce Integration](assets/images/BrainPress-Pro-1.2.5.4-WooCommerce-Settings.png)
 
  WooCommerce settings at BrainPress Pro > Settings
 
    With either MarketPress or WooCommerce installed and activated, and with the settings configured as above, you'll then see payment options for your Course. 
 
-![BrainPress - New Course - Enrollment - This is a paid course](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-New-Course-Enrollment-This-is-a-paid-course.png)
+![BrainPress - New Course - Enrollment - This is a paid course](assets/images/BrainPress-New-Course-Enrollment-This-is-a-paid-course.png)
 
 *   Tick the '_Automatically generate Stock Keeping Unit_' option to have BrainPress Pro automatically create a unique SKU. Otherwise you can enter a _SKU_ value yourself.
 *   Enter the _Price_.
@@ -205,7 +205,7 @@ Beginnen wir mit dem Hinzufügen eines Kurses. Gehe zu _BrainPress > Neuer Kurs_
 *   Enter a _Sale Price_ to be used with the above option.
 *   If you're using MarketPress, you'll have an option to _Edit Payment Gateways_ where you'll be presented with a pop-up dialog and will be able to select and configure the payment gateways.
 
-![BrainPress Pro - Payment Gateways](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Pro-1.2.1.9-Payment-Gateways.png)
+![BrainPress Pro - Payment Gateways](assets/images/BrainPress-Pro-1.2.1.9-Payment-Gateways.png)
 
  Once you're done configuring the payment settings, you can click the _Previous_ button to go back to the previous section. Or click the _Done_ button to complete the course creation process and save the new course.
 
@@ -213,11 +213,11 @@ Beginnen wir mit dem Hinzufügen eines Kurses. Gehe zu _BrainPress > Neuer Kurs_
 
 Let's have a look through the Courses at _BrainPress Pro > Courses_. 
 
-![BrainPress - Courses menu](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Courses-menu1.png)
+![BrainPress - Courses menu](assets/images/BrainPress-Courses-menu1.png)
 
  You'll see a list of all the Courses you've created. 
 
-![BrainPress - Courses](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Courses.png)
+![BrainPress - Courses](assets/images/BrainPress-Courses.png)
 
 *   User the _Search Courses_ section to search through the existing courses.
 *   Click the _Delete_ icon to delete a course.
@@ -225,11 +225,11 @@ Let's have a look through the Courses at _BrainPress Pro > Courses_.
 
 On wide-screen devices, you'll see a few extra options in the list. 
 
-![BrainPress - Courses - other options](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Courses-other-options.png)
+![BrainPress - Courses - other options](assets/images/BrainPress-Courses-other-options.png)
 
  You'll see a _Published_ column where you can easily publish or unpublish a course. 
 
-![BrainPress - Courses - Bulk Actions](https://premium.wpmudev.org/wp-content/uploads/2014/09/BrainPress-Courses-Bulk-Actions.png)
+![BrainPress - Courses - Bulk Actions](assets/images/BrainPress-Courses-Bulk-Actions.png)
 
  You'll also see a Bulk Actions drop-down. You can tick any courses in the list, select an option from the drop-down and click Apply to apply an action to all the ticked courses. The available Bulk Actions are as follows:
 

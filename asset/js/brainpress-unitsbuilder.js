@@ -133,7 +133,7 @@ var BrainPress = BrainPress || {};
 			if ( 'unit-live-toggle' === ui_name || 'unit-live-toggle-2' === ui_name ) {
 				if ( ! can_publish ) {
 					is_toggle = false;
-					ui.unbind( 'click' );
+					ui.off( 'click' );
 				} 
 			}
 			if ( is_toggle ) {

@@ -1807,7 +1807,7 @@ BrainPress.Events = BrainPress.Events || _.extend( {}, Backbone.Events );
 			window.open(href);
 		}
 
-		form.unbind('submit').submit();
+		form.off('submit').submit();
 
 		return false;
 	};

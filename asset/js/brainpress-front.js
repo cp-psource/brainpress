@@ -907,7 +907,7 @@ var BrainPress = BrainPress || {};
 		/*
 		 * Comments
 		 */
-		$( '.brainpress-focus-view #commentform #submit' ).unbind( 'click' ).on( 'click', function() {
+		$( '.brainpress-focus-view #commentform #submit' ).off( 'click' ).on( 'click', function() {
 			var form = $(this).closest('form'), mask;
 			if ( '' == $( '#comment', form ).val() ) {
 				alert(_brainpress.comments.require_valid_comment);

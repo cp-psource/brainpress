@@ -3,7 +3,7 @@ Contributors: DerN3rd (PSOURCE)
 Tags: classicpress-plugin, lms
 Requires at least: 4.9
 Tested up to: 6.8.1
-Stable tag: 2.3.9
+Stable tag: 2.4.0
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -28,6 +28,12 @@ PS BrainPress simplifies online education with course sites, paywalls, social sh
 
 
 == ChangeLog ==
+
+= 2.4.0 =
+
+* Fix Problem editing Course
+* Fix some deprecated JS
+* New Docs
 
 = 2.3.9 =
 

@@ -1,6 +1,19 @@
-# PHP Classes
+---
+layout: psource-theme
+title: "BrainPress PHP Classes"
+---
 
-`CoursePress_User`
+<h2 align="center" style="color:#38c2bb;">📚 BrainPress PHP Classes</h2>
+
+<div class="menu">
+  <a href="https://github.com/cp-psource/brainpress/discussions" style="color:#38c2bb;">💬 Forum</a>
+  <a href="https://github.com/cp-psource/brainpress/releases" style="color:#38c2bb;">⬇️ Download</a>
+  <a href="functions.html" style="color:#38c2bb;">🎨 Dev: Funktionen</a>
+  <a href="classes.html" style="color:#38c2bb;">🌐 Dev: Klassen</a>
+</div>
+
+
+`BrainPress_User`
 -
 **Paramter:**
 * $user_id or WP_User object.

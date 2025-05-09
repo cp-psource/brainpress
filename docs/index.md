@@ -8,8 +8,8 @@ title: "BrainPress"
 <div class="menu">
   <a href="https://github.com/cp-psource/brainpress/discussions" style="color:#38c2bb;">💬 Forum</a>
   <a href="https://github.com/cp-psource/brainpress/releases" style="color:#38c2bb;">⬇️ Download</a>
-  <a href="themes.html" style="color:#38c2bb;">🎨 Design</a>
-  <a href="readme-en.html" style="color:#38c2bb;">🌐 English</a>
+  <a href="functions.html" style="color:#38c2bb;">🎨 Dev: Funktionen</a>
+  <a href="classes.html" style="color:#38c2bb;">🌐 Dev: Klassen</a>
 </div>
 
 ## Denkst Du darüber nach, Tutorials oder Kurse auf Deiner Webseite zu teilen oder zu verkaufen? Erstelle, bewerbe und verkaufe ganz einfach Dein Wissen mit BrainPress.
@@ -90,7 +90,7 @@ BrainPress bietet mehr Möglichkeiten zur Bewertung Deiner Schüler: Mehrfachant
 
  
 
-![Erstelle benutzerdefinierte Zertifikate für jeden Kurs.](assets/images/certificate-coursepress-1470x940-1.jpeg)
+![Erstelle benutzerdefinierte Zertifikate für jeden Kurs.](assets/images/certificate-brainpress-1470x940-1.jpeg)
 
   Erstelle individuelle Zertifikate für jeden Kurs.
 

@@ -49,47 +49,71 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 		 **/
 		static $post_type = 'course';
 
-		public static function init_hooks( $post ) {
+		public static function init_hooks( $screen_or_post ) {
 			self::$data_course = new BrainPress_Data_Course();
 
 			self::$post_type = $post_type = self::$data_course->get_post_type_name();
-
-			if ( $post->post_type != $post_type ) {
+		
+			$post = null;
+		
+			// Falls WP_Screen übergeben wird (ab WordPress 5.5+ Standard)
+			if ( $screen_or_post instanceof WP_Screen ) {
+				if ( $screen_or_post->post_type !== $post_type ) {
+					return;
+				}
+		
+				$post_id = isset( $_GET['post'] ) ? (int) $_GET['post'] : 0;
+				if ( $post_id ) {
+					$post = get_post( $post_id );
+				}
+			}
+			// Falls doch noch ein Post-Objekt direkt übergeben wird (Fallback für alte Hooks)
+			elseif ( is_object( $screen_or_post ) && isset( $screen_or_post->post_type ) && $screen_or_post->post_type === $post_type ) {
+				$post = $screen_or_post;
+			}
+		
+			// Sicherstellen, dass ein valider Post da ist
+			if ( ! $post || $post->post_type !== $post_type ) {
 				return;
 			}
+		
 
-			/**
-			 * Trigger before rendering CP page.
-			 **/
-			do_action( 'brainpress_admin_render_page' );
+
+
+
 
 			self::$current_course = $post;
-
+		
 			if ( 'auto-draft' !== $post->post_status || ! empty( $_GET['post'] ) ) {
 				self::$action = 'edit';
 			}
-
-			$tab = empty( $_GET['tab'] ) ? 'setup' : $_GET['tab'];
+		
+			$tab = empty( $_GET['tab'] ) ? 'setup' : sanitize_text_field( $_GET['tab'] );
+		
+			// Tabs und Meta-Boxen
 			add_action( 'edit_form_top', array( __CLASS__, 'edit_tabs' ) );
 
-			// Filter metabox to render
+
 			add_action( 'add_meta_boxes', array( __CLASS__, 'allowed_meta_boxes' ), 999 );
+		
+			if ( 'setup' === $tab ) {
 
-			if ( 'setup' == $tab ) {
 
-				// Change preview link
 				add_filter( 'preview_post_link', array( __CLASS__, 'preview_post_link' ), 10, 2 );
 
-				// Disable permalink
+
 				add_filter( 'get_sample_permalink_html', array( __CLASS__, 'disable_permalink' ), 100, 5 );
 
-				// Print steps
+
 				add_action( 'edit_form_after_editor', array( __CLASS__, 'course_edit_steps' ) );
 
 			} else {
 				$_GET['id'] = $_REQUEST['id'] = self::$current_course->ID;
 				add_action( 'admin_footer', array( __CLASS__, 'disable_style' ), 100 );
 			}
+		
+			// Dein Plugin-Action-Fire
+			do_action( 'brainpress_admin_render_page' );
 		}
 
 		public static function allowed_meta_boxes() {

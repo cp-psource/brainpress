@@ -26,8 +26,7 @@ class BrainPress_Hooks {
 
 		// Edit Course
 		add_filter( 'post_updated_messages', array( 'BrainPress_Admin_Edit', 'updated_messages' ) );
-		add_action('current_screen', array('BrainPress_Admin_Edit', 'init_hooks'));
-
+		add_action( 'dbx_post_advanced', array( 'BrainPress_Admin_Edit', 'init_hooks' ) );
 
 		// Enable TinyMCE for course pages.
 		add_filter( 'user_can_richedit', array( 'BrainPress_Admin_Edit', 'enable_tinymce' ) );
@@ -70,7 +69,7 @@ class BrainPress_Hooks {
 		add_action( 'wp_ajax_update_discussion', array( 'BrainPress_Data_Discussion', 'ajax_update' ) );
 
 		// MP Notice
-		add_action( 'admin_notices', array( 'BrainPress_Helper_Extension_MarketPress', 'mp_notice' ) );
+		add_action( 'admin_notices', array( 'BrainPress_Helper_Extension_PSeCommerce', 'mp_notice' ) );
 
 		// Admin class
 		add_filter( 'admin_body_class', array( __CLASS__, 'admin_classes' ) );

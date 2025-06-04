@@ -1,5 +1,5 @@
 /*! BrainPress - v2.2.2
- * https://github.com/cp-psourcepiestingtal_source/ps-brainpress-classicpress-lms-online-akademie-plugin/
+ * https://n3rds.work/piestingtal_source/ps-brainpress-classicpress-lms-online-akademie-plugin/
  * Copyright (c) 2019; * Licensed GPLv2+ */
 /*global _brainpress*/
 /*global pwsL10n*/
@@ -828,7 +828,7 @@ var BrainPress = BrainPress || {};
 		//$( '.view-response' ).link_popup( { link_text:  '<span class="dashicons dashicons-visibility"></span>' });
 		$( '.workbook-table .view-response' ).link_popup( { link_text:  '<span class="dashicons dashicons-visibility"></span>', offset_x: -160 });
 		$( '.workbook-table .feedback' ).link_popup( { link_text:  '<span class="dashicons dashicons-admin-comments"></span>' });
-		bind_marketpress_add_to_cart_button();
+		bind_psecommerce_add_to_cart_button();
 
 		/**
 		 * close message
@@ -907,7 +907,7 @@ var BrainPress = BrainPress || {};
 		/*
 		 * Comments
 		 */
-		$( '.brainpress-focus-view #commentform #submit' ).off( 'click' ).on( 'click', function() {
+		$( '.brainpress-focus-view #commentform #submit' ).unbind( 'click' ).on( 'click', function() {
 			var form = $(this).closest('form'), mask;
 			if ( '' == $( '#comment', form ).val() ) {
 				alert(_brainpress.comments.require_valid_comment);
@@ -1020,8 +1020,8 @@ var BrainPress = BrainPress || {};
 	/**
 	 * MP add to cart
 	 */
-	function bind_marketpress_add_to_cart_button() {
-		if ( undefined === _brainpress.marketpress_is_used || 'no' === _brainpress.marketpress_is_used ) {
+	function bind_psecommerce_add_to_cart_button() {
+		if ( undefined === _brainpress.psecommerce_is_used || 'no' === _brainpress.psecommerce_is_used ) {
 			return;
 		}
 		$('body.single-course button.mp_button-addcart').on( 'click', function() {
@@ -1034,8 +1034,8 @@ var BrainPress = BrainPress || {};
 					cart_action: 'add_item'
 				}
 			}).done( function(data) {
-				if ( data.success && undefined !== _brainpress.marketpress_cart_url ) {
-					window.location.assign( _brainpress.marketpress_cart_url );
+				if ( data.success && undefined !== _brainpress.psecommerce_cart_url ) {
+					window.location.assign( _brainpress.psecommerce_cart_url );
 				}
 			});
 			return false;
@@ -1872,7 +1872,7 @@ var BrainPress = BrainPress || {};
 	/**
 	 * bind arrows on course module page
 	 */
-	$(document).on('keydown', function( e ) {
+	$(document).keydown( function( e ) {
 		/**
 		 * Avoid to change module if CTRL, ALT, META or Shift is pressed.
 		 */

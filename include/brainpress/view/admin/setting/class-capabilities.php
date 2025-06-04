@@ -141,10 +141,10 @@ class BrainPress_View_Admin_Setting_Capabilities {
 			),
 		);
 		/**
-		 * Add this capabilities only when MarketPress is acctive.
+		 * Add this capabilities only when PSeCommerce is acctive.
 		 */
-		$is_marketpress_active = apply_filters( 'brainpress_is_marketpress_active', false );
-		if ( $is_marketpress_active ) {
+		$is_psecommerce_active = apply_filters( 'brainpress_is_psecommerce_active', false );
+		if ( $is_psecommerce_active ) {
 			$options['wordpress'] = array(
 				'title' => __( 'Gewähre Standard-ClassicPress-Funktionen', 'brainpress' ),
 				'items' => self::_instructor_capabilities_posts_and_pages(),
@@ -267,7 +267,7 @@ class BrainPress_View_Admin_Setting_Capabilities {
 
 	private static function _instructor_capabilities_posts_and_pages() {
 		return array(
-			'edit_pages' => __( 'Seiten bearbeiten (erforderlich für MarketPress)', 'brainpress' ),
+			'edit_pages' => __( 'Seiten bearbeiten (erforderlich für PSeCommerce)', 'brainpress' ),
 			'edit_published_pages' => __( 'Veröffentlichte Seiten bearbeiten', 'brainpress' ),
 			'edit_posts' => __( 'Beiträge bearbeiten', 'brainpress' ),
 			'publish_pages' => __( 'Seiten veröffentlichen', 'brainpress' ),

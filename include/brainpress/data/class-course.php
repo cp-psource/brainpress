@@ -568,8 +568,7 @@ class BrainPress_Data_Course {
 
 		$setting = BrainPress_Helper_Utility::get_array_val( $settings, $key );
 		$setting = is_null( $setting ) ? $default : $setting;
-		$setting = ! is_array( $setting ) && ! is_null( $setting ) ? trim( $setting ) : $setting;
-
+		$setting = ! is_array( $setting ) ? trim( $setting ) : $setting;
 
 		return apply_filters(
 			'brainpress_get_course_setting_' . $key,
@@ -578,7 +577,7 @@ class BrainPress_Data_Course {
 		);
 	}
 
-	public static function update_setting($course_id, $value, $key=true) {
+	public static function update_setting( $course_id, $key = true, $value ) {
 		$settings = get_post_meta( $course_id, 'course_settings', true );
 
 		if ( empty( $settings ) ) {
@@ -935,22 +934,20 @@ class BrainPress_Data_Course {
 							$module
 						);
 					}
-					if ( isset( $items[ $unit->ID ]['pages'] ) && is_array( $items[ $unit->ID ]['pages'] ) ) {
-						ksort( $items[ $unit->ID ]['pages'], SORT_NUMERIC );
-					}
+					ksort( $items[ $unit->ID ]['pages'], SORT_NUMERIC );
 				}
 			}
 		}
 
 		// Fix legacy orphaned posts and page titles
 		foreach ( $items as $post_id => $unit ) {
-			if ( ! isset( $unit->unit ) ) {
+			if ( ! isset( $unit['unit'] ) ) {
 				unset( $items[ $post_id ] );
 			}
 
 			// Fix broken page titles
 			$page_titles = get_post_meta( $post_id, 'page_title', true );
-			if ( empty( $page_titles ) && ! empty( $unit->pages ) ) {
+			if ( empty( $page_titles ) && ! empty( $unit['pages'] ) ) {
 				$page_titles = array();
 				$page_visible = array();
 				foreach ( $unit['pages'] as $key => $page ) {
@@ -1213,11 +1210,11 @@ class BrainPress_Data_Course {
 			$is_paid = cp_is_true( $is_paid );
 		}
 		/**
-		 * Check for supported integration: MarketPress
+		 * Check for supported integration: PSeCommerce
 		 */
-		if ( $is_paid && class_exists( 'BrainPress_Helper_Integration_MarketPress' ) ) {
+		if ( $is_paid && class_exists( 'BrainPress_Helper_Integration_PSeCommerce' ) ) {
 			if ( defined( 'MP_VERSION' ) && MP_VERSION ) {
-				$is_paid = BrainPress_Helper_Integration_MarketPress::$is_active;
+				$is_paid = BrainPress_Helper_Integration_PSeCommerce::$is_active;
 				$is_paid = cp_is_true( $is_paid );
 				return $is_paid;
 			}

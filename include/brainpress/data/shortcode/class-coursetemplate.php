@@ -153,17 +153,9 @@ class BrainPress_Data_Shortcode_CourseTemplate {
 		$student_enrolled = false;
 		$student_id = false;
 		$is_instructor = false;
-		$is_custom_login = false;
+		$is_custom_login = cp_is_true( $general_settings['use_custom_login'] );
 		$course_link = esc_url( trailingslashit( get_permalink( $course_id ) ) . trailingslashit( BrainPress_Core::get_setting( 'slugs/units', 'units' ) ) );
 		$continue_learning_link = null;
-
-		if (isset($general_settings['use_custom_login'])) {
-			$is_custom_login = cp_is_true( $general_settings['use_custom_login'] );
-		}
-
-		if (isset($general_settings['slugs/units'])) {
-			$course_link = esc_url( trailingslashit( get_permalink( $course_id ) ) . trailingslashit( BrainPress_Core::get_setting( 'slugs/units', 'units' ) ) );
-		}
 
 		if ( is_user_logged_in() ) {
 			$student_id = get_current_user_id();

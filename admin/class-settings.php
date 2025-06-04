@@ -11,7 +11,7 @@ class BrainPress_Admin_Settings extends BrainPress_Admin_Controller_Menu {
 		'BasicCertificate',
 		'Shortcodes',
 		'Extensions',
-		'MarketPress',
+		'PSeCommerce',
 		'WooCommerce',
 		'Setup',
 	);

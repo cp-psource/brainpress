@@ -49,71 +49,47 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 		 **/
 		static $post_type = 'course';
 
-		public static function init_hooks( $screen_or_post ) {
+		public static function init_hooks( $post ) {
 			self::$data_course = new BrainPress_Data_Course();
 
 			self::$post_type = $post_type = self::$data_course->get_post_type_name();
-		
-			$post = null;
-		
-			// Falls WP_Screen übergeben wird (ab WordPress 5.5+ Standard)
-			if ( $screen_or_post instanceof WP_Screen ) {
-				if ( $screen_or_post->post_type !== $post_type ) {
-					return;
-				}
-		
-				$post_id = isset( $_GET['post'] ) ? (int) $_GET['post'] : 0;
-				if ( $post_id ) {
-					$post = get_post( $post_id );
-				}
-			}
-			// Falls doch noch ein Post-Objekt direkt übergeben wird (Fallback für alte Hooks)
-			elseif ( is_object( $screen_or_post ) && isset( $screen_or_post->post_type ) && $screen_or_post->post_type === $post_type ) {
-				$post = $screen_or_post;
-			}
-		
-			// Sicherstellen, dass ein valider Post da ist
-			if ( ! $post || $post->post_type !== $post_type ) {
+
+			if ( $post->post_type != $post_type ) {
 				return;
 			}
-		
 
-
-
-
+			/**
+			 * Trigger before rendering CP page.
+			 **/
+			do_action( 'brainpress_admin_render_page' );
 
 			self::$current_course = $post;
-		
+
 			if ( 'auto-draft' !== $post->post_status || ! empty( $_GET['post'] ) ) {
 				self::$action = 'edit';
 			}
-		
-			$tab = empty( $_GET['tab'] ) ? 'setup' : sanitize_text_field( $_GET['tab'] );
-		
-			// Tabs und Meta-Boxen
+
+			$tab = empty( $_GET['tab'] ) ? 'setup' : $_GET['tab'];
 			add_action( 'edit_form_top', array( __CLASS__, 'edit_tabs' ) );
 
-
+			// Filter metabox to render
 			add_action( 'add_meta_boxes', array( __CLASS__, 'allowed_meta_boxes' ), 999 );
-		
-			if ( 'setup' === $tab ) {
 
+			if ( 'setup' == $tab ) {
 
+				// Change preview link
 				add_filter( 'preview_post_link', array( __CLASS__, 'preview_post_link' ), 10, 2 );
 
-
+				// Disable permalink
 				add_filter( 'get_sample_permalink_html', array( __CLASS__, 'disable_permalink' ), 100, 5 );
 
-
+				// Print steps
 				add_action( 'edit_form_after_editor', array( __CLASS__, 'course_edit_steps' ) );
 
 			} else {
 				$_GET['id'] = $_REQUEST['id'] = self::$current_course->ID;
 				add_action( 'admin_footer', array( __CLASS__, 'disable_style' ), 100 );
 			}
-		
-			// Dein Plugin-Action-Fire
-			do_action( 'brainpress_admin_render_page' );
 		}
 
 		public static function allowed_meta_boxes() {
@@ -162,14 +138,14 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 		 * Disable metabox containers. It looks ugly on units and students tabs.
 		 **/
 		static function disable_style() {
-		?>
+?>
             <style>
             #postbox-container-1,
             #postbox-container-2 {
             display: none;
             }
             </style>
-		<?php
+<?php
 		}
 
 		static function preview_post_link( $preview_link, $post ) {
@@ -607,14 +583,14 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 			 */
 			$is_payment_available = false;
 			$filters_to_check = array(
-				'brainpress_is_marketpress_active',
+				'brainpress_is_psecommerce_active',
 				'brainpress_is_woocommerce_active',
 			);
 			foreach ( $filters_to_check as $filter ) {
 				if ( $is_payment_available ) {
 					continue;
 				}
-				$is_payment_available = apply_filters( 'brainpress_is_marketpress_active', $is_payment_available );
+				$is_payment_available = apply_filters( 'brainpress_is_psecommerce_active', $is_payment_available );
 			}
 			if ( ! $is_payment_available ) {
 				$disable_payment = false;
@@ -624,7 +600,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 			$is_paid_course = ! empty( self::$settings['payment_paid_course'] );
 			//$data_course = new BrainPress_Data_Course();
 			$data_instructor = new BrainPress_Data_Instructor();
-			$mp_class = new Brainpress_Helper_Extension_MarketPress();
+			$mp_class = new Brainpress_Helper_Extension_PSeCommerce();
 			$utility_class = new BrainPress_Helper_Utility();
 
 			$install_url = add_query_arg(
@@ -639,25 +615,25 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 				array(
 					'post_type' => self::$post_type,
 					'page' => 'brainpress_settings',
-					'tab' => 'marketpress',
+					'tab' => 'psecommerce',
 				),
 				admin_url( 'edit.php' )
 			);
 
-			$install_message = __( 'Bitte wende Dich an Deinen Administrator, um MarketPress für Deine Seite zu aktivieren.', 'brainpress' );
+			$install_message = __( 'Bitte wende Dich an Deinen Administrator, um PSeCommerce für Deine Seite zu aktivieren.', 'brainpress' );
 			$install_message2 = '';
 			$installed = $mp_class->installed();
 
 			if ( current_user_can( 'install_plugins' ) || current_user_can( 'activate_plugins ' ) ) {
-				$install_message = __( 'Um mit dem Verkauf Deines Kurses zu beginnen, bitte <a href="%s">Installiere und aktiviere MarketPress</a>.', 'brainpress' );
+				$install_message = __( 'Um mit dem Verkauf Deines Kurses zu beginnen, bitte <a href="%s">Installiere und aktiviere PSeCommerce</a>.', 'brainpress' );
 
 				if ( $installed && $mp_class->activated() ) {
-					$install_message = __( 'Um mit dem Verkauf Deines Kurses zu beginnen, bitte <a href="%s">Setup komplettieren</a> für MarketPress.', 'brainpress' );
+					$install_message = __( 'Um mit dem Verkauf Deines Kurses zu beginnen, bitte <a href="%s">Setup komplettieren</a> für PSeCommerce.', 'brainpress' );
 					$install_url = $mp_url;
 				}
 
 				if ( false === $installed ) {
-					$install_message2 = __( 'Die Vollversion von MarketPress wurde mit BrainPress gebündelt.', 'brainpress' );
+					$install_message2 = __( 'Die Vollversion von PSeCommerce wurde mit BrainPress gebündelt.', 'brainpress' );
 				}
 			}
 			$install_message = sprintf( $install_message, esc_url_raw( $install_url ) );
@@ -668,7 +644,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 			$payment_message = sprintf(
 				'<div class="payment-message %1$s"><h4>%2$s</h4>%3$s%4$s<p>%5$s: WooCommerce</p></div>',
 				esc_attr( $is_paid_course ? '' : 'hidden' ),
-				__( 'Verkaufe Deine Kurse online mit MarketPress.', 'brainpress' ),
+				__( 'Verkaufe Deine Kurse online mit PSeCommerce.', 'brainpress' ),
 				! empty( $install_message2 ) ? sprintf( '<p>%s</p>', $install_message2 ) : '',
 				! empty( $install_message ) ? sprintf( '<p>%s</p>', $install_message ) : '',
 				__( 'Andere unterstützte Plugins', 'brainpress' )
@@ -978,7 +954,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 			echo '</p>';
 			printf(
 				'<p><a href="%s" class="button-primary">%s</a></p>',
-				esc_url( __( 'https://github.com/cp-psourcecp_psource/brainpress-lms-fuer-classicpress/', 'brainpress' ) ),
+				esc_url( __( 'https://n3rds.work/cp_psource/brainpress-lms-fuer-classicpress/', 'brainpress' ) ),
 				esc_html__( 'Hol Dir die neueste Version von BrainPress', 'brainpress' )
 			);
 		}

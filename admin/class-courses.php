@@ -110,7 +110,7 @@ class BrainPress_Admin_Courses {
 		/**
 		 * Paid column is needed?
 		 */
-		if ( ! BrainPress_Helper_Integration_MarketPress::$is_active && ! BrainPress_Helper_Integration_WooCommerce::$is_active ) {
+		if ( ! BrainPress_Helper_Integration_PSeCommerce::$is_active && ! BrainPress_Helper_Integration_WooCommerce::$is_active ) {
 			unset( $columns['paid'] );
 		}
 

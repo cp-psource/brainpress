@@ -461,7 +461,7 @@ foreach ( $allowed_statuses as $status => $label ) {
 				__( 'Einstellungen', 'brainpress' )
 			);
 		}
-		$url = 'https://github.com/cp-psourcepiestingtal_source/ps-brainpress-classicpress-lms-online-akademie-plugin/';
+		$url = 'https://n3rds.work/piestingtal_source/ps-brainpress-classicpress-lms-online-akademie-plugin/';
 		
 		$actions['support'] = sprintf(
 			'<a href="%s">%s</a>',

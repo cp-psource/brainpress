@@ -68,7 +68,7 @@ class BrainPress_Helper_JavaScript {
 		) );
 		$dummy_editor = ob_get_clean();
 
-		$is_super_admin = current_user_can('manage_options');
+		$is_super_admin = user_can( 'manage_options', get_current_user_id() );
 
 		$localize_array = array(
 			'_ajax_url' => BrainPress_Helper_Utility::get_ajax_url(),

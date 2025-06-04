@@ -71,7 +71,7 @@ class BrainPress {
 	 *
 	 * @var string
 	 */
-	public static $version = '2.4.0';
+	public static $version = '2.3.7';
 
 	/**
 	 * Plugin name, this reflects the Pro/Standard version.
@@ -117,9 +117,7 @@ class BrainPress {
 		/**
 		 * Translate plugin name
 		 */
-		add_action( 'init', function() {
-			self::$name = _x( 'BrainPress', 'plugin name', 'brainpress' ); // Translated by grunt.
-		} );
+		self::$name = _x( 'BrainPress', 'plugin name', 'brainpress' ); // Translated by grunt.
 		// Initialise the autoloader.
 		spl_autoload_register( array( __CLASS__, 'class_loader' ) );
 

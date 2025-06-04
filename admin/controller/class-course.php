@@ -387,7 +387,7 @@ class BrainPress_Admin_Controller_Course {
 
 							case 'publish':
 								if ( ! BrainPress_Data_Capabilities::can_update_course( $course_id ) ) {
-									continue 2;
+									continue;
 								}
 								wp_update_post( array(
 									'ID' => $course_id,
@@ -396,7 +396,7 @@ class BrainPress_Admin_Controller_Course {
 							break;
 							case 'unpublish':
 								if ( ! BrainPress_Data_Capabilities::can_update_course( $course_id ) ) {
-									continue 2;
+									continue;
 								}
 								wp_update_post( array(
 									'ID' => $course_id,

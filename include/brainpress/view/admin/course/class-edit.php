@@ -953,16 +953,16 @@ class BrainPress_View_Admin_Course_Edit {
 		if ( ! $payment_supported && ! $disable_payment ) {
 
 			if ( current_user_can( 'install_plugins' ) || current_user_can( 'activate_plugins ' ) ) {
-				$install_message = sprintf( __( '<p>To start selling your course, please install and activate MarketPress here:</p>
-								<a href="%s">Activate MarketPress</a>', 'brainpress' ), esc_url_raw( admin_url( 'admin.php?page=brainpress_settings&tab=extensions' ) ) );
+				$install_message = sprintf( __( '<p>To start selling your course, please install and activate PSeCommerce here:</p>
+								<a href="%s">Activate PSeCommerce</a>', 'brainpress' ), esc_url_raw( admin_url( 'admin.php?page=brainpress_settings&tab=extensions' ) ) );
 			} else {
-				$install_message = __( '<p>Please contact your administrator to enable MarketPress for your site.</p>', 'brainpress' );
+				$install_message = __( '<p>Please contact your administrator to enable PSeCommerce for your site.</p>', 'brainpress' );
 			}
 
 			if ( CP_IS_PREMIUM ) {
-				$version_message = __( '<p>The full version of MarketPress has been bundled with BrainPress.</p>', 'brainpress' );
+				$version_message = __( '<p>The full version of PSeCommerce has been bundled with BrainPress.</p>', 'brainpress' );
 			} else {
-				$version_message = __( '<p>You can use the free or premium version of MarketPress to sell your courses.</p>', 'brainpress' );
+				$version_message = __( '<p>You can use the free or premium version of PSeCommerce to sell your courses.</p>', 'brainpress' );
 			}
 
 			$class = $is_paid ? '' : 'hidden';
@@ -972,7 +972,7 @@ class BrainPress_View_Admin_Course_Edit {
 			 */
 			$message = sprintf(
 				'<div class="payment-message %%s"><h3>%s</h3>%%s%%s<p>%s</p></div>',
-				esc_html__( 'Sell your courses online with MarketPress.', 'brainpress' ),
+				esc_html__( 'Sell your courses online with PSeCommerce.', 'brainpress' ),
 				esc_html__( 'Other supported plugins: WooCommerce', 'brainpress' )
 			);
 			$payment_message = apply_filters( 'brainpress_course_payment_message',

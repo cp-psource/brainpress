@@ -1,5 +1,5 @@
 /*! BrainPress - v2.2.2
- * https://github.com/cp-psourcepiestingtal_source/ps-brainpress-classicpress-lms-online-akademie-plugin/
+ * https://n3rds.work/piestingtal_source/ps-brainpress-classicpress-lms-online-akademie-plugin/
  * Copyright (c) 2019; * Licensed GPLv2+ */
 +(function($){
 	BrainPress = BrainPress || {};

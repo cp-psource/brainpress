@@ -304,7 +304,7 @@
 			if (tp_inst._defaults.maxDateTime !== undefined && tp_inst._defaults.maxDateTime instanceof Date) {
 				tp_inst._defaults.maxDate = new Date(tp_inst._defaults.maxDateTime.getTime());
 			}
-			tp_inst.$input.on('focus', function () {
+			tp_inst.$input.bind('focus', function () {
 				tp_inst._onFocus();
 			});
 
@@ -458,7 +458,7 @@
 							marginLeft: o.isRTL ? '0' : ((size / (-2 * gridSize[litem])) + "%"),
 							marginRight: o.isRTL ? ((size / (-2 * gridSize[litem])) + "%") : '0',
 							borderCollapse: 'collapse'
-						}).find("td").on('click', function (e) {
+						}).find("td").click(function (e) {
 								var $t = $(this),
 									h = $t.html(),
 									n = parseInt(h.replace(/[^0-9]/g), 10),
@@ -509,7 +509,7 @@
 						selectLocalTimezone(tp_inst);
 					}
 				}
-				this.timezone_select.on('change', function () {
+				this.timezone_select.change(function () {
 					tp_inst._onTimeChange();
 					tp_inst._onSelectHandler();
 					tp_inst._afterInject();
@@ -525,7 +525,7 @@
 				}
 
 				this.$timeObj = $tp.find('.ui_tpicker_time_input');
-				this.$timeObj.on('change', function () {
+				this.$timeObj.change(function () {
 					var timeFormat = tp_inst.inst.settings.timeFormat;
 					var parsedTime = $.datepicker.parseTime(timeFormat, this.value);
 					var update = new Date();
@@ -1087,7 +1087,7 @@
 
 					obj.children('select').remove();
 
-					$(sel).appendTo(obj).on('change', function (e) {
+					$(sel).appendTo(obj).change(function (e) {
 						tp_inst._onTimeChange();
 						tp_inst._onSelectHandler();
 						tp_inst._afterInject();

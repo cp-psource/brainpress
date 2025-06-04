@@ -1,7 +1,7 @@
 /*
 Theme Name: BrainPress Theme (Neu Beta)
-Theme URI: https://github.com/cp-psource
-Author: PSOURCE
+Theme URI: https://n3rds.work
+Author: WMS N@W
 Author URI: https://premium.wpmudev.org/
 Description: Spezialisiertes Theme für BrainPress
 Version: 2.0.7
@@ -1324,7 +1324,7 @@ a.rsswidget {
 }
 
 
-body.marketpress-course .entry-content-excerpt {
+body.psecommerce-course .entry-content-excerpt {
 	min-height: 360px;
 }
 

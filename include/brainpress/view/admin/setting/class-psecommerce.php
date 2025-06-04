@@ -8,13 +8,13 @@
 /**
  * Settings for Basic Certificate.
  */
-class BrainPress_View_Admin_Setting_MarketPress {
+class BrainPress_View_Admin_Setting_PSeCommerce {
 
 	public static function init() {
 		/**
 		 * do not run if integration is not active
 		 */
-		if ( ! BrainPress_Helper_Extension_MarketPress::activated() ) {
+		if ( ! BrainPress_Helper_Extension_PSeCommerce::activated() ) {
 			return;
 		}
 
@@ -23,25 +23,25 @@ class BrainPress_View_Admin_Setting_MarketPress {
 			array( __CLASS__, 'add_tabs' )
 		);
 		add_action(
-			'brainpress_settings_process_marketpress',
+			'brainpress_settings_process_psecommerce',
 			array( __CLASS__, 'process_form' ),
 			10, 2
 		);
 		add_filter(
-			'brainpress_settings_render_tab_marketpress',
+			'brainpress_settings_render_tab_psecommerce',
 			array( __CLASS__, 'return_content' ),
 			10, 3
 		);
 		add_action(
 			'brainpress_general_options_page',
-			array( __CLASS__, 'add_marketpress_general_option' )
+			array( __CLASS__, 'add_psecommerce_general_option' )
 		);
 	}
 
 	public static function add_tabs( $tabs ) {
-		$tabs['marketpress'] = array(
-			'title' => __( 'MarketPress', 'brainpress' ),
-			'description' => __( 'Ermögliche die Integration von MarketPress, um Kurse zu verkaufen ...', 'brainpress' ),
+		$tabs['psecommerce'] = array(
+			'title' => __( 'PSeCommerce', 'brainpress' ),
+			'description' => __( 'Ermögliche die Integration von PSeCommerce, um Kurse zu verkaufen ...', 'brainpress' ),
 			'order' => 69,
 		);
 
@@ -49,10 +49,10 @@ class BrainPress_View_Admin_Setting_MarketPress {
 	}
 
 	public static function return_content( $content, $slug, $tab ) {
-		$is_enabled = BrainPress_Core::get_setting( 'marketpress/enabled', false );
-		$use_redirect = BrainPress_Core::get_setting( 'marketpress/redirect', false );
-		$unpaid = BrainPress_Core::get_setting( 'marketpress/unpaid', 'change_status' );
-		$delete = BrainPress_Core::get_setting( 'marketpress/delete', 'change_status' );
+		$is_enabled = BrainPress_Core::get_setting( 'psecommerce/enabled', false );
+		$use_redirect = BrainPress_Core::get_setting( 'psecommerce/redirect', false );
+		$unpaid = BrainPress_Core::get_setting( 'psecommerce/unpaid', 'change_status' );
+		$delete = BrainPress_Core::get_setting( 'psecommerce/delete', 'change_status' );
 
 		ob_start();
 		?>
@@ -67,24 +67,24 @@ class BrainPress_View_Admin_Setting_MarketPress {
 						<td><label>
 							<input type="checkbox"
 								<?php checked( cp_is_true( $is_enabled ) ); ?>
-								name="brainpress_settings[marketpress][enabled]"
+								name="brainpress_settings[psecommerce][enabled]"
 								class="certificate_enabled"
 								value="1" />
-							<?php esc_html_e( 'Verwende MarketPress, um Kurse zu verkaufen', 'brainpress' ); ?>
+							<?php esc_html_e( 'Verwende PSeCommerce, um Kurse zu verkaufen', 'brainpress' ); ?>
 						</label>
-						<p class="description"><?php _e( 'Wenn diese Option aktiviert ist, wird MarketPress für den Verkauf von Kursen verwendet', 'brainpress' ) ?></p>
+						<p class="description"><?php _e( 'Wenn diese Option aktiviert ist, wird PSeCommerce für den Verkauf von Kursen verwendet', 'brainpress' ) ?></p>
 </td>
 					</tr>
 					<tr>
 						<td><label>
 							<input type="checkbox"
 								<?php checked( cp_is_true( $use_redirect ) ); ?>
-								name="brainpress_settings[marketpress][redirect]"
+								name="brainpress_settings[psecommerce][redirect]"
 								class="certificate_enabled"
 								value="1" />
-							<?php esc_html_e( 'Leite den MarketPress-Produktbeitrag zu einem übergeordneten Kursbeitrag um', 'brainpress' ); ?>
+							<?php esc_html_e( 'Leite den PSeCommerce-Produktbeitrag zu einem übergeordneten Kursbeitrag um', 'brainpress' ); ?>
 						</label>
-							<p class="description"><?php _e( 'Wenn diese Option aktiviert ist, werden Besucher, die versuchen, auf einen einzelnen Beitrag von MarketPress zuzugreifen, automatisch auf einen einzelnen Beitrag eines übergeordneten Kurses umgeleitet.', 'brainpress' ) ?></p>
+							<p class="description"><?php _e( 'Wenn diese Option aktiviert ist, werden Besucher, die versuchen, auf einen einzelnen Beitrag von PSeCommerce zuzugreifen, automatisch auf einen einzelnen Beitrag eines übergeordneten Kurses umgeleitet.', 'brainpress' ) ?></p>
 						</td>
 					</tr>
 					<tr>
@@ -93,14 +93,14 @@ class BrainPress_View_Admin_Setting_MarketPress {
 							<ul>
 								<li><label><input type="radio"
 									<?php checked( $unpaid, 'change_status' ); ?>
-									name="brainpress_settings[marketpress][unpaid]"
+									name="brainpress_settings[psecommerce][unpaid]"
 									class="certificate_enabled"
-									value="change_status" /> <?php esc_html_e( 'Wechsle auf Entwurf des zugehörigen MarketPress-Produkts.', 'brainpress' ); ?></label></li>
+									value="change_status" /> <?php esc_html_e( 'Wechsle auf Entwurf des zugehörigen PSeCommerce-Produkts.', 'brainpress' ); ?></label></li>
 								<li><label><input type="radio"
 									<?php checked( $unpaid, 'delete' ); ?>
-									name="brainpress_settings[marketpress][unpaid]"
+									name="brainpress_settings[psecommerce][unpaid]"
 									class="certificate_enabled"
-									value="delete" /> <?php esc_html_e( 'Lösche das zugehörige MarketPress-Produkt.', 'brainpress' ); ?></label></li>
+									value="delete" /> <?php esc_html_e( 'Lösche das zugehörige PSeCommerce-Produkt.', 'brainpress' ); ?></label></li>
 							</ul>
 						</td>
 					</tr>
@@ -110,14 +110,14 @@ class BrainPress_View_Admin_Setting_MarketPress {
 							<ul>
 								<li><label><input type="radio"
 									<?php checked( $delete, 'change_status' ); ?>
-									name="brainpress_settings[marketpress][delete]"
+									name="brainpress_settings[psecommerce][delete]"
 									class="certificate_enabled"
-									value="change_status" /> <?php esc_html_e( 'Wechsle auf Entwurf des zugehörigen MarketPress-Produkts.', 'brainpress' ); ?></label></li>
+									value="change_status" /> <?php esc_html_e( 'Wechsle auf Entwurf des zugehörigen PSeCommerce-Produkts.', 'brainpress' ); ?></label></li>
 								<li><label><input type="radio"
 									<?php checked( $delete, 'delete' ); ?>
-									name="brainpress_settings[marketpress][delete]"
+									name="brainpress_settings[psecommerce][delete]"
 									class="certificate_enabled"
-									value="delete" /> <?php esc_html_e( 'Lösche das zugehörige MarketPress-Produkt.', 'brainpress' ); ?></label></li>
+									value="delete" /> <?php esc_html_e( 'Lösche das zugehörige PSeCommerce-Produkt.', 'brainpress' ); ?></label></li>
 							</ul>
 						</td>
 					</tr>
@@ -136,12 +136,12 @@ class BrainPress_View_Admin_Setting_MarketPress {
 
 		if ( ! isset( $_POST['action'] ) ) { return; }
 		if ( 'updateoptions' != $_POST['action'] ) { return; }
-		if ( 'marketpress' != $tab ) { return; }
+		if ( 'psecommerce' != $tab ) { return; }
 
 		$settings = BrainPress_Core::get_setting( false ); // false: Get all settings.
 
 		$post_settings = array(
-			'marketpress' => array(
+			'psecommerce' => array(
 				'enabled' => false,
 				'redirect' => false,
 				'unpaid' => 'change_status',
@@ -155,29 +155,29 @@ class BrainPress_View_Admin_Setting_MarketPress {
 		if (
 			isset( $_POST['brainpress_settings'] )
 			&& is_array( $_POST['brainpress_settings'] )
-			&& isset( $_POST['brainpress_settings']['marketpress'] )
-			&& is_array( $_POST['brainpress_settings']['marketpress'] )
+			&& isset( $_POST['brainpress_settings']['psecommerce'] )
+			&& is_array( $_POST['brainpress_settings']['psecommerce'] )
 		) {
-			foreach ( $post_settings['marketpress'] as $key => $value ) {
-				if ( isset( $_POST['brainpress_settings']['marketpress'][ $key ] ) ) {
-					$post_settings['marketpress'][ $key ] = true;
+			foreach ( $post_settings['psecommerce'] as $key => $value ) {
+				if ( isset( $_POST['brainpress_settings']['psecommerce'][ $key ] ) ) {
+					$post_settings['psecommerce'][ $key ] = true;
 				}
 			}
 			if (
-				isset( $_POST['brainpress_settings']['marketpress']['unpaid'] )
-				&& 'delete' == $_POST['brainpress_settings']['marketpress']['unpaid']
+				isset( $_POST['brainpress_settings']['psecommerce']['unpaid'] )
+				&& 'delete' == $_POST['brainpress_settings']['psecommerce']['unpaid']
 			) {
-				$post_settings['marketpress']['unpaid'] = 'delete';
+				$post_settings['psecommerce']['unpaid'] = 'delete';
 			} else {
-				$post_settings['marketpress']['unpaid'] = 'change_status';
+				$post_settings['psecommerce']['unpaid'] = 'change_status';
 			}
 			if (
-				isset( $_POST['brainpress_settings']['marketpress']['delete'] )
-				&& 'delete' == $_POST['brainpress_settings']['marketpress']['delete']
+				isset( $_POST['brainpress_settings']['psecommerce']['delete'] )
+				&& 'delete' == $_POST['brainpress_settings']['psecommerce']['delete']
 			) {
-				$post_settings['marketpress']['delete'] = 'delete';
+				$post_settings['psecommerce']['delete'] = 'delete';
 			} else {
-				$post_settings['marketpress']['delete'] = 'change_status';
+				$post_settings['psecommerce']['delete'] = 'change_status';
 			}
 		}
 		$post_settings = BrainPress_Helper_Utility::sanitize_recursive( $post_settings );

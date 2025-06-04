@@ -1,5 +1,5 @@
 /*! BrainPress - v2.2.2
- * https://github.com/cp-psourcepiestingtal_source/ps-brainpress-classicpress-lms-online-akademie-plugin/
+ * https://n3rds.work/piestingtal_source/ps-brainpress-classicpress-lms-online-akademie-plugin/
  * Copyright (c) 2019; * Licensed GPLv2+ */
 /*global tinyMCEPreInit*/
 /*global _brainpress*/
@@ -133,7 +133,7 @@ var BrainPress = BrainPress || {};
 			if ( 'unit-live-toggle' === ui_name || 'unit-live-toggle-2' === ui_name ) {
 				if ( ! can_publish ) {
 					is_toggle = false;
-					ui.off( 'click' );
+					ui.unbind( 'click' );
 				} 
 			}
 			if ( is_toggle ) {
@@ -339,7 +339,7 @@ var BrainPress = BrainPress || {};
 				inputs = target.find( 'input' )
 			;
 			inputs.attr( 'readonly', ! is_checked );
-		}).trigger('change');
+		}).change();
 	};
 
 	BrainPress.Helpers.Module.quiz.render_component = function( module ) {

@@ -8,7 +8,7 @@
  * Plugin URI:  https://cp-psource.github.io/coursepress/
  * License:     GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: coursepress
+ * Text Domain: cp
  * Domain Path: /languages
  * @package CoursePress
  */
@@ -57,7 +57,14 @@ $myUpdateChecker->setBranch('master');
  * @@@@@@@@@@@@@@@@@ ENDE PS UPDATER 1.3 @@@@@@@@@@@
  **/
 
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+// Debug: Sprache und Textdomain prüfen
+add_action( 'plugins_loaded', function() {
+    load_textdomain(
+        'cp',
+        WP_PLUGIN_DIR . '/coursepress/languages/cp-' . get_locale() . '.mo'
+    );
+    //error_log( 'cp loaded: ' . ( is_textdomain_loaded( 'cp' ) ? 'yes' : 'no' ) );
+});
 
 // Launch CoursePress.
 CoursePress::init();
@@ -118,7 +125,7 @@ class CoursePress {
 		/**
 		 * Translate plugin name
 		 */
-		self::$name = _x( 'CoursePress Pro', 'plugin name', 'cp' ); // Translated by grunt.
+		//self::$name = _x( 'CoursePress Pro', 'plugin name', 'cp' ); // Translated by grunt.
 		// Initialise the autoloader.
 		spl_autoload_register( array( __CLASS__, 'class_loader' ) );
 
@@ -314,4 +321,5 @@ class CoursePress {
 	public static function get_file() {
 		return self::$file;
 	}
+	
 }

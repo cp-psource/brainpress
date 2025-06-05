@@ -23,11 +23,11 @@ class CoursePress_Core {
 		if ( ! defined( 'CP_IS_CAMPUS' ) ) { define( 'CP_IS_CAMPUS', false ); }
 
 		// We speak languages!
-		load_plugin_textdomain(
-			'cp', // Text domain.
-			false, // Deprecated. Set to false.
-			CoursePress::$dir . '/language'
-		);
+		/*load_plugin_textdomain(
+			'cp',
+			false,
+			dirname( plugin_basename( __FILE__ ) ) . '/languages'
+		);*/
 
 		// Initialize Capabilities.
 		CoursePress_Data_Capabilities::init();

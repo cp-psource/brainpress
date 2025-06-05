@@ -3,26 +3,26 @@
  * Course Certificates Page
  * Display and manages the generated certificates.
  **/
-class BrainPress_Admin_Upgrade extends BrainPress_Admin_Controller_Menu {
+class CoursePress_Admin_Upgrade extends CoursePress_Admin_Controller_Menu {
 
-	var $parent_slug = 'brainpress';
-	var $slug = 'brainpress_upgrade';
-	protected $cap = 'brainpress_settings_cap';
+	var $parent_slug = 'coursepress';
+	var $slug = 'coursepress_upgrade';
+	protected $cap = 'coursepress_settings_cap';
 
 	public function init() {
-		$brainpress_courses_need_update = get_option( 'brainpress_courses_need_update', false );
-		if ( 'yes' == $brainpress_courses_need_update ) {
+		$coursepress_courses_need_update = get_option( 'coursepress_courses_need_update', false );
+		if ( 'yes' == $coursepress_courses_need_update ) {
 			add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
 		}
 	}
 
 	public function get_labels() {
-		$brainpress_courses_need_update = get_option( 'brainpress_courses_need_update', 'no' );
-		if ( 'yes' == $brainpress_courses_need_update ) {
+		$coursepress_courses_need_update = get_option( 'coursepress_courses_need_update', 'no' );
+		if ( 'yes' == $coursepress_courses_need_update ) {
 			$this->init();
 			return array(
-				'title' => __( 'BrainPress Upgrade', 'brainpress' ),
-				'menu_title' => __( 'Upgrade', 'brainpress' ),
+				'title' => __( 'CoursePress Upgrade', 'cp' ),
+				'menu_title' => __( 'Upgrade', 'cp' ),
 			);
 		}
 		return array();
@@ -33,11 +33,11 @@ class BrainPress_Admin_Upgrade extends BrainPress_Admin_Controller_Menu {
 	 */
 	public function admin_enqueue_scripts() {
 		$screen = get_current_screen();
-		$re = sprintf( '/_page_%s$/', 'brainpress_upgrade' );
+		$re = sprintf( '/_page_%s$/', 'coursepress_upgrade' );
 		if ( ! preg_match( $re, $screen->id ) ) {
 			return;
 		}
-		$script = BrainPress::$url . 'asset/js/admin-upgrade.js';
-		wp_enqueue_script( 'brainpress_admin_upgrade_js', $script, array( 'jquery' ), BrainPress::$version, true );
+		$script = CoursePress::$url . 'asset/js/admin-upgrade.js';
+		wp_enqueue_script( 'coursepress_admin_upgrade_js', $script, array( 'jquery' ), CoursePress::$version, true );
 	}
 }

@@ -1,16 +1,16 @@
 <?php
 /**
- * The class responsible for creating or editing BrainPress course.
+ * The class responsible for creating or editing CoursePress course.
  *
- * @package BrainPress
+ * @package CoursePress
  **/
 if ( ! defined( 'ABSPATH' ) ) {
 	die();
 }
 
-if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
+if ( ! class_exists( 'CoursePress_Admin_Edit' ) ) :
 
-	class BrainPress_Admin_Edit extends BrainPress_Utility {
+	class CoursePress_Admin_Edit extends CoursePress_Utility {
 		/**
 		 * @var (int) $course_id	Current course ID being edited.
 		 **/
@@ -26,7 +26,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 		 **/
 		static $setup_marker = 0;
 
-		public static $slug = 'brainpress_course';
+		public static $slug = 'coursepress_course';
 		private static $action = 'new';
 		private static $allowed_actions = array(
 			'new',
@@ -40,7 +40,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 		private static $current_course = false;
 
 		/**
-		 * Hold BrainPress_Data_Course instance.
+		 * Hold CoursePress_Data_Course instance.
 		 **/
 		static $data_course;
 
@@ -50,7 +50,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 		static $post_type = 'course';
 
 		public static function init_hooks( $post ) {
-			self::$data_course = new BrainPress_Data_Course();
+			self::$data_course = new CoursePress_Data_Course();
 
 			self::$post_type = $post_type = self::$data_course->get_post_type_name();
 
@@ -61,7 +61,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 			/**
 			 * Trigger before rendering CP page.
 			 **/
-			do_action( 'brainpress_admin_render_page' );
+			do_action( 'coursepress_admin_render_page' );
 
 			self::$current_course = $post;
 
@@ -113,7 +113,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 				/**
 				 * Filter the allowed meta boxes to be rendered
 				 **/
-				$allowed = apply_filters( 'brainpress_allowed_meta_boxes', $allowed );
+				$allowed = apply_filters( 'coursepress_allowed_meta_boxes', $allowed );
 
 				foreach ( $cp_metaboxes as $group => $groups ) {
 					foreach ( $groups as $location => $metaboxes ) {
@@ -168,8 +168,8 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 			self::$tabs = apply_filters( self::$slug . '_tabs', self::$tabs );
 
 			self::$tabs['setup'] = array(
-				'title' => __( 'Kurs Setup', 'brainpress' ),
-				'description' => __( 'Bearbeiten Deine kursspezifischen Einstellungen unten.', 'brainpress' ),
+				'title' => __( 'Course Setup', 'cp' ),
+				'description' => __( 'Edit your course specific settings below.', 'cp' ),
 				'order' => 10,
 				'buttons' => 'none',
 				'is_form' => false,
@@ -177,24 +177,24 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 			$course_id = ! empty( self::$current_course ) ? self::$current_course->ID : 0;
 
 			if ( 'edit' == self::_current_action() ) {
-				if ( BrainPress_Data_Capabilities::can_view_course_units( $course_id ) ) {
+				if ( CoursePress_Data_Capabilities::can_view_course_units( $course_id ) ) {
 					$units = self::$data_course->get_unit_ids( $course_id, array( 'publish', 'draft' ) );
 					self::$tabs['units'] = array(
-						'title' => sprintf( __( 'Einheiten (%s)', 'brainpress' ), count( $units ) ),
-						'description' => __( 'Bearbeiten Deine kursspezifischen Einstellungen unten.', 'brainpress' ),
+						'title' => sprintf( __( 'Units (%s)', 'cp' ), count( $units ) ),
+						'description' => __( 'Edit your course specific settings below.', 'cp' ),
 						'order' => 20,
 						'buttons' => 'none',
 						'is_form' => false,
 					);
 				}
 
-				if ( BrainPress_Data_Capabilities::can_view_course_students( $course_id ) ) {
+				if ( CoursePress_Data_Capabilities::can_view_course_students( $course_id ) ) {
 					self::$tabs['students'] = array(
 						'title' => sprintf(
-							__( 'Studenten (%s)', 'brainpress' ),
+							__( 'Students (%s)', 'cp' ),
 							self::$data_course->count_students( $course_id )
 						),
-						'description' => __( 'Bearbeiten Deine kursspezifischen Einstellungen unten.', 'brainpress' ),
+						'description' => __( 'Edit your course specific settings below.', 'cp' ),
 						'order' => 30,
 						'buttons' => 'none',
 						'is_form' => false,
@@ -213,7 +213,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 			}
 
 			// Order the tabs
-			self::$tabs = BrainPress_Helper_Utility::sort_on_key( self::$tabs, 'order' );
+			self::$tabs = CoursePress_Helper_Utility::sort_on_key( self::$tabs, 'order' );
 
 			return self::$tabs;
 		}
@@ -260,7 +260,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 			$publish_toggle = '';
 
 			$ui = array(
-				'label' => __( 'Kurs veröffentlichen', 'brainpress' ),
+				'label' => __( 'Publish Course', 'cp' ),
 				'left' => '<i class="fa fa-ban"></i>',
 				'left_class' => 'red',
 				'right' => '<i class="fa fa-check"></i>',
@@ -273,18 +273,18 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 			$ui['class'] = 'course-' . $course_id;
 			$publish_toggle = '';
 
-			if ( 'edit' == self::$action && BrainPress_Data_Capabilities::can_change_course_status( $course_id ) && $status !== 'auto-draft' ) {
-				$publish_toggle = ! empty( $course_id ) ? BrainPress_Helper_UI::toggle_switch( 'publish-course-toggle', 'publish-course-toggle', $ui ) : '';
+			if ( 'edit' == self::$action && CoursePress_Data_Capabilities::can_change_course_status( $course_id ) && $status !== 'auto-draft' ) {
+				$publish_toggle = ! empty( $course_id ) ? CoursePress_Helper_UI::toggle_switch( 'publish-course-toggle', 'publish-course-toggle', $ui ) : '';
 			}
-			echo BrainPress_Helper_Tabs::render_tabs( $tabs, $content, $hidden_args, self::$slug, $tab, false, 'horizontal', $publish_toggle );
+			echo CoursePress_Helper_Tabs::render_tabs( $tabs, $content, $hidden_args, self::$slug, $tab, false, 'horizontal', $publish_toggle );
 		}
 
 		private static function render_tab_units() {
-			return BrainPress_Admin_Controller_Unit::render();
+			return CoursePress_Admin_Controller_Unit::render();
 		}
 
 		private static function render_tab_students() {
-			return BrainPress_View_Admin_Course_Student::render();
+			return CoursePress_View_Admin_Course_Student::render();
 		}
 
 		/**
@@ -314,7 +314,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 				$content .= sprintf(
 					'<input type="button" class="button step prev step-%d" value="%s" />',
 					esc_attr( $step ),
-					esc_attr__( 'Zurück', 'brainpress' )
+					esc_attr__( 'Previous', 'cp' )
 				);
 			}
 
@@ -322,7 +322,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 				$content .= sprintf(
 					'<input type="button" class="button step next step-%d" value="%s" />',
 					esc_attr( $step ),
-					esc_attr__( 'Weiter', 'brainpress' )
+					esc_attr__( 'Next', 'cp' )
 				);
 			}
 
@@ -330,17 +330,17 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 			if ( 7 == $step ) {
 				$content .= sprintf(
 					'<input type="button" class="button step finish step-7" value="%s" />',
-					esc_attr__( 'Abgeschlossen', 'brainpress' )
+					esc_attr__( 'Finish', 'cp' )
 				);
 			}
 			/**
 			 * update button
 			 */
-			if ( $args['update'] && BrainPress_Data_Capabilities::can_update_course( $course_id ) ) {
+			if ( $args['update'] && CoursePress_Data_Capabilities::can_update_course( $course_id ) ) {
 				$content .= sprintf(
 					'<input type="button" class="button step update hidden step-%d" value="%s" />',
 					esc_attr( $step ),
-					esc_attr__( 'Aktualisieren', 'brainpress' )
+					esc_attr__( 'Update', 'cp' )
 				);
 			}
 			/**
@@ -406,7 +406,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 				),
 			);
 			$args = wp_parse_args( $args, $defaults );
-			$args = apply_filters( 'brainpress_element_editor_args', $args, $editor_name, $editor_id );
+			$args = apply_filters( 'coursepress_element_editor_args', $args, $editor_name, $editor_id );
 
 			ob_start();
 			wp_editor( $editor_content, $editor_id, $args );
@@ -423,10 +423,10 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 			// Setup Nonce
 			$setup_nonce = wp_create_nonce( 'setup-course' );
 
-			BrainPress_View_Admin_Course_Edit::$current_course = self::$current_course;
+			CoursePress_View_Admin_Course_Edit::$current_course = self::$current_course;
 
 			$edit_course_link = get_edit_post_link( self::$current_course->ID );
-			printf( '<input type="hidden" id="edit_course_link_url" value="%1$s" /><div class="brainpress-course-step-container"><div id="course-setup-steps" data-nonce="%2$s">', esc_url( $edit_course_link ), $setup_nonce );
+			printf( '<input type="hidden" id="edit_course_link_url" value="%1$s" /><div class="coursepress-course-step-container"><div id="course-setup-steps" data-nonce="%2$s">', esc_url( $edit_course_link ), $setup_nonce );
 
 			self::step_1();
 			self::step_2();
@@ -443,7 +443,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 			 *
 			 * @param (object) $course			WP_Post Object.
 			 **/
-			do_action( 'brainpress_course_edit_steps', $course );
+			do_action( 'coursepress_course_edit_steps', $course );
 
 			echo '</div></div>';
 		}
@@ -477,7 +477,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 			$setup_class = self::$setup_marker === 1 ? $setup_class . ' setup_marker' : $setup_class;
 
 			$units = self::$data_course->get_units_with_modules( self::$course_id, array( 'publish', 'draft' ) );
-			$units = BrainPress_Helper_Utility::sort_on_key( $units, 'order' );
+			$units = CoursePress_Helper_Utility::sort_on_key( $units, 'order' );
 
 			self::render( 'admin/view/steps/step-2', array(
 				'course_id' => self::$course_id,
@@ -501,36 +501,36 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 		static function step_3() {
 			$setup_class = self::$settings['setup_step_3'];
 			$setup_class = 2 == self::$setup_marker ? $setup_class . ' setup_marker' : $setup_class;
-			$can_assign_instructor = BrainPress_Data_Capabilities::can_assign_course_instructor( self::$course_id );
-			$can_assign_facilitator = BrainPress_Data_Capabilities::can_assign_facilitator( self::$course_id );
+			$can_assign_instructor = CoursePress_Data_Capabilities::can_assign_course_instructor( self::$course_id );
+			$can_assign_facilitator = CoursePress_Data_Capabilities::can_assign_facilitator( self::$course_id );
 
 			$label = $description = $placeholder = '';
 
 			if ( $can_assign_instructor && $can_assign_facilitator ) {
-				$label = esc_html__( 'Lade einen neuen Kursleiter oder Moderator ein', 'brainpress' );
-				$description = esc_html__( 'Wenn der Kursleiter oder der Moderator in der obigen Liste nicht gefunden werden kann, musst Du ihn per E-Mail einladen.', 'brainpress' );
-				$placeholder = __( 'instructor-or-facilitator@email.com', 'brainpress' );
+				$label = esc_html__( 'Invite New Instructor or Facilitator', 'cp' );
+				$description = esc_html__( 'If the instructor or the facilitator can not be found in the list above, you will need to invite them via email.', 'cp' );
+				$placeholder = __( 'instructor-or-facilitator@email.com', 'cp' );
 
 			} else if ( $can_assign_instructor ) {
-				$label = esc_html__( 'Neuen Kursleiter einladen', 'brainpress' );
-				$description = esc_html__( 'Wenn der Kursleiter in der obigen Liste nicht gefunden werden kann, musst Du ihn per E-Mail einladen.', 'brainpress' );
-				$placeholder = __( 'facilitator@email.com', 'brainpress' );
+				$label = esc_html__( 'Invite New Instructor', 'cp' );
+				$description = esc_html__( 'If the instructor can not be found in the list above, you will need to invite them via email.', 'cp' );
+				$placeholder = __( 'facilitator@email.com', 'cp' );
 
 			} else if ( $can_assign_facilitator ) {
-				$label = esc_html__( 'Lade einen neuen Moderator ein', 'brainpress' );
-				$description = esc_html__( 'Wenn der Moderator in der obigen Liste nicht gefunden werden kann, musst Du ihn per E-Mail einladen.', 'brainpress' );
-				$placeholder = __( 'instructor@email.com', 'brainpress' );
+				$label = esc_html__( 'Invite New Facilitator', 'cp' );
+				$description = esc_html__( 'If the facilitator can not be found in the list above, you will need to invite them via email.', 'cp' );
+				$placeholder = __( 'instructor@email.com', 'cp' );
 			}
 
 			self::render( 'admin/view/steps/step-3', array(
 				'course_id' => self::$course_id,
 				'setup_class' => $setup_class,
 				'can_assign_instructor' => $can_assign_instructor,
-				'search_nonce' => wp_create_nonce( 'brainpress_instructor_search' ),
-				'instructors' => BrainPress_Helper_UI::course_instructors_avatars( self::$course_id, array( 'remove_buttons' => true, 'count' => true ) ),
+				'search_nonce' => wp_create_nonce( 'coursepress_instructor_search' ),
+				'instructors' => CoursePress_Helper_UI::course_instructors_avatars( self::$course_id, array( 'remove_buttons' => true, 'count' => true ) ),
 				'can_assign_facilitator' => $can_assign_facilitator,
-				'facilitators' => BrainPress_Data_Facilitator::get_course_facilitators( self::$course_id ),
-				'facilitator_search_nonce' => $search_nonce = wp_create_nonce( 'brainpress_search_users' ),
+				'facilitators' => CoursePress_Data_Facilitator::get_course_facilitators( self::$course_id ),
+				'facilitator_search_nonce' => $search_nonce = wp_create_nonce( 'coursepress_search_users' ),
 				'label' => $label,
 				'description' => $description,
 				'placeholder' => $placeholder,
@@ -577,36 +577,19 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 		public static function step_6() {
 			$setup_class = self::$settings['setup_step_6'];
 			$setup_class = 5 == self::$setup_marker ? $setup_class . ' setup_marker' : $setup_class;
-			$disable_payment = true;
-			/**
-			 * Check payment Availability (integrations)
-			 */
-			$is_payment_available = false;
-			$filters_to_check = array(
-				'brainpress_is_psecommerce_active',
-				'brainpress_is_woocommerce_active',
-			);
-			foreach ( $filters_to_check as $filter ) {
-				if ( $is_payment_available ) {
-					continue;
-				}
-				$is_payment_available = apply_filters( 'brainpress_is_psecommerce_active', $is_payment_available );
-			}
-			if ( ! $is_payment_available ) {
-				$disable_payment = false;
-			}
-			$disable_payment = defined( 'BRAINPRESS_DISABLE_PAYMENT' ) && true == BRAINPRESS_DISABLE_PAYMENT;
-			$disable_payment = apply_filters( 'brainpress_disable_course_payments', $disable_payment, self::$course_id );
+			$disable_payment = defined( 'COURSEPRESS_DISABLE_PAYMENT' ) && true == COURSEPRESS_DISABLE_PAYMENT;
+			$disable_payment = apply_filters( 'coursepress_disable_course_payments', $disable_payment, self::$course_id );
 			$is_paid_course = ! empty( self::$settings['payment_paid_course'] );
-			//$data_course = new BrainPress_Data_Course();
-			$data_instructor = new BrainPress_Data_Instructor();
-			$mp_class = new Brainpress_Helper_Extension_PSeCommerce();
-			$utility_class = new BrainPress_Helper_Utility();
+
+			//$data_course = new CoursePress_Data_Course();
+			$data_instructor = new CoursePress_Data_Instructor();
+			$mp_class = new Coursepress_Helper_Extension_MarketPress();
+			$utility_class = new CoursePress_Helper_Utility();
 
 			$install_url = add_query_arg(
 				array(
 					'post_type' => self::$post_type,
-					'page' => 'brainpress_settings',
+					'page' => 'coursepress_settings',
 					'tab' => 'extensions',
 				),
 				admin_url( 'edit.php' )
@@ -614,26 +597,26 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 			$mp_url = $url = add_query_arg(
 				array(
 					'post_type' => self::$post_type,
-					'page' => 'brainpress_settings',
-					'tab' => 'psecommerce',
+					'page' => 'coursepress_settings',
+					'tab' => 'marketpress',
 				),
 				admin_url( 'edit.php' )
 			);
 
-			$install_message = __( 'Bitte wende Dich an Deinen Administrator, um PSeCommerce für Deine Seite zu aktivieren.', 'brainpress' );
+			$install_message = __( 'Please contact your administrator to enable MarketPress for your site.', 'cp' );
 			$install_message2 = '';
 			$installed = $mp_class->installed();
 
 			if ( current_user_can( 'install_plugins' ) || current_user_can( 'activate_plugins ' ) ) {
-				$install_message = __( 'Um mit dem Verkauf Deines Kurses zu beginnen, bitte <a href="%s">Installiere und aktiviere PSeCommerce</a>.', 'brainpress' );
+				$install_message = __( 'To start selling your course, please <a href="%s">install and activate MarketPress</a>.', 'cp' );
 
 				if ( $installed && $mp_class->activated() ) {
-					$install_message = __( 'Um mit dem Verkauf Deines Kurses zu beginnen, bitte <a href="%s">Setup komplettieren</a> für PSeCommerce.', 'brainpress' );
+					$install_message = __( 'To start selling your course, please <a href="%s">complete setup</a> of of MarketPress.', 'cp' );
 					$install_url = $mp_url;
 				}
 
 				if ( false === $installed ) {
-					$install_message2 = __( 'Die Vollversion von PSeCommerce wurde mit BrainPress gebündelt.', 'brainpress' );
+					$install_message2 = __( 'The full version of MarketPress has been bundled with CoursePress.', 'cp' );
 				}
 			}
 			$install_message = sprintf( $install_message, esc_url_raw( $install_url ) );
@@ -644,12 +627,12 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 			$payment_message = sprintf(
 				'<div class="payment-message %1$s"><h4>%2$s</h4>%3$s%4$s<p>%5$s: WooCommerce</p></div>',
 				esc_attr( $is_paid_course ? '' : 'hidden' ),
-				__( 'Verkaufe Deine Kurse online mit PSeCommerce.', 'brainpress' ),
+				__( 'Sell your courses online with MarketPress.', 'cp' ),
 				! empty( $install_message2 ) ? sprintf( '<p>%s</p>', $install_message2 ) : '',
 				! empty( $install_message ) ? sprintf( '<p>%s</p>', $install_message ) : '',
-				__( 'Andere unterstützte Plugins', 'brainpress' )
+				__( 'Other supported plugins', 'cp' )
 			);
-			$payment_message = apply_filters( 'brainpress_course_payment_message', $payment_message, self::$course_id );
+			$payment_message = apply_filters( 'coursepress_course_payment_message', $payment_message, self::$course_id );
 
 			// It's already been filtered, but because we're dealing with HTML, lets be sure
 			$install_message = $utility_class->filter_content( $payment_message );
@@ -658,7 +641,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 				'course_id' => self::$course_id,
 				'setup_class' => $setup_class,
 				'disable_payment' => $disable_payment,
-				'title2' => false === $disable_payment ? __( '& Kurskosten', 'brainpress' ) : '',
+				'title2' => false === $disable_payment ? __( '& Course Cost', 'cp' ) : '',
 				'enrollment_types' => self::$data_course->get_enrollment_types_array( self::$course_id ),
 				'enrollment_type' => self::$settings['enrollment_type'],
 				'prerequisite_class' => 'prerequisite' === self::$settings['enrollment_type'] ? '' : ' hidden',
@@ -691,27 +674,27 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 
 			$pre_completion_content = self::$settings['pre_completion_content'];
 			if ( empty( $pre_completion_content ) ) {
-				$pre_completion_content = sprintf( '<h3>%s</h3>', __( 'Herzliche Glückwünsche! Du hast COURSE_NAME abgeschlossen!', 'brainpress' ) );
-				$pre_completion_content .= sprintf( '<p>%s</p>', __( 'Dein Kursleiter überprüft nun Deine Arbeit und meldet sich mit Deiner Abschlussbewertung bei Dir, bevor er Dir ein Abschlusszertifikat ausstellt.', 'brainpress' ) );
+				$pre_completion_content = sprintf( '<h3>%s</h3>', __( 'Congratulations! You have completed COURSE_NAME!', 'cp' ) );
+				$pre_completion_content .= sprintf( '<p>%s</p>', __( 'Your course instructor will now review your work and get back to you with your final grade before issuing you a certificate of completion.', 'cp' ) );
 			}
 
 			$completion_content = self::$settings['course_completion_content'];
 			if ( empty( $completion_content ) ) {
 				$completion_content = sprintf( '<h3>%s</h3><p>%s</p><p>DOWNLOAD_CERTIFICATE_BUTTON</p>',
-					__( 'Herzliche Glückwünsche! Du hast COURSE_NAME erfolgreich abgeschlossen und bestanden!', 'brainpress' ),
-					__( 'Hier kannst Du dein Zertifikat herunterladen.', 'brainpress' )
+					__( 'Congratulations! You have successfully completed and passed COURSE_NAME!', 'cp' ),
+					__( 'You can download your certificate here.', 'cp' )
 				);
 			}
 
 			$failed_content = self::$settings['course_failed_content'];
 			if ( empty( $failed_content ) ) {
 				$failed_content = sprintf( '<p>%s</p><p>%s</p>',
-					__( 'Leider hast Du COURSE_NAME nicht bestanden.', 'brainpress' ),
-					__( 'Mehr Wissen beim nächsten Mal!', 'brainpress' )
+					__( 'Unfortunately, you didn\'t pass COURSE_NAME.', 'cp' ),
+					__( 'Better luck next time!', 'cp' )
 				);
 			}
 
-			$certificate_tokens = apply_filters( 'brainpress_basic_certificate_vars',
+			$certificate_tokens = apply_filters( 'coursepress_basic_certificate_vars',
 				array(
 					'FIRST_NAME' => '',
 					'LAST_NAME' => '',
@@ -729,7 +712,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 				'setup_class' => $setup_class,
 				'course_id' => self::$course_id,
 				'minimum_grade_required' => self::$settings['minimum_grade_required'],
-				'token_message' => sprintf( __( 'Verwende diese Token, um die tatsächlichen Kursdetails anzuzeigen: %s', 'brainpress' ), implode( ', ', $tokens ) ),
+				'token_message' => sprintf( __( 'Use these tokens to display actual course details: %s', 'cp' ), implode( ', ', $tokens ) ),
 				'precompletion' => array(
 					'title' => self::$settings['pre_completion_title'],
 					'content' => htmlspecialchars_decode( $pre_completion_content ),
@@ -749,7 +732,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 						'course_id' => self::$course_id,
 					) ),
 					'enabled' => ! empty( self::$settings['basic_certificate'] ),
-					'token_message' => sprintf( __( 'Verwende diese Token, um die tatsächlichen Kursdetails anzuzeigen: %s', 'brainpress' ), implode( ', ', $certificate_tokens ) ),
+					'token_message' => sprintf( __( 'Use these tokens to display actual course details: %s', 'cp' ), implode( ', ', $certificate_tokens ) ),
 					'background' => self::$settings['certificate_background'],
 					'logo' => self::$settings['certificate_logo'],
 					'logo_position' => self::$settings['logo_position'],
@@ -782,12 +765,12 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 				/**
 				 * vars
 				 */
-				$date_format = apply_filters( 'brainpress_basic_certificate_date_format', get_option( 'date_format' ) );
+				$date_format = apply_filters( 'coursepress_basic_certificate_date_format', get_option( 'date_format' ) );
 				$vars = array(
-					'FIRST_NAME' => __( 'Max', 'brainpress' ),
-					'LAST_NAME' => __( 'Mustermann', 'brainpress' ),
-					'COURSE_NAME' => __( 'Beispiel für einen Kurstitel', 'brainpress' ),
-					'COMPLETION_DATE' => date_i18n( $date_format, BrainPress_Data_Course::time_now() ),
+					'FIRST_NAME' => __( 'Jon', 'cp' ),
+					'LAST_NAME' => __( 'Snow', 'cp' ),
+					'COURSE_NAME' => __( 'Example Course Title', 'cp' ),
+					'COMPLETION_DATE' => date_i18n( $date_format, CoursePress_Data_Course::time_now() ),
 					'CERTIFICATE_NUMBER' => uniqid( rand(), true ),
 				);
 
@@ -814,9 +797,9 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 						}
 						$margins = self::get_course_setting( $course_id, 'cert_margin', array() );
 						$orientation = self::get_course_setting( $course_id, 'page_orientation', 'L' );
-						$text_color = BrainPress_Helper_Utility::convert_hex_color_to_rgb( self::get_course_setting( $course_id, 'cert_text_color' ), $text_color );
+						$text_color = CoursePress_Helper_Utility::convert_hex_color_to_rgb( self::get_course_setting( $course_id, 'cert_text_color' ), $text_color );
 						$html = self::get_course_setting( $course_id, 'basic_certificate_layout' );
-						$html = apply_filters( 'brainpress_basic_certificate_html', $html, $course_id, get_current_user_id() );
+						$html = apply_filters( 'coursepress_basic_certificate_html', $html, $course_id, get_current_user_id() );
 						$use_cp_default = false;
 					} else {
 						$background = self::get_setting( 'basic_certificate/background_image' );
@@ -834,7 +817,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 						}
 						$orientation = self::get_setting( 'basic_certificate/orientation', 'L' );
 						$margins  = self::get_setting( 'basic_certificate/margin' );
-						$text_color = BrainPress_Helper_Utility::convert_hex_color_to_rgb( self::get_setting( 'basic_certificate/text_color' ), $text_color );
+						$text_color = CoursePress_Helper_Utility::convert_hex_color_to_rgb( self::get_setting( 'basic_certificate/text_color' ), $text_color );
 						foreach ( $margins as $margin => $value ) {
 							$margins[ $margin ] = $value;
 						}
@@ -869,7 +852,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 
 					$orientation = self::get_setting( 'basic_certificate/orientation', 'L' );
 					$margins  = self::get_setting( 'basic_certificate/margin' );
-					$text_color = BrainPress_Helper_Utility::convert_hex_color_to_rgb( self::get_setting( 'basic_certificate/text_color' ), $text_color );
+					$text_color = CoursePress_Helper_Utility::convert_hex_color_to_rgb( self::get_setting( 'basic_certificate/text_color' ), $text_color );
 					foreach ( $margins as $margin => $value ) {
 						$margins[ $margin ] = $value;
 					}
@@ -879,7 +862,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 					/**
 					 * Default Background
 					 */
-					$background = BrainPress::$path.'/asset/img/certificate/certificate-background-p.png';
+					$background = CoursePress::$path.'/asset/img/certificate/certificate-background-p.png';
 					/**
 					 * default orientation
 					 */
@@ -888,7 +871,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 					 * CP Logo
 					 */
 					$logo = array(
-						'file' => BrainPress::$path.'/asset/img/certificate/certificate-logo-brainpress.png',
+						'file' => CoursePress::$path.'/asset/img/certificate/certificate-logo-coursepress.png',
 						'x' => 95,
 						'y' => 15,
 						'w' => 100,
@@ -908,7 +891,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 					/**
 					 * get default content
 					 */
-					$html = BrainPress_View_Admin_Setting_BasicCertificate::default_certificate_content();
+					$html = CoursePress_View_Admin_Setting_BasicCertificate::default_certificate_content();
 				}
 
 				/**
@@ -917,27 +900,27 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 				if ( empty( $html ) ) {
 					$html = self::get_setting(
 						'basic_certificate/content',
-						BrainPress_View_Admin_Setting_BasicCertificate::default_certificate_content()
+						CoursePress_View_Admin_Setting_BasicCertificate::default_certificate_content()
 					);
 				}
 				$html = stripslashes( $html );
-				$html = BrainPress_Helper_Utility::replace_vars( $html, $vars );
+				$html = CoursePress_Helper_Utility::replace_vars( $html, $vars );
 				// Set PDF args
 				$args = array(
-					'title' => __( 'Abschlusszertifikat', 'brainpress' ),
+					'title' => __( 'Course Completion Certificate', 'cp' ),
 					'orientation' => $orientation,
 					'image' => $background,
 					'filename' => $filename,
 					'format' => 'F',
 					'uid' => '12345',
-					'margins' => apply_filters( 'brainpress_basic_certificate_margins', $margins ),
-					'logo' => apply_filters( 'brainpress_basic_certificate_logo', $logo ),
-					'text_color' => apply_filters( 'brainpress_basic_certificate_text_color', $text_color ),
+					'margins' => apply_filters( 'coursepress_basic_certificate_margins', $margins ),
+					'logo' => apply_filters( 'coursepress_basic_certificate_logo', $logo ),
+					'text_color' => apply_filters( 'coursepress_basic_certificate_text_color', $text_color ),
 				);
-				BrainPress_Helper_PDF::make_pdf( $html, $args );
+				CoursePress_Helper_PDF::make_pdf( $html, $args );
 				// Print preview
 				$args['format'] = 'I';
-				BrainPress_Helper_PDF::make_pdf( $html, $args );
+				CoursePress_Helper_PDF::make_pdf( $html, $args );
 				exit;
 			}
 		}
@@ -950,12 +933,12 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 		 */
 		public static function notice_about_pro_when_try_to_add_new_course() {
 			echo '<p>';
-			_e( 'BrainPress powered by PSource.', 'brainpress' );
+			_e( 'The free version of CoursePress is limited to one course. To add more courses, upgrade to CoursePress Pro for unlimited courses and more payment gateways.', 'cp' );
 			echo '</p>';
 			printf(
 				'<p><a href="%s" class="button-primary">%s</a></p>',
-				esc_url( __( 'https://n3rds.work/cp_psource/brainpress-lms-fuer-classicpress/', 'brainpress' ) ),
-				esc_html__( 'Hol Dir die neueste Version von BrainPress', 'brainpress' )
+				esc_url( __( 'https://cp-psource.github.io/coursepress/', 'cp' ) ),
+				esc_html__( 'Try CoursePress Pro for Free', 'cp' )
 			);
 		}
 
@@ -972,7 +955,7 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 			if ( 'add' != $screen->action ) {
 				return;
 			}
-			$post_type = BrainPress_Data_Course::get_post_type_name();
+			$post_type = CoursePress_Data_Course::get_post_type_name();
 			if ( $post_type != $screen->post_type ) {
 				return;
 			}
@@ -1007,20 +990,20 @@ if ( ! class_exists( 'BrainPress_Admin_Edit' ) ) :
 			$query_param_value = isset( $_GET[ $query_param ] ) ? $_GET[ $query_param ] : null;
 
 			if ( $query_param_value !== null ) {
-				return BrainPress_Helper_Utility::filter_content( $query_param_value );
+				return CoursePress_Helper_Utility::filter_content( $query_param_value );
 			}
 
-			return BrainPress_Data_Course::get_setting( $course_id, $key, $default );
+			return CoursePress_Data_Course::get_setting( $course_id, $key, $default );
 		}
 
 		private static function get_setting( $key, $default = '' ) {
 
-			$query_param_value = BrainPress_Helper_Utility::get_array_val( $_GET, 'brainpress_settings/' . $key );
+			$query_param_value = CoursePress_Helper_Utility::get_array_val( $_GET, 'coursepress_settings/' . $key );
 			if ( $query_param_value !== null ) {
-				return BrainPress_Helper_Utility::filter_content( $query_param_value );
+				return CoursePress_Helper_Utility::filter_content( $query_param_value );
 			}
 
-			return BrainPress_Core::get_setting( $key, $default );
+			return CoursePress_Core::get_setting( $key, $default );
 		}
 
 

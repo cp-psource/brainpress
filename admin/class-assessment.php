@@ -2,11 +2,11 @@
 /**
  * Assessments
  **/
-class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
-	var $parent_slug = 'brainpress';
-	var $slug = 'brainpress_assessments';
+class CoursePress_Admin_Assessment extends CoursePress_Admin_Controller_Menu {
+	var $parent_slug = 'coursepress';
+	var $slug = 'coursepress_assessments';
 	var $with_editor = true;
-	protected $cap = 'brainpress_assessment_cap';
+	protected $cap = 'coursepress_assessment_cap';
 
 	public function __construct() {
 		parent::__construct();
@@ -14,8 +14,8 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 
 	public function get_labels() {
 		return array(
-			'title' => __( 'BrainPress Bewertungen', 'brainpress' ),
-			'menu_title' => __( 'Bewertungen', 'brainpress' ),
+			'title' => __( 'CoursePress Assessments', 'cp' ),
+			'menu_title' => __( 'Assessments', 'cp' ),
 		);
 	}
 
@@ -27,7 +27,7 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 			'jquery-select2' => true,
 			'admin-ui' => true,
 			'core' => true,
-			'assessment' => BrainPress::$url . 'asset/js/brainpress-assessment.js',
+			'assessment' => CoursePress::$url . 'asset/js/coursepress-assessment.js',
 		);
 		$this->css = array(
 			'select2' => true,
@@ -36,21 +36,21 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 
 		// Set localize array for assessment only
 		$this->localize_array['courseinstructor_id'] = get_current_user_id();
-		$this->localize_array['instructor_name'] = BrainPress_Helper_Utility::get_user_name( get_current_user_id() );
+		$this->localize_array['instructor_name'] = CoursePress_Helper_Utility::get_user_name( get_current_user_id() );
 		$this->localize_array['assessment_labels'] = array(
-			'pass' => __( 'Bestanden', 'brainpress' ),
-			'fail' => __( 'Gescheitert', 'brainpress' ),
-			'add_feedback' => __( 'Feedback hinzufügen', 'brainpress' ),
-			'edit_feedback' => __( 'Feedback bearbeiten', 'brainpress' ),
-			'cancel_feedback' => __( 'Abbrechen', 'brainpress' ),
-			'success' => __( 'Erfolg', 'brainpress' ),
-			'error' => __( 'Feedback kann nicht gespeichert werden!', 'brainpress' ),
-			'help_tooltip' => __( 'Wenn ein Student durch die Erreichung dieser Bewertung den Kurs abschließt, wird automatisch eine E-Mail mit Zertifikat gesendet.', 'brainpress' ),
-			'minimum_help' => __( 'Du kannst diese Mindestnote in der Kurseinstellung ändern.', 'brainpress' ),
-			'submit_with_feedback' => __( 'Bewertung mit Feedback einreichen', 'brainpress' ),
-			'submit_no_feedback' => __( 'Bewertung ohne Rückmeldung einreichen', 'brainpress' ),
-			'edit_with_feedback' => __( 'Bewertung mit Feedback bearbeiten', 'brainpress' ),
-			'edit_no_feedback' => __( 'Bewertung ohne Rückmeldung bearbeiten', 'brainpress' ),
+			'pass' => __( 'Pass', 'cp' ),
+			'fail' => __( 'Fail', 'cp' ),
+			'add_feedback' => __( 'Add Feedback', 'cp' ),
+			'edit_feedback' => __( 'Edit Feedback', 'cp' ),
+			'cancel_feedback' => __( 'Cancel', 'cp' ),
+			'success' => __( 'Success', 'cp' ),
+			'error' => __( 'Unable to save feedback!', 'cp' ),
+			'help_tooltip' => __( 'If the submission of this grade makes a student completes the course, an email with certificate will be automatically sent.', 'cp' ),
+			'minimum_help' => __( 'You may change this minimum grade from course setting.', 'cp' ),
+			'submit_with_feedback' => __( 'Submit grade with feedback', 'cp' ),
+			'submit_no_feedback' => __( 'Submit grade without feedback', 'cp' ),
+			'edit_with_feedback' => __( 'Edit grade with feedback', 'cp' ),
+			'edit_no_feedback' => __( 'Edit grade without feedback', 'cp' ),
 		);
 
 		// We will not need media buttons and we only need teeny editor for our feedback
@@ -59,7 +59,7 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 	}
 
 	public function render_page() {
-		$view_id = str_replace( 'brainpress_', '', $this->slug );
+		$view_id = str_replace( 'coursepress_', '', $this->slug );
 		$admin_path = dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'view' . DIRECTORY_SEPARATOR;
 		$view_file = $admin_path . $view_id . '.php';
 
@@ -76,7 +76,7 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 	public function process_form() {
 		if ( isset( $_REQUEST['course_action'] ) && 'upload-file' === $_REQUEST['course_action'] ) {
 			$_REQUEST['in_admin'] = true;
-			$json = BrainPress_View_Front_Course::handle_module_uploads( true );
+			$json = CoursePress_View_Front_Course::handle_module_uploads( true );
 
 			if ( ! empty( $json['success'] ) ) {
 				// Reload the page
@@ -105,16 +105,16 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 				$grade = (int) $data->student_grade;
 				$with_feedback = ! empty( $data->with_feedback );
 
-				$feedback_text = BrainPress_Helper_Utility::filter_content( $data->feedback_content );
-				$student_progress = BrainPress_Data_Student::get_completion_data( $student_id, $course_id );
+				$feedback_text = CoursePress_Helper_Utility::filter_content( $data->feedback_content );
+				$student_progress = CoursePress_Data_Student::get_completion_data( $student_id, $course_id );
 
-				$feedback = BrainPress_Data_Student::get_feedback( $student_id, $course_id, $unit_id, $module_id, false, false, $student_progress );
+				$feedback = CoursePress_Data_Student::get_feedback( $student_id, $course_id, $unit_id, $module_id, false, false, $student_progress );
 				$old_feedback = '';
 				$draft_feedback = ! empty( $feedback['draft'] );
 				if ( ! empty( $feedback['feedback'] ) ) {  $old_feedback = $feedback['feedback']; }
 
 				// Record new grade and get the progress back
-				$student_progress = BrainPress_Data_Student::record_grade(
+				$student_progress = CoursePress_Data_Student::record_grade(
 					$student_id,
 					$course_id,
 					$unit_id,
@@ -135,7 +135,7 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 
 					if ( $is_feedback_new ) {
 						// Record new feedback
-						$student_progress = BrainPress_Data_Student::record_feedback(
+						$student_progress = CoursePress_Data_Student::record_feedback(
 							$student_id,
 							$course_id,
 							$unit_id,
@@ -156,27 +156,27 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 
 
 						// New feedback, send email.
-						$sent = BrainPress_Helper_Email::send_email(
-							BrainPress_Helper_Email::INSTRUCTOR_MODULE_FEEDBACK_NOTIFICATION,
+						$sent = CoursePress_Helper_Email::send_email(
+							CoursePress_Helper_Email::INSTRUCTOR_MODULE_FEEDBACK_NOTIFICATION,
 							$email_args
 						);
 					}
 				}
 
-				BrainPress_Data_Student::get_calculated_completion_data( $student_id, $course_id );
-				$student_progress = BrainPress_Data_Student::get_completion_data( $student_id, $course_id );
-				$is_completed = BrainPress_Helper_Utility::get_array_val(
+				CoursePress_Data_Student::get_calculated_completion_data( $student_id, $course_id );
+				$student_progress = CoursePress_Data_Student::get_completion_data( $student_id, $course_id );
+				$is_completed = CoursePress_Helper_Utility::get_array_val(
 					$student_progress,
 					'completion/completed'
 				);
-				$unit_grade = BrainPress_Helper_Utility::get_array_val(
+				$unit_grade = CoursePress_Helper_Utility::get_array_val(
 					$student_progress,
 					'completion/' . $unit_id . '/average'
 				);
 				$json_data['completed'] = cp_is_true( $is_completed );
 				$json_data['success'] = $success = true;
 				$json_data['unit_grade'] = (int) $unit_grade;
-				$json_data['course_grade'] = BrainPress_Data_Student::average_course_responses( $student_id, $course_id );
+				$json_data['course_grade'] = CoursePress_Data_Student::average_course_responses( $student_id, $course_id );
 			break;
 
 			case 'save_draft_feedback':
@@ -184,10 +184,10 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 				$unit_id = $data->unit_id;
 				$module_id = $data->module_id;
 				$student_id = $data->student_id;
-				$feedback_text = BrainPress_Helper_Utility::filter_content( $data->feedback_content );
-				$student_progress = BrainPress_Data_Student::get_completion_data( $student_id, $course_id );
+				$feedback_text = CoursePress_Helper_Utility::filter_content( $data->feedback_content );
+				$student_progress = CoursePress_Data_Student::get_completion_data( $student_id, $course_id );
 
-				BrainPress_Data_Student::record_feedback(
+				CoursePress_Data_Student::record_feedback(
 					$student_id,
 					$course_id,
 					$unit_id,
@@ -205,21 +205,21 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 				$unit_id = $data->unit_id;
 				$module_id = $data->module_id;
 				$student_id = $data->student_id;
-				$student_progress = BrainPress_Data_Student::get_completion_data( $student_id, $course_id );
-				$responses = BrainPress_Helper_Utility::get_array_val(
+				$student_progress = CoursePress_Data_Student::get_completion_data( $student_id, $course_id );
+				$responses = CoursePress_Helper_Utility::get_array_val(
 					$student_progress,
 					'units/' . $unit_id . '/responses/' . $module_id
 				);
 
 				// Get last response
 				$response_index = ( count( $responses ) - 1 );
-				$student_progress = BrainPress_Helper_Utility::unset_array_value(
+				$student_progress = CoursePress_Helper_Utility::unset_array_value(
 					$student_progress,
 					'units/' . $unit_id . '/responses/' . $module_id . '/' . $response_index . '/feedback',
 					$feedback_data
 				);
 
-				BrainPress_Data_Student::update_completion_data( $student_id, $course_id, $student_progress );
+				CoursePress_Data_Student::update_completion_data( $student_id, $course_id, $student_progress );
 				$json_data['success'] = $success = true;
 
 			break;
@@ -229,7 +229,7 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 				$student_id = $data->student_id;
 				$display_type = $data->display_type;
 				$assess = 'all_assessable' == $display_type;
-				$progress = BrainPress_Data_Student::get_calculated_completion_data( $student_id, $course_id );
+				$progress = CoursePress_Data_Student::get_calculated_completion_data( $student_id, $course_id );
 				$json_data['success'] = $success = true;
 				$json_data['html'] = self::student_assessment( $student_id, $course_id, $progress, $assess, $display_type );
 			break;
@@ -242,7 +242,7 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 				$student_id = $data->student_id;
 				$course_id = $data->course_id;
 				$the_unit = $data->unit_id;
-				$student_progress = BrainPress_Data_Student::get_completion_data( $student_id, $course_id );
+				$student_progress = CoursePress_Data_Student::get_completion_data( $student_id, $course_id );
 				$json_data['html'] = self::student_assessment( $student_id, $course_id, $student_progress, $the_unit, ( $the_unit != 'all' ) );
 				$json_data['success'] = $success = true;
 				$json_data['student_id'] = $student_id;
@@ -268,10 +268,10 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 		 * Admins see everything...
 		 */
 		if ( current_user_can( 'manage_options' ) ) {
-			$now = BrainPress_Data_Course::time_now();
+			$now = CoursePress_Data_Course::time_now();
 			// An admin, get all published courses but have already started
 			$post_args = array(
-				'post_type' => BrainPress_Data_Course::get_post_type_name(),
+				'post_type' => CoursePress_Data_Course::get_post_type_name(),
 				'post_status' => 'publish',
 				'posts_per_page' => -1,
 				'meta_key' => 'cp_course_start_date',
@@ -289,14 +289,14 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 		/**
 		 * Get facilitator courses.
 		 */
-		if ( BrainPress_Data_Capabilities::is_facilitator( $user_id ) ) {
-			$courses = BrainPress_Data_Facilitator::get_facilitated_courses( $user_id, 'publish' );
+		if ( CoursePress_Data_Capabilities::is_facilitator( $user_id ) ) {
+			$courses = CoursePress_Data_Facilitator::get_facilitated_courses( $user_id, 'publish' );
 		}
 		/**
 		 * Get instructor courses.
 		 */
-		if ( BrainPress_Data_Capabilities::is_instructor( $user_id ) ) {
-			$courses2 = BrainPress_Data_Instructor::get_accessable_courses( $user_id, 'publish' );
+		if ( CoursePress_Data_Capabilities::is_instructor( $user_id ) ) {
+			$courses2 = CoursePress_Data_Instructor::get_accessable_courses( $user_id, 'publish' );
 			/**
 			 * Check courses
 			 */
@@ -332,17 +332,17 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 
 		if ( empty( $student_ids ) ) {
 			remove_all_filters( 'pre_user_query' );
-			$student_ids = BrainPress_Data_Course::get_student_ids( $course_id );
+			$student_ids = CoursePress_Data_Course::get_student_ids( $course_id );
 		}
 
 		$found_students = array();
-		$units = BrainPress_Data_Course::get_units_with_modules( $course_id );
+		$units = CoursePress_Data_Course::get_units_with_modules( $course_id );
 		$assessable = array();
 
 		$module_count = array();
 
 		foreach ( $student_ids as $student_id ) {
-			$student_progress = BrainPress_Data_Student::get_completion_data( $student_id, $course_id );
+			$student_progress = CoursePress_Data_Student::get_completion_data( $student_id, $course_id );
 			$minimum_grade = 0;
 			$student_grade = 0;
 			$unit_found = 0;
@@ -365,13 +365,13 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 					if ( ! is_array( $page['modules'] ) ) { continue; }
 
 					foreach ( $page['modules'] as $module_id => $module ) {
-						$attributes = BrainPress_Data_Module::attributes( $module_id );
+						$attributes = CoursePress_Data_Module::attributes( $module_id );
 						$module_type = $attributes['module_type'];
 						$is_answerable = preg_match( '%input%', $module_type );
 						$is_required = cp_is_true( $attributes['mandatory'] );
 						$is_assessable = ! empty( $attributes['assessable'] ) && cp_is_true( $attributes['assessable'] );
 						$require_instructor_assessment = ! empty( $attributes['instructor_assessable'] ) && cp_is_true( $attributes['instructor_assessable'] );
-						$response = BrainPress_Data_Student::get_response( $student_id, $course_id, $_unit_id, $module_id, false, $student_progress );
+						$response = CoursePress_Data_Student::get_response( $student_id, $course_id, $_unit_id, $module_id, false, $student_progress );
 						$response = $response['response'];
 						$is_assessable = $is_assessable || $require_instructor_assessment;
 
@@ -401,12 +401,12 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 						}
 
 						$found_valid += 1;
-						$grades = BrainPress_Data_Student::get_grade( $student_id, $course_id, $_unit_id, $module_id, false, false, $student_progress );
+						$grades = CoursePress_Data_Student::get_grade( $student_id, $course_id, $_unit_id, $module_id, false, false, $student_progress );
 						$grade = empty( $grades['grade'] ) ? 0 : (int) $grades['grade'];
 
 						if ( 'input-upload' === $module_type && ! empty( $require_instructor ) && cp_is_true( $require_instructor ) ) {
 							// Check if the grade came from an instructor
-							$graded_by = BrainPress_Helper_Utility::get_array_val(
+							$graded_by = CoursePress_Helper_Utility::get_array_val(
 								$grades,
 								'graded_by'
 							);
@@ -449,7 +449,7 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 		return array(
 			'students' => $student_ids,
 			'assessable' => 'all' === $unit_id ? count( $module_count ) : count( $assessable ),
-			'passing_grade' => BrainPress_Data_Course::get_setting( $course_id, 'minimum_grade_required', 100 ),
+			'passing_grade' => CoursePress_Data_Course::get_setting( $course_id, 'minimum_grade_required', 100 ),
 		);
 
 	}
@@ -580,7 +580,7 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 			$student_ids = self::search_students( $course_id, $search );
 		}
 
-		$list = new BrainPress_Helper_Table_CourseAssessments();
+		$list = new CoursePress_Helper_Table_CourseAssessments();
 		$list->set_data( $data );
 		$list->set_student_ids( $student_ids );
 		$list->set_type( $type );
@@ -596,9 +596,9 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 
 	public static function student_assessment( $student_id, $course_id, $student_progress = false, $activeUnit = 'all', $assess = false, $display = false ) {
 		if ( false === $student_progress ) {
-			BrainPress_Data_Student::get_completion_data( $student_id, $course_id );
+			CoursePress_Data_Student::get_completion_data( $student_id, $course_id );
 		}
-		$units = BrainPress_Data_Course::get_units_with_modules( $course_id );
+		$units = CoursePress_Data_Course::get_units_with_modules( $course_id );
 
 		$content = '';
 		$hide = ' style="display:none;"';
@@ -618,7 +618,7 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 
 		foreach ( $units as $unit_id => $unit ) {
 			$the_unit = $unit['unit'];
-			$unit_progress = BrainPress_Data_Student::get_all_unit_progress( $student_id, $course_id, $unit_id, $student_progress );
+			$unit_progress = CoursePress_Data_Student::get_all_unit_progress( $student_id, $course_id, $unit_id, $student_progress );
 
 			$unit_wrapper = sprintf( '<div class="cp-unit-div" data-unit="%s" data-student="%s" data-progress="%s">',
 				$unit_id,
@@ -629,7 +629,7 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 			if ( $activeUnit > 0 && $activeUnit != $unit_id ) {
 				continue;
 			}
-			$unit_grade = BrainPress_Helper_Utility::get_array_val(
+			$unit_grade = CoursePress_Helper_Utility::get_array_val(
 				$student_progress,
 				'completion/' . $unit_id . '/average'
 			);
@@ -662,13 +662,13 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 				$found_module = 0;
 
 				foreach ( $page['modules'] as $module_id => $module ) {
-					$attributes = BrainPress_Data_Module::attributes( $module_id );
+					$attributes = CoursePress_Data_Module::attributes( $module_id );
 					$module_type = $attributes['module_type'];
 					$is_answerable = preg_match( '%input%', $module_type );
 					$is_required = cp_is_true( $attributes['mandatory'] );
 					$is_assessable = ! empty( $attributes['assessable'] ) && cp_is_true( $attributes['assessable'] );
 					$require_instructor_assessment = ! empty( $attributes['instructor_assessable'] ) && cp_is_true( $attributes['instructor_assessable'] );
-					$response = BrainPress_Data_Student::get_response( $student_id, $course_id, $unit_id, $module_id, false, $student_progress );
+					$response = CoursePress_Data_Student::get_response( $student_id, $course_id, $unit_id, $module_id, false, $student_progress );
 					$response = $response['response'];
 					$is_assessable = $is_assessable || $require_instructor_assessment;
 					$min_grade = empty( $attributes['minimum_grade'] ) ? 0 : (int) $attributes['minimum_grade'];
@@ -691,19 +691,19 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 
 					$found_module += 1;
 
-					$feedback = BrainPress_Data_Student::get_feedback( $student_id, $course_id, $unit_id, $module_id, false, false, $student_progress );
+					$feedback = CoursePress_Data_Student::get_feedback( $student_id, $course_id, $unit_id, $module_id, false, false, $student_progress );
 					$has_feedback = ! empty( $feedback['feedback'] );
 					$feedback_class = $has_feedback ? ' cp-active' : '';
 					$feedback_text = $has_feedback ? $feedback['feedback'] : '';
-					$feedback_by = $has_feedback ? '- ' . BrainPress_Helper_Utility::get_user_name( $feedback['feedback_by'] ) : '';
+					$feedback_by = $has_feedback ? '- ' . CoursePress_Helper_Utility::get_user_name( $feedback['feedback_by'] ) : '';
 
-					$grades = BrainPress_Data_Student::get_grade( $student_id, $course_id, $unit_id, $module_id, false, false, $student_progress );
+					$grades = CoursePress_Data_Student::get_grade( $student_id, $course_id, $unit_id, $module_id, false, false, $student_progress );
 					$grade = empty( $grades['grade'] ) ? 0 : (int) $grades['grade'];
 
 					$excluded_modules = array( 'input-textarea', 'input-text', 'input-upload', 'input-form' );
 
 					// Check if the grade came from an instructor
-					$graded_by = BrainPress_Helper_Utility::get_array_val(
+					$graded_by = CoursePress_Helper_Utility::get_array_val(
 						$grades,
 						'graded_by'
 					);
@@ -730,27 +730,27 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 					$allowed_for_feedback = array( 'input-text', 'input-textarea', 'input-upload', 'input-form' );
 
 					if ( false === $no_anwer && ( $is_assessable || $require_instructor_assessment ) && in_array( $module_type, $allowed_for_feedback ) ) {
-						$no_feedback_button_label = __( 'Bewertung ohne Feedback einreichen', 'brainpress' );
-						$with_feedback_button_label = __( 'Bewertung mit Feedback einreichen', 'brainpress' );
-						$pass_label = sprintf( __( 'Die Mindestbewertung um zu bestehen: %s', 'brainpress' ), $min_grade );
+						$no_feedback_button_label = __( 'Submit Grade without Feedback', 'cp' );
+						$with_feedback_button_label = __( 'Submit Grade with Feedback', 'cp' );
+						$pass_label = sprintf( __( 'The minimum grade to pass: %s', 'cp' ), $min_grade );
 						$pass_label .= '<br />';
-						$pass_label .= __( 'Du kannst diese Mindestpunktzahl in den Kurseinstellungen ändern.', 'brainpress' );
-						$module_status = $is_pass ? __( 'Bestanden', 'brainpress' ) : __( 'Gescheitert', 'brainpress' );
+						$pass_label .= __( 'You can change this minimum score from course settings.', 'cp' );
+						$module_status = $is_pass ? __( 'Pass', 'cp' ) : __( 'Fail', 'cp' );
 
 						if ( false === $is_pass && ( empty( $graded_by ) || 'auto' === $graded_by ) ) {
-							$module_status = __( 'Ausstehend', 'brainpress' );
+							$module_status = __( 'Pending', 'cp' );
 						}
 
 						if ( ! empty( $graded_by ) && 'auto' != $graded_by ) {
-							$no_feedback_button_label = __( 'Bewertung ohne Feedback bearbeiten', 'brainpress' );
-							$with_feedback_button_label = __( 'Bewertung mit Feedback bearbeiten', 'brainpress' );
+							$no_feedback_button_label = __( 'Edit Grade without Feedback', 'cp' );
+							$with_feedback_button_label = __( 'Edit Grade with Feedback', 'cp' );
 						}
 
 						$page_content .= '<div class="cp-grade-editor">
                                     <div class="cp-right cp-assessment-div">
                                         <div>
                                             <div class="cp-module-grade-info">
-                                                <label class="cp-assess-label">' . __( 'Bewertungsergebnis: ', 'brainpress' ) . '</label>
+                                                <label class="cp-assess-label">' . __( 'Assessment Result: ', 'cp' ) . '</label>
                                                 <span class="cp-current-grade">'. $grade . '%</span>
                                                 <span class="cp-check ' . $pass_class . '">' . $module_status . '</span>
                                             </div>
@@ -760,17 +760,17 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
                                     </div>
                                     <textarea class="cp_feedback_content" style="display:none;">'. esc_textarea( $feedback_text ) . '</textarea>
                                     <div class="cp-grade-editor-box" style="display:none;">
-                                        <div class="brainpress-tooltip cp-right cp-edit-grade-box">
-                                            <label class="cp-assess-label">'. __( 'Bewertung', 'brainpress' ) . '</label>
+                                        <div class="coursepress-tooltip cp-right cp-edit-grade-box">
+                                            <label class="cp-assess-label">'. __( 'Grade', 'cp' ) . '</label>
                                             <input type="number" name="module-grade" data-courseid="' . $course_id . '" data-unit="' . $unit_id . '" data-module="' . $module_id . '" data-minimum="' . esc_attr( $min_grade ) . '" data-student="' . $student_id . '" class="module-grade small-text" data-grade="'. esc_attr( $grade ) . '" value="' . esc_attr( $grade ) . '" min="0" max="100" />
-                                            <button type="button" class="button-primary cp-right cp-save-as-draft disabled">'. __( 'Feeback als Entwurf speichern', 'brainpress' ) . '</button>
-                                            <button type="button" class="button-primary cp-submit-grade disabled">' . __( 'Bewertung übermitteln', 'brainpress' ) . '</button>
-                                            <button type="button" class="button cp-cancel">' . __( 'Abbrechen', 'brainpress' ) . '</button>
+                                            <button type="button" class="button-primary cp-right cp-save-as-draft disabled">'. __( 'Save Feeback as Draft', 'cp' ) . '</button>
+                                            <button type="button" class="button-primary cp-submit-grade disabled">' . __( 'Submit Grade', 'cp' ) . '</button>
+                                            <button type="button" class="button cp-cancel">' . __( 'Cancel', 'cp' ) . '</button>
                                             <p class="description">' . $pass_label . '</p>
                                         </div>
                                         <div class="cp-feedback-editor">
-                                            <label class="cp-feedback-title">' . __( 'Feedback', 'brainpress' ) . '</label>
-                                            <p class="description">'. __( 'Dein Feedback wird nach der Einreichung per E-Mail an den Studenten gesendet.', 'brainpress' ) . '</p>
+                                            <label class="cp-feedback-title">' . __( 'Feedback', 'cp' ) . '</label>
+                                            <p class="description">'. __( 'Your feedback will be emailed to the student after submission.', 'cp' ) . '</p>
                                         </div>
                                     </div>
                                 </div>
@@ -786,7 +786,7 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 							if ( 'input-upload' === $module_type ) {
 								$action_url = add_query_arg(
 									array(
-										'page' => 'brainpress_assessments',
+										'page' => 'coursepress_assessments',
 										'course_id' => $course_id,
 										'unit' => $activeUnit,
 										'type' => ! empty( $_REQUEST['type'] ) ? $_REQUEST['type'] : 'all',
@@ -798,13 +798,13 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 								);
 								$action_url .= '&view_answer#unit-' . $unit_id . '-module-' . $module_id;
 								$page_content .= '<form method="post" action="' . $action_url . '" enctype="multipart/form-data" class="has-disabled">';
-								$page_content .= sprintf( '<label class="cp-assess-label">%s</label>', __( 'Datei hochladen', 'brainpress' ) );
+								$page_content .= sprintf( '<label class="cp-assess-label">%s</label>', __( 'Upload File', 'cp' ) );
 								$page_content .= '<input type="file" name="module-' . $module_id .'" class="input-key" />';
 								$page_content .= '<input type="hidden" name="module_id" value="' . $module_id . '" />';
 								$page_content .= '<input type="hidden" name="course_id" value="' . $course_id . '" />';
 								$page_content .= '<input type="hidden" name="student_id" value="' . $student_id . '" />';
 								$page_content .= '<input type="hidden" name="unit_id" value="' . $unit_id . '" />';
-								$page_content .= '<input type="submit" class="button-primary disabled" value="' . __( 'Einreichen', 'brainpress' ) . '" />';
+								$page_content .= '<input type="submit" class="button-primary disabled" value="' . __( 'Submit', 'cp' ) . '" />';
 								$page_content .= '</form>';
 							}
 
@@ -813,16 +813,16 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 							if ( in_array( $module_type, $excluded_modules ) ) {
 								$page_content .= '<div class="cp-right cp-assessment-div">
                                             <div class="cp-module-grade-info">
-                                                <label class="cp-assess-label">' . __( 'Nicht bewertbar', 'brainpress' ) . '</label>
+                                                <label class="cp-assess-label">' . __( 'Non-gradable', 'cp' ) . '</label>
                                             </div>
                                         </div>';
 							} else {
 								$page_content .= '<div class="cp-right cp-assessment-div">
                                                 <div>
                                                     <div class="cp-module-grade-info">
-                                                        <label class="cp-assess-label">' . __( 'Modulbewertung: ', 'brainpress' ) . '</label>
+                                                        <label class="cp-assess-label">' . __( 'Module Grade: ', 'cp' ) . '</label>
                                                         <span class="cp-current-grade">'. $grade . '%</span>
-                                                        <span class="cp-check ' . $pass_class . '">' . ( 'green' === trim( $pass_class ) ? __( 'Bestanden', 'brainpress' ) : __( 'Gescheitert', 'brainpress' ) ) . '</span>
+                                                        <span class="cp-check ' . $pass_class . '">' . ( 'green' === trim( $pass_class ) ? __( 'Pass', 'cp' ) : __( 'Fail', 'cp' ) ) . '</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -880,7 +880,7 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 								if ( ! empty( $response['url'] ) ) {
 									$url = $response['url'];
 									$filename = basename( $url );
-									$url = BrainPress_Helper_Utility::encode( $url );
+									$url = CoursePress_Helper_Utility::encode( $url );
 									$url = trailingslashit( home_url() ) . '?fdcpf=' . $url;
 
 									$page_content .= sprintf( '<a href="%s" class="button-primary cp-download">%s</a>', esc_url( $url ), $filename );
@@ -958,17 +958,17 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 							$page_content .= '</div>';
 					}
 					if ( 0 === count( $response ) ) {
-						$page_content .= sprintf( '<div class="cp-answer-box"><span class="dashicons dashicons-no"></span> %s</div>', __( 'Keine Antwort!', 'brainpress' ) );
+						$page_content .= sprintf( '<div class="cp-answer-box"><span class="dashicons dashicons-no"></span> %s</div>', __( 'No answer!', 'cp' ) );
 					} else {
 						if ( false === $no_anwer && ( $is_assessable || $require_instructor_assessment ) && in_array( $module_type, $allowed_for_feedback ) ) {
 
 							$is_draft = $has_feedback && ! empty( $feedback['draft'] );
 
 							$page_content .= '<div class="cp-instructor-feedback" style="display: '. ( ! empty( $feedback ) ? 'block' : 'none' ) . '">
-                                        <h4>' . __( 'Kursleiter Feedback', 'brainpress' ) . ' <span class="cp-draft-icon" style="display: '. ( $is_draft ? 'inline-block' : 'none' ) . ';">['. __( 'Entwurf', 'brainpress' ) . ']</span></h4>
+                                        <h4>' . __( 'Instructor Feedback', 'cp' ) . ' <span class="cp-draft-icon" style="display: '. ( $is_draft ? 'inline-block' : 'none' ) . ';">['. __( 'Draft', 'cp' ) . ']</span></h4>
                                     ';
 							$page_content .= sprintf( '<div class="cp-feedback-details%s">%s</div><cite>%s</cite>', empty( $feedback_text ) ? ' empty' : '', $feedback_text, $feedback_by );
-							$page_content .= sprintf( '<p class="description" %s>%s</p>', empty( $feedback_text ) ? '' : $hide, __( 'Schreibe Dein Feedback!', 'brainpress' ) );
+							$page_content .= sprintf( '<p class="description" %s>%s</p>', empty( $feedback_text ) ? '' : $hide, __( 'Write your feedback!', 'cp' ) );
 							$page_content .= '</div>';
 						}
 					}
@@ -993,7 +993,7 @@ class BrainPress_Admin_Assessment extends BrainPress_Admin_Controller_Menu {
 		}
 
 		if ( empty( $content ) ) {
-			$content .= sprintf( '<p class="div-info description">%s</p>', __( 'Es gibt keine bewertbaren Module!', 'brainpress' ) );
+			$content .= sprintf( '<p class="div-info description">%s</p>', __( 'There are no assessable items!', 'cp' ) );
 		}
 
 		$content .= implode( ' ', $hidden_fields );

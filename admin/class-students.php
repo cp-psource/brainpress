@@ -2,14 +2,14 @@
 /**
  * Admin Students
  *
- * @package ClassicPress
- * @subpackage BrainPress
+ * @package WordPress
+ * @subpackage CoursePress
  **/
-class BrainPress_Admin_Students extends BrainPress_Admin_Controller_Menu {
-	var $parent_slug = 'brainpress';
-	var $slug = 'brainpress_students';
+class CoursePress_Admin_Students extends CoursePress_Admin_Controller_Menu {
+	var $parent_slug = 'coursepress';
+	var $slug = 'coursepress_students';
 	var $with_editor = false;
-	protected $cap = 'brainpress_students_cap';
+	protected $cap = 'coursepress_students_cap';
 	var $students_list = null;
 	var $enrolled_courses = null;
 
@@ -22,8 +22,8 @@ class BrainPress_Admin_Students extends BrainPress_Admin_Controller_Menu {
 
 	public function get_labels() {
 		return array(
-			'title' => __( 'BrainPress Studenten', 'brainpress' ),
-			'menu_title' => __( 'Studenten', 'brainpress' ),
+			'title' => __( 'CoursePress Students', 'cp' ),
+			'menu_title' => __( 'Students', 'cp' ),
 		);
 	}
 
@@ -53,7 +53,7 @@ class BrainPress_Admin_Students extends BrainPress_Admin_Controller_Menu {
 					/**
 				 * Check nonce.
 				 */
-					$nonce_action = BrainPress_Data_Student::get_nonce_action( $action, $_REQUEST['student_id'] );
+					$nonce_action = CoursePress_Data_Student::get_nonce_action( $action, $_REQUEST['student_id'] );
 					if ( ! wp_verify_nonce( $_REQUEST['_wpnonce'], $nonce_action ) ) {
 						break;
 					}
@@ -64,9 +64,9 @@ class BrainPress_Admin_Students extends BrainPress_Admin_Controller_Menu {
 						break;
 					}
 					if ( 'all' == $_REQUEST['course_id'] ) {
-						BrainPress_Data_Student::remove_from_all_courses( $_REQUEST['student_id'] );
+						CoursePress_Data_Student::remove_from_all_courses( $_REQUEST['student_id'] );
 					} else {
-						BrainPress_Data_Course::withdraw_student( $_REQUEST['student_id'], $_REQUEST['course_id'] );
+						CoursePress_Data_Course::withdraw_student( $_REQUEST['student_id'], $_REQUEST['course_id'] );
 					}
 				break;
 				/**
@@ -89,9 +89,9 @@ class BrainPress_Admin_Students extends BrainPress_Admin_Controller_Menu {
 					$course_id = intval( isset( $_REQUEST['course_id'] )? $_REQUEST['course_id'] : 'all' );
 					foreach ( $_REQUEST['users'] as $student_id ) {
 						if ( 0 === $course_id ) {
-							BrainPress_Data_Student::remove_from_all_courses( $student_id );
+							CoursePress_Data_Student::remove_from_all_courses( $student_id );
 						} else {
-							BrainPress_Data_Course::withdraw_student( $student_id, $course_id );
+							CoursePress_Data_Course::withdraw_student( $student_id, $course_id );
 						}
 					}
 				break;
@@ -106,10 +106,10 @@ class BrainPress_Admin_Students extends BrainPress_Admin_Controller_Menu {
 
 		if ( empty( $_REQUEST['view'] ) ) {
 			// Set up students table
-			$this->students_list = new BrainPress_Admin_Table_Students;
+			$this->students_list = new CoursePress_Admin_Table_Students;
 			$this->students_list->prepare_items();
 
-			add_screen_option( 'per_page', array( 'default' => 20, 'option' => 'brainpress_students_per_page', 'label' => __( 'Anzahl der Studenten pro Seite:', 'brainpress' ) ) );
+			add_screen_option( 'per_page', array( 'default' => 20, 'option' => 'coursepress_students_per_page', 'label' => __( 'Number of students per page:', 'cp' ) ) );
 		} else {
 			$view = $_REQUEST['view'];
 			$this->slug = 'student-' . $view;
@@ -118,7 +118,7 @@ class BrainPress_Admin_Students extends BrainPress_Admin_Controller_Menu {
 				$student_id = isset( $_GET['student_id'] ) ? intval( $_GET['student_id'] ) : 0;
 				$nonce_verify = self::view_profile_verify_nonce( $student_id );
 				if ( $nonce_verify ) {
-					$this->enrolled_courses = new BrainPress_Admin_Table_Courses( $student_id );
+					$this->enrolled_courses = new CoursePress_Admin_Table_Courses( $student_id );
 					$this->enrolled_courses->prepare_items();
 				}
 			}
@@ -189,12 +189,12 @@ class BrainPress_Admin_Students extends BrainPress_Admin_Controller_Menu {
 		$exclude = array();
 
 		$course_id = (int) $_GET['course_id'];
-		if ( wp_verify_nonce( $nonce_request, 'brainpress_search_users' ) ) {
+		if ( wp_verify_nonce( $nonce_request, 'coursepress_search_users' ) ) {
 			// Facilitator
-			$exclude = BrainPress_Data_Facilitator::get_course_facilitators( $course_id );
-		} elseif ( wp_verify_nonce( $nonce_request, 'brainpress_instructor_search' ) ) {
+			$exclude = CoursePress_Data_Facilitator::get_course_facilitators( $course_id );
+		} elseif ( wp_verify_nonce( $nonce_request, 'coursepress_instructor_search' ) ) {
 			// Instructors
-			$exclude = BrainPress_Data_Course::get_setting( $course_id, 'instructors', array() );
+			$exclude = CoursePress_Data_Course::get_setting( $course_id, 'instructors', array() );
 			$exclude = array_filter( $exclude );
 		} else {
 			// Student
@@ -203,7 +203,7 @@ class BrainPress_Admin_Students extends BrainPress_Admin_Controller_Menu {
 				echo json_encode( $results );
 				die;
 			}
-			$exclude = BrainPress_Data_Course::get_students( $_GET['course_id'], 0, 0, 'ID' );
+			$exclude = CoursePress_Data_Course::get_students( $_GET['course_id'], 0, 0, 'ID' );
 		}
 
 		$search = $_GET['q'];
@@ -291,7 +291,7 @@ class BrainPress_Admin_Students extends BrainPress_Admin_Controller_Menu {
 				$results['items'][] = array(
 					'id' => $user->ID,
 					'text' => $user->display_name,
-					'display_name' => BrainPress_Helper_Utility::get_user_name( $user->ID ),
+					'display_name' => CoursePress_Helper_Utility::get_user_name( $user->ID ),
 					'user_login' => $user->user_login,
 					'gravatar' => get_avatar( $user->ID, 30 ),
 				);
@@ -306,7 +306,7 @@ class BrainPress_Admin_Students extends BrainPress_Admin_Controller_Menu {
 	public static function certificate_send() {
 		$results = array(
 			'success' => false,
-			'message' => __( 'Etwas ist schief gelaufen. Senden fehlgeschlagen.', 'brainpress' ),
+			'message' => __( 'Something went wrong. Sending failed.', 'cp' ),
 			'step' => 'init',
 		);
 		/**
@@ -330,7 +330,7 @@ class BrainPress_Admin_Students extends BrainPress_Admin_Controller_Menu {
 			echo json_encode( $results );
 			die;
 		}
-		$result = BrainPress_Data_Certificate::send_certificate( $_POST['id'] );
+		$result = CoursePress_Data_Certificate::send_certificate( $_POST['id'] );
 		if ( $result ) {
 			$parent_id = wp_get_post_parent_id( $_POST['id'] );
 			$results = array(
@@ -338,7 +338,7 @@ class BrainPress_Admin_Students extends BrainPress_Admin_Controller_Menu {
 				'message' => sprintf(
 					'<div class="notice notice-success certificate-send"><p>%s</p></div>',
 					sprintf(
-						__( 'Zertifikat von <b>%s</b> wurde gesendet.', 'brainpress' ),
+						__( 'Certificate of <b>%s</b> has been sent.', 'cp' ),
 						get_the_title( $parent_id )
 					)
 				),
@@ -358,7 +358,7 @@ class BrainPress_Admin_Students extends BrainPress_Admin_Controller_Menu {
 	 */
 	public static function hidden_columns( $columns ) {
 		$screen = get_current_screen();
-		if ( empty( $screen ) || 'course_page_brainpress_students' != $screen->id ) {
+		if ( empty( $screen ) || 'course_page_coursepress_students' != $screen->id ) {
 			return $columns;
 		}
 		array_push( $columns, 'user_id' );

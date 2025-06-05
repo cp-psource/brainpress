@@ -3,21 +3,21 @@
  * Course Certificates Page
  * Display and manages the generated certificates.
  **/
-class BrainPress_Admin_Certificate extends BrainPress_Admin_Controller_Menu {
-	var $parent_slug = 'brainpress';
-	var $slug = 'brainpress_certificate';
-	protected $cap = 'brainpress_settings_cap';
+class CoursePress_Admin_Certificate extends CoursePress_Admin_Controller_Menu {
+	var $parent_slug = 'coursepress';
+	var $slug = 'coursepress_certificate';
+	protected $cap = 'coursepress_settings_cap';
 
 	public function __construct() {
 		/*
 		parent::__construct();
 
 		// Temp solution
-		// @todo: Replace this with actual certificates pages under Brainpress
+		// @todo: Replace this with actual certificates pages under Coursepress
 		add_action( 'init', array( $this, 're_register_certificates' ) );
 
 		// Let's temporarily enable certificate caps
-		if ( current_user_can( 'brainpress_settings_cap' ) ) {
+		if ( current_user_can( 'coursepress_settings_cap' ) ) {
 			add_filter( 'user_has_cap', array( $this, 'add_caps' ), 100, 3 );
 		}
 		*/
@@ -25,20 +25,20 @@ class BrainPress_Admin_Certificate extends BrainPress_Admin_Controller_Menu {
 
 	public function get_labels() {
 		return array(
-			'title' => __( 'BrainPress Zertifikate', 'brainpress' ),
-			'menu_title' => __( 'Zertifikate', 'brainpress' ),
+			'title' => __( 'CoursePress Certificates', 'cp' ),
+			'menu_title' => __( 'Certificates', 'cp' ),
 		);
 	}
 
 	public function re_register_certificates() {
 		register_post_type(
-			BrainPress_Data_Certificate::get_post_type_name(),
+			CoursePress_Data_Certificate::get_post_type_name(),
 			array(
 				'public' => false,
 				'show_ui' => true,
 				'capability_type' => 'certificate',
 				'map_meta_cap' => null,
-				'label' => __( 'Zertifikate', 'brainpress' ),
+				'label' => __( 'Certificates', 'cp' ),
 			)
 		);
 	}

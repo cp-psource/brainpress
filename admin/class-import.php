@@ -1,23 +1,23 @@
 <?php
 /**
- * BrainPress Import
+ * CoursePress Import
  *
  * This import only works with CP export.
  *
  * @since 2.0
  **/
-class BrainPress_Admin_Import extends BrainPress_Admin_Controller_Menu {
-	var $parent_slug = 'brainpress';
-	var $slug = 'brainpress_import';
+class CoursePress_Admin_Import extends CoursePress_Admin_Controller_Menu {
+	var $parent_slug = 'coursepress';
+	var $slug = 'coursepress_import';
 	private static $start_time = 0;
 	private static $current_time = 0;
 	private static $time_limit_reached = false;
-	protected $cap = 'brainpress_settings_cap';
+	protected $cap = 'coursepress_settings_cap';
 
 	public function get_labels() {
 		return array(
-			'title' => __( 'BrainPress Import', 'brainpress' ),
-			'menu_title' => __( 'Importieren', 'brainpress' ),
+			'title' => __( 'CoursePress Import', 'cp' ),
+			'menu_title' => __( 'Import', 'cp' ),
 		);
 	}
 
@@ -34,8 +34,8 @@ class BrainPress_Admin_Import extends BrainPress_Admin_Controller_Menu {
 				$with_students = false;
 				$with_comments = false;
 
-				if ( isset( $_REQUEST['brainpress'] ) ) {
-					$options = $_REQUEST['brainpress'];
+				if ( isset( $_REQUEST['coursepress'] ) ) {
+					$options = $_REQUEST['coursepress'];
 					$is_replace = ! empty( $options['replace'] );
 					$with_students = ! empty( $options['students'] );
 					$with_comments = ! empty( $options['comments'] ) && $with_students;
@@ -64,7 +64,7 @@ class BrainPress_Admin_Import extends BrainPress_Admin_Controller_Menu {
 				}
 			} else {
 				$user_id = get_current_user_id();
-				$courses = get_option( 'brainpress_import_' . $user_id, array() );
+				$courses = get_option( 'coursepress_import_' . $user_id, array() );
 				$is_replace = ! empty( $_REQUEST['replace'] );
 				$with_students = ! empty( $_REQUEST['students'] );
 				$with_comments = ! empty( $_REQUEST['comments'] ) && $with_students;
@@ -86,7 +86,7 @@ class BrainPress_Admin_Import extends BrainPress_Admin_Controller_Menu {
 		$user_id = get_current_user_id();
 
 		// Delete the imported courses
-		delete_option( 'brainpress_import_' . $user_id );
+		delete_option( 'coursepress_import_' . $user_id );
 
 		// Notify user that import has completed
 		add_action( 'admin_notices', array( __CLASS__, 'import_completed' ) );
@@ -97,7 +97,7 @@ class BrainPress_Admin_Import extends BrainPress_Admin_Controller_Menu {
 	 **/
 	public static function import_failed_wrong_or_empty_file() {
 		printf( '<div class="notice notice-error"><p>%s</p></div>',
-			__( 'Der Import von Kursen schlägt fehl. Falsche oder leere Datei.', 'brainpress' )
+			__( 'Courses import fail. Wrong or empty file.', 'cp' )
 		);
 	}
 
@@ -106,7 +106,7 @@ class BrainPress_Admin_Import extends BrainPress_Admin_Controller_Menu {
 	 **/
 	public static function import_completed() {
 		printf( '<div class="notice notice-info is-dismissible"><p>%s</p></div>',
-			__( 'Kurse erfolgreich importiert!', 'brainpress' )
+			__( 'Courses successfully imported!', 'cp' )
 		);
 	}
 
@@ -188,7 +188,7 @@ class BrainPress_Admin_Import extends BrainPress_Admin_Controller_Menu {
 					$author_id = self::maybe_add_user( $course->author );
 				}
 				$course->course->post_author = $author_id;
-				$new_course_id = self::_insert_post( $course->course, BrainPress_Data_Course::get_post_type_name(), $replace );
+				$new_course_id = self::_insert_post( $course->course, CoursePress_Data_Course::get_post_type_name(), $replace );
 				$course->course = $new_course_id;
 			} else {
 				$new_course_id = $course->course;
@@ -210,7 +210,7 @@ class BrainPress_Admin_Import extends BrainPress_Admin_Controller_Menu {
 					if ( false === self::check_memory() ) { break; }
 
 					$user_id = self::maybe_add_user( $instructor );
-					BrainPress_Data_Course::add_instructor( $new_course_id, $user_id );
+					CoursePress_Data_Course::add_instructor( $new_course_id, $user_id );
 					unset( $course->instructors->$instructor_id );
 				}
 
@@ -226,7 +226,7 @@ class BrainPress_Admin_Import extends BrainPress_Admin_Controller_Menu {
 					if ( false === self::check_memory() ) { break; }
 
 					$user_id = self::maybe_add_user( $facilitator );
-					BrainPress_Data_Facilitator::add_course_facilitator( $new_course_id, $user_id );
+					CoursePress_Data_Facilitator::add_course_facilitator( $new_course_id, $user_id );
 					unset( $course->facilitators->$facilitator_id );
 				}
 
@@ -236,7 +236,7 @@ class BrainPress_Admin_Import extends BrainPress_Admin_Controller_Menu {
 
 			if ( false === self::check_memory() ) { break; }
 
-			$course_settings = BrainPress_Data_Course::get_setting( $new_course_id );
+			$course_settings = CoursePress_Data_Course::get_setting( $new_course_id );
 			$visible_units = $preview_units = $visible_pages = $preview_pages = $visible_modules = $preview_modules = array();
 			$setting_keys = array(
 				'structure_visible_units',
@@ -264,7 +264,7 @@ class BrainPress_Admin_Import extends BrainPress_Admin_Controller_Menu {
 					if ( ! isset( $unit->unit_id ) ) {
 						$the_unit = $unit->unit;
 						$the_unit->post_parent = $new_course_id;
-						$new_unit_id = self::_insert_post( $the_unit, BrainPress_Data_Unit::get_post_type_name(), $replace );
+						$new_unit_id = self::_insert_post( $the_unit, CoursePress_Data_Unit::get_post_type_name(), $replace );
 						$course->units->$unit_id->unit_id = $new_unit_id;
 					} else {
 						$new_unit_id = $unit->unit_id;
@@ -307,7 +307,7 @@ class BrainPress_Admin_Import extends BrainPress_Admin_Controller_Menu {
 									if ( ! isset( $module->_module_id ) ) {
 										$module_data = $module;
 										$module_data->post_parent = $new_unit_id;
-										$new_module_id = self::_insert_post( $module_data, BrainPress_Data_Module::get_post_type_name(), $replace );
+										$new_module_id = self::_insert_post( $module_data, CoursePress_Data_Module::get_post_type_name(), $replace );
 										$module->_module_id = $new_module_id;
 										$page->modules->$module_id = $module;
 									} else {
@@ -355,19 +355,19 @@ class BrainPress_Admin_Import extends BrainPress_Admin_Controller_Menu {
 			}
 
 			// Update course meta
-			$course_settings = BrainPress_Helper_Utility::set_array_value( $course_settings, 'structure_visible_units', $visible_units );
-			$course_settings = BrainPress_Helper_Utility::set_array_value( $course_settings, 'structure_preview_units', $preview_units );
-			$course_settings = BrainPress_Helper_Utility::set_array_value( $course_settings, 'structure_visible_pages', $visible_pages );
-			$course_settings = BrainPress_Helper_Utility::set_array_value( $course_settings, 'structure_preview_pages', $preview_pages );
-			$course_settings = BrainPress_Helper_Utility::set_array_value( $course_settings, 'structure_visible_modules', $visible_modules );
-			$course_settings = BrainPress_Helper_Utility::set_array_value( $course_settings, 'structure_preview_modules', $preview_modules );
-			BrainPress_Data_Course::update_setting( $new_course_id, true, $course_settings );
+			$course_settings = CoursePress_Helper_Utility::set_array_value( $course_settings, 'structure_visible_units', $visible_units );
+			$course_settings = CoursePress_Helper_Utility::set_array_value( $course_settings, 'structure_preview_units', $preview_units );
+			$course_settings = CoursePress_Helper_Utility::set_array_value( $course_settings, 'structure_visible_pages', $visible_pages );
+			$course_settings = CoursePress_Helper_Utility::set_array_value( $course_settings, 'structure_preview_pages', $preview_pages );
+			$course_settings = CoursePress_Helper_Utility::set_array_value( $course_settings, 'structure_visible_modules', $visible_modules );
+			$course_settings = CoursePress_Helper_Utility::set_array_value( $course_settings, 'structure_preview_modules', $preview_modules );
+			CoursePress_Data_Course::update_setting( $new_course_id, true, $course_settings );
 
 			if ( false === self::check_memory() ) { break; }
 			// Import course students
 			if ( $with_students && isset( $course->students ) && is_object( $course->students ) ) {
-				// Tell brainpress not to send enrollment notification
-				add_filter( 'brainpress_notify_student', '__return_false' );
+				// Tell coursepress not to send enrollment notification
+				add_filter( 'coursepress_notify_student', '__return_false' );
 
 				foreach ( $course->students as $student_id => $student ) {
 					if ( false === self::check_memory() ) { break; }
@@ -387,18 +387,18 @@ class BrainPress_Admin_Import extends BrainPress_Admin_Controller_Menu {
 					if ( false === self::check_memory() ) { break; }
 
 					// Remove enrollment restrictions
-					remove_all_filters( 'brainpress_enroll_student' );
+					remove_all_filters( 'coursepress_enroll_student' );
 
 					// Enroll student
-					BrainPress_Data_Course::enroll_student( $new_student_id, $new_course_id );
+					CoursePress_Data_Course::enroll_student( $new_student_id, $new_course_id );
 
 					if ( false === self::check_memory() ) { break; }
 
 					if ( ! empty( $student_progress ) && $new_student_id > 0 ) {
-						$student_progress = BrainPress_Helper_Utility::object_to_array( $student_progress );
+						$student_progress = CoursePress_Helper_Utility::object_to_array( $student_progress );
 						$student_progress = self::replace_student_progress( $student_progress, $new_units );
 						if ( false === self::check_memory() ) { break; }
-						BrainPress_Data_Student::update_completion_data( $new_student_id, $new_course_id, $student_progress );
+						CoursePress_Data_Student::update_completion_data( $new_student_id, $new_course_id, $student_progress );
 						unset( $course->students->$student_id->progress );
 					}
 					unset( $courses->students->$student_id );
@@ -431,7 +431,7 @@ class BrainPress_Admin_Import extends BrainPress_Admin_Controller_Menu {
 					}
 
 					// Insert comment
-					$new_comments[ $comment->comment_ID ] = wp_insert_comment( BrainPress_Helper_Utility::object_to_array( $comment ) );
+					$new_comments[ $comment->comment_ID ] = wp_insert_comment( CoursePress_Helper_Utility::object_to_array( $comment ) );
 
 					unset( $course->comments->course->$comment_id );
 
@@ -470,7 +470,7 @@ class BrainPress_Admin_Import extends BrainPress_Admin_Controller_Menu {
 						$comment->user_id = $user_id;
 
 						// Insert comment
-						$new_comments[ $comment->comment_ID ] = wp_insert_comment( BrainPress_Helper_Utility::object_to_array( $comment ) );
+						$new_comments[ $comment->comment_ID ] = wp_insert_comment( CoursePress_Helper_Utility::object_to_array( $comment ) );
 
 						if ( false === self::check_memory() ) { break; }
 					}
@@ -486,16 +486,16 @@ class BrainPress_Admin_Import extends BrainPress_Admin_Controller_Menu {
 		}
 
 		// Save the remaining courses to db
-		$courses = BrainPress_Helper_Utility::object_to_array( $courses );
+		$courses = CoursePress_Helper_Utility::object_to_array( $courses );
 		$courses = array_filter( $courses );
 
 		if ( ! empty( $courses ) ) {
 			$user_id = get_current_user_id();
-			update_option( 'brainpress_import_' . $user_id, $courses );
+			update_option( 'coursepress_import_' . $user_id, $courses );
 
 			// Reload the page
 			$url_args = array(
-				'brainpress_import' => wp_create_nonce( 'brainpress_import' ),
+				'coursepress_import' => wp_create_nonce( 'coursepress_import' ),
 				'reload' => true,
 				'import_id' => $import_id,
 			);
@@ -552,7 +552,7 @@ class BrainPress_Admin_Import extends BrainPress_Admin_Controller_Menu {
 	 * @param (array|object) $metas			The metadata to insert.
 	 **/
 	public static function insert_meta( $post_id, $metas = array() ) {
-		$metas = BrainPress_Helper_Utility::object_to_array( $metas );
+		$metas = CoursePress_Helper_Utility::object_to_array( $metas );
 		foreach ( $metas as  $key => $values ) {
 			$values = array_map( 'maybe_unserialize', $values );
 			if ( is_array( $values ) ) {
@@ -606,56 +606,56 @@ class BrainPress_Admin_Import extends BrainPress_Admin_Controller_Menu {
 	public static function replace_student_progress( $student_progress, $new_units ) {
 		foreach ( $new_units as $unit_id => $unit ) {
 			$new_unit_id = $unit['new_unit_id'];
-			$unit_data = BrainPress_Helper_Utility::get_array_val(
+			$unit_data = CoursePress_Helper_Utility::get_array_val(
 				$student_progress,
 				'units/' . $unit_id
 			);
-			$unit_completion = BrainPress_Helper_Utility::get_array_val(
+			$unit_completion = CoursePress_Helper_Utility::get_array_val(
 				$student_progress,
 				'completion/' . $unit_id
 			);
 
 			if ( ! empty( $unit['modules'] ) ) {
 				foreach ( $unit['modules'] as $module_id => $new_module_id ) {
-					$module_progress = BrainPress_Helper_Utility::get_array_val(
+					$module_progress = CoursePress_Helper_Utility::get_array_val(
 						$unit_data,
 						'responses/' . $module_id
 					);
 
 					if ( ! empty( $module_progress ) ) {
-						$unit_data = BrainPress_Helper_Utility::set_array_value(
+						$unit_data = CoursePress_Helper_Utility::set_array_value(
 							$unit_data,
 							'responses/' . $new_module_id,
 							$module_progress
 						);
 					}
 
-					$module_seen = BrainPress_Helper_Utility::get_array_val(
+					$module_seen = CoursePress_Helper_Utility::get_array_val(
 						$unit_completion,
 						'modules_seen/' . $module_id
 					);
 					if ( ! empty( $module_seen ) ) {
-						$unit_completion = BrainPress_Helper_Utility::set_array_value(
+						$unit_completion = CoursePress_Helper_Utility::set_array_value(
 							$unit_completion,
 							'modules_seen/' . $new_module_id,
 							1
 						);
-						$unit_completion = BrainPress_Helper_Utility::unset_array_value(
+						$unit_completion = CoursePress_Helper_Utility::unset_array_value(
 							$unit_completion,
 							'modules_seen/' . $module_id
 						);
 					}
-					$module_answered = BrainPress_Helper_Utility::get_array_val(
+					$module_answered = CoursePress_Helper_Utility::get_array_val(
 						$unit_completion,
 						'answered/' . $module_id
 					);
 					if ( ! empty( $module_answered ) ) {
-						$unit_completion = BrainPress_Helper_Utility::set_array_value(
+						$unit_completion = CoursePress_Helper_Utility::set_array_value(
 							$unit_completion,
 							'answered/' . $new_module_id,
 							1
 						);
-						$unit_completion = BrainPress_Helper_Utility::unset_array_value(
+						$unit_completion = CoursePress_Helper_Utility::unset_array_value(
 							$unit_completion,
 							'answered/' . $module_id
 						);
@@ -664,23 +664,23 @@ class BrainPress_Admin_Import extends BrainPress_Admin_Controller_Menu {
 			}
 
 			if ( ! empty( $unit_data ) ) {
-				$student_progress = BrainPress_Helper_Utility::set_array_value(
+				$student_progress = CoursePress_Helper_Utility::set_array_value(
 					$student_progress,
 					'units/' . $new_unit_id,
 					$unit_data
 				);
-				$student_progress = BrainPress_Helper_Utility::unset_array_value(
+				$student_progress = CoursePress_Helper_Utility::unset_array_value(
 					$student_progress,
 					'units/' . $unit_id
 				);
 			}
 			if ( ! empty( $unit_completion ) ) {
-				$student_progress = BrainPress_Helper_Utility::set_array_value(
+				$student_progress = CoursePress_Helper_Utility::set_array_value(
 					$student_progress,
 					'completion/' . $new_unit_id,
 					$unit_completion
 				);
-				$student_progress = BrainPress_Helper_Utility::unset_array_value(
+				$student_progress = CoursePress_Helper_Utility::unset_array_value(
 					$student_progress,
 					'completion/' . $unit_id
 				);

@@ -1,11 +1,11 @@
 <?php
-BrainPress_Admin_Notifications::init();
+CoursePress_Admin_Notifications::init();
 $bulk_nonce = wp_create_nonce( 'bulk_action_nonce' );
 ?>
-<div class="wrap brainpress_wrapper course-notifications">
+<div class="wrap coursepress_wrapper course-notifications">
 <h2><?php
-echo BrainPress_Admin_Notifications::get_label_by_name( 'name' );
-BrainPress_Admin_Notifications::add_button_add_new();
+echo CoursePress_Admin_Notifications::get_label_by_name( 'name' );
+CoursePress_Admin_Notifications::add_button_add_new();
 ?></h2>
 	<hr />
 	<form method="post">

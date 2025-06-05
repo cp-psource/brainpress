@@ -1,6 +1,6 @@
-/*! BrainPress - v2.2.2
- * https://n3rds.work/piestingtal_source/ps-brainpress-classicpress-lms-online-akademie-plugin/
- * Copyright (c) 2019; * Licensed GPLv2+ */
+/*! CoursePress - v2.1.2
+ * https://cp-psource.github.io/coursepress/
+ * Copyright (c) 2017; * Licensed GPLv2+ */
 (jQuery(function() {
 
 	// Make the left menu sticky.
@@ -97,7 +97,7 @@
 			event.preventDefault();
 			option_name = $(this).parent().attr('data-option-name');
 			data = {
-				'action': 'brainpress_dismiss_admin_notice',
+				'action': 'coursepress_dismiss_admin_notice',
 				'option_name': option_name,
 				'_wpnonce': $(this).parent().data('nonce'),
 				'user_id': $(this).parent().data('user_id')

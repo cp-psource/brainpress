@@ -1,9 +1,9 @@
-/*! BrainPress - v2.2.2
- * https://n3rds.work/piestingtal_source/ps-brainpress-classicpress-lms-online-akademie-plugin/
- * Copyright (c) 2019; * Licensed GPLv2+ */
+/*! CoursePress - v2.1.2
+ * https://cp-psource.github.io/coursepress/
+ * Copyright (c) 2017; * Licensed GPLv2+ */
 +function( $ ){
-	BrainPress = BrainPress || {};
-	BrainPress.Events = BrainPress.Events || _.extend( {}, Backbone.Events );
+	CoursePress = CoursePress || {};
+	CoursePress.Events = CoursePress.Events || _.extend( {}, Backbone.Events );
 
 	// Toggle the state of a form's submit button
 	var canSubmit = function() {
@@ -85,18 +85,18 @@
 				progress.addClass( 'success' ).html( check + message );
 				progress.fadeOut( 3500, progress.remove );
 
-				BrainPress.Events.trigger( 'brainpress:progress:success' );
+				CoursePress.Events.trigger( 'coursepress:progress:success' );
 			},
 			error: function( message ) {
 				message = ! message ? '' : message;
 				progress.addClass( 'error' ).html( error + message );
 				progress.fadeOut( 3500, progress.remove );
 
-				BrainPress.Events.trigger( 'brainpress:progress:error' );
+				CoursePress.Events.trigger( 'coursepress:progress:error' );
 			}
 		};
 	};
-	BrainPress.ProgressIndicator = progressIndicator;
+	CoursePress.ProgressIndicator = progressIndicator;
 
 	var reloadPageByCourse = function() {
 		var select = $(this),

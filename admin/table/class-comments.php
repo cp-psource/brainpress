@@ -4,20 +4,20 @@
  *
  * This class extends WP_Users_List_Table to manage courses students.
  *
- * @package ClassicPress
- * @subpackage BrainPress
+ * @package WordPress
+ * @subpackage CoursePress
  **/
 if ( ! class_exists( 'WP_Comments_List_Table' ) ) {
 	require_once ABSPATH . 'wp-admin/includes/class-wp-comments-list-table.php';
 }
-class BrainPress_Admin_Table_Comments extends WP_Comments_List_Table {
+class CoursePress_Admin_Table_Comments extends WP_Comments_List_Table {
 	var $course_id = 0;
 
 	public function __construct() {
 		parent::__construct();
 		if ( ! empty( $_REQUEST['course_id'] ) ) {
 			$course_id = (int) $_REQUEST['course_id'];
-			if ( BrainPress_Data_Course::is_course( $course_id ) ) {
+			if ( CoursePress_Data_Course::is_course( $course_id ) ) {
 				$this->course_id = $course_id;
 			}
 		}
@@ -27,7 +27,7 @@ class BrainPress_Admin_Table_Comments extends WP_Comments_List_Table {
 		global $post_id, $comment_status, $search, $comment_type;
 
 		$course_id = ( isset( $_REQUEST['course_id'] ) ) ? $_REQUEST['course_id'] : null;
-		$discussions = BrainPress_Data_Module::get_all_modules_ids_by_type( 'discussion', $course_id );
+		$discussions = CoursePress_Data_Module::get_all_modules_ids_by_type( 'discussion', $course_id );
 		if ( empty( $discussions ) ) {
 			return;
 		}
@@ -135,7 +135,7 @@ class BrainPress_Admin_Table_Comments extends WP_Comments_List_Table {
 		$del_nonce = esc_html( '_wpnonce=' . wp_create_nonce( "delete-comment_$comment->comment_ID" ) );
 		$approve_nonce = esc_html( '_wpnonce=' . wp_create_nonce( "approve-comment_$comment->comment_ID" ) );
 
-		$url = "edit.php?post_type=course&page=brainpress_comments&c=$comment->comment_ID";
+		$url = "edit.php?post_type=course&page=coursepress_comments&c=$comment->comment_ID";
 
 		$approve_url = esc_url( $url . "&action=approvecomment&$approve_nonce" );
 		$unapprove_url = esc_url( $url . "&action=unapprovecomment&$approve_nonce" );
@@ -202,24 +202,24 @@ if ( 'top' === $which ) {
 	$options['value'] = $this->course_id;
 	$options['class'] = 'medium dropdown';
 	$options['first_option'] = array(
-	'text' => __( 'Alle Kurse', 'brainpress' ),
+	'text' => __( 'All courses', 'cp' ),
 	'value' => 'all',
 	);
 
 		$assigned_courses = array();
 		$user_id = get_current_user_id();
-	if ( BrainPress_Data_Capabilities::is_facilitator() ) {
-		$assigned_courses = BrainPress_Data_Facilitator::get_facilitated_courses( $user_id, array( 'any' ), 0, -1 );
-	} else if ( BrainPress_Data_Capabilities::is_instructor() ) {
-		$assigned_courses = BrainPress_Data_Instructor::get_assigned_courses_ids( $user_id );
+	if ( CoursePress_Data_Capabilities::is_facilitator() ) {
+		$assigned_courses = CoursePress_Data_Facilitator::get_facilitated_courses( $user_id, array( 'any' ), 0, -1 );
+	} else if ( CoursePress_Data_Capabilities::is_instructor() ) {
+		$assigned_courses = CoursePress_Data_Instructor::get_assigned_courses_ids( $user_id );
 	}
 
 	$assigned_courses = array_filter( $assigned_courses );
 	$assigned_courses = array_map( 'get_post', $assigned_courses );
 
-	$courses = BrainPress_Helper_UI::get_course_dropdown( 'filter-by-course', 'course_id', $assigned_courses, $options );
+	$courses = CoursePress_Helper_UI::get_course_dropdown( 'filter-by-course', 'course_id', $assigned_courses, $options );
 ?>
-	<label class="screen-reader-text" for="filter-by-course"><?php _e( 'Filter nach Kurs' ); ?></label>
+	<label class="screen-reader-text" for="filter-by-course"><?php _e( 'Filter by course' ); ?></label>
 	<?php echo $courses; ?>
 		<?php
 		/**
@@ -329,7 +329,7 @@ if ( 'top' === $which ) {
 				$per_page = 20;
 			}
 		}
-		$per_page = $this->get_items_per_page( 'brainpress_comments_per_page', $per_page );
+		$per_page = $this->get_items_per_page( 'coursepress_comments_per_page', $per_page );
 		return $per_page;
 	}
 

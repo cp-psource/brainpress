@@ -1,25 +1,25 @@
 <?php
 
-BrainPress_Admin_Forums::init_edit();
+CoursePress_Admin_Forums::init_edit();
 
-$post_type = BrainPress_Data_Discussion::get_post_type_name();
+$post_type = CoursePress_Data_Discussion::get_post_type_name();
 $the_id = ! empty( $_REQUEST['id'] ) ? (int) $_REQUEST['id'] : 0;
 
-$post = BrainPress_Helper_Utility::get_post_by_post_type( $post_type, $the_id );
+$post = CoursePress_Helper_Utility::get_post_by_post_type( $post_type, $the_id );
 
-$title = BrainPress_Admin_Forums::get_label_by_name( 'add_new_item' );
+$title = CoursePress_Admin_Forums::get_label_by_name( 'add_new_item' );
 if ( 0 < $the_id ) {
-	$title = BrainPress_Admin_Forums::get_label_by_name( 'edit_item' );
+	$title = CoursePress_Admin_Forums::get_label_by_name( 'edit_item' );
 }
 
 do_action( 'add_meta_boxes', $post_type, $post );
 do_action( 'do_meta_boxes', $post_type, 'side', $post );
 
 ?>
-<div class="wrap brainpress_wrapper course-edit-forums">
+<div class="wrap coursepress_wrapper course-edit-forums">
 <h2><?php
 echo $title;
-BrainPress_Admin_Forums::add_button_add_new();
+CoursePress_Admin_Forums::add_button_add_new();
 ?></h2>
 	<hr />
 	<form method="post" class="edit">
@@ -32,7 +32,7 @@ wp_nonce_field( 'edit_discussion' );
 		<div id="poststuff">
 			<div id="post-body" class="metabox-holder columns-<?php echo 1 == get_current_screen()->get_columns() ? '1' : '2'; ?>">
 			<div id="post-body-content">
-				<?php echo BrainPress_Helper_UI::get_admin_edit_title_field( $post->post_title, __( 'Gib den Titel des Themas ein', 'brainpress' ) ); ?>
+				<?php echo CoursePress_Helper_UI::get_admin_edit_title_field( $post->post_title, __( 'Enter topic title', 'cp' ) ); ?>
 				<br />
 				<div id="postdivrich" class="postarea wp-editor-expand">
 					<?php
@@ -47,7 +47,7 @@ wp_nonce_field( 'edit_discussion' );
 						),
 					);
 					// Filter $args
-					$args = apply_filters( 'brainpress_element_editor_args', $args, $editor_name, $editor_id );
+					$args = apply_filters( 'coursepress_element_editor_args', $args, $editor_name, $editor_id );
 					wp_editor( $post->post_content, $editor_id, $args );
 					?>
 				</div>

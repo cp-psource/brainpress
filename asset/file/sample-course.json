@@ -14,13 +14,13 @@
             "post_name": "non-scholae-sed-vitae-discimus",
             "post_modified": "2017-03-07 08:27:15",
             "post_modified_gmt": "2017-03-07 08:27:15",
-            "guid": "http:\/\/psource\/courses\/non-scholae-sed-vitae-discimus\/",
+            "guid": "http:\/\/incsub\/courses\/non-scholae-sed-vitae-discimus\/",
             "post_type": "course"
         },
         "meta": {
             "course_settings": [
                 {
-                    "listing_image": "https:\/\/premium.wpmudev.org\/wp-content\/uploads\/2014\/09\/BrainPress-Pro.png",
+                    "listing_image": "https:\/\/premium.wpmudev.org\/wp-content\/uploads\/2014\/09\/CoursePress-Pro.png",
                     "course_language": "English",
                     "setup_step_1": "saved",
                     "featured_video": "https:\/\/www.youtube.com\/watch?v=y_bIr1yAELw&list=UULgqhMisF-ykzHZzuMEfV4Q",
@@ -103,7 +103,7 @@
                 "1475280000"
             ],
             "cp_listing_image": [
-                "https:\/\/premium.wpmudev.org\/wp-content\/uploads\/2014\/09\/BrainPress-Pro.png"
+                "https:\/\/premium.wpmudev.org\/wp-content\/uploads\/2014\/09\/CoursePress-Pro.png"
             ],
             "cp_course_language": [
                 "English"
@@ -223,7 +223,7 @@
                     "post_modified_gmt": "2017-03-07 08:26:33",
                     "post_content_filtered": "",
                     "post_parent": 1,
-                    "guid": "http:\/\/psource\/?unit=praesent-venenatis-consectetur-habitasse-a-nisi-hac-hendrerit",
+                    "guid": "http:\/\/incsub\/?unit=praesent-venenatis-consectetur-habitasse-a-nisi-hac-hendrerit",
                     "menu_order": 0,
                     "post_type": "unit",
                     "post_mime_type": "",
@@ -256,7 +256,7 @@
                                 "post_modified_gmt": "2017-03-07 08:24:19",
                                 "post_content_filtered": "",
                                 "post_parent": 2,
-                                "guid": "http:\/\/psource\/module\/platea-conubia-tempor-justo-integer\/",
+                                "guid": "http:\/\/incsub\/module\/platea-conubia-tempor-justo-integer\/",
                                 "menu_order": 0,
                                 "post_type": "module",
                                 "post_mime_type": "",
@@ -317,7 +317,7 @@
                                 "post_modified_gmt": "2017-03-07 08:24:19",
                                 "post_content_filtered": "",
                                 "post_parent": 2,
-                                "guid": "http:\/\/psource\/module\/mattis-hendrerit-molestie-turpis-ipsum-augue-lectus\/",
+                                "guid": "http:\/\/incsub\/module\/mattis-hendrerit-molestie-turpis-ipsum-augue-lectus\/",
                                 "menu_order": 0,
                                 "post_type": "module",
                                 "post_mime_type": "",
@@ -340,7 +340,7 @@
                                         "0:00"
                                     ],
                                     "image_url": [
-                                        "https:\/\/premium.wpmudev.org\/wp-content\/uploads\/2014\/09\/BrainPress-Pro.png"
+                                        "https:\/\/premium.wpmudev.org\/wp-content\/uploads\/2014\/09\/CoursePress-Pro.png"
                                     ],
                                     "mandatory": [
                                         "0"
@@ -390,7 +390,7 @@
                                 "post_modified_gmt": "2017-03-07 08:24:19",
                                 "post_content_filtered": "",
                                 "post_parent": 2,
-                                "guid": "http:\/\/psource\/module\/urna-odio-ultricies-non-varius-velit-hendrerit\/",
+                                "guid": "http:\/\/incsub\/module\/urna-odio-ultricies-non-varius-velit-hendrerit\/",
                                 "menu_order": 0,
                                 "post_type": "module",
                                 "post_mime_type": "",
@@ -407,10 +407,10 @@
                                         "0:00"
                                     ],
                                     "file_url": [
-                                        "https:\/\/downloads.wordpress.org\/plugin\/brainpress.zip"
+                                        "https:\/\/downloads.wordpress.org\/plugin\/coursepress.zip"
                                     ],
                                     "link_text": [
-                                        "Latest version of BrainPress"
+                                        "Latest version of CoursePress"
                                     ],
                                     "mandatory": [
                                         "0"
@@ -457,7 +457,7 @@
                                 "post_modified_gmt": "2017-03-07 08:24:19",
                                 "post_content_filtered": "",
                                 "post_parent": 2,
-                                "guid": "http:\/\/psource\/module\/quis-fringilla-ligula-sed-vitae-cum-convallis\/",
+                                "guid": "http:\/\/incsub\/module\/quis-fringilla-ligula-sed-vitae-cum-convallis\/",
                                 "menu_order": 0,
                                 "post_type": "module",
                                 "post_mime_type": "",
@@ -526,7 +526,7 @@
                                 "post_modified_gmt": "2017-03-07 08:26:33",
                                 "post_content_filtered": "",
                                 "post_parent": 2,
-                                "guid": "http:\/\/psource\/module\/natoque-volutpat-consequat-molestie-maecenas-donec\/",
+                                "guid": "http:\/\/incsub\/module\/natoque-volutpat-consequat-molestie-maecenas-donec\/",
                                 "menu_order": 0,
                                 "post_type": "module",
                                 "post_mime_type": "",
@@ -596,7 +596,7 @@
                                 "post_modified_gmt": "2017-03-07 08:26:33",
                                 "post_content_filtered": "",
                                 "post_parent": 2,
-                                "guid": "http:\/\/psource\/module\/purus-mi-eros-pharetra-quam\/",
+                                "guid": "http:\/\/incsub\/module\/purus-mi-eros-pharetra-quam\/",
                                 "menu_order": 0,
                                 "post_type": "module",
                                 "post_mime_type": "",
@@ -666,7 +666,7 @@
                                 "post_modified_gmt": "2017-03-07 08:26:33",
                                 "post_content_filtered": "",
                                 "post_parent": 2,
-                                "guid": "http:\/\/psource\/module\/posuere-aenean-nam\/",
+                                "guid": "http:\/\/incsub\/module\/posuere-aenean-nam\/",
                                 "menu_order": 0,
                                 "post_type": "module",
                                 "post_mime_type": "",
@@ -736,7 +736,7 @@
                                 "post_modified_gmt": "2017-03-07 08:26:34",
                                 "post_content_filtered": "",
                                 "post_parent": 2,
-                                "guid": "http:\/\/psource\/module\/fames-vehicula-consectetur-morbi-felis-adipiscing\/",
+                                "guid": "http:\/\/incsub\/module\/fames-vehicula-consectetur-morbi-felis-adipiscing\/",
                                 "menu_order": 0,
                                 "post_type": "module",
                                 "post_mime_type": "",
@@ -803,7 +803,7 @@
                                 "post_modified_gmt": "2017-03-07 08:26:34",
                                 "post_content_filtered": "",
                                 "post_parent": 2,
-                                "guid": "http:\/\/psource\/module\/hendrerit-nam-ultricies-maecenas-hac\/",
+                                "guid": "http:\/\/incsub\/module\/hendrerit-nam-ultricies-maecenas-hac\/",
                                 "menu_order": 0,
                                 "post_type": "module",
                                 "post_mime_type": "",

@@ -1,44 +1,44 @@
-<div class="wrap brainpress_wrapper brainpress-import">
-	<h2><?php esc_html_e( 'Importieren', 'brainpress' ); ?></h2>
+<div class="wrap coursepress_wrapper coursepress-import">
+	<h2><?php esc_html_e( 'Import', 'cp' ); ?></h2>
 	<p class="description page-tagline">
-		<?php esc_html_e( 'Lade Deine exportierten Kurse hoch, um sie hier zu importieren.', 'brainpress' ); ?>
+		<?php esc_html_e( 'Upload your exported courses to import here.', 'cp' ); ?>
 	</p>
 
 	<form method="post" enctype="multipart/form-data" class="has-disabled">
-		<?php wp_nonce_field( 'brainpress_import', 'brainpress_import' ); ?>
+		<?php wp_nonce_field( 'coursepress_import', 'coursepress_import' ); ?>
 		<p>
 			<input type="file" name="import" class="input-key" />
 		</p>
-		<h3><?php esc_html_e( 'Import Optionen', 'brainpress' ); ?></h3>
+		<h3><?php esc_html_e( 'Import Options', 'cp' ); ?></h3>
 		<div>
 			<label>
-				<input type="checkbox" name="brainpress[replace]" value="1" />
-				<?php esc_html_e( 'Kurs ersetzen, falls vorhanden.', 'brainpress' ); ?>
+				<input type="checkbox" name="coursepress[replace]" value="1" />
+				<?php esc_html_e( 'Replace course if exists.', 'cp' ); ?>
 			</label>
 			<p class="description">
-				<?php esc_html_e( 'Kurse mit demselben Titel werden automatisch durch neue ersetzt.', 'brainpress' ); ?>
+				<?php esc_html_e( 'Courses with the same title will be automatically replaced by the new one.', 'cp' ); ?>
 			</p>
 		</div><br />
 		<div>
 			<label>
-				<input type="checkbox" name="brainpress[students]" class="input-requiredby" value="1" />
-				<?php esc_html_e( 'Kursstudenten einbeziehen', 'brainpress' ); ?>
+				<input type="checkbox" name="coursepress[students]" class="input-requiredby" value="1" />
+				<?php esc_html_e( 'Include course students', 'cp' ); ?>
 			</label>
 			<p class="description">
-				<?php esc_html_e( 'Die Liste der Studenten muss ebenfalls im Export enthalten sein, damit dies funktioniert.', 'brainpress' ); ?>
+				<?php esc_html_e( 'Students listing must also included in your export for this to work.', 'cp' ); ?>
 			</p>
 		</div><br />
 		<div>
 			<label>
-				<input type="checkbox" name="brainpress[comments]" data-required-imput="brainpress[students]" disabled="disabled" value="1" />
-				<?php esc_html_e( 'Kursthread/Kommentare einschließen', 'brainpress' ); ?>
+				<input type="checkbox" name="coursepress[comments]" data-required-imput="coursepress[students]" disabled="disabled" value="1" />
+				<?php esc_html_e( 'Include course thread/comments', 'cp' ); ?>
 			</label>
 			<p class="description">
-				<?php esc_html_e( 'Die Auflistung der Kommentare muss ebenfalls im Export enthalten sein, damit dies funktioniert.', 'brainpress' ); ?>
+				<?php esc_html_e( 'Comments listing must also included in your export for this to work.', 'cp' ); ?>
 			</p>
-		</div>		
+		</div>
 		<div class="cp-submit">
-			<?php submit_button( __( 'Datei hochladen und importieren', 'brainpress' ), 'button-primary disabled' ); ?>
+			<?php submit_button( __( 'Upload file and import', 'cp' ), 'button-primary disabled' ); ?>
 		</div>
 	</form>
 </div>

@@ -2,21 +2,21 @@
 /**
  * Forum admin controller
  *
- * @package ClassicPress
- * @subpackage BrainPress
+ * @package WordPress
+ * @subpackage CoursePress
  **/
-class BrainPress_Admin_Forums extends BrainPress_Admin_Controller_Menu {
-	var $parent_slug = 'brainpress';
-	var $slug = 'brainpress_discussions';
+class CoursePress_Admin_Forums extends CoursePress_Admin_Controller_Menu {
+	var $parent_slug = 'coursepress';
+	var $slug = 'coursepress_discussions';
 	var $with_editor = false;
-	protected $cap = 'brainpress_discussions_cap';
+	protected $cap = 'coursepress_discussions_cap';
 	protected $list_forums;
 
 	/**
 	 * Class init
 	 */
 	public static function init() {
-		self::$post_type = BrainPress_Data_Discussion::get_post_type_name();
+		self::$post_type = CoursePress_Data_Discussion::get_post_type_name();
 		self::set_labels();
 	}
 
@@ -29,15 +29,15 @@ class BrainPress_Admin_Forums extends BrainPress_Admin_Controller_Menu {
 			/**
 			 * Check if user can not add new discussion
 			 */
-			if ( ! BrainPress_Data_Capabilities::can_add_discussions() ) {
-				wp_die( __( 'Leider darfst Du nicht auf diese Seite zugreifen.' ), 403 );
+			if ( ! CoursePress_Data_Capabilities::can_add_discussions() ) {
+				wp_die( __( 'Sorry, you are not allowed to access this page.' ), 403 );
 			}
 		} else {
 			/**
 			 * Check if user can not update this discussion
 			 */
-			if ( ! BrainPress_Data_Capabilities::can_update_discussion( $id ) ) {
-				wp_die( __( 'Leider darfst Du nicht auf diese Seite zugreifen.' ), 403 );
+			if ( ! CoursePress_Data_Capabilities::can_update_discussion( $id ) ) {
+				wp_die( __( 'Sorry, you are not allowed to access this page.' ), 403 );
 			}
 		}
 		wp_reset_vars( array( 'action' ) );
@@ -52,7 +52,7 @@ class BrainPress_Admin_Forums extends BrainPress_Admin_Controller_Menu {
 		 */
 		add_meta_box(
 			'submitdiv',
-			__( 'Speichern', 'brainpress' ),
+			__( 'Save', 'cp' ),
 			array( __CLASS__, 'box_submitdiv' ),
 			self::$post_type,
 			'side',
@@ -60,14 +60,14 @@ class BrainPress_Admin_Forums extends BrainPress_Admin_Controller_Menu {
 		);
 		add_meta_box(
 			'related_courses',
-			__( 'Ähnliche Kurse', 'brainpress' ),
+			__( 'Related Courses', 'cp' ),
 			array( __CLASS__, 'box_release_courses' ),
 			self::$post_type,
 			'side'
 		);
 		add_meta_box(
 			'settings',
-			__( 'Einstellungen', 'brainpress' ),
+			__( 'Settings', 'cp' ),
 			array( __class__, 'box_settings' ),
 			self::$post_type,
 			'side'
@@ -76,8 +76,8 @@ class BrainPress_Admin_Forums extends BrainPress_Admin_Controller_Menu {
 
 	public function get_labels() {
 		return array(
-			'title' => __( 'BrainPress Diskussionen', 'brainpress' ),
-			'menu_title' => __( 'Diskussionen', 'brainpress' ),
+			'title' => __( 'CoursePress Forums', 'cp' ),
+			'menu_title' => __( 'Forums', 'cp' ),
 		);
 	}
 
@@ -106,14 +106,14 @@ class BrainPress_Admin_Forums extends BrainPress_Admin_Controller_Menu {
 		 * build
 		 */
 		if ( 'edit' == $action ) {
-			$this->slug = 'brainpress_edit-forum';
+			$this->slug = 'coursepress_edit-forum';
 			// Set before the page
 			add_screen_option( 'layout_columns', array( 'max' => 2, 'default' => 2 ) );
 		} else {
-			$this->slug = 'brainpress_forums-table';
+			$this->slug = 'coursepress_forums-table';
 			// Prepare items
-			add_screen_option( 'per_page', array( 'default' => 20, 'option' => 'brainpress_forum_per_page' ) );
-			$this->list_forums = new BrainPress_Admin_Table_Forums();
+			add_screen_option( 'per_page', array( 'default' => 20, 'option' => 'coursepress_forum_per_page' ) );
+			$this->list_forums = new CoursePress_Admin_Table_Forums();
 			$this->list_forums->prepare_items();
 		}
 	}
@@ -130,18 +130,18 @@ class BrainPress_Admin_Forums extends BrainPress_Admin_Controller_Menu {
 
 		// Update the discussion
 		$id = isset( $_REQUEST['id'] ) ? (int) $_REQUEST['id'] : false;
-		$content = BrainPress_Helper_Utility::filter_content( $_POST['post_content'] );
-		$title = BrainPress_Helper_Utility::filter_content( $_POST['post_title'] );
+		$content = CoursePress_Helper_Utility::filter_content( $_POST['post_content'] );
+		$title = CoursePress_Helper_Utility::filter_content( $_POST['post_title'] );
 
 		// Validate
 		if ( empty( $title ) ) {
-			self::$error_message = __( 'Der Titel des Themas ist erforderlich!', 'brainpress' );
+			self::$error_message = __( 'The topic title is required!', 'cp' );
 			return;
 		} elseif ( empty( $_POST['post_content'] ) ) {
-			self::$error_message = __( 'Die Themenbeschreibung ist erforderlich!', 'brainpress' );
+			self::$error_message = __( 'The topic description is required!', 'cp' );
 			return;
-		} elseif ( ! empty( $id ) && ! BrainPress_Data_Capabilities::can_update_discussion( $id ) ) {
-			self::$error_message = __( 'Du hast keine Berechtigung, dieses Thema zu bearbeiten!', 'brainpress' );
+		} elseif ( ! empty( $id ) && ! CoursePress_Data_Capabilities::can_update_discussion( $id ) ) {
+			self::$error_message = __( 'You have no permission to edit this topic!', 'cp' );
 			return;
 		}
 
@@ -163,12 +163,12 @@ class BrainPress_Admin_Forums extends BrainPress_Admin_Controller_Menu {
 			wp_update_post( $args );
 		}
 
-		BrainPress_Helper_Utility::add_meta_unique( $id, 'course_id', $course_id );
+		CoursePress_Helper_Utility::add_meta_unique( $id, 'course_id', $course_id );
 
 		/**
 		 * Try to add unit_id - it should be unique post meta.
 		 */
-		BrainPress_Helper_Utility::add_meta_unique( $id, 'unit_id', $unit_id );
+		CoursePress_Helper_Utility::add_meta_unique( $id, 'unit_id', $unit_id );
 
 		/**
 		 * email_notification
@@ -178,7 +178,7 @@ class BrainPress_Admin_Forums extends BrainPress_Admin_Controller_Menu {
 		if ( ! preg_match( '/^(yes|no)$/', $value ) ) {
 			$value = 'no';
 		}
-		BrainPress_Helper_Utility::add_meta_unique( $id, $name, $value );
+		CoursePress_Helper_Utility::add_meta_unique( $id, $name, $value );
 
 		/**
 		 * thread_comments_depth
@@ -188,7 +188,7 @@ class BrainPress_Admin_Forums extends BrainPress_Admin_Controller_Menu {
 		if ( ! is_numeric( $value ) || 0 > $value ) {
 			$value = 0;
 		}
-		BrainPress_Helper_Utility::add_meta_unique( $id, $name, $value );
+		CoursePress_Helper_Utility::add_meta_unique( $id, $name, $value );
 
 		/**
 		 * comments_per_page
@@ -198,7 +198,7 @@ class BrainPress_Admin_Forums extends BrainPress_Admin_Controller_Menu {
 		if ( ! is_numeric( $value ) || 1 > $value ) {
 			$value = 1;
 		}
-		BrainPress_Helper_Utility::add_meta_unique( $id, $name, $value );
+		CoursePress_Helper_Utility::add_meta_unique( $id, $name, $value );
 
 		/**
 		 * comments_order
@@ -208,7 +208,7 @@ class BrainPress_Admin_Forums extends BrainPress_Admin_Controller_Menu {
 		if ( ! preg_match( '/^(older|newer)$/', $value ) ) {
 			$value = 'newer';
 		}
-		BrainPress_Helper_Utility::add_meta_unique( $id, $name, $value );
+		CoursePress_Helper_Utility::add_meta_unique( $id, $name, $value );
 
 		$url = add_query_arg( 'id', $id );
 		wp_redirect( esc_url_raw( $url ) );
@@ -235,7 +235,7 @@ class BrainPress_Admin_Forums extends BrainPress_Admin_Controller_Menu {
 			if ( ! is_numeric( $id ) ) {
 				$id = 0;
 			}
-			if ( ! BrainPress_Data_Discussion::is_correct_post_type( $id ) ) {
+			if ( ! CoursePress_Data_Discussion::is_correct_post_type( $id ) ) {
 				$id = 0;
 			}
 		}
@@ -259,7 +259,7 @@ class BrainPress_Admin_Forums extends BrainPress_Admin_Controller_Menu {
 			if ( isset( $_POST['_wpnonce'] ) && wp_verify_nonce( $_POST['_wpnonce'], 'bulk-posts' ) ) {
 				if ( isset( $_POST['post'] ) && is_array( $_POST['post'] ) ) {
 					foreach ( $_POST['post'] as $post_id ) {
-						if ( BrainPress_Data_Discussion::is_correct_post_type( $post_id ) ) {
+						if ( CoursePress_Data_Discussion::is_correct_post_type( $post_id ) ) {
 							switch ( $action ) {
 								case 'delete':
 									wp_delete_post( $post_id );
@@ -293,8 +293,8 @@ class BrainPress_Admin_Forums extends BrainPress_Admin_Controller_Menu {
 				/**
 				 * delete
 				 */
-				case 'delete' && ! empty( $_REQUEST['_wpnonce'] ) && wp_verify_nonce( $_REQUEST['_wpnonce'], 'brainpress_delete_discussion' ) :
-					$is_correct_post_type = BrainPress_Data_Discussion::is_correct_post_type( $id );
+				case 'delete' && ! empty( $_REQUEST['_wpnonce'] ) && wp_verify_nonce( $_REQUEST['_wpnonce'], 'coursepress_delete_discussion' ) :
+					$is_correct_post_type = CoursePress_Data_Discussion::is_correct_post_type( $id );
 					if ( $is_correct_post_type ) {
 						wp_delete_post( $id );
 					}
@@ -310,8 +310,8 @@ class BrainPress_Admin_Forums extends BrainPress_Admin_Controller_Menu {
 				/**
 				 * trash
 				 */
-				case 'trash' && ! empty( $_REQUEST['_wpnonce'] ) && wp_verify_nonce( $_REQUEST['_wpnonce'], 'brainpress_trash_discussion' ) :
-					$is_correct_post_type = BrainPress_Data_Discussion::is_correct_post_type( $id );
+				case 'trash' && ! empty( $_REQUEST['_wpnonce'] ) && wp_verify_nonce( $_REQUEST['_wpnonce'], 'coursepress_trash_discussion' ) :
+					$is_correct_post_type = CoursePress_Data_Discussion::is_correct_post_type( $id );
 					if ( $is_correct_post_type ) {
 						wp_trash_post( $id );
 					}
@@ -319,8 +319,8 @@ class BrainPress_Admin_Forums extends BrainPress_Admin_Controller_Menu {
 				/**
 				 * untrash
 				 */
-				case 'untrash' && ! empty( $_REQUEST['_wpnonce'] ) && wp_verify_nonce( $_REQUEST['_wpnonce'], 'brainpress_untrash_discussion' ) :
-					$is_correct_post_type = BrainPress_Data_Discussion::is_correct_post_type( $id );
+				case 'untrash' && ! empty( $_REQUEST['_wpnonce'] ) && wp_verify_nonce( $_REQUEST['_wpnonce'], 'coursepress_untrash_discussion' ) :
+					$is_correct_post_type = CoursePress_Data_Discussion::is_correct_post_type( $id );
 					if ( $is_correct_post_type ) {
 						wp_untrash_post( $id );
 					}
@@ -345,43 +345,43 @@ class BrainPress_Admin_Forums extends BrainPress_Admin_Controller_Menu {
 		$course_id = 'all';
 		$unit_id = 'course';
 		if ( 'new' !== $the_id && ! empty( $the_id ) ) {
-			if ( ! BrainPress_Data_Capabilities::can_update_discussion( $the_id ) ) {
-				_e( 'Du hast keine Berechtigung, diese Diskussion zu bearbeiten.', 'brainpress' );
+			if ( ! CoursePress_Data_Capabilities::can_update_discussion( $the_id ) ) {
+				_e( 'You do not have permission to edit this discussion.', 'cp' );
 				return;
 			}
 			$post = get_post( $the_id );
-			$attributes = BrainPress_Data_Discussion::attributes( $the_id );
+			$attributes = CoursePress_Data_Discussion::attributes( $the_id );
 			$course_id = $attributes['course_id'];
 			$unit_id = $attributes['unit_id'];
 		} else {
-			if ( ! BrainPress_Data_Capabilities::can_add_discussion( 0 ) ) {
-				_e( 'Du hast keine Berechtigung zum Hinzufügen einer Diskussion.', 'brainpress' );
+			if ( ! CoursePress_Data_Capabilities::can_add_discussion( 0 ) ) {
+				_e( 'You do not have permission to add discussion.', 'cp' );
 				return;
 			}
 		}
 		$options = array();
 		$options['value'] = $course_id;
-		if ( ! BrainPress_Data_Capabilities::can_add_discussion_to_all() ) {
+		if ( ! CoursePress_Data_Capabilities::can_add_discussion_to_all() ) {
 			$options['courses'] = self::get_courses();
 			if ( empty( $options['courses'] ) ) {
-				_e( 'Du hast keine Berechtigung zum Hinzufügen einer Diskussion.', 'brainpress' );
+				_e( 'You do not have permission to add discussion.', 'cp' );
 				return;
 			}
 		}
 
-		printf( '<h4>%s</h4>', __( 'Kurs wählen', 'unit' ) );
-		echo BrainPress_Helper_UI::get_course_dropdown( 'course_id', 'meta_course_id', false, $options );
+		printf( '<h4>%s</h4>', __( 'Select Course', 'unit' ) );
+		echo CoursePress_Helper_UI::get_course_dropdown( 'course_id', 'meta_course_id', false, $options );
 		/**
 		 * units
 		 */
 		$options_unit = array();
 		$options_unit['value'] = $unit_id;
 		$options_unit['first_option'] = array(
-			'text' => __( 'Alle Einheiten', 'brainpress' ),
+			'text' => __( 'All units', 'cp' ),
 			'value' => 'course',
 		);
-		printf( '<h4>%s</h4>', esc_html__( 'Einheit wählen', 'brainpress' ) );
-		echo BrainPress_Helper_UI::get_unit_dropdown( 'unit_id', 'meta_unit_id', $course_id, false, $options_unit );
+		printf( '<h4>%s</h4>', esc_html__( 'Select Unit', 'cp' ) );
+		echo CoursePress_Helper_UI::get_unit_dropdown( 'unit_id', 'meta_unit_id', $course_id, false, $options_unit );
 	}
 
 	/**
@@ -400,17 +400,17 @@ class BrainPress_Admin_Forums extends BrainPress_Admin_Controller_Menu {
 		$courses = self::get_accessable_courses();
 
 		if ( ! empty( $courses ) ) {
-			/** This filter is documented in include/brainpress/helper/class-setting.php */
-			$capability = apply_filters( 'brainpress_capabilities', 'brainpress_create_my_discussion_cap' );
+			/** This filter is documented in include/coursepress/helper/class-setting.php */
+			$capability = apply_filters( 'coursepress_capabilities', 'coursepress_create_my_discussion_cap' );
 			$is_author = user_can( $user_id, $capability );
-			$capability2 = apply_filters( 'brainpress_capabilities', 'brainpress_create_my_assigned_discussion_cap' );
+			$capability2 = apply_filters( 'coursepress_capabilities', 'coursepress_create_my_assigned_discussion_cap' );
 			$is_instructor = user_can( $user_id, $capability2 );
 
 			foreach ( $courses as $index => $course ) {
 				if ( $course->post_author == $user_id && ! $is_author ) {
 					unset( $courses[ $index ] );
 				}
-				if ( BrainPress_Data_Capabilities::is_course_instructor( $course ) && ! $is_instructor ) {
+				if ( CoursePress_Data_Capabilities::is_course_instructor( $course ) && ! $is_instructor ) {
 					unset( $courses[ $index ] );
 				}
 			}
@@ -435,7 +435,7 @@ class BrainPress_Admin_Forums extends BrainPress_Admin_Controller_Menu {
 	 * @since 2.0.0
 	 */
 	public static function add_button_add_new() {
-		if ( ! BrainPress_Data_Capabilities::can_add_discussions() ) {
+		if ( ! CoursePress_Data_Capabilities::can_add_discussions() ) {
 			return;
 		}
 		$label = self::get_label_by_name( 'add_new' );
@@ -470,9 +470,9 @@ class BrainPress_Admin_Forums extends BrainPress_Admin_Controller_Menu {
 		 * email_notification
 		 */
 		$email_notification = get_post_meta( $post->ID, 'email_notification', true );
-		printf( '<h4>%s</h4>', __( 'Aktiviere die E-Mail-Benachrichtigung', 'brainpress' ) );
+		printf( '<h4>%s</h4>', __( 'Enable email notification', 'cp' ) );
 		printf( '<input type="checkbox" name="email_notification" value="yes" %s id="meta_email_notification" />', checked( $email_notification, 'yes', false ) );
-		printf( ' <label for="meta_email_notification">%s</label>', __( 'Aktiviere E-Mail-Benachrichtigung', 'brainpress' ) );
+		printf( ' <label for="meta_email_notification">%s</label>', __( 'Enable email notification', 'cp' ) );
 		/**
 		 * thread_comments_depth
 		 */
@@ -480,7 +480,7 @@ class BrainPress_Admin_Forums extends BrainPress_Admin_Controller_Menu {
 		if ( empty( $thread_comments_depth ) ) {
 			$thread_comments_depth = get_option( 'thread_comments_depth', 5 );
 		}
-		printf( '<h4>%s</h4>', __( 'Threaded Kommentare Ebene', 'brainpress' ) );
+		printf( '<h4>%s</h4>', __( 'Threaded comments level', 'cp' ) );
 		printf( '<input type="number" min="0" value="%d" name="thread_comments_depth" class="small-text" />', $thread_comments_depth );
 		/**
 		 * comments_per_page
@@ -489,20 +489,20 @@ class BrainPress_Admin_Forums extends BrainPress_Admin_Controller_Menu {
 		if ( empty( $comments_per_page ) ) {
 			$comments_per_page = get_option( 'comments_per_page', 20 );
 		}
-		printf( '<h4>%s</h4>', __( 'Anzahl der Kommentare pro Seite', 'brainpress' ) );
+		printf( '<h4>%s</h4>', __( 'Number of comments per page', 'cp' ) );
 		printf( '<input type="number" min="0" value="%d" name="comments_per_page" class="small-text" />', $comments_per_page );
 		/**
 		 * comments_order
 		 */
 		$attr = array(
-			'older' => __( 'Zuerst älter', 'brainpress' ),
-			'newer' => __( 'Zuerst neuer', 'brainpress' ),
+			'older' => __( 'Older first', 'cp' ),
+			'newer' => __( 'Newer first', 'cp' ),
 		);
 		$comments_order = get_post_meta( $post->ID, 'comments_order', true );
 		if ( empty( $comments_order ) || ! array_key_exists( $comments_order, $attr ) ) {
 			$comments_order = 'newer';
 		}
-		printf( '<h4>%s</h4>', __( 'Kommentare bestellen', 'brainpress' ) );
+		printf( '<h4>%s</h4>', __( 'Comments order', 'cp' ) );
 		echo '<ul>';
 		foreach ( $attr as $key => $label ) {
 			printf(
@@ -531,18 +531,18 @@ class BrainPress_Admin_Forums extends BrainPress_Admin_Controller_Menu {
 			$user_id = $user_id->ID;
 		}
 		$args = array(
-			'post_type' => BrainPress_Data_Course::get_post_type_name(),
+			'post_type' => CoursePress_Data_Course::get_post_type_name(),
 			'post_status' => $post_status,
 			'posts_per_page' => -1,
 		);
 		if ( ! user_can( $user_id, 'manage_options' ) ) {
 			$can_search = false;
-			if ( user_can( $user_id, 'brainpress_create_my_discussion_cap' ) ) {
+			if ( user_can( $user_id, 'coursepress_create_my_discussion_cap' ) ) {
 				$args['author'] = $user_id;
 				$can_search = true;
 			}
-			if ( user_can( $user_id, 'brainpress_create_my_assigned_discussion_cap' ) ) {
-				$assigned_courses = BrainPress_Data_Instructor::get_assigned_courses_ids( $user_id );
+			if ( user_can( $user_id, 'coursepress_create_my_assigned_discussion_cap' ) ) {
+				$assigned_courses = CoursePress_Data_Instructor::get_assigned_courses_ids( $user_id );
 				$args['include'] = $assigned_courses;
 				if ( $can_search ) {
 					// Let's add the author param via filter hooked.

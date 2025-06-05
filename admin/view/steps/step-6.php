@@ -1,5 +1,5 @@
 <div class="step-title step-6">
-	<?php printf( __( 'Schritt 6 &ndash; Einschreibung %s', 'brainpress' ), $title2 ); ?>
+	<?php printf( __( 'Step 6 &ndash; Enrollment %s', 'cp' ), $title2 ); ?>
 	<div class="status <?php echo $setup_class; ?>"></div>
 </div>
 
@@ -7,14 +7,14 @@
 	<input type="hidden" name="meta_setup_step_6" value="saved" />
 
 	<div class="wide">
-		<label><?php _e( 'Einschreibungsbeschränkungen', 'brainpress' ); ?></label>
-		<p class="description"><?php _e( 'Wähle die Einschränkungen für den Zugriff auf und die Einschreibung zu diesem Kurs aus.', 'brainpress' ); ?></p>
-		<?php echo BrainPress_Helper_UI::select( 'meta_enrollment_type', $enrollment_types, $enrollment_type, 'chosen-select medium' ); ?>
+		<label><?php _e( 'Enrollment Restrictions', 'cp' ); ?></label>
+		<p class="description"><?php _e( 'Select the limitations on accessing and enrolling in this course.', 'cp' ); ?></p>
+		<?php echo CoursePress_Helper_UI::select( 'meta_enrollment_type', $enrollment_types, $enrollment_type, 'chosen-select medium' ); ?>
 	</div>
 
 	<div class="wide enrollment-type-options prerequisite<?php echo $prerequisite_class; ?>">
-		<label><?php _e( 'Vorausgesetzte Kurse', 'brainpress' ); ?></label>
-		<p class="description"><?php _e( 'Wähle die Kurse aus, die ein Student absolvieren muss, bevor er sich für diesen Kurs einschreiben kann', 'brainpress' ); ?></p>
+		<label><?php _e( 'Prerequisite Courses', 'cp' ); ?></label>
+		<p class="description"><?php _e( 'Select the courses a student needs to complete before enrolling in this course', 'cp' ); ?></p>
 		<select name="meta_enrollment_prerequisite" class="medium chosen-select chosen-select-course <?php echo $class_extra; ?>" multiple="true" data-placeholder=" ">
 
 			<?php if ( ! empty( $courses ) ) : foreach ( $courses as $course ) : ?>
@@ -25,21 +25,21 @@
 	</div>
 
 	<div class="wide enrollment-type-options passcode <?php echo $passcode_class; ?>">
-		<label><?php _e( 'Kurs Passcode', 'brainpress' ); ?></label>
-		<p class="description"><?php _e( 'Gib den Passcode ein, der für den Zugriff auf diesen Kurs erforderlich ist', 'brainpress' ); ?></p>
+		<label><?php _e( 'Course Passcode', 'cp' ); ?></label>
+		<p class="description"><?php _e( 'Enter the passcode required to access this course', 'cp' ); ?></p>
 		<input type="text" name="meta_enrollment_passcode" value="<?php echo esc_attr( $enrollment_passcode ); ?>" />
 	</div>
 
 	<?php if ( false === $disable_payment ) :
 		$one = array(
 				'meta_key' => 'payment_paid_course',
-				'title' => __( 'Kurszahlung', 'brainpress' ),
-				'description' => __( 'Zahlungsmöglichkeiten für Deinen Kurs. Zusätzliche Plugins sind erforderlich und die Einstellungen variieren je nach Plugin.', 'brainpress' ),
-				'label' => __( 'Dies ist ein kostenpflichtiger Kurs', 'brainpress' ),
+				'title' => __( 'Course Payment', 'cp' ),
+				'description' => __( 'Payment options for your course. Additional plugins are required and settings vary depending on the plugin.', 'cp' ),
+				'label' => __( 'This is a paid course', 'cp' ),
 				'default' => false,
 			);
 		echo '<hr class="separator" />';
-		echo BrainPress_Helper_UI::course_edit_checkbox( $one, $course_id );
+		echo CoursePress_Helper_UI::course_edit_checkbox( $one, $course_id );
 	endif;
 	?>
 
@@ -58,7 +58,7 @@
 		 *
 		 * * This is the ideal filter to use for integrating payment plugins
 		 */
-		echo apply_filters( 'brainpress_course_setup_step_6_paid', '', $course_id );
+		echo apply_filters( 'coursepress_course_setup_step_6_paid', '', $course_id );
 		?>
 	</div>
 
@@ -66,9 +66,9 @@
 	/**
 	 * Trigger to add additional fields in step 6.
 	 **/
-	echo apply_filters( 'brainpress_course_setup_step_6', '', $course_id );
+	echo apply_filters( 'coursepress_course_setup_step_6', '', $course_id );
 
 	// Show buttons
-	echo BrainPress_View_Admin_Course_Edit::get_buttons( $course_id, 6 );
+	echo CoursePress_View_Admin_Course_Edit::get_buttons( $course_id, 6 );
 	?>
 </div>

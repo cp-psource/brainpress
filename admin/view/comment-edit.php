@@ -7,7 +7,7 @@ $comment_id = absint( $_GET['c'] );
 if ( ! $comment = get_comment( $comment_id ) ) {
     comment_footer_die( __( 'Invalid comment ID.' ) . sprintf( ' <a href="%s">' . __( 'Go back' ) . '</a>.', 'javascript:history.go(-1)' ) ); }
 
-if ( !BrainPress_Data_Capabilities::can_edit_comment( $comment_id ) )
+if ( !CoursePress_Data_Capabilities::can_edit_comment( $comment_id ) )
     comment_footer_die( __('Sorry, you are not allowed to edit this comment.') );
 
 if ( 'trash' == $comment->comment_approved ) {
@@ -22,8 +22,8 @@ $comment = get_comment_to_edit( $comment_id );
 <h1><?php _e( 'Edit Comment' ); ?></h1>
 
 <div id="poststuff">
-<input type="hidden" name="post_type" value="<?php echo BrainPress_Data_Course::get_post_type_name(); ?>" />
-<input type="hidden" name="page" value="brainpress_comments" />
+<input type="hidden" name="post_type" value="<?php echo CoursePress_Data_Course::get_post_type_name(); ?>" />
+<input type="hidden" name="page" value="coursepress_comments" />
 <input type="hidden" name="action" value="editedcomment" />
 <input type="hidden" name="comment_ID" value="<?php echo esc_attr( $comment->comment_ID ); ?>" />
 <input type="hidden" name="comment_post_ID" value="<?php echo esc_attr( $comment->comment_post_ID ); ?>" />
@@ -64,7 +64,7 @@ $datef = __( 'M j, Y @ H:i' );
     <span id="timestamp"><?php
 printf(
     /* translators: %s: comment date */
-    __( 'Eingereicht am: %s' ),
+    __( 'Submitted on: %s' ),
     '<b>' . date_i18n( $datef, strtotime( $comment->comment_date ) ) . '</b>'
 );
 ?></span>
@@ -87,7 +87,7 @@ if ( current_user_can( 'edit_post', $post_id ) ) {
 <div class="misc-pub-section misc-pub-response-to">
 <?php printf(
     /* translators: %s: post link */
-    __( 'Als Antwort auf: %s' ),
+    __( 'In response to: %s' ),
     '<b>' . $post_link . '</b>'
 ); ?>
 </div>
@@ -102,7 +102,7 @@ $name        = get_comment_author( $parent );
     <div class="misc-pub-section misc-pub-reply-to">
 <?php printf(
     /* translators: %s: comment link */
-    __( 'Als Antwort auf: %s' ),
+    __( 'In reply to: %s' ),
     '<b><a href="' . $parent_link . '">' . $name . '</a></b>'
 ); ?>
     </div>

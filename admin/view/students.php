@@ -1,5 +1,5 @@
-<div class="wrap brainpress_wrapper brainpress-students">
-	<h2><?php esc_html_e( 'Studenten', 'brainpress' ); ?></h2>
+<div class="wrap coursepress_wrapper coursepress-students">
+	<h2><?php esc_html_e( 'Students', 'cp' ); ?></h2>
 	<hr />
 
 	<form method="post">

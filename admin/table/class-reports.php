@@ -2,13 +2,13 @@
 /**
  * Reports table
  *
- * @package ClassicPress
- * @subpackage BrainPress
+ * @package WordPress
+ * @subpackage CoursePress
  **/
 if ( ! class_exists( 'WP_List_Table' ) ) {
 	require_once ABSPATH . 'wp-admin/includes/class-wp-list-table.php';
 }
-class BrainPress_Admin_Table_Reports extends WP_List_Table {
+class CoursePress_Admin_Table_Reports extends WP_List_Table {
 	var $courses = array();
 	var $course_id = 0;
 	var $last_student_progress = array();
@@ -18,14 +18,14 @@ class BrainPress_Admin_Table_Reports extends WP_List_Table {
 	public function __construct() {
 
 		parent::__construct( array(
-			'singular' => __( 'Bericht', 'brainpress' ),
-			'plural' => __( 'Berichte', 'brainpress' ),
+			'singular' => __( 'Reports', 'cp' ),
+			'plural' => __( 'Reports', 'cp' ),
 			'ajax' => false,// should this table support ajax?
 		) );
 
-		$this->is_cache_path_writable = BrainPress_Helper_PDF::is_cache_path_writable();
+		$this->is_cache_path_writable = CoursePress_Helper_PDF::is_cache_path_writable();
 
-		$this->courses = BrainPress_Data_Instructor::get_accessable_courses();
+		$this->courses = CoursePress_Data_Instructor::get_accessable_courses();
 
 		if ( empty( $_REQUEST['course_id'] ) && ! empty( $this->courses ) ) {
 			$this->course_id = $this->courses[0]->ID;
@@ -49,7 +49,7 @@ class BrainPress_Admin_Table_Reports extends WP_List_Table {
 				$per_page = 20;
 			}
 		}
-		$per_page = $this->get_items_per_page( 'brainpress_reports_per_page', $per_page );
+		$per_page = $this->get_items_per_page( 'coursepress_reports_per_page', $per_page );
 
 		$current_page = $this->get_pagenum();
 		$offset = ( $current_page - 1 ) * $per_page;
@@ -83,27 +83,27 @@ class BrainPress_Admin_Table_Reports extends WP_List_Table {
 	}
 
 	public function no_items() {
-		_e( 'No students found.', 'brainpress' );
+		_e( 'No students found.', 'cp' );
 	}
 
 	public function get_columns() {
 		return array(
 			'cb' => '<input type="checkbox" />',
-			'id' => __( 'ID', 'brainpress' ),
-			'name' => __( 'Studentenname', 'brainpress' ),
-			'responses' => __( 'Antworten', 'brainpress' ),
-			'average' => __( 'Durchschnittlich', 'brainpress' ),
-			'report' => __( 'Download', 'brainpress' ),
-			'html' => __( 'Ansehen', 'brainpress' ),
+			'id' => __( 'ID', 'cp' ),
+			'name' => __( 'Student Name', 'cp' ),
+			'responses' => __( 'Responses', 'cp' ),
+			'average' => __( 'Average', 'cp' ),
+			'report' => __( 'Download', 'cp' ),
+			'html' => __( 'View', 'cp' ),
 		);
 	}
 
 	public function get_bulk_actions() {
 		$actions = array(
-			'download' => __( 'Download', 'brainpress' ),
-			'download_summary' => __( 'Zusammenfassung herunterladen', 'brainpress' ),
-			'show' => __( 'Anzeigen', 'brainpress' ),
-			'show_summary' => __( 'Zusammenfassung anzeigen', 'brainpress' ),
+			'download' => __( 'Download', 'cp' ),
+			'download_summary' => __( 'Download Summary', 'cp' ),
+			'show' => __( 'Show', 'cp' ),
+			'show_summary' => __( 'Show Summary', 'cp' ),
 		);
 
 		return $actions;
@@ -121,21 +121,21 @@ class BrainPress_Admin_Table_Reports extends WP_List_Table {
 
 	public function column_name( $item ) {
 		$avatar = get_avatar( $item->user_email, 28 );
-		$name = BrainPress_Helper_Utility::get_user_name( $item->ID, true );
+		$name = CoursePress_Helper_Utility::get_user_name( $item->ID, true );
 
 		return $avatar . $name;
 	}
 
 	public function column_responses( $item ) {
-		BrainPress_Data_Student::get_calculated_completion_data( $item->ID, $this->course_id );
-		$this->last_student_progress = BrainPress_Data_Student::get_completion_data( $item->ID, $this->course_id );
-		$responses = (int) BrainPress_Data_Student::count_course_responses( $item->ID, $this->course_id, $this->last_student_progress );
+		CoursePress_Data_Student::get_calculated_completion_data( $item->ID, $this->course_id );
+		$this->last_student_progress = CoursePress_Data_Student::get_completion_data( $item->ID, $this->course_id );
+		$responses = (int) CoursePress_Data_Student::count_course_responses( $item->ID, $this->course_id, $this->last_student_progress );
 
 		return $responses;
 	}
 
 	public function column_average( $item ) {
-		$average = BrainPress_Helper_Utility::get_array_val(
+		$average = CoursePress_Helper_Utility::get_array_val(
 			$this->last_student_progress,
 			'completion/average'
 		);
@@ -155,7 +155,7 @@ class BrainPress_Admin_Table_Reports extends WP_List_Table {
 				array(
 					'student_id' => $item->ID,
 					'course_id' => $this->course_id,
-					'_wpnonce' => wp_create_nonce( 'brainpress_download_report' ),
+					'_wpnonce' => wp_create_nonce( 'coursepress_download_report' ),
 				)
 			);
 			return sprintf(
@@ -165,7 +165,7 @@ class BrainPress_Admin_Table_Reports extends WP_List_Table {
 				esc_attr( $this->course_id )
 			);
 		}
-		return sprintf( '<span title="%s" data-click="false"></span>', esc_attr__( 'Wir können keine PDF-Dateien erstellen. Das Cache-Verzeichnis ist nicht beschreibbar.', 'brainpress' ) );
+		return sprintf( '<span title="%s" data-click="false"></span>', esc_attr__( 'We can not generata PDF. Cache directory is not writable.', 'cp' ) );
 	}
 
 	/**
@@ -179,7 +179,7 @@ class BrainPress_Admin_Table_Reports extends WP_List_Table {
 				'student_id' => $item->ID,
 				'course_id' => $this->course_id,
 				'mode' => 'html',
-				'_wpnonce' => wp_create_nonce( 'brainpress_download_report' ),
+				'_wpnonce' => wp_create_nonce( 'coursepress_download_report' ),
 			)
 		);
 		return sprintf(
@@ -198,15 +198,15 @@ class BrainPress_Admin_Table_Reports extends WP_List_Table {
 		$options = array();
 		$options['value'] = $this->course_id;
 		$options['class'] = 'medium dropdown';
-		$options['placeholder'] = __( 'Kurs auswählen', 'brainpress' );
-		$courses = BrainPress_Helper_UI::get_course_dropdown( 'course_id', 'course_id', $this->courses, $options );
+		$options['placeholder'] = __( 'Select course', 'cp' );
+		$courses = CoursePress_Helper_UI::get_course_dropdown( 'course_id', 'course_id', $this->courses, $options );
 		?>
 		<div class="alignleft course-filter">
 			<?php echo $courses; ?>
-			<input type="submit" class="button action" name="action" value="<?php esc_attr_e( 'Filter', 'brainpress' ); ?>" />
+			<input type="submit" class="button action" name="action" value="<?php esc_attr_e( 'Filter', 'cp' ); ?>" />
 		</div>
 		<?php
-		$this->search_box( __( 'Suche', 'brainpress' ), 'search_students' );
+		$this->search_box( __( 'Search', 'cp' ), 'search_students' );
 	}
 
 	public function pagination( $which ) {

@@ -1,5 +1,5 @@
-<div class="wrap brainpress_wrapper brainpress-comments">
-	<h1><?php esc_html_e( 'Kommentare', 'brainpress' ); ?></h1>
+<div class="wrap coursepress_wrapper coursepress-comments">
+	<h1><?php esc_html_e( 'Comments', 'cp' ); ?></h1>
 	<hr />
 
 	<form method="post">

@@ -4,7 +4,7 @@
  *
  * @since 2.0
  **/
-class BrainPress_Admin_Controller_Menu {
+class CoursePress_Admin_Controller_Menu {
 	var $parent_slug 				= '';
 	var $slug 						= '';
 	protected $cap 					= 'manage_options'; // Default to admin cap
@@ -35,20 +35,20 @@ class BrainPress_Admin_Controller_Menu {
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 		// Set ajax callback
 		add_action( 'wp_ajax_' . $this->slug, array( $this, 'ajax_request' ) );
-		add_action( 'brainpress_submitbox_misc_actions', array( __CLASS__, 'get_statuses' ), 10 );
+		add_action( 'coursepress_submitbox_misc_actions', array( __CLASS__, 'get_statuses' ), 10 );
 
 		/**
 		* add links on plugin page.
 		 */
-		$file = BrainPress::get_file();
-		if ( defined( 'BRAINPRESS_UPGRADE' ) && BRAINPRESS_UPGRADE ) {
+		$file = CoursePress::get_file();
+		if ( defined( 'COURSEPRESS_UPGRADE' ) && COURSEPRESS_UPGRADE ) {
 			$file = preg_replace( '@/2.0/@', '/', $file );
 		}
 		add_filter( 'plugin_action_links_' . plugin_basename( $file ), array( __CLASS__, 'add_action_links' ), 10, 4 );
-		add_action( 'wp_ajax_brainpress_dismiss_admin_notice', array( __CLASS__, 'dismiss_admin_notice' ) );
+		add_action( 'wp_ajax_coursepress_dismiss_admin_notice', array( __CLASS__, 'dismiss_admin_notice' ) );
 
 		// Add endpoints custom URLs in Appearance > Menus > Pages
-		add_action( 'admin_init', array( 'BrainPress_Helper_Utility', 'add_nav_menu_meta_boxes' ) );
+		add_action( 'admin_init', array( 'CoursePress_Helper_Utility', 'add_nav_menu_meta_boxes' ) );
 	}
 
 	public function get_labels() {
@@ -66,7 +66,7 @@ class BrainPress_Admin_Controller_Menu {
 		}
 
 		if ( ! empty( $this->parent_slug ) ) {
-			$post_type = BrainPress_Data_Course::get_post_type_name();
+			$post_type = CoursePress_Data_Course::get_post_type_name();
 			$this->parent_slug = 'edit.php?post_type=' . $post_type;
 
 			// It's a sub-menu
@@ -78,7 +78,7 @@ class BrainPress_Admin_Controller_Menu {
 	}
 
 	public function render_page() {
-		$view_id = str_replace( 'brainpress_', '', $this->slug );
+		$view_id = str_replace( 'coursepress_', '', $this->slug );
 		$admin_path = dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'view' . DIRECTORY_SEPARATOR;
 		$view_file = $admin_path . $view_id . '.php';
 
@@ -89,7 +89,7 @@ class BrainPress_Admin_Controller_Menu {
 
 	public function before_page_load() {
 		if ( ! current_user_can( $this->cap ) ) {
-			wp_die( __( 'Du hast keine Berechtigung, auf diese Seite zuzugreifen!', 'brainpress' ) );
+			wp_die( __( 'You have no permission to access this page!', 'cp' ) );
 		}
 
 		// Set assets
@@ -98,7 +98,7 @@ class BrainPress_Admin_Controller_Menu {
 		add_action( 'admin_notices', array( $this, 'admin_notices' ) );
 
 		$this->is_page_loaded = true;
-		do_action( 'brainpress_admin_render_page' );
+		do_action( 'coursepress_admin_render_page' );
 	}
 
 	/**
@@ -133,10 +133,10 @@ class BrainPress_Admin_Controller_Menu {
 		if ( $this->is_page_loaded ) {
 			$this->get_assets();
 
-			$url = BrainPress::$url;
+			$url = CoursePress::$url;
 			$css_url = $url . 'asset/css/';
 			$js_url = $url . 'asset/js/';
-			$version = BrainPress::$version;
+			$version = CoursePress::$version;
 			$include_core = isset( $this->scripts['core'] );
 
 			// Print styles
@@ -144,7 +144,7 @@ class BrainPress_Admin_Controller_Menu {
 				'select2' => $css_url . 'external/select2.min.css',
 			);
 
-			wp_enqueue_style( 'brainpress-admin-ui', $css_url . 'admin-ui.css', array(), $version );
+			wp_enqueue_style( 'coursepress-admin-ui', $css_url . 'admin-ui.css', array(), $version );
 			if ( $include_core ) {
 				// Chosen
 				wp_enqueue_style( 'cp_chosen_css', $css_url . 'external/chosen.min.css' );
@@ -152,8 +152,8 @@ class BrainPress_Admin_Controller_Menu {
 				wp_enqueue_style( 'fontawesome', $css_url . 'external/font-awesome.min.css' );
 
 				// General admin css
-				wp_enqueue_style( 'brainpress_admin_general', $css_url . 'admin-general.css', array(), $version );
-				wp_enqueue_style( 'brainpress_admin_global', $css_url . 'admin-global.css', array( 'dashicons' ), $version );
+				wp_enqueue_style( 'coursepress_admin_general', $css_url . 'admin-general.css', array(), $version );
+				wp_enqueue_style( 'coursepress_admin_global', $css_url . 'admin-global.css', array( 'dashicons' ), $version );
 			}
 
 			// Print the css required for this page
@@ -163,7 +163,7 @@ class BrainPress_Admin_Controller_Menu {
 					wp_enqueue_style( $css_id, $core_css[ $css_id ] );
 				} else {
 					if ( 1 != $css_path ) {
-						wp_enqueue_style( "brainpress-{$css_id}", $css_path, array(), $version );
+						wp_enqueue_style( "coursepress-{$css_id}", $css_path, array(), $version );
 					}
 				}
 			}
@@ -177,7 +177,7 @@ class BrainPress_Admin_Controller_Menu {
 			);
 
 			if ( $include_core ) {
-				// Load brainpress core scripts
+				// Load coursepress core scripts
 				$course_dependencies = array(
 					'jquery-ui-accordion',
 					'jquery-effects-highlight',
@@ -185,21 +185,20 @@ class BrainPress_Admin_Controller_Menu {
 					'jquery-ui-datepicker',
 					'jquery-ui-spinner',
 					'jquery-ui-droppable',
-					'jquery-ui-draggable',
 				);
 
 				if ( isset( $this->scripts['jquery-select2'] ) ) {
 					$course_dependencies[] = 'jquery-select2';
 				}
-				wp_enqueue_script( 'brainpress_object', $url . 'asset/js/brainpress.js', array( 'jquery', 'backbone', 'underscore' ), $version );
+				wp_enqueue_script( 'coursepress_object', $url . 'asset/js/coursepress.js', array( 'jquery', 'backbone', 'underscore' ), $version );
 				wp_enqueue_script( 'chosen', $url . 'asset/js/external/chosen.jquery.min.js' );
-				wp_enqueue_script( 'brainpress_course', $url . 'asset/js/brainpress-course.js', $course_dependencies, $version );
+				wp_enqueue_script( 'coursepress_course', $url . 'asset/js/coursepress-course.js', $course_dependencies, $version );
 				wp_enqueue_script( 'jquery-treegrid', $url . 'asset/js/external/jquery.treegrid.min.js' );
 
 				$script = $url . 'asset/js/admin-general.js';
 				$sticky = $url . 'asset/js/external/sticky.min.js';
 
-				wp_enqueue_script( 'brainpress_admin_general_js', $script, array( 'jquery' ), $version, true );
+				wp_enqueue_script( 'coursepress_admin_general_js', $script, array( 'jquery' ), $version, true );
 				wp_enqueue_script( 'sticky_js', $sticky, array( 'jquery' ), $version, true );
 			}
 
@@ -210,7 +209,7 @@ class BrainPress_Admin_Controller_Menu {
 					wp_enqueue_script( $script_id, $core_scripts[ $script_id ], array( 'jquery' ) );
 				} else {
 					if ( 1 != $script_path ) {
-						wp_enqueue_script( "brainpress_{$script_id}", $script_path, false, $version );
+						wp_enqueue_script( "coursepress_{$script_id}", $script_path, false, $version );
 					}
 				}
 			}
@@ -218,37 +217,37 @@ class BrainPress_Admin_Controller_Menu {
 			if ( $include_core ) {
 				$this->localize_array = array_merge(
 					array(
-						'_ajax_url' => BrainPress_Helper_Utility::get_ajax_url(),
+						'_ajax_url' => CoursePress_Helper_Utility::get_ajax_url(),
 						'allowed_video_extensions' => wp_get_video_extensions(),
 						'allowed_audio_extensions' => wp_get_audio_extensions(),
-						'allowed_image_extensions' => BrainPress_Helper_Utility::get_image_extensions(),
-						'allowed_extensions' => apply_filters( 'brainpress_custom_allowed_extensions', false ),
+						'allowed_image_extensions' => CoursePress_Helper_Utility::get_image_extensions(),
+						'allowed_extensions' => apply_filters( 'coursepress_custom_allowed_extensions', false ),
 						'date_format' => get_option( 'date_format' ),
-						'editor_visual' => __( 'Visuell', 'brainpress' ),
-						'editor_text' => _x( 'Text', 'Name für die Registerkarte Texteditor (früher HTML)', 'brainpress' ),
-						'invalid_extension_message' => __( 'Die Erweiterung der Datei ist ungültig. Bitte verwende eine der folgenden Möglichkeiten:', 'brainpress' ),
+						'editor_visual' => __( 'Visual', 'cp' ),
+						'editor_text' => _x( 'Text', 'Name for the Text editor tab (formerly HTML)', 'cp' ),
+						'invalid_extension_message' => __( 'Extension of the file is not valid. Please use one of the following:', 'cp' ),
 						'is_super_admin' => current_user_can( 'manage_options' ),
-						'user_caps' => BrainPress_Data_Capabilities::get_user_capabilities(),
-						'server_error' => __( 'Bei der Bearbeitung Deiner Anfrage ist ein Fehler aufgetreten. Bitte versuche es später noch einmal!', 'brainpress' ),
+						'user_caps' => CoursePress_Data_Capabilities::get_user_capabilities(),
+						'server_error' => __( 'An error occur while processing your request. Please try again later!', 'cp' ),
 						'labels' => array(
-							'user_dropdown_placeholder' => __( 'Gib den Benutzernamen, den Vor- und Nachnamen oder die E-Mail-Adresse ein', 'brainpress' ),
+							'user_dropdown_placeholder' => __( 'Enter username, first name and last name, or email', 'cp' ),
 						),
 						'messages' => array(
 							'notification' => array(
-								'empty_content' => __( 'Kein Benachrichtigungsinhalt!', 'brainpress' ),
-								'empty_title' => __( 'Kein Benachrichtigungstitel!', 'brainpress' ),
+								'empty_content' => __( 'No notification content!', 'cp' ),
+								'empty_title' => __( 'No notification title!', 'cp' ),
 							),
 							'discussion' => array(
-								'empty_content' => __( 'Kein Themen-Inhalt!', 'brainpress' ),
-								'empty_title' => __( 'Kein TThementitel!', 'brainpress' ),
+								'empty_content' => __( 'No thread content!', 'cp' ),
+								'empty_title' => __( 'No thread title!', 'cp' ),
 							),
 							'general' => array(
-								'empty_content' => __( 'Kein Inhalt!', 'brainpress' ),
-								'empty_title' => __( 'Kein Titel!', 'brainpress' ),
+								'empty_content' => __( 'No content!', 'cp' ),
+								'empty_title' => __( 'No title!', 'cp' ),
 							),
 							'instructors' => array(
-								'instructor_delete_confirm' => __( 'Bitte bestätige, dass Du den Kursleiter aus diesem Kurs entfernen möchtest (%s).', 'brainpress' ),
-								'instructor_delete_all_confirm' => __( 'Bitte bestätige dass Du den Kursleiter aus ALLEN zugehörigen Kursen entfernen möchtest.', 'brainpress' ),
+								'instructor_delete_confirm' => __( 'Please confirm that you want to remove the instructor from this course (%s).', 'cp' ),
+								'instructor_delete_all_confirm' => __( 'Please confirm that you want to remove the instructor from ALL the associated courses.', 'cp' ),
 							),
 						),
 					),
@@ -259,7 +258,7 @@ class BrainPress_Admin_Controller_Menu {
 					add_action( 'admin_footer', array( $this, 'prepare_editor' ), 1 );
 				}
 
-				wp_localize_script( 'brainpress_object', '_brainpress', $this->localize_array );
+				wp_localize_script( 'coursepress_object', '_coursepress', $this->localize_array );
 			}
 		}
 	}
@@ -329,12 +328,12 @@ class BrainPress_Admin_Controller_Menu {
 		} else {
 			$post = new stdClass;
 		}
-		$post->can_change_status = call_user_func( array( 'BrainPress_Data_Capabilities', $can_change_function ), $post_id );
+		$post->can_change_status = call_user_func( array( 'CoursePress_Data_Capabilities', $can_change_function ), $post_id );
 		if ( 'draft' == $post->post_status && $post->can_change_status ) {
 ?>
 <div id="minor-publishing-actions">
 <div id="save-action">
-<input type="submit" name="save" id="save-post" value="<?php esc_attr_e( 'Entwurf speichern', 'brainpress' ); ?>" class="button">
+<input type="submit" name="save" id="save-post" value="<?php esc_attr_e( 'Save Draft', 'cp' ); ?>" class="button">
 <span class="spinner"></span>
 </div>
 <div class="clear"></div>
@@ -344,20 +343,20 @@ class BrainPress_Admin_Controller_Menu {
 		/**
 		 * misc actions
 		 */
-		printf( '<div id="misc-publishing-actions" data-no-options="%s">', esc_attr__( 'keine Optionen verfügbar', 'brainpress' ) );
-		do_action( 'brainpress_submitbox_misc_actions', $post );
+		printf( '<div id="misc-publishing-actions" data-no-options="%s">', esc_attr__( 'no option available', 'cp' ) );
+		do_action( 'coursepress_submitbox_misc_actions', $post );
 		echo '</div>';
 		/**
 		 * major actions
 		 */
 		echo '<div id="major-publishing-actions"><div id="publishing-action"><span class="spinner"></span>';
-		$label = __( 'Veröffentlichen', 'brainpress' );
+		$label = __( 'Publish', 'cp' );
 		if ( ! $post->can_change_status && empty( $post->ID ) ) {
-			$label = __( 'Speichern', 'brainpress' );
+			$label = __( 'Save', 'cp' );
 		}
 		$class = 'force-publish';
 		if ( 'publish' == $post->post_status || ! $post->can_change_status ) {
-			$label = __( 'Aktualisieren', 'brainpress' );
+			$label = __( 'Update', 'cp' );
 			$class = '';
 		}
 		printf(
@@ -372,8 +371,8 @@ class BrainPress_Admin_Controller_Menu {
 
 	public static function get_statuses( $post ) {
 		$allowed_statuses = array(
-			'draft'		 => __( 'Entwurf', 'brainpress' ),
-			'publish'	   => __( 'Veröffentlicht', 'brainpress' ),
+			'draft'		 => __( 'Draft', 'cp' ),
+			'publish'	   => __( 'Published', 'cp' ),
 		);
 		if ( isset( $post ) ) {
 			if ( ! array_key_exists( $post->post_status, $allowed_statuses ) ) {
@@ -450,19 +449,21 @@ foreach ( $allowed_statuses as $status => $label ) {
 		if ( current_user_can( 'manage_options' ) ) {
 			$url = add_query_arg(
 				array(
-					'post_type' => BrainPress_Data_Course::get_post_type_name(),
-					'page' => BrainPress_View_Admin_Setting::get_slug(),
+					'post_type' => CoursePress_Data_Course::get_post_type_name(),
+					'page' => CoursePress_View_Admin_Setting::get_slug(),
 				),
 				admin_url( 'edit.php' )
 			);
 			$actions['settings'] = sprintf(
 				'<a href="%s">%s</a>',
 				esc_url( $url ),
-				__( 'Einstellungen', 'brainpress' )
+				__( 'Settings', 'cp' )
 			);
 		}
-		$url = 'https://n3rds.work/piestingtal_source/ps-brainpress-classicpress-lms-online-akademie-plugin/';
-		
+		$url = 'https://wordpress.org/support/plugin/coursepress';
+
+		$url = 'https://premium.wpmudev.org/forums/tags/coursepress-pro';
+
 		$actions['support'] = sprintf(
 			'<a href="%s">%s</a>',
 			esc_url( $url ),
@@ -509,7 +510,7 @@ foreach ( $allowed_statuses as $status => $label ) {
 			return;
 		}
 		$course_id = $_POST['course_id'];
-		if ( BrainPress_Data_Course::is_course( $course_id ) ) {
+		if ( CoursePress_Data_Course::is_course( $course_id ) ) {
 			$url = 0 == $course_id ? remove_query_arg( 'course_id' ) : add_query_arg( 'course_id', $course_id );
 			wp_safe_redirect( $url );
 			exit;

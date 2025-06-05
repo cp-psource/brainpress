@@ -1,24 +1,24 @@
 ---
 layout: psource-theme
-title: "BrainPress"
+title: "CoursePress"
 ---
 
-<h2 align="center" style="color:#38c2bb;">📚 BrainPress</h2>
+<h2 align="center" style="color:#38c2bb;">📚 CoursePress</h2>
 
 <div class="menu">
-  <a href="https://github.com/cp-psource/brainpress/discussions" style="color:#38c2bb;">💬 Forum</a>
-  <a href="https://github.com/cp-psource/brainpress/releases" style="color:#38c2bb;">⬇️ Download</a>
+  <a href="https://github.com/cp-psource/coursepress/discussions" style="color:#38c2bb;">💬 Forum</a>
+  <a href="https://github.com/cp-psource/coursepress/releases" style="color:#38c2bb;">⬇️ Download</a>
   <a href="functions.html" style="color:#38c2bb;">🎨 Dev: Funktionen</a>
   <a href="classes.html" style="color:#38c2bb;">🌐 Dev: Klassen</a>
 </div>
 
-## Denkst Du darüber nach, Tutorials oder Kurse auf Deiner Webseite zu teilen oder zu verkaufen? Erstelle, bewerbe und verkaufe ganz einfach Dein Wissen mit BrainPress.
+## Denkst Du darüber nach, Tutorials oder Kurse auf Deiner Webseite zu teilen oder zu verkaufen? Erstelle, bewerbe und verkaufe ganz einfach Dein Wissen mit CoursePress.
 
 ### Einfaches Online-Lernen
 
-BrainPress macht Online-Lernen einfach mit Kursseiten, Paywalls, Social Sharing und einer interaktiven Lernumgebung, die dabei hilft, mehr Studenten miteinander zu verbinden.
+CoursePress macht Online-Lernen einfach mit Kursseiten, Paywalls, Social Sharing und einer interaktiven Lernumgebung, die dabei hilft, mehr Studenten miteinander zu verbinden.
 
-![Mache Deine Kurse interaktiv mit Video, Audio, Quiz und anderen herunterladbaren Medien.](assets/images/BrainPress1.jpeg)
+![Mache Deine Kurse interaktiv mit Video, Audio, Quiz und anderen herunterladbaren Medien.](assets/images/CoursePress1.jpeg)
 
   Gestalte Deine Kurse interaktiv mit Video, Audio, Quiz und anderen herunterladbaren Medien.
 
@@ -26,11 +26,11 @@ BrainPress macht Online-Lernen einfach mit Kursseiten, Paywalls, Social Sharing 
 
 ### Flexibler Stil
 
-BrainPress wird mit einem eigenen Theme geliefert – gestaltet und sofort einsatzbereit. Darüber hinaus erleichtern die enthaltenen Shortcodes und Widgets die Integration von BrainPress in Deine Lieblingsthemes.
+CoursePress wird mit einem eigenen Theme geliefert – gestaltet und sofort einsatzbereit. Darüber hinaus erleichtern die enthaltenen Shortcodes und Widgets die Integration von CoursePress in Deine Lieblingsthemes.
 
 ![Bild](assets/images/cp-theme-735x470.jpg)
 
-  Verwende das BrainPress-Design für vollständig gestaltete Einheiten direkt nach dem Auspacken.
+  Verwende das CoursePress-Design für vollständig gestaltete Einheiten direkt nach dem Auspacken.
 
 ### Medien und interaktives Lernen
 
@@ -50,13 +50,13 @@ Erstelle und verwalte die nächste große Academy, Tuts+ oder Lynda mit integrie
 
  
 
-![BrainPress erleichtert die Einrichtung und Verwaltung von Schülern, Kursen und Lehrern.](assets/images/cp-steps-735x470-compressor.jpg)
+![CoursePress erleichtert die Einrichtung und Verwaltung von Schülern, Kursen und Lehrern.](assets/images/cp-steps-735x470-compressor.jpg)
 
-  BrainPress erleichtert die Einrichtung und Verwaltung von Schülern, Kursen und Lehrern.
+  CoursePress erleichtert die Einrichtung und Verwaltung von Schülern, Kursen und Lehrern.
 
 ### Verwalte Dein Klassenzimmer wie ein Profi
 
-Verwalte Studenten, Dozenten und Kurse wie ein Profi mit automatischer Benotung und Berichterstattung, Beurteilungen und Diskussionen. Mit BrainPress können Studenten ihre Fortschritte von Anfang bis Ende verfolgen.
+Verwalte Studenten, Dozenten und Kurse wie ein Profi mit automatischer Benotung und Berichterstattung, Beurteilungen und Diskussionen. Mit CoursePress können Studenten ihre Fortschritte von Anfang bis Ende verfolgen.
 
  
 
@@ -86,17 +86,17 @@ Stelle sicher, dass jede Frage beantwortet wird und die Aufgaben schnell bewerte
 
 ### Weitere Quizoptionen
 
-BrainPress bietet mehr Möglichkeiten zur Bewertung Deiner Schüler: Mehrfachantwort, Einzelauswahl, auswählbare Antwort, kurze Antwort, lange Antwort, Richtig/Falsch und Hochladen. Fordere außerdem die Schüler auf, jede Quizeinheit mit einer qualifizierenden Note zu absolvieren, bevor sie mit der nächsten Sitzung beginnen.
+CoursePress bietet mehr Möglichkeiten zur Bewertung Deiner Schüler: Mehrfachantwort, Einzelauswahl, auswählbare Antwort, kurze Antwort, lange Antwort, Richtig/Falsch und Hochladen. Fordere außerdem die Schüler auf, jede Quizeinheit mit einer qualifizierenden Note zu absolvieren, bevor sie mit der nächsten Sitzung beginnen.
 
  
 
-![Erstelle benutzerdefinierte Zertifikate für jeden Kurs.](assets/images/certificate-brainpress-1470x940-1.jpeg)
+![Erstelle benutzerdefinierte Zertifikate für jeden Kurs.](assets/images/certificate-coursepress-1470x940-1.jpeg)
 
   Erstelle individuelle Zertifikate für jeden Kurs.
 
 ### Benutzerdefinierte Abschlusszertifikate
 
-Mit BrainPress kannst Du für jeden Kurs individuell gestaltete, personalisierte, druckbare Abschlusszertifikate erstellen.
+Mit CoursePress kannst Du für jeden Kurs individuell gestaltete, personalisierte, druckbare Abschlusszertifikate erstellen.
 
 ### All-In-One-LMS
 
@@ -104,7 +104,7 @@ Mit BrainPress kannst Du für jeden Kurs individuell gestaltete, personalisierte
 
 ![Bild](assets/images/courses-large-1x-compressor-1.jpeg)
 
-   BrainPress ist das komplette Learning Management System (LMS), das von Profis für Profis entwickelt wurde. Der Wissensaustausch war noch nie so einfach.
+   CoursePress ist das komplette Learning Management System (LMS), das von Profis für Profis entwickelt wurde. Der Wissensaustausch war noch nie so einfach.
 
 ## Verwendung
 
@@ -117,25 +117,25 @@ Melde Dichich bei Deinem Admin-Panel für ClassicPress oder Multisite an und akt
 
 ### Benutzen:
 
-Nach der Installation und Aktivierung wird in Deinem Dashboard ein neuer Menüpunkt angezeigt. _BrainPress_.
+Nach der Installation und Aktivierung wird in Deinem Dashboard ein neuer Menüpunkt angezeigt. _CoursePress_.
 
-![BrainPress – Menü](assets/images/BrainPress-Pro-Menu.png)
+![CoursePress – Menü](assets/images/CoursePress-Pro-Menu.png)
 
   Wenn Du auf diesen Menülink klickst, wirst Du mit einer Willkommensnachricht und kurzen Details begrüßt, die Dir den Einstieg in die Kurserstellung erleichtert.
 
-![BrainPress – Erste Schritte](assets/images/BrainPress-Getting-Started.png)
+![CoursePress – Erste Schritte](assets/images/CoursePress-Getting-Started.png)
 
 ### Einen neuen Kurs hinzufügen
 
-Beginnen wir mit dem Hinzufügen eines Kurses. Gehe zu _BrainPress > Neuer Kurs_.
+Beginnen wir mit dem Hinzufügen eines Kurses. Gehe zu _CoursePress > Neuer Kurs_.
 
-![BrainPress – Menü „Neuer Kurs“](assets/images/BrainPress-New-Course-menu1.png)
+![CoursePress – Menü „Neuer Kurs“](assets/images/CoursePress-New-Course-menu1.png)
 
   Du siehst eine Reihe von Unterabschnitten, die einen 6-stufigen Prozess umfassen. Gehen wir sie alle durch.
 
 ##### Schritt 1 - Kursübersicht
 
-![BrainPress - Neuer Kurs - Kursübersicht](assets/images/BrainPress-New-Course-Course-Overview.png)
+![CoursePress - Neuer Kurs - Kursübersicht](assets/images/CoursePress-New-Course-Course-Overview.png)
 
 *   Gib einen _Kursnamen_ ein.
 *   Füge eine _Kurzbeschreibung_ des Kurses hinzu.
@@ -145,7 +145,7 @@ Beginnen wir mit dem Hinzufügen eines Kurses. Gehe zu _BrainPress > Neuer Kurs_
 
 ##### Schritt 2 - Kursbeschreibung
 
-![BrainPress - Neuer Kurs - Kursbeschreibung](assets/images/BrainPress-New-Course-Course-Description.png)
+![CoursePress - Neuer Kurs - Kursbeschreibung](assets/images/CoursePress-New-Course-Course-Description.png)
 
 *   Optional: Lade ein _Vorgestelltes Video_ hoch oder verlinke es, das auf der Kursdetailseite in der Kursübersicht angezeigt wird.
 *   Gib eine _Kursbeschreibung_ ein – eine detaillierte Beschreibung des Kurses. Du kannst den visuellen Editor von ClassicPress voll nutzen, um die Beschreibung anzupassen.
@@ -156,7 +156,7 @@ Beginnen wir mit dem Hinzufügen eines Kurses. Gehe zu _BrainPress > Neuer Kurs_
 
 ##### Schritt 3 - Dozenten
 
-![BrainPress - Neuer Kurs - Dozenten](assets/images/BrainPress-New-Course-Instructors.png)
+![CoursePress - Neuer Kurs - Dozenten](assets/images/CoursePress-New-Course-Instructors.png)
 
 *   Du kannst im Abschnitt _Kursdozenten_ so viele Dozenten zuweisen, wie Du möchtest. Wähle einfach aus der Liste der Standard-ClassicPress-Benutzer aus.
 *   Lade neue Dozenten ganz einfach per E-Mail ein. Gib im Abschnitt _Neuen Dozenten einladen_ einfach einen _Vorname_, _Nachname_ und eine _E-Mail-Adresse_ ein und klicke auf _Einladung senden_.
@@ -164,7 +164,7 @@ Beginnen wir mit dem Hinzufügen eines Kurses. Gehe zu _BrainPress > Neuer Kurs_
 
 ##### Schritt 4 - Kursdaten
 
-![BrainPress - Neuer Kurs - Kursdaten](assets/images/BrainPress-New-Course-Course-Dates.png)
+![CoursePress - Neuer Kurs - Kursdaten](assets/images/CoursePress-New-Course-Course-Dates.png)
 
 *   Gib im Abschnitt _Kursdaten_ die Daten ein, an denen Dein Kurs verfügbar sein soll. Oder aktiviere die Option '_Dieser Kurs hat kein Enddatum_'.
 *   Alternativ kannst Du das _Startdatum_ und _Enddatum_ mit dem Pop-up-Datumswähler auswählen.
@@ -174,7 +174,7 @@ Beginnen wir mit dem Hinzufügen eines Kurses. Gehe zu _BrainPress > Neuer Kurs_
 
 ##### Schritt 5 - Klassen, Diskussionen und Arbeitsbücher
 
-![BrainPress - Neuer Kurs - Klassen, Diskussionen und Arbeitsbücher](assets/images/BrainPress-New-Course-Classes.png)
+![CoursePress - Neuer Kurs - Klassen, Diskussionen und Arbeitsbücher](assets/images/CoursePress-New-Course-Classes.png)
 
 *   Um die Klassengröße zu begrenzen, aktiviere die Option '_Klassengröße begrenzen_' und gib einen Wert für die Begrenzung ein.
 *   Aktiviere die Option '_Kursdiskussion erlauben_', um offene Diskussionen zwischen Studenten und Dozenten zu ermöglichen.
@@ -183,42 +183,42 @@ Beginnen wir mit dem Hinzufügen eines Kurses. Gehe zu _BrainPress > Neuer Kurs_
 
 ##### Schritt 6 - Einschreibung und Kurskosten
 
-![BrainPress - Neuer Kurs - Einschreibung](assets/images/BrainPress-New-Course-Enrollment.png)
+![CoursePress - Neuer Kurs - Einschreibung](assets/images/CoursePress-New-Course-Enrollment.png)
 
-Aktiviere die Option "_Dies ist ein kostenpflichtiger Kurs_", um Zahlungsoptionen anzuzeigen. Für Zahlungen integriert sich BrainPress Pro sowohl mit [MarketPress](https://cp-psource.github.io/marketpress/ "MarketPress ClassicPress e-Commerce") als auch mit [WooCommerce](https://wordpress.org/plugins/woocommerce/). Beachte bitte, dass derzeit nur eines der beiden Plugins (entweder MarketPress oder WooCommerce) aktiviert sein sollte, da die gleichzeitige Aktivierung beider Plugins zu Konflikten führen kann. 
+Aktiviere die Option "_Dies ist ein kostenpflichtiger Kurs_", um Zahlungsoptionen anzuzeigen. Für Zahlungen integriert sich CoursePress Pro sowohl mit [MarketPress](https://cp-psource.github.io/marketpress/ "MarketPress ClassicPress e-Commerce") als auch mit [WooCommerce](https://wordpress.org/plugins/woocommerce/). Beachte bitte, dass derzeit nur eines der beiden Plugins (entweder MarketPress oder WooCommerce) aktiviert sein sollte, da die gleichzeitige Aktivierung beider Plugins zu Konflikten führen kann. 
 
 Für die MarketPress-Integration wird dir beim ersten Aktivieren der oben genannten Zahlungsoption eine Nachricht zu MarketPress angezeigt, wie hier:
 
-![BrainPress Pro - MarketPress aktivieren](assets/images/BrainPress-Pro-1.2.5.4-Payment-settings-Activate-MarketPress.png)
+![CoursePress Pro - MarketPress aktivieren](assets/images/CoursePress-Pro-1.2.5.4-Payment-settings-Activate-MarketPress.png)
 
-Klicke auf den Link "_MarketPress aktivieren_", um den Aktivierungsprozess zu starten und die Zahlungsoptionen freizuschalten. Für die WooCommerce-Integration stelle sicher, dass WooCommerce installiert und aktiviert ist, und aktiviere dann die Einstellung "_WooCommerce verwenden, um Kurse zu verkaufen_" unter _BrainPress Pro > Einstellungen_. Optional kannst du auch einstellen, dass WooCommerce-Produktseiten zu einem übergeordneten Kurs weiterleiten.
+Klicke auf den Link "_MarketPress aktivieren_", um den Aktivierungsprozess zu starten und die Zahlungsoptionen freizuschalten. Für die WooCommerce-Integration stelle sicher, dass WooCommerce installiert und aktiviert ist, und aktiviere dann die Einstellung "_WooCommerce verwenden, um Kurse zu verkaufen_" unter _CoursePress Pro > Einstellungen_. Optional kannst du auch einstellen, dass WooCommerce-Produktseiten zu einem übergeordneten Kurs weiterleiten.
 
-![BrainPress Pro - Einstellungen - WooCommerce-Integration](assets/images/BrainPress-Pro-1.2.5.4-WooCommerce-Settings.png)
+![CoursePress Pro - Einstellungen - WooCommerce-Integration](assets/images/CoursePress-Pro-1.2.5.4-WooCommerce-Settings.png)
 
-WooCommerce-Einstellungen unter BrainPress Pro > Einstellungen
+WooCommerce-Einstellungen unter CoursePress Pro > Einstellungen
 
 Mit entweder MarketPress oder WooCommerce installiert und aktiviert sowie den oben konfigurierten Einstellungen werden dir dann Zahlungsoptionen für deinen Kurs angezeigt.
 
-![BrainPress - Neuer Kurs - Einschreibung - Dies ist ein kostenpflichtiger Kurs](assets/images/BrainPress-New-Course-Enrollment-This-is-a-paid-course.png)
+![CoursePress - Neuer Kurs - Einschreibung - Dies ist ein kostenpflichtiger Kurs](assets/images/CoursePress-New-Course-Enrollment-This-is-a-paid-course.png)
 
-* Aktiviere die Option "_Automatisch eine Artikelnummer (SKU) generieren_", damit BrainPress Pro automatisch eine eindeutige SKU erstellt. Alternativ kannst du selbst einen SKU-Wert eingeben.
+* Aktiviere die Option "_Automatisch eine Artikelnummer (SKU) generieren_", damit CoursePress Pro automatisch eine eindeutige SKU erstellt. Alternativ kannst du selbst einen SKU-Wert eingeben.
 * Gib den _Preis_ ein.
 * Aktiviere die Option "_Reduzierter Preis aktiviert_", um anzugeben, dass dieser Kurs im Angebot ist.
 * Gib einen _Angebotspreis_ ein, der mit der obigen Option verwendet wird.
 * Wenn du MarketPress verwendest, hast du die Möglichkeit, die _Zahlungsgateways zu bearbeiten_. Dabei wird ein Pop-up-Dialog angezeigt, in dem du die Zahlungsgateways auswählen und konfigurieren kannst.
 
-![BrainPress Pro - Zahlungsgateways](assets/images/BrainPress-Pro-1.2.1.9-Payment-Gateways.png)
+![CoursePress Pro - Zahlungsgateways](assets/images/CoursePress-Pro-1.2.1.9-Payment-Gateways.png)
 
 Wenn du die Zahlungseinstellungen fertig konfiguriert hast, kannst du auf die Schaltfläche "_Zurück_" klicken, um zum vorherigen Abschnitt zu gelangen, oder auf "_Fertig_", um den Kurs-Erstellungsprozess abzuschließen und den neuen Kurs zu speichern.
 ### Kurse
 
-Schauen wir uns die Kurse unter _BrainPress Pro > Kurse_ an.
+Schauen wir uns die Kurse unter _CoursePress Pro > Kurse_ an.
 
-![BrainPress - Kurse-Menü](assets/images/BrainPress-Courses-menu1.png)
+![CoursePress - Kurse-Menü](assets/images/CoursePress-Courses-menu1.png)
 
 Hier findest Du eine Liste aller Kurse, die Du erstellt hast.
 
-![BrainPress - Kurse](assets/images/BrainPress-Courses.png)
+![CoursePress - Kurse](assets/images/CoursePress-Courses.png)
 
 * Nutze den Bereich _Kurse durchsuchen_, um nach bestehenden Kursen zu suchen.
 * Klicke auf das _Löschen_-Symbol, um einen Kurs zu entfernen.
@@ -226,11 +226,11 @@ Hier findest Du eine Liste aller Kurse, die Du erstellt hast.
 
 Auf Geräten mit großem Bildschirm siehst Du ein paar zusätzliche Optionen in der Liste.
 
-![BrainPress - Kurse - weitere Optionen](assets/images/BrainPress-Courses-other-options.png)
+![CoursePress - Kurse - weitere Optionen](assets/images/CoursePress-Courses-other-options.png)
 
 Es gibt eine Spalte _Veröffentlicht_, in der Du Kurse ganz einfach veröffentlichen oder zurückziehen kannst.
 
-![BrainPress - Kurse - Massenaktionen](assets/images/BrainPress-Courses-Bulk-Actions.png)
+![CoursePress - Kurse - Massenaktionen](assets/images/CoursePress-Courses-Bulk-Actions.png)
 
 Außerdem gibt es ein Dropdown-Menü für Massenaktionen. Du kannst mehrere Kurse in der Liste markieren, eine Aktion aus dem Dropdown-Menü auswählen und auf _Anwenden_ klicken, um die Aktion auf alle markierten Kurse anzuwenden. Die verfügbaren Massenaktionen sind:
 
@@ -240,7 +240,7 @@ Außerdem gibt es ein Dropdown-Menü für Massenaktionen. Du kannst mehrere Kurs
 
 Wenn Du mit der Maus über einen Kurs in der Liste fährst, siehst Du eine Schnellübersicht mit Links.
 
-![BrainPress - Kurse - Hover-Links](assets/images/BrainPress-Courses-hover-links.png)
+![CoursePress - Kurse - Hover-Links](assets/images/CoursePress-Courses-hover-links.png)
 
 Diese Links sind:
 
@@ -256,7 +256,7 @@ Schauen wir uns die Kursübersicht für den Kurs an, den wir zuvor erstellt habe
 
 Hier siehst Du eine Reihe von Tabs (_Kursübersicht_, _Einheiten_ und _Studenten_) sowie einige andere Optionen.
 
-![BrainPress - Kurs - Kursübersicht](assets/images/BrainPress-Course-Course-Overview1.png)
+![CoursePress - Kurs - Kursübersicht](assets/images/CoursePress-Course-Course-Overview1.png)
 
 *   Du siehst eine Akkordeon-Liste der verschiedenen _Schritte_, die Du zuvor erstellt hast. Klicke auf einen Schritt, um die Einstellungen anzuzeigen.
 *   Veröffentliche den Kurs schnell mit dem _Kurs veröffentlichen_-Schalter.
@@ -268,7 +268,7 @@ Lass uns zum Tab "Studenten" wechseln.
 
 Im Tab _Studenten_ kannst Du schnell auf die Studenten dieses Kurses zugreifen.
 
-![BrainPress - Kurs - Studenten](assets/images/BrainPress-Course-Students.png)
+![CoursePress - Kurs - Studenten](assets/images/CoursePress-Course-Students.png)
 
 *   Füge ganz einfach einen Studenten hinzu, indem Du einen Namen aus dem Dropdown-Menü auswählst und dann auf den Button _Student hinzufügen_ klickst.
 *   Klicke auf das _Abmelden_-Symbol, um einen Studenten vom Kurs abzumelden.
@@ -277,7 +277,7 @@ Im Tab _Studenten_ kannst Du schnell auf die Studenten dieses Kurses zugreifen.
 
 ##### Studentenprofil
 
-![BrainPress - Kurs - Studenten - Profil](assets/images/BrainPress-Course-Students-Profile1.png)
+![CoursePress - Kurs - Studenten - Profil](assets/images/CoursePress-Course-Students-Profile1.png)
 
 Hier siehst Du einige grundlegende Details über den Studenten sowie hilfreiche Links und eine Liste der Kurse, in die der Student eingeschrieben ist.
 
@@ -293,23 +293,23 @@ Lass uns zurückgehen und den Tab "Einheiten" anschauen.
 
 Einheiten sind der eigentliche Inhalt des Kurses. Lass uns die verschiedenen Optionen zum Hinzufügen und Bearbeiten durchgehen.
 
-![BrainPress - Kurs - Einheiten - Neue Einheit hinzufügen](assets/images/BrainPress-Course-Units-Add-New-Unit.png)
+![CoursePress - Kurs - Einheiten - Neue Einheit hinzufügen](assets/images/CoursePress-Course-Units-Add-New-Unit.png)
 
 Du siehst eine Liste der vorhandenen _Einheiten_, die du anklicken kannst, um die Einstellungen zu bearbeiten. Wenn du mit der Maus über eine Einheit fährst, wird ein Pfeilsymbol angezeigt, das darauf hinweist, dass du sie ziehen kannst. Du kannst die Einheiten durch Ziehen und Ablegen neu anordnen.
 
-![BrainPress - Kurs - Einheiten - Neu anordnen](assets/images/BrainPress-Course-Units-Re-order.png)
+![CoursePress - Kurs - Einheiten - Neu anordnen](assets/images/CoursePress-Course-Units-Re-order.png)
 
 Fahre mit der Maus über eine Einheit, dann ziehe und lasse sie los, um sie neu anzuordnen.
 
 Klicke auf die Schaltfläche _Neue Einheit hinzufügen_, um eine Einheit hinzuzufügen.
 
-![BrainPress - Kurs - Einheiten - Kurs veröffentlichen](assets/images/BrainPress-Course-Units-Publish-Course.png)
+![CoursePress - Kurs - Einheiten - Kurs veröffentlichen](assets/images/CoursePress-Course-Units-Publish-Course.png)
 
 In der oberen rechten Ecke dieses Tabs findest du einen _Kurs veröffentlichen_-Schalter, mit dem du den Kurs schnell veröffentlichen oder zurückziehen kannst. Darunter siehst du mehrere Unterabschnitte zum Bearbeiten der Einheit.
 
 ##### Einheitseinstellungen
 
-![BrainPress - Kurs - Einheiten - Einheitseinstellungen](assets/images/BrainPress-Course-Units-Unit-Settings.png)
+![CoursePress - Kurs - Einheiten - Einheitseinstellungen](assets/images/CoursePress-Course-Units-Unit-Settings.png)
 
 *   Nutze den Schalter in der oberen rechten Ecke, um die Einheit auf _Entwurf_ oder _Live_ zu setzen.
 *   Gib einen Titel in das Feld _Einheitstitel_ ein.
@@ -322,7 +322,7 @@ In der oberen rechten Ecke dieses Tabs findest du einen _Kurs veröffentlichen_-
 
 Seiten können verwendet werden, um Abschnitte des Einheitinhalts zu trennen.
 
-![BrainPress - Kurs - Einheiten - Einheitsseiten](assets/images/BrainPress-Course-Units-Unit-Pages.png)
+![CoursePress - Kurs - Einheiten - Einheitsseiten](assets/images/CoursePress-Course-Units-Unit-Pages.png)
 
 *   Wähle eine Seite aus, indem du auf eine der _Seitennummern_ klickst.
 *   Füge eine Seite hinzu, indem du auf das _+_-Symbol klickst.
@@ -334,62 +334,62 @@ Seiten können verwendet werden, um Abschnitte des Einheitinhalts zu trennen.
 
 In diesem Abschnitt findest Du eine Reihe von Elementen, die Du verwenden kannst, um die Seite zu gestalten.
 
-![BrainPress - Kurs - Einheiten - Seite erstellen](assets/images/BrainPress-Course-Units-Build-Page.png)
+![CoursePress - Kurs - Einheiten - Seite erstellen](assets/images/CoursePress-Course-Units-Build-Page.png)
 
 Klicke einfach auf eines der Element-Icons, und ein Unterabschnitt wird unten hinzugefügt, den Du konfigurieren kannst. Lass uns die einzelnen Elemente kurz durchgehen:
 
 *   _Text_ – für einfache Texteingaben
 
-![BrainPress - Kurs - Einheiten - Elemente - Text](assets/images/BrainPress-Course-Units-Elements-Text.png)
+![CoursePress - Kurs - Einheiten - Elemente - Text](assets/images/CoursePress-Course-Units-Elements-Text.png)
 
 *   _Bild_ – um Bilder hinzuzufügen
 
-![BrainPress - Kurs - Einheiten - Elemente - Bild](assets/images/BrainPress-Course-Units-Elements-Image.png)
+![CoursePress - Kurs - Einheiten - Elemente - Bild](assets/images/CoursePress-Course-Units-Elements-Image.png)
 
 *   _Video_ – um Videoinhalte einzubinden
 
-![BrainPress - Kurs - Einheiten - Elemente - Video](assets/images/BrainPress-Course-Units-Elements-Video.png)
+![CoursePress - Kurs - Einheiten - Elemente - Video](assets/images/CoursePress-Course-Units-Elements-Video.png)
 
 *   _Datei-Download_ – um eine Datei für Studenten zum Herunterladen bereitzustellen
 
-![BrainPress - Kurs - Einheiten - Elemente - Datei-Download](assets/images/BrainPress-Course-Units-Elements-File-Download.png)
+![CoursePress - Kurs - Einheiten - Elemente - Datei-Download](assets/images/CoursePress-Course-Units-Elements-File-Download.png)
 
 *   _Abschnittstrennung_ – um Abschnitte optisch zu trennen
 
-![BrainPress - Kurs - Einheiten - Elemente - Abschnittstrennung](assets/images/BrainPress-Course-Units-Elements-Section-Break-compressor.png)
+![CoursePress - Kurs - Einheiten - Elemente - Abschnittstrennung](assets/images/CoursePress-Course-Units-Elements-Section-Break-compressor.png)
 
 *   _Multiple Choice_ – um ein Multiple-Choice-Quiz hinzuzufügen
 
-![BrainPress - Kurs - Einheiten - Elemente - Multiple Choice](assets/images/BrainPress-Course-Units-Elements-Multiple-Choice1.png)
+![CoursePress - Kurs - Einheiten - Elemente - Multiple Choice](assets/images/CoursePress-Course-Units-Elements-Multiple-Choice1.png)
 
 *   _Datei-Upload_ – ermöglicht es Studenten, eine Datei für den Dozenten hochzuladen
 
-![BrainPress - Kurs - Einheiten - Elemente - Datei-Upload](assets/images/BrainPress-Course-Units-Elements-File-Upload1.png)
+![CoursePress - Kurs - Einheiten - Elemente - Datei-Upload](assets/images/CoursePress-Course-Units-Elements-File-Upload1.png)
 
 *   _Einzelauswahl_ – um ein Quiz mit einer Einzelauswahl zu erstellen
 
-![BrainPress - Kurs - Einheiten - Elemente - Einzelauswahl](assets/images/BrainPress-Course-Units-Elements-Single-Choice1.png)
+![CoursePress - Kurs - Einheiten - Elemente - Einzelauswahl](assets/images/CoursePress-Course-Units-Elements-Single-Choice1.png)
 
 *   _Antwortfeld_ – stelle eine Frage und biete ein einzeiliges oder mehrzeiliges Feld für die Antworten der Studenten an
 
-![BrainPress - Kurs - Einheiten - Elemente - Antwortfeld](assets/images/BrainPress-Course-Units-Elements-Answer-Field1.png)
+![CoursePress - Kurs - Einheiten - Elemente - Antwortfeld](assets/images/CoursePress-Course-Units-Elements-Answer-Field1.png)
 
 Am unteren Ende der Seite findest Du noch ein paar weitere Buttons und einen Umschalter.
 
-![BrainPress - Kurs - Einheiten - Speichern und Vorschau](assets/images/BrainPress-Course-Units-Save-and-Preview.png)
+![CoursePress - Kurs - Einheiten - Speichern und Vorschau](assets/images/CoursePress-Course-Units-Save-and-Preview.png)
 
 *   Klicke auf den Button _Speichern_, um Deine Änderungen an der Einheit zu sichern.
 *   Klicke auf den Button _Vorschau_, um die Einheit im Frontend der Seite anzusehen.
 *   Nutze den Umschalter, um zwischen _Entwurf_ und _Live_-Modus zu wechseln.
 ### Dozenten
 
-Kurse brauchen Dozenten – schauen wir uns an, wie Du sie unter _BrainPress Pro > Dozenten_ hinzufügen und bearbeiten kannst.
+Kurse brauchen Dozenten – schauen wir uns an, wie Du sie unter _CoursePress Pro > Dozenten_ hinzufügen und bearbeiten kannst.
 
-![BrainPress - Dozenten-Menü](assets/images/BrainPress-Instructors-menu1.png)
+![CoursePress - Dozenten-Menü](assets/images/CoursePress-Instructors-menu1.png)
 
 Hier findest Du eine Liste aller Dozenten, die Du eingerichtet hast. Dozenten sind im Grunde ClassicPress-Benutzer, die als Dozenten für einen Kurs zugewiesen wurden.
 
-![BrainPress - Dozenten](assets/images/BrainPress-Instructors.png)
+![CoursePress - Dozenten](assets/images/CoursePress-Instructors.png)
 
 *   Du kannst ganz einfach im Abschnitt _Dozenten durchsuchen_ nach Dozenten suchen.
 *   Klicke auf den Button _Neu hinzufügen_, um einen neuen Dozenten hinzuzufügen. Das führt Dich zur Seite _Benutzer > Neu hinzufügen_ in ClassicPress, wo Du neue Benutzer hinzufügen kannst.
@@ -397,7 +397,7 @@ Hier findest Du eine Liste aller Dozenten, die Du eingerichtet hast. Dozenten si
 
 Auf Geräten mit großem Bildschirm siehst Du auch ein Dropdown-Menü für Massenaktionen.
 
-![BrainPress - Dozenten - Massenaktionen](assets/images/BrainPress-Instructors-Bulk-actions.png)
+![CoursePress - Dozenten - Massenaktionen](assets/images/CoursePress-Instructors-Bulk-actions.png)
 
 Um _Massenaktionen_ zu nutzen, markiere einfach die Dozenten, die Du bearbeiten möchtest, wähle eine der Aktionen aus dem Dropdown-Menü aus und klicke auf _Anwenden_. Die verfügbaren Massenaktionen sind:
 
@@ -406,23 +406,23 @@ Um _Massenaktionen_ zu nutzen, markiere einfach die Dozenten, die Du bearbeiten 
 
 Ein Klick auf die Option _Profil_ bringt Dich zur Profilseite des Dozenten.
 
-![BrainPress - Dozenten - Profil - Kurse](assets/images/BrainPress-Instructors-Profile-Courses.png)
+![CoursePress - Dozenten - Profil - Kurse](assets/images/CoursePress-Instructors-Profile-Courses.png)
 
 Hier siehst Du eine Liste aller _Kurse_, mit denen der Dozent verbunden ist, sowie Links zu jedem Kurs.
 
-![BrainPress - Dozenten - Profil](assets/images/BrainPress-Instructors-Profile1.png)
+![CoursePress - Dozenten - Profil](assets/images/CoursePress-Instructors-Profile1.png)
 
 Außerdem gibt es einen kleinen Profilbereich mit zusätzlichen Details und einem Link _Profil bearbeiten_, der Dich zur Benutzerbearbeitungsseite für das Benutzerkonto dieses Dozenten führt.
 
 ### Studenten
 
-Kurse brauchen auch Studenten – schauen wir uns an, wie Du sie unter _BrainPress Pro > Studenten_ hinzufügen und bearbeiten kannst.
+Kurse brauchen auch Studenten – schauen wir uns an, wie Du sie unter _CoursePress Pro > Studenten_ hinzufügen und bearbeiten kannst.
 
-![BrainPress - Studenten-Menü](assets/images/BrainPress-Students-menu1.png)
+![CoursePress - Studenten-Menü](assets/images/CoursePress-Students-menu1.png)
 
 Hier findest Du eine Liste aller Studenten, die im System eingerichtet sind. Studenten sind im Grunde ClassicPress-Benutzer, die in einem Kurs eingeschrieben sind.
 
-![BrainPress - Studenten](assets/images/BrainPress-Students.png)
+![CoursePress - Studenten](assets/images/CoursePress-Students.png)
 
 *   Du kannst ganz einfach im Abschnitt _Studenten durchsuchen_ nach Studenten suchen.
 *   Klicke auf den Button _Neu hinzufügen_, um einen neuen Studenten hinzuzufügen. Das führt Dich zur Seite _Benutzer > Neu hinzufügen_ in ClassicPress, wo Du neue Benutzer hinzufügen kannst.
@@ -430,7 +430,7 @@ Hier findest Du eine Liste aller Studenten, die im System eingerichtet sind. Stu
 
 Auf Geräten mit großem Bildschirm siehst Du auch ein Dropdown-Menü für Massenaktionen.
 
-![BrainPress - Studenten - Massenaktionen](assets/images/BrainPress-Students-Bulk-Actions.png)
+![CoursePress - Studenten - Massenaktionen](assets/images/CoursePress-Students-Bulk-Actions.png)
 
 Um _Massenaktionen_ zu nutzen, markiere einfach die Studenten, die Du bearbeiten möchtest, wähle eine der Aktionen aus dem Dropdown-Menü aus und klicke auf _Anwenden_. Die verfügbaren Massenaktionen für Studenten sind:
 
@@ -440,13 +440,13 @@ Um _Massenaktionen_ zu nutzen, markiere einfach die Studenten, die Du bearbeiten
 Ein Klick auf die Option _Profil_ bringt Dich zur Profilseite des Studenten. Hier siehst Du eine Liste aller _Kurse_, in denen der Student eingeschrieben ist, sowie Links zu jedem Kurs. Außerdem gibt es einen kleinen Profilbereich mit zusätzlichen Details und einem Link _Profil bearbeiten_, der Dich zur Benutzerbearbeitungsseite für das Benutzerkonto dieses Studenten führt.
 ### Einstellungen
 
-Lass uns die Einstellungen des Plugins unter _BrainPress Pro > Einstellungen_ durchgehen.
+Lass uns die Einstellungen des Plugins unter _CoursePress Pro > Einstellungen_ durchgehen.
 
-![BrainPress - Einstellungsmenü](assets/images/BrainPress-Settings-menu.png)
+![CoursePress - Einstellungsmenü](assets/images/CoursePress-Settings-menu.png)
 
 Hier findest Du eine Reihe von Unterabschnitten, um verschiedene Aspekte des Plugins anzupassen.
 
-![BrainPress - Einstellungs-Unterabschnitte](assets/images/BrainPress-Settings-sub-sections.png)
+![CoursePress - Einstellungs-Unterabschnitte](assets/images/CoursePress-Settings-sub-sections.png)
 
 Schauen wir uns diese Unterabschnitte an, beginnend mit den allgemeinen Einstellungen.
 
@@ -454,7 +454,7 @@ Schauen wir uns diese Unterabschnitte an, beginnend mit den allgemeinen Einstell
 
 Die allgemeinen Einstellungen beinhalten mehrere Unterabschnitte, der erste davon ermöglicht es Dir, die URL-Slugs anzupassen.
 
-![BrainPress - Einstellungen - Slugs](assets/images/BrainPress-Settings-Slugs.png)
+![CoursePress - Einstellungen - Slugs](assets/images/CoursePress-Settings-Slugs.png)
 
 Die verfügbaren Slugs zur Anpassung, zusammen mit den Standardwerten, sind:
 
@@ -474,7 +474,7 @@ Die verfügbaren Slugs zur Anpassung, zusammen mit den Standardwerten, sind:
 
 Weiter unten auf der Seite findest Du zusätzliche Einstellungen.
 
-![BrainPress - Einstellungen - Weitere](assets/images/BrainPress-Settings-Others.png)
+![CoursePress - Einstellungen - Weitere](assets/images/CoursePress-Settings-Others.png)
 
 Passe die Einstellungen nach Deinen Bedürfnissen an und drücke den Button _Änderungen speichern_, um alles zu sichern.
 
@@ -482,7 +482,7 @@ Passe die Einstellungen nach Deinen Bedürfnissen an und drücke den Button _Än
 
 Im Unterabschnitt E-Mail-Einstellungen kannst Du den Inhalt der Benachrichtigungs-E-Mails des Plugins anpassen.
 
-![BrainPress - Einstellungen - E-Mail](assets/images/BrainPress-Settings-E-mail.png)
+![CoursePress - Einstellungen - E-Mail](assets/images/CoursePress-Settings-E-mail.png)
 
 Folgende E-Mails kannst Du konfigurieren, zusammen mit Codes, die Du im Inhalt verwenden kannst, um dynamische Werte einzufügen:
 
@@ -494,13 +494,13 @@ Folgende E-Mails kannst Du konfigurieren, zusammen mit Codes, die Du im Inhalt v
 
 Vergiss nicht, den Button _Änderungen speichern_ zu drücken, wenn Du fertig bist.
 
-![BrainPress - Einstellungen - Änderungen speichern](assets/images/BrainPress-Settings-Save-Changes-button.png)
+![CoursePress - Einstellungen - Änderungen speichern](assets/images/CoursePress-Settings-Save-Changes-button.png)
 
 ##### Fähigkeiten der Dozenten
 
 Dozenten haben spezielle Fähigkeiten, die es ihnen ermöglichen, Kurse zu erstellen. Lass uns diese Fähigkeiten mal genauer anschauen.
 
-![BrainPress - Einstellungen - Fähigkeiten der Dozenten](assets/images/BrainPress-Settings-Instructor-Capabilities.png)
+![CoursePress - Einstellungen - Fähigkeiten der Dozenten](assets/images/CoursePress-Settings-Instructor-Capabilities.png)
 
 Die Fähigkeiten sind in folgende Unterabschnitte unterteilt:
 
@@ -569,13 +569,13 @@ _Benachrichtigungen_
 
 Einfach die gewünschten Fähigkeiten anhaken und dann auf den Button _Änderungen speichern_ klicken, um alles zu sichern.
 
-![BrainPress - Einstellungen - Änderungen speichern](assets/images/BrainPress-Settings-Save-Changes-button.png)
+![CoursePress - Einstellungen - Änderungen speichern](assets/images/CoursePress-Settings-Save-Changes-button.png)
 
 ##### Shortcodes
 
-BrainPress Pro bietet zahlreiche Shortcodes, die du in den Inhaltsbereichen deiner Website verwenden kannst, um Plugin-Funktionen nach Bedarf bereitzustellen.
+CoursePress Pro bietet zahlreiche Shortcodes, die du in den Inhaltsbereichen deiner Website verwenden kannst, um Plugin-Funktionen nach Bedarf bereitzustellen.
 
-![BrainPress - Einstellungen - Shortcodes](assets/images/BrainPress-Settings-Shortcodes.png)
+![CoursePress - Einstellungen - Shortcodes](assets/images/CoursePress-Settings-Shortcodes.png)
 
 Hier findest du eine detaillierte Übersicht, die dir bei den Shortcodes hilft. Hier ist eine Liste aller Shortcodes mit einigen hilfreichen Infos:
 
@@ -606,45 +606,45 @@ Hier findest du eine detaillierte Übersicht, die dir bei den Shortcodes hilft. 
 *   _Kursliste_ [course_list] Zeigt eine Liste von Kursen an. Kann für alle Kurse oder eingeschränkt auf Dozenten oder Studenten sein (nur eines von beiden, wenn beides angegeben ist, wird nur Studenten verwendet).
 *   _Feature-Kurs_ [course_featured] Zeigt einen hervorgehobenen Kurs an.
 *   _Kursstruktur_ [course_structure] Zeigt eine Baumansicht der Kursstruktur an.
-*   _Kursanmeldung/Login-Seite_ [course_signup] Zeigt eine benutzerdefinierte Login- oder Anmeldeseite für die Frontend-Benutzerregistrierung und -anmeldung an. Hinweis: Dies ist bereits Teil von BrainPress und kann in den BrainPress-Einstellungen festgelegt werden. Links zu Standardseiten findest du unter Design > Menüs > BrainPress.
+*   _Kursanmeldung/Login-Seite_ [course_signup] Zeigt eine benutzerdefinierte Login- oder Anmeldeseite für die Frontend-Benutzerregistrierung und -anmeldung an. Hinweis: Dies ist bereits Teil von CoursePress und kann in den CoursePress-Einstellungen festgelegt werden. Links zu Standardseiten findest du unter Design > Menüs > CoursePress.
 *   _Studenten-Dashboard-Template_ [courses_student_dashboard] Lädt das Studenten-Dashboard-Template.
 *   _Studenten-Einstellungen-Template_ [courses_student_settings] Lädt das Studenten-Einstellungen-Template.
 
 ##### View Setup Guide
 
-![BrainPress - Settings - View Setup Guide](assets/images/BrainPress-Settings-View-Setup-Guide.png)
+![CoursePress - Settings - View Setup Guide](assets/images/CoursePress-Settings-View-Setup-Guide.png)
 
  This is just a quick link back to the welcome page, so you'll always have access to the 'Getting Started' section through this link.
 
-### The BrainPress Pro Theme
+### The CoursePress Pro Theme
 
-BrainPress Pro works with any standard ClassicPress theme, but it also includes a built-in theme to help you get started. Lets switch to that theme at _Appearance > Themes_. 
+CoursePress Pro works with any standard ClassicPress theme, but it also includes a built-in theme to help you get started. Lets switch to that theme at _Appearance > Themes_. 
 
-![BrainPress - Themes menu](assets/images/BrainPress-Themes-menu.png)
+![CoursePress - Themes menu](assets/images/CoursePress-Themes-menu.png)
 
- Locate the _BrainPress_ theme in the themes list. 
+ Locate the _CoursePress_ theme in the themes list. 
 
-![BrainPress - theme selection](assets/images/BrainPress-theme-selection.png)
+![CoursePress - theme selection](assets/images/CoursePress-theme-selection.png)
 
  Click the _Activate_ button to activate it!
 
 ### Widgets
 
-BrainPress Pro also includes a number of widgets for use in your theme's sidebar areas, as follows:
+CoursePress Pro also includes a number of widgets for use in your theme's sidebar areas, as follows:
 
 *   _Featured Course_ - displays a featured Course
 
-![BrainPress - Widgets - Featured Course](assets/images/BrainPress-Widgets-Featured-Course.png)
+![CoursePress - Widgets - Featured Course](assets/images/CoursePress-Widgets-Featured-Course.png)
 
 *   _Latest Courses_ - shows a list of recently published Courses
 
-![BrainPress - Widgets - Latest Courses](assets/images/BrainPress-Widgets-Latest-Courses.png)
+![CoursePress - Widgets - Latest Courses](assets/images/CoursePress-Widgets-Latest-Courses.png)
 
 ### The User Experience
 
-Lets take a look at the front-end experience from the user's standpoint! Here's an example of how it could look with the BrainPress theme when viewing the front page. 
+Lets take a look at the front-end experience from the user's standpoint! Here's an example of how it could look with the CoursePress theme when viewing the front page. 
 
-![BrainPress - front-end](assets/images/courselist.png)
+![CoursePress - front-end](assets/images/courselist.png)
 
  Clicking the _Details_ link or the Course's image takes you to the Details page for the selected Course. 
 

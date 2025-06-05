@@ -4,7 +4,7 @@
  **/
 ?>
 <div class="step-title step-5">
-	<?php _e( 'Sschritt 5 &ndash; Klassen, Diskussion & Arbeitsmappe', 'brainpress' ); ?>
+	<?php _e( 'Step 5 &ndash; Classes, Discussion & Workbook', 'cp' ); ?>
 	<div class="status <?php echo $setup_class; ?>"></div>
 </div>
 
@@ -12,15 +12,15 @@
 	<input type="hidden" name="meta_setup_step_5" value="saved" />
 
 	<div class="wide class-size">
-		<label><?php _e( 'Klassengröße', 'brainpress' ); ?></label>
-		<p class="description"><?php _e( 'Verwende diese Einstellung, um ein Limit für alle Klassen festzulegen. Deaktiviere das Kontrollkästchen für unbegrenzte Klassengröße(n)..', 'brainpress' ); ?></p>
+		<label><?php _e( 'Class Size', 'cp' ); ?></label>
+		<p class="description"><?php _e( 'Use this setting to set a limit for all classes. Uncheck for unlimited class size(s).', 'cp' ); ?></p>
 		<label class="narrow col">
 			<input type="checkbox" name="meta_class_limited" <?php checked( true, $class_limited ); ?> />
-			<span><?php _e( 'Begrenze die Klassengröße', 'brainpress' ); ?></span>
+			<span><?php _e( 'Limit class size', 'cp' ); ?></span>
 		</label>
 
 		<label class="num-students narrow col <?php echo ( $class_limited ? '' : 'disabled' ); ?>">
-			<?php _e( 'Anzahl der Studenten', 'brainpress' ); ?>
+			<?php _e( 'Number of students', 'cp' ); ?>
 			<input type="text" class="spinners" name="meta_class_size" value="<?php echo $class_size; ?>" <?php echo ( $class_limited ? '' : 'disabled="disabled"' ); ?> />
 		</label>
 	</div>
@@ -29,29 +29,29 @@
 	$checkboxes = array(
 		array(
 			'meta_key' => 'allow_discussion',
-			'title' => __( 'Kursdiskussion', 'brainpress' ),
-			'description' => __( 'Wenn diese Option aktiviert ist, können die Studenten Fragen stellen und Antworten auf Kursebene erhalten. Ein Menüpunkt "Diskussion" wird hinzugefügt, damit der Student ALLE Diskussionen sehen kann, die von allen Klassenmitgliedern und Kursleitern stattfinden.', 'brainpress' ),
-			'label' => __( 'Kursdiskussion zulassen', 'brainpress' ),
+			'title' => __( 'Course Discussion', 'cp' ),
+			'description' => __( 'If checked, students can post questions and receive answers at a course level. A \'Discusssion\' menu item is added for the student to see ALL discussions occuring from all class members and instructors.', 'cp' ),
+			'label' => __( 'Allow course discussion', 'cp' ),
 			'default' => false,
 		),
 		array(
 			'meta_key' => 'allow_workbook',
-			'title' => __( 'Studentenarbeitsmappe', 'brainpress' ),
-			'description' => __( 'Wenn diese Option aktiviert ist, können die Studenten ihre Fortschritte und Bewertungen sehen.', 'brainpress' ),
-			'label' => __( 'Studentenarbeitsmappe anzeigen', 'brainpress' ),
+			'title' => __( 'Student Workbook', 'cp' ),
+			'description' => __( 'If checked, students can see their progress and grades.', 'cp' ),
+			'label' => __( 'Show student workbook', 'cp' ),
 			'default' => false,
 		),
 		array(
 			'meta_key' => 'allow_grades',
-			'title' => __( 'Bewertungen der Studenten', 'brainpress' ),
-			'description' => __( 'Wenn diese Option aktiviert ist, können die Studenten ihre Bewertungen sehen.', 'brainpress' ),
-			'label' => __( 'Zeige Bewertungen der Studenten an', 'brainpress' ),
+			'title' => __( 'Student grades', 'cp' ),
+			'description' => __( 'If checked, students can see their grades.', 'cp' ),
+			'label' => __( 'Show student grades', 'cp' ),
 			'default' => false,
 		),
 	);
 
 	foreach ( $checkboxes as $one ) {
-		echo BrainPress_Helper_UI::course_edit_checkbox( $one, $course_id );
+		echo CoursePress_Helper_UI::course_edit_checkbox( $one, $course_id );
 	}
 
 	/**
@@ -59,10 +59,10 @@
 	 *
 	 * The dynamic portion of this hook is to allow additional course meta fields.
 	 **/
-	echo apply_filters( 'brainpress_course_setup_step_5', '', $course_id );
+	echo apply_filters( 'coursepress_course_setup_step_5', '', $course_id );
 
 	/**
 	 * Print button **/
-	echo BrainPress_View_Admin_Course_Edit::get_buttons( $course_id, 5 );
+	echo CoursePress_View_Admin_Course_Edit::get_buttons( $course_id, 5 );
 	?>
 </div>

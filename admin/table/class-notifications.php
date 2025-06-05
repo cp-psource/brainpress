@@ -2,30 +2,30 @@
 /**
  * A sub-class of WP_Posts_List_Table
  *
- * @package ClassicPress
- * @subpackage BrainPress
+ * @package WordPress
+ * @subpackage CoursePress
  **/
 if ( ! class_exists( 'WP_Posts_List_Table' ) ) {
 	require_once ABSPATH . 'wp-admin/includes/class-wp-posts-list-table.php';
 }
 
-class BrainPress_Admin_Table_Notifications extends WP_Posts_List_Table {
+class CoursePress_Admin_Table_Notifications extends WP_Posts_List_Table {
 	private $count = array();
 	protected $post_type;
 	private $_categories;
 	private $recivers_allowed_options;
 	protected $is_trash;
-	protected $page = 'brainpress_notifications';
+	protected $page = 'coursepress_notifications';
 
 	public function __construct() {
-		$post_format = BrainPress_Data_Notification::get_format();
+		$post_format = CoursePress_Data_Notification::get_format();
 		parent::__construct( array(
 			'singular' => $post_format['post_args']['labels']['singular_name'],
 			'plural' => $post_format['post_args']['labels']['name'],
 			'ajax' => false,
 		) );
 
-		$this->post_type = BrainPress_Data_Notification::get_post_type_name();
+		$this->post_type = CoursePress_Data_Notification::get_post_type_name();
 		$this->count = wp_count_posts( $this->post_type );
 	}
 
@@ -44,7 +44,7 @@ class BrainPress_Admin_Table_Notifications extends WP_Posts_List_Table {
 				$per_page = 20;
 			}
 		}
-		$per_page = $this->get_items_per_page( 'brainpress_notifications_per_page', $per_page );
+		$per_page = $this->get_items_per_page( 'coursepress_notifications_per_page', $per_page );
 		/**
 		 * Post statsu
 		 */
@@ -72,7 +72,7 @@ class BrainPress_Admin_Table_Notifications extends WP_Posts_List_Table {
 			);
 		} else {
 			// Only show notifications where the current user have access with.
-			$courses = BrainPress_Data_Notification::get_courses();
+			$courses = CoursePress_Data_Notification::get_courses();
 			$courses_ids = array_map( array( __CLASS__, 'get_course_id' ), $courses );
 			// Include notification for all courses
 			$courses_ids[] = 'all';
@@ -89,9 +89,9 @@ class BrainPress_Admin_Table_Notifications extends WP_Posts_List_Table {
 		$wp_query = new WP_Query( $post_args );
 		$this->items = array();
 		foreach ( $wp_query->posts as $post ) {
-			$post->user_can_edit = BrainPress_Data_Capabilities::can_update_notification( $post->ID );
-			$post->user_can_delete  = BrainPress_Data_Capabilities::can_delete_notification( $post->ID );
-			$post->user_can_change_status = BrainPress_Data_Capabilities::can_change_status_notification( $post->ID );
+			$post->user_can_edit = CoursePress_Data_Capabilities::can_update_notification( $post->ID );
+			$post->user_can_delete  = CoursePress_Data_Capabilities::can_delete_notification( $post->ID );
+			$post->user_can_change_status = CoursePress_Data_Capabilities::can_change_status_notification( $post->ID );
 			$post->user_can_change = $post->user_can_edit || $post->user_can_delete || $post->user_can_change_status;
 			$this->items[] = $post;
 		}
@@ -109,15 +109,15 @@ class BrainPress_Admin_Table_Notifications extends WP_Posts_List_Table {
 	}
 
 	protected function can_update( $item_id ) {
-		return BrainPress_Data_Capabilities::can_update_notification( $item_id );
+		return CoursePress_Data_Capabilities::can_update_notification( $item_id );
 	}
 
 	protected function can_delete( $item_id ) {
-		return BrainPress_Data_Capabilities::can_delete_notification( $item_id );
+		return CoursePress_Data_Capabilities::can_delete_notification( $item_id );
 	}
 
 	protected function can_change_status( $item_id ) {
-		return BrainPress_Data_Capabilities::can_change_status_notification( $item_id );
+		return CoursePress_Data_Capabilities::can_change_status_notification( $item_id );
 	}
 
 	/** No items */
@@ -142,10 +142,10 @@ class BrainPress_Admin_Table_Notifications extends WP_Posts_List_Table {
 	public function get_columns() {
 		$columns = array(
 			'cb' => '<input type="checkbox" />',
-			'notification' => __( 'Benachrichtigung', 'brainpress' ),
-			'course' => __( 'Kurs', 'brainpress' ),
-			'receivers' => __( 'Empfänger', 'brainpress' ),
-			'status' => __( 'Status', 'brainpress' ),
+			'notification' => __( 'Notification', 'cp' ),
+			'course' => __( 'Course', 'cp' ),
+			'receivers' => __( 'Receivers', 'cp' ),
+			'status' => __( 'Status', 'cp' ),
 		);
 
 		return $columns;
@@ -165,12 +165,12 @@ class BrainPress_Admin_Table_Notifications extends WP_Posts_List_Table {
 			if ( $this->is_trash ) {
 				$url = add_query_arg(
 					array(
-						'_wpnonce' => wp_create_nonce( 'brainpress_untrash_notification' ),
+						'_wpnonce' => wp_create_nonce( 'coursepress_untrash_notification' ),
 						'action' => 'untrash',
 						'id' => $item->ID,
 					)
 				);
-				$row_actions['untrash'] = sprintf( '<a href="%s">%s</a>', esc_url( $url ), __( 'Wiederherstellen', 'brainpress' ) );
+				$row_actions['untrash'] = sprintf( '<a href="%s">%s</a>', esc_url( $url ), __( 'Restore', 'cp' ) );
 			} else {
 				$url = add_query_arg(
 					array(
@@ -178,28 +178,28 @@ class BrainPress_Admin_Table_Notifications extends WP_Posts_List_Table {
 						'id' => $item->ID,
 					)
 				);
-				$row_actions['edit'] = sprintf( '<a href="%s">%s</a>', esc_url( $url ), __( 'Bearbeiten', 'brainpress' ) );
+				$row_actions['edit'] = sprintf( '<a href="%s">%s</a>', esc_url( $url ), __( 'Edit', 'cp' ) );
 			}
 		}
 		if ( $this->can_delete( $item ) ) {
 			if ( $this->is_trash ) {
 				$url = add_query_arg(
 					array(
-						'_wpnonce' => wp_create_nonce( 'brainpress_delete_notification' ),
+						'_wpnonce' => wp_create_nonce( 'coursepress_delete_notification' ),
 						'id' => $item->ID,
 						'action' => 'delete',
 					)
 				);
-				$row_actions['delete'] = sprintf( '<a href="%s">%s</a>', esc_url( $url ), __( 'Dauerhaft löschen', 'brainpress' ) );
+				$row_actions['delete'] = sprintf( '<a href="%s">%s</a>', esc_url( $url ), __( 'Delete Permanently', 'cp' ) );
 			} else {
 				$url = add_query_arg(
 					array(
-						'_wpnonce' => wp_create_nonce( 'brainpress_trash_notification' ),
+						'_wpnonce' => wp_create_nonce( 'coursepress_trash_notification' ),
 						'id' => $item->ID,
 						'action' => 'trash',
 					)
 				);
-				$row_actions['trash'] = sprintf( '<a href="%s">%s</a>', esc_url( $url ), __( 'Müll', 'brainpress' ) );
+				$row_actions['trash'] = sprintf( '<a href="%s">%s</a>', esc_url( $url ), __( 'Trash', 'cp' ) );
 			}
 		}
 		return $this->row_actions( $row_actions );
@@ -220,44 +220,44 @@ class BrainPress_Admin_Table_Notifications extends WP_Posts_List_Table {
 		if ( empty( $receivers ) ) {
 			$receivers = 'all';
 		}
-		$attributes = BrainPress_Data_Notification::attributes( $item->ID );
+		$attributes = CoursePress_Data_Notification::attributes( $item->ID );
 		$course_id = $attributes['course_id'];
 		if ( 'all' == $course_id ) {
 			return sprintf(
 				'<span aria-hidden="true">&#8212;</span><span class="screen-reader-text">%s</span>',
-				__( 'Option nicht für alle Kurse verfügbar.', 'brainpress' )
+				__( 'Option not available for all courses.', 'cp' )
 			);
 		}
 		$recivers_allowed_options = array();
 		if ( isset( $this->recivers_allowed_options[ $course_id ] ) ) {
 			$recivers_allowed_options = $this->recivers_allowed_options[ $course_id ];
 		} else {
-			$recivers_allowed_options = BrainPress_Admin_Notifications::get_allowed_options( $course_id );
+			$recivers_allowed_options = CoursePress_Admin_Notifications::get_allowed_options( $course_id );
 			$this->recivers_allowed_options[ $course_id ] = $recivers_allowed_options;
 		}
 		if ( isset( $recivers_allowed_options[ $receivers ] ) ) {
 			return $recivers_allowed_options[ $receivers ]['label'];
 		}
-		return __( 'Falsche Empfänger!', 'brainpress' );
+		return __( 'Wrong receivers!', 'cp' );
 	}
 
 	protected function get_bulk_actions() {
 		$actions = array(
-			'publish' => __( 'Veröffentlichen', 'brainpress' ),
-			'draft' => __( 'Ändere den Status in Entwurf', 'brainpress' ),
-			'trash' => __( 'Ab in den Müll', 'brainpress' ),
+			'publish' => __( 'Publish', 'cp' ),
+			'draft' => __( 'Change status to Draft', 'cp' ),
+			'trash' => __( 'Move to Trash', 'cp' ),
 		);
 		if ( $this->is_trash ) {
 			$actions = array(
-				'untrash' => __( 'Wiederherstellen', 'brainpress' ),
-				'delete' => __( 'Dauerhaft löschen', 'brainpress' ),
+				'untrash' => __( 'Restore', 'cp' ),
+				'delete' => __( 'Delete Permanently', 'cp' ),
 			);
 		}
 		return $actions;
 	}
 
 	public function column_course( $item ) {
-		$attributes = BrainPress_Data_Notification::attributes( $item->ID );
+		$attributes = CoursePress_Data_Notification::attributes( $item->ID );
 		$output = sprintf( '<div data-course="%s">%s</div>',
 			$attributes['course_id'],
 			$attributes['course_title']
@@ -288,7 +288,7 @@ class BrainPress_Admin_Table_Notifications extends WP_Posts_List_Table {
 			),
 		);
 		$ui['class'] = 'notification-' . $d_id;
-		$publish_toggle = ! empty( $d_id ) ? BrainPress_Helper_UI::toggle_switch( 'publish-notification-toggle-' . $d_id, 'publish-notification-toggle-' . $d_id, $ui ) : '';
+		$publish_toggle = ! empty( $d_id ) ? CoursePress_Helper_UI::toggle_switch( 'publish-notification-toggle-' . $d_id, 'publish-notification-toggle-' . $d_id, $ui ) : '';
 
 		return $publish_toggle;
 	}
@@ -308,18 +308,18 @@ class BrainPress_Admin_Table_Notifications extends WP_Posts_List_Table {
 		$options['value'] = $course_id;
 		$options['class'] = 'medium dropdown';
 		$options['first_option'] = array(
-			'text' => __( 'Alle Kurse', 'brainpress' ),
+			'text' => __( 'All courses', 'cp' ),
 			'value' => 'all',
 		);
 
-		$courses = BrainPress_Data_Notification::get_courses();
+		$courses = CoursePress_Data_Notification::get_courses();
 		if ( current_user_can( 'manage_options' ) ) {
 			$courses = false;
-		} elseif ( BrainPress_Data_Capabilities::can_add_notification_to_all() ) {
+		} elseif ( CoursePress_Data_Capabilities::can_add_notification_to_all() ) {
 			$courses = false;
 		}
 
-		echo BrainPress_Helper_UI::get_course_dropdown( 'course_id', 'course_id', $courses, $options );
+		echo CoursePress_Helper_UI::get_course_dropdown( 'course_id', 'course_id', $courses, $options );
 	}
 
 	protected function pagination( $which ) {
@@ -337,10 +337,10 @@ class BrainPress_Admin_Table_Notifications extends WP_Posts_List_Table {
 		?>
 		<div class="alignleft actions category-filter">
 			<?php $this->course_filter( $which ); ?>
-			<input type="submit" class="button" name="action" value="<?php esc_attr_e( 'Filter', 'brainpress' ); ?>" />
+			<input type="submit" class="button" name="action" value="<?php esc_attr_e( 'Filter', 'cp' ); ?>" />
 		</div>
 		<?php
-		$this->search_box( __( 'Benachrichtigungen suchen', 'brainpress' ), 'search_notifications' );
+		$this->search_box( __( 'Search Notifications', 'cp' ), 'search_notifications' );
 	}
 
 	/**
@@ -364,7 +364,7 @@ class BrainPress_Admin_Table_Notifications extends WP_Posts_List_Table {
 
 		$current_user_id = get_current_user_id();
 		$all_args = array(
-			'post_type' => BrainPress_Data_Course::get_post_type_name(),
+			'post_type' => CoursePress_Data_Course::get_post_type_name(),
 			'page' => $this->page,
 		);
 		$mine = '';
@@ -380,7 +380,7 @@ class BrainPress_Admin_Table_Notifications extends WP_Posts_List_Table {
 			}
 
 			$mine_args = array(
-				'post_type' => BrainPress_Data_Course::get_post_type_name(),
+				'post_type' => CoursePress_Data_Course::get_post_type_name(),
 				'page' => $this->page,
 				'author' => $current_user_id,
 			);
@@ -435,7 +435,7 @@ class BrainPress_Admin_Table_Notifications extends WP_Posts_List_Table {
 
 			$status_args = array(
 				'post_status' => $status_name,
-				'post_type' => BrainPress_Data_Course::get_post_type_name(),
+				'post_type' => CoursePress_Data_Course::get_post_type_name(),
 				'page' => $this->page,
 			);
 
@@ -451,7 +451,7 @@ class BrainPress_Admin_Table_Notifications extends WP_Posts_List_Table {
 			$class = ! empty( $_REQUEST['show_sticky'] ) ? 'current' : '';
 
 			$sticky_args = array(
-				'post_type' => BrainPress_Data_Course::get_post_type_name(),
+				'post_type' => CoursePress_Data_Course::get_post_type_name(),
 				'page' => $this->page,
 				'show_sticky' => 1,
 			);

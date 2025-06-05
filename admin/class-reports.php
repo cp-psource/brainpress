@@ -2,20 +2,20 @@
 /**
  * Admin reports controller
  *
- * @package ClassicPress
- * @subpackage BrainPress
+ * @package WordPress
+ * @subpackage CoursePress
  **/
-class BrainPress_Admin_Reports extends BrainPress_Admin_Controller_Menu {
-	var $parent_slug = 'brainpress';
-	var $slug = 'brainpress_reports';
+class CoursePress_Admin_Reports extends CoursePress_Admin_Controller_Menu {
+	var $parent_slug = 'coursepress';
+	var $slug = 'coursepress_reports';
 	var $with_editor = false;
-	protected $cap = 'brainpress_reports_cap';
+	protected $cap = 'coursepress_reports_cap';
 	protected $reports_table;
 
 	public function get_labels() {
 		return array(
-			'title' => __( 'BrainPress Berichte', 'brainpress' ),
-			'menu_title' => __( 'Berichte', 'brainpress' ),
+			'title' => __( 'CoursePress Reports', 'cp' ),
+			'menu_title' => __( 'Reports', 'cp' ),
 		);
 	}
 
@@ -25,11 +25,11 @@ class BrainPress_Admin_Reports extends BrainPress_Admin_Controller_Menu {
 		if ( empty( $_REQUEST['view'] ) ) {
 			$options = array(
 				'default' => 20,
-				'option' => 'brainpress_reports_per_page',
+				'option' => 'coursepress_reports_per_page',
 				'course_id' => isset( $_REQUEST['course_id'] ) ? (int) $_REQUEST['course_id'] : 0,
 			);
 			add_screen_option( 'per_page', $options );
-			$this->reports_table = new BrainPress_Admin_Table_Reports;
+			$this->reports_table = new CoursePress_Admin_Table_Reports;
 			$this->reports_table->prepare_items();
 		}
 	}
@@ -41,7 +41,7 @@ class BrainPress_Admin_Reports extends BrainPress_Admin_Controller_Menu {
 		$nonce = $_REQUEST['_wpnonce'];
 
 		// Check for download request
-		if ( wp_verify_nonce( $nonce, 'brainpress_download_report' ) ) {
+		if ( wp_verify_nonce( $nonce, 'coursepress_download_report' ) ) {
 			$student_id = (int) $_REQUEST['student_id'];
 			$course_id = (int) $_REQUEST['course_id'];
 			$mode = isset( $_REQUEST['mode'] ) ? $_REQUEST['mode'] : 'pdf';
@@ -73,7 +73,7 @@ class BrainPress_Admin_Reports extends BrainPress_Admin_Controller_Menu {
 					self::report_content( $students, $course_id, $mode );
 					exit;
 				} else {
-					self::$warning_message = __( 'Wähle die Studenten aus, um den Bericht zu erstellen!', 'brainpress' );
+					self::$warning_message = __( 'Select students to generate the report!', 'cp' );
 				}
 			break;
 			case 'download_summary':
@@ -85,7 +85,7 @@ class BrainPress_Admin_Reports extends BrainPress_Admin_Controller_Menu {
 					self::report_content_multi( $students, $course_id, $mode );
 					exit;
 				} else {
-					self::$warning_message = __( 'Wähle die Studenten aus, um den Bericht zu erstellen!', 'brainpress' );
+					self::$warning_message = __( 'Select students to generate the report!', 'cp' );
 				}
 			break;
 		}
@@ -108,18 +108,18 @@ class BrainPress_Admin_Reports extends BrainPress_Admin_Controller_Menu {
 		$html = '';
 
 		// Get the units...
-		$units = BrainPress_Data_Course::get_units_with_modules( $course_id );
-		$units = BrainPress_Helper_Utility::sort_on_key( $units, 'order' );
+		$units = CoursePress_Data_Course::get_units_with_modules( $course_id );
+		$units = CoursePress_Helper_Utility::sort_on_key( $units, 'order' );
 
 		if ( 1 < count( $students ) ) {
 			$html .= '<br />';
-			$html .= sprintf( '<h2>%s</h2>', __( 'Einheitenliste', 'brainpress' ) );
-			$html .= BrainPress_Data_Course::get_units_html_list( $course_id );
+			$html .= sprintf( '<h2>%s</h2>', __( 'Units list', 'cp' ) );
+			$html .= CoursePress_Data_Course::get_units_html_list( $course_id );
 			$html .= '<br />';
-			$html .= sprintf( '<h2>%s</h2>', __( 'Studentenliste', 'brainpress' ) );
+			$html .= sprintf( '<h2>%s</h2>', __( 'Student list', 'cp' ) );
 			$html .= '<ul>';
 			foreach ( $students as $student_id ) {
-				$student_name = BrainPress_Helper_Utility::get_user_name( $student_id );
+				$student_name = CoursePress_Helper_Utility::get_user_name( $student_id );
 				$html .= sprintf( '<li>%s</li>', esc_html( $student_name ) );
 			}
 			$html .= '</ul>';
@@ -128,8 +128,8 @@ class BrainPress_Admin_Reports extends BrainPress_Admin_Controller_Menu {
 		$last_student = false;
 
 		foreach ( $students as $student_id ) {
-			$student_name = BrainPress_Helper_Utility::get_user_name( $student_id );
-			$student_progress = BrainPress_Data_Student::get_completion_data( $student_id, $course_id );
+			$student_name = CoursePress_Helper_Utility::get_user_name( $student_id );
+			$student_progress = CoursePress_Data_Student::get_completion_data( $student_id, $course_id );
 
 			/**
 			 * Add page break here.
@@ -178,7 +178,7 @@ class BrainPress_Admin_Reports extends BrainPress_Admin_Controller_Menu {
 					// ';
 					foreach ( $page['modules'] as $module_id => $module ) {
 
-						$attributes = BrainPress_Data_Module::attributes( $module_id );
+						$attributes = CoursePress_Data_Module::attributes( $module_id );
 
 						if ( false === $attributes || 'output' === $attributes['mode'] || ! $attributes['assessable'] ) {
 							continue;
@@ -186,11 +186,11 @@ class BrainPress_Admin_Reports extends BrainPress_Admin_Controller_Menu {
 
 						$assessable_modules += 1;
 
-						$grade = BrainPress_Data_Student::get_grade( $student_id, $course_id, $unit_id, $module_id, false, false, $student_progress );
+						$grade = CoursePress_Data_Student::get_grade( $student_id, $course_id, $unit_id, $module_id, false, false, $student_progress );
 						$total += false !== $grade && isset( $grade['grade'] ) ? (int) $grade['grade'] : 0;
 						$grade_display = false !== $grade && isset( $grade['grade'] ) ? (int) $grade['grade'] . '%' : '--';
-						$response = BrainPress_Data_Student::get_response( $student_id, $course_id, $unit_id, $module_id, false, $student_progress );
-						$date_display = false !== $response && isset( $response['date'] ) ? $response['date'] : __( 'Noch nicht eingereicht', 'brainpress' );
+						$response = CoursePress_Data_Student::get_response( $student_id, $course_id, $unit_id, $module_id, false, $student_progress );
+						$date_display = false !== $response && isset( $response['date'] ) ? $response['date'] : __( 'Not yet submitted', 'cp' );
 						$answered += false !== $response && isset( $response['date'] ) ? 1 : 0;
 
 						$html .= '
@@ -207,7 +207,7 @@ class BrainPress_Admin_Reports extends BrainPress_Admin_Controller_Menu {
 				if ( empty( $assessable_modules ) ) {
 					$html .= '
 							<tr style="font-style:oblique; font-size: 4mm; background-color: ' . esc_attr( $colors['item_bg'] ) . '; color: ' . esc_attr( $colors['no_items'] ) . ';">
-								<td colspan="3"><em>' . esc_html__( 'Keine bewertbaren Module.', 'brainpress' ) . '</em></td>
+								<td colspan="3"><em>' . esc_html__( 'No assessable items.', 'cp' ) . '</em></td>
 							</tr>
 						';
 				}
@@ -222,9 +222,9 @@ class BrainPress_Admin_Reports extends BrainPress_Admin_Controller_Menu {
 			}
 
 			$average = $course_answered > 0 ? (int) ( $course_total / $course_answered ) : 0;
-			$average_display = ! $course_answered && ! $assessable_modules ? '' : sprintf( __( 'Durchschnittliche Antwortbewertung: %d%%', 'brainpress' ), $average );
+			$average_display = ! $course_answered && ! $assessable_modules ? '' : sprintf( __( 'Average response grade: %d%%', 'cp' ), $average );
 			$course_average = $assessable_modules > 0 ? (int) ( $course_total / $course_assessable_modules ) : 0;
-			$course_average_display = ! $assessable_modules ? __( 'Keine bewertbaren Module in diesem Kurs.', 'brainpress' ) : sprintf( __( 'Gesamtdurchschnitt: %d%%', 'brainpress' ), $course_average );
+			$course_average_display = ! $assessable_modules ? __( 'No assessable items in this course.', 'cp' ) : sprintf( __( 'Total Average: %d%%', 'cp' ), $course_average );
 
 			$html .= '
 					<tfoot>
@@ -242,21 +242,21 @@ class BrainPress_Admin_Reports extends BrainPress_Admin_Controller_Menu {
 		}
 
 		if ( count( $students ) === 1 ) {
-			$student_name = BrainPress_Helper_Utility::get_user_name( $last_student );
+			$student_name = CoursePress_Helper_Utility::get_user_name( $last_student );
 			$pdf_args['filename'] = $course_title . '_' . $student_name;
 		} elseif ( count( $students > 1 ) ) {
 			$pdf_args['filename'] = $course_title . '_bulk';
 		}
 
 		$pdf_args['filename'] = sanitize_title( strtolower( str_replace( ' ', '-', $pdf_args['filename'] ) ) ).'.pdf';
-		$pdf_args['footer'] = __( 'Kursbericht', 'brainpress' );
+		$pdf_args['footer'] = __( 'Course Report', 'cp' );
 
 		if ( 'html' == $mode ) {
-			BrainPress_Helper_HTML::make( $html, $pdf_args );
+			CoursePress_Helper_HTML::make( $html, $pdf_args );
 			return;
 		}
 
-		BrainPress_Helper_PDF::make_pdf( $html, $pdf_args );
+		CoursePress_Helper_PDF::make_pdf( $html, $pdf_args );
 
 	}
 
@@ -274,8 +274,8 @@ class BrainPress_Admin_Reports extends BrainPress_Admin_Controller_Menu {
 		$colors = self::get_colors();
 		$html = '';
 		// Get the units...
-		$units = BrainPress_Data_Course::get_units_with_modules( $course_id );
-		$units = BrainPress_Helper_Utility::sort_on_key( $units, 'order' );
+		$units = CoursePress_Data_Course::get_units_with_modules( $course_id );
+		$units = CoursePress_Helper_Utility::sort_on_key( $units, 'order' );
 
 		$last_student = false;
 		$html .= '<table>';
@@ -289,16 +289,16 @@ class BrainPress_Admin_Reports extends BrainPress_Admin_Controller_Menu {
 			$colors['footer']
 		);
 		$html .= '<tr>';
-		$html .= sprintf( '<th style="%s">%s</th>', esc_attr( $style ), __( 'Student', 'brainpress' ) );
-		$html .= sprintf( '<th style="%s">%s</th>', esc_attr( $style ), __( 'Antworten', 'brainpress' ) );
-		$html .= sprintf( '<th style="%s">%s</th>', esc_attr( $style ), __( 'Durchschnittliche Antwortbewertung', 'brainpress' ) );
-		$html .= sprintf( '<th style="%s">%s</th>', esc_attr( $style ), __( 'Gesamtdurchschnitt', 'brainpress' ) );
+		$html .= sprintf( '<th style="%s">%s</th>', esc_attr( $style ), __( 'Student', 'cp' ) );
+		$html .= sprintf( '<th style="%s">%s</th>', esc_attr( $style ), __( 'Responses', 'cp' ) );
+		$html .= sprintf( '<th style="%s">%s</th>', esc_attr( $style ), __( 'Average response grade', 'cp' ) );
+		$html .= sprintf( '<th style="%s">%s</th>', esc_attr( $style ), __( 'Total Average', 'cp' ) );
 		$html .= '</tr>';
 
 		$i = 0;
 		foreach ( $students as $student_id ) {
-			$student_name = BrainPress_Helper_Utility::get_user_name( $student_id );
-			$student_progress = BrainPress_Data_Student::get_completion_data( $student_id, $course_id );
+			$student_name = CoursePress_Helper_Utility::get_user_name( $student_id );
+			$student_progress = CoursePress_Data_Student::get_completion_data( $student_id, $course_id );
 
 			$html .= sprintf( '<tr style="background-color: %s">', $i++ % 2 ? $colors['row_even_bg']:$colors['row_odd_bg'] );
 			$html .= '<td style="border-bottom: 0.5mm solid ' . esc_attr( $colors['item_line'] ) . ';">' . esc_html( $student_name ) . '</td>'
@@ -317,7 +317,7 @@ class BrainPress_Admin_Reports extends BrainPress_Admin_Controller_Menu {
 				$total = 0;
 				foreach ( $unit_obj['pages'] as $page ) {
 					foreach ( $page['modules'] as $module_id => $module ) {
-						$attributes = BrainPress_Data_Module::attributes( $module_id );
+						$attributes = CoursePress_Data_Module::attributes( $module_id );
 
 						if ( false === $attributes || 'output' === $attributes['mode'] || ! $attributes['assessable'] ) {
 							continue;
@@ -325,10 +325,10 @@ class BrainPress_Admin_Reports extends BrainPress_Admin_Controller_Menu {
 
 						$assessable_modules += 1;
 
-						$grade = BrainPress_Data_Student::get_grade( $student_id, $course_id, $unit_id, $module_id, false, false, $student_progress );
+						$grade = CoursePress_Data_Student::get_grade( $student_id, $course_id, $unit_id, $module_id, false, false, $student_progress );
 						$total += false !== $grade && isset( $grade['grade'] ) ? (int) $grade['grade'] : 0;
 						$grade_display = false !== $grade && isset( $grade['grade'] ) ? (int) $grade['grade'] . '%' : '--';
-						$response = BrainPress_Data_Student::get_response( $student_id, $course_id, $unit_id, $module_id, false, $student_progress );
+						$response = CoursePress_Data_Student::get_response( $student_id, $course_id, $unit_id, $module_id, false, $student_progress );
 						$answered += false !== $response && isset( $response['date'] ) ? 1 : 0;
 
 					}
@@ -355,20 +355,20 @@ class BrainPress_Admin_Reports extends BrainPress_Admin_Controller_Menu {
 		$pdf_args['filename'] = $course_title . '_bulk';
 
 		$pdf_args['filename'] = sanitize_title( strtolower( str_replace( ' ', '-', $pdf_args['filename'] ) ) ).'.pdf';
-		$pdf_args['footer'] = __( 'Kursbericht', 'brainpress' );
+		$pdf_args['footer'] = __( 'Course Report', 'cp' );
 
 		if ( 'html' == $mode ) {
-			BrainPress_Helper_HTML::make( $html, $pdf_args );
+			CoursePress_Helper_HTML::make( $html, $pdf_args );
 			return;
 		}
 
-		BrainPress_Helper_PDF::make_pdf( $html, $pdf_args );
+		CoursePress_Helper_PDF::make_pdf( $html, $pdf_args );
 
 	}
 
 	private static function get_colors() {
 		$colors = apply_filters(
-			'brainpress_report_colors',
+			'coursepress_report_colors',
 			array(
 				'title_bg' => '#0091cd',
 				'title' => '#ffffff',

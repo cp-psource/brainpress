@@ -2,11 +2,11 @@
 /**
  * Admin course
  **/
-class BrainPress_Admin_Controller_Course {
+class CoursePress_Admin_Controller_Course {
 	/**
 	 * Delete a course and it's units and modules
 	 *
-	 * @global wpdb $wpdb ClassicPress database abstraction object.
+	 * @global wpdb $wpdb WordPress database abstraction object.
 	 *
 	 * @param (int) $course_id		The course ID to delete.
 	 **/
@@ -15,13 +15,13 @@ class BrainPress_Admin_Controller_Course {
 		/**
 		 * check is course
 		 */
-		$is_course = BrainPress_Data_Course::is_course( $course_id );
+		$is_course = CoursePress_Data_Course::is_course( $course_id );
 		if ( ! $is_course ) {
 			return;
 		}
 		// Get units
 		$status = array( 'publish', 'draft', 'private' );
-		$units_ids = BrainPress_Data_Course::get_units( $course_id, $status, true );
+		$units_ids = CoursePress_Data_Course::get_units( $course_id, $status, true );
 		if ( is_array( $units_ids ) && ! empty( $units_ids ) ) {
 			// Units found, delete them as well
 			foreach ( $units_ids as $unit_id ) {
@@ -29,8 +29,8 @@ class BrainPress_Admin_Controller_Course {
 				/**
 				 * Notify others that a unit is deleted
 				 **/
-				do_action( 'brainpress_unit_deleted', $unit_id );
-				$modules_ids = BrainPress_Data_Course::get_unit_modules( $unit_id, $status, true );
+				do_action( 'coursepress_unit_deleted', $unit_id );
+				$modules_ids = CoursePress_Data_Course::get_unit_modules( $unit_id, $status, true );
 				if ( is_array( $modules_ids ) && count( $modules_ids ) > 0 ) {
 					// Modules found, delete them
 					foreach ( $modules_ids as $module_id ) {
@@ -38,7 +38,7 @@ class BrainPress_Admin_Controller_Course {
 						/**
 						 * Notify others that a module is deleted
 						 **/
-						do_action( 'brainpress_module_deleted', $module_id );
+						do_action( 'coursepress_module_deleted', $module_id );
 					}
 				}
 			}
@@ -68,7 +68,7 @@ class BrainPress_Admin_Controller_Course {
 		/**
 		 * Notify others that a course is deleted
 		 **/
-		do_action( 'brainpress_course_deleted', $course_id );
+		do_action( 'coursepress_course_deleted', $course_id );
 		return true;
 	}
 
@@ -79,7 +79,7 @@ class BrainPress_Admin_Controller_Course {
 		$success = false;
 
 		if ( empty( $data->action ) ) {
-			$json_data['message'] = __( 'Kursaktualisierung: Keine Aktion.', 'brainpress' );
+			$json_data['message'] = __( 'Course Update: No action.', 'cp' );
 			wp_send_json_error( $json_data );
 		}
 
@@ -98,7 +98,7 @@ class BrainPress_Admin_Controller_Course {
 
 					$step = (int) $step_data->step;
 
-					$course_id = BrainPress_Data_Course::update( $step_data->course_id, $step_data );
+					$course_id = CoursePress_Data_Course::update( $step_data->course_id, $step_data );
 					$json_data['course_id'] = $course_id;
 
 					$next_step = (int) $data->next_step;
@@ -107,7 +107,7 @@ class BrainPress_Admin_Controller_Course {
 					$json_data['redirect'] = $data->data->is_finished;
 					$json_data['nonce'] = wp_create_nonce( 'setup-course' );
 					$success = true;
-					$settings = BrainPress_Data_Course::get_setting( $course_id, true );
+					$settings = CoursePress_Data_Course::get_setting( $course_id, true );
 
 					/*
 					 * save course start date as separate field, we need it to
@@ -145,7 +145,7 @@ class BrainPress_Admin_Controller_Course {
 
 				if (
 					wp_verify_nonce( $data->data->nonce, 'publish-course' )
-					&& BrainPress_Data_Capabilities::can_update_course( $data->data->course_id )
+					&& CoursePress_Data_Capabilities::can_update_course( $data->data->course_id )
 				) {
 
 					wp_update_post( array(
@@ -155,9 +155,9 @@ class BrainPress_Admin_Controller_Course {
 
 					$json_data['nonce'] = wp_create_nonce( 'publish-course' );
 					$success = true;
-					$settings = BrainPress_Data_Course::get_setting( $course_id, true );
-					/** This action is documented in include/brainpress/data/class-course.php */
-					do_action( 'brainpress_course_updated', $course_id, $settings );
+					$settings = CoursePress_Data_Course::get_setting( $course_id, true );
+					/** This action is documented in include/coursepress/data/class-course.php */
+					do_action( 'coursepress_course_updated', $course_id, $settings );
 
 				}
 
@@ -172,13 +172,13 @@ class BrainPress_Admin_Controller_Course {
 				if ( wp_verify_nonce( $data->data->nonce, 'setup-course' ) ) {
 					$json_data['who'] = 'instructor';
 					if ( isset( $data->data->who ) && 'facilitator' === $data->data->who ) {
-						BrainPress_Data_Facilitator::remove_course_facilitator(
+						CoursePress_Data_Facilitator::remove_course_facilitator(
 							$data->data->course_id,
 							$data->data->instructor_id
 						);
 						$json_data['who'] = 'facilitator';
 					} else {
-						BrainPress_Data_Course::remove_instructor(
+						CoursePress_Data_Course::remove_instructor(
 							$data->data->course_id,
 							$data->data->instructor_id
 						);
@@ -196,7 +196,7 @@ class BrainPress_Admin_Controller_Course {
 			case 'add_instructor':
 
 				if ( wp_verify_nonce( $data->data->nonce, 'setup-course' ) ) {
-					BrainPress_Data_Course::add_instructor( $data->data->course_id, $data->data->instructor_id );
+					CoursePress_Data_Course::add_instructor( $data->data->course_id, $data->data->instructor_id );
 					$user = get_userdata( $data->data->instructor_id );
 					$json_data['id'] = $data->data->instructor_id;
 					$json_data['display_name'] = $user->display_name;
@@ -216,14 +216,14 @@ class BrainPress_Admin_Controller_Course {
 				if ( wp_verify_nonce( $data->data->nonce, 'setup-course' ) ) {
 					$response = '';
 					if ( isset( $data->data->who ) && 'facilitator' === $data->data->who ) {
-						$response = BrainPress_Data_Facilitator::send_invitation(
+						$response = CoursePress_Data_Facilitator::send_invitation(
 							(int) $data->data->course_id,
 							$data->data->email,
 							$data->data->first_name,
 							$data->data->last_name
 						);
 					} else {
-						$response = BrainPress_Data_Instructor::send_invitation(
+						$response = CoursePress_Data_Instructor::send_invitation(
 							(int) $data->data->course_id,
 							$data->data->email,
 							$data->data->first_name,
@@ -243,13 +243,13 @@ class BrainPress_Admin_Controller_Course {
 				if ( wp_verify_nonce( $data->data->nonce, 'setup-course' ) ) {
 					$json_data['who'] = 'instructor';
 					if ( isset( $data->data->who ) && 'facilitator' === $data->data->who ) {
-						BrainPress_Data_Facilitator::delete_invitation(
+						CoursePress_Data_Facilitator::delete_invitation(
 							$data->data->course_id,
 							$data->data->invite_code
 						);
 						$json_data['who'] = 'facilitator';
 					} else {
-						BrainPress_Data_Instructor::delete_invitation(
+						CoursePress_Data_Instructor::delete_invitation(
 							$data->data->course_id,
 							$data->data->invite_code
 						);
@@ -268,9 +268,9 @@ class BrainPress_Admin_Controller_Course {
 					 * Turn off enroll_student check when we are in ajax admin action
 					 */
 					if ( is_admin() && defined( 'DOING_AJAX' ) && DOING_AJAX ) {
-						remove_all_filters( 'brainpress_enroll_student' );
+						remove_all_filters( 'coursepress_enroll_student' );
 					}
-					BrainPress_Data_Course::enroll_student( $data->data->student_id, $data->data->course_id );
+					CoursePress_Data_Course::enroll_student( $data->data->student_id, $data->data->course_id );
 					$json_data['student_id'] = $data->data->student_id;
 					$json_data['course_id'] = $data->data->course_id;
 
@@ -282,7 +282,7 @@ class BrainPress_Admin_Controller_Course {
 			case 'withdraw_student':
 				$nonce = sprintf( 'withdraw-single-student-%d', $data->data->student_id );
 				if ( wp_verify_nonce( $data->data->nonce, $nonce ) ) {
-					BrainPress_Data_Course::withdraw_student( $data->data->student_id, $data->data->course_id );
+					CoursePress_Data_Course::withdraw_student( $data->data->student_id, $data->data->course_id );
 					$json_data['student_id'] = $data->data->student_id;
 					$json_data['course_id'] = $data->data->course_id;
 
@@ -294,7 +294,7 @@ class BrainPress_Admin_Controller_Course {
 			case 'withdraw_all_students':
 
 				if ( wp_verify_nonce( $data->data->nonce, 'withdraw_all_students' ) ) {
-					BrainPress_Data_Course::withdraw_all_students( $data->data->course_id );
+					CoursePress_Data_Course::withdraw_all_students( $data->data->course_id );
 					$json_data['course_id'] = $data->data->course_id;
 
 					$json_data['nonce'] = wp_create_nonce( 'withdraw_all_students' );
@@ -305,8 +305,8 @@ class BrainPress_Admin_Controller_Course {
 			case 'invite_student':
 
 				if ( wp_verify_nonce( $data->data->nonce, 'invite_student' ) ) {
-					$email_data = BrainPress_Helper_Utility::object_to_array( $data->data );
-					$response = BrainPress_Data_Course::send_invitation( $email_data );
+					$email_data = CoursePress_Helper_Utility::object_to_array( $data->data );
+					$response = CoursePress_Data_Course::send_invitation( $email_data );
 
 					$json_data['data'] = $data->data;
 
@@ -315,7 +315,7 @@ class BrainPress_Admin_Controller_Course {
 					// Save invited student
 					$email = sanitize_email( $email_data['email'] );
 					$course_id = (int) $email_data['course_id'];
-					$invited_students = BrainPress_Data_Course::get_setting( $course_id, 'invited_students', array() );
+					$invited_students = CoursePress_Data_Course::get_setting( $course_id, 'invited_students', array() );
 					$invite_data = array(
 						'first_name' => $email_data['first_name'],
 						'last_name' => $email_data['last_name'],
@@ -324,23 +324,23 @@ class BrainPress_Admin_Controller_Course {
 					$invited_students[ $email ] = $invite_data;
 
 					// Save invited data
-					BrainPress_Data_Course::update_setting( $course_id, 'invited_students', $invited_students );
+					CoursePress_Data_Course::update_setting( $course_id, 'invited_students', $invited_students );
 
 					$success = $response;
 				}
 				break;
 
 			case 'remove_student_invitation':
-				if ( wp_verify_nonce( $data->data->nonce, 'brainpress_remove_invite' ) ) {
+				if ( wp_verify_nonce( $data->data->nonce, 'coursepress_remove_invite' ) ) {
 					$course_id = (int) $data->data->course_id;
 					$student_email = sanitize_email( $data->data->email );
-					$invited_students = BrainPress_Data_Course::get_setting( $course_id, 'invited_students', array() );
+					$invited_students = CoursePress_Data_Course::get_setting( $course_id, 'invited_students', array() );
 
 					if ( ! empty( $invited_students[ $student_email ] ) ) {
 						unset( $invited_students[ $student_email ] );
 					}
 					// Resaved invited students
-					BrainPress_Data_Course::update_setting( $course_id, 'invited_students', $invited_students );
+					CoursePress_Data_Course::update_setting( $course_id, 'invited_students', $invited_students );
 					$success = true;
 				}
 				break;
@@ -348,7 +348,7 @@ class BrainPress_Admin_Controller_Course {
 			// Add facilitator
 			case 'add_facilitator':
 				if ( wp_verify_nonce( $data->data->nonce, 'setup-course' ) ) {
-					BrainPress_Data_Facilitator::add_course_facilitator( $data->data->course_id, $data->data->facilitator_id );
+					CoursePress_Data_Facilitator::add_course_facilitator( $data->data->course_id, $data->data->facilitator_id );
 					$json_data['who'] = 'facilitator';
 					$json_data['id'] = $data->data->facilitator_id;
 					$json_data['display_name'] = get_user_option( 'display_name', $data->data->facilitator_id );
@@ -361,14 +361,14 @@ class BrainPress_Admin_Controller_Course {
 					$success = true;
 				} else {
 					$json_data['facilitator_id'] = $data->data->facilitator_id;
-					$json_data['message'] = __( 'Moderator kann nicht hinzugefügt werden!', 'brainpress' );
+					$json_data['message'] = __( 'Unable to add facilitator!', 'cp' );
 				}
 
 				break;
 			// Remove facilitator
 			case 'remove_facilitator':
 				if ( wp_verify_nonce( $data->data->nonce, 'setup-course' ) ) {
-					BrainPress_Data_Facilitator::remove_course_facilitator( $data->data->course_id, $data->data->facilitator_id );
+					CoursePress_Data_Facilitator::remove_course_facilitator( $data->data->course_id, $data->data->facilitator_id );
 					$json_data['facilitator_id'] = $data->data->facilitator_id;
 					$json_data['nonce'] = wp_create_nonce( 'setup-course' );
 					$success = true;
@@ -386,7 +386,7 @@ class BrainPress_Admin_Controller_Course {
 						switch ( $action ) {
 
 							case 'publish':
-								if ( ! BrainPress_Data_Capabilities::can_update_course( $course_id ) ) {
+								if ( ! CoursePress_Data_Capabilities::can_update_course( $course_id ) ) {
 									continue;
 								}
 								wp_update_post( array(
@@ -395,7 +395,7 @@ class BrainPress_Admin_Controller_Course {
 								) );
 							break;
 							case 'unpublish':
-								if ( ! BrainPress_Data_Capabilities::can_update_course( $course_id ) ) {
+								if ( ! CoursePress_Data_Capabilities::can_update_course( $course_id ) ) {
 									continue;
 								}
 								wp_update_post( array(
@@ -404,15 +404,15 @@ class BrainPress_Admin_Controller_Course {
 								) );
 							break;
 							case 'delete':
-								BrainPress_Admin_Controller_Course::delete_course( $course_id );
+								CoursePress_Admin_Controller_Course::delete_course( $course_id );
 							break;
 
 						}
 					}
 
-					$settings = BrainPress_Data_Course::get_setting( $course_id, true );
-					/** This action is documented in include/brainpress/data/class-course.php */
-					do_action( 'brainpress_course_updated', $course_id, $settings );
+					$settings = CoursePress_Data_Course::get_setting( $course_id, true );
+					/** This action is documented in include/coursepress/data/class-course.php */
+					do_action( 'coursepress_course_updated', $course_id, $settings );
 
 					$json_data['data'] = $data->data;
 
@@ -426,7 +426,7 @@ class BrainPress_Admin_Controller_Course {
 				if ( wp_verify_nonce( $data->data->nonce, 'delete_course' ) ) {
 
 					$course_id = (int) $data->data->course_id;
-					BrainPress_Admin_Controller_Course::delete_course( $course_id );
+					CoursePress_Admin_Controller_Course::delete_course( $course_id );
 
 					$json_data['data'] = $data->data;
 
@@ -439,7 +439,7 @@ class BrainPress_Admin_Controller_Course {
 			case 'duplicate_course':
 				// Check wp nonce.
 				if ( wp_verify_nonce( $data->data->nonce, 'duplicate_course' ) ) {
-					$json_data = BrainPress_Data_Course::duplicate_course( $data );
+					$json_data = CoursePress_Data_Course::duplicate_course( $data );
 					$success = (bool) $json_data['success'];
 					if ( $success ) {
 						// force removal of MP meta stuffs
@@ -454,8 +454,8 @@ class BrainPress_Admin_Controller_Course {
 			case 'send_email':
 				if ( wp_verify_nonce( $data->data->nonce, 'send_email_to_enroled_students' ) ) {
 					$course_id = $data->data->course_id;
-					$students = BrainPress_Data_Course::get_students( $course_id );
-					$error_message = __( 'Keine E-Mail gesendet!', 'brainpress' );
+					$students = CoursePress_Data_Course::get_students( $course_id );
+					$error_message = __( 'No email sent!', 'cp' );
 
 					// Filter list of students to send email to
 					if ( ! empty( $data->data->send_to ) && 'all' != $data->data->send_to ) {
@@ -463,8 +463,8 @@ class BrainPress_Admin_Controller_Course {
 						$filtered_students = array();
 
 						foreach ( $students as $student ) {
-							$student_progress = BrainPress_Data_Student::get_completion_data( $student->ID, $course_id );
-							$units_progress = BrainPress_Helper_Utility::get_array_val(
+							$student_progress = CoursePress_Data_Student::get_completion_data( $student->ID, $course_id );
+							$units_progress = CoursePress_Helper_Utility::get_array_val(
 								$student_progress,
 								'completion/progress'
 							);
@@ -472,7 +472,7 @@ class BrainPress_Admin_Controller_Course {
 							if ( 'all_with_submission' === $send_to && intval( $units_progress ) > 0 ) {
 								$filtered_students[] = $student;
 							} elseif ( intval( $send_to ) > 0 ) {
-								$per_unit_progress = BrainPress_Helper_Utility::get_array_val(
+								$per_unit_progress = CoursePress_Helper_Utility::get_array_val(
 									$student_progress,
 									'completion/' . $send_to . '/progress'
 								);
@@ -486,7 +486,7 @@ class BrainPress_Admin_Controller_Course {
 						if ( count( $filtered_students ) > 0 ) {
 							$students = $filtered_students;
 						} else {
-							$error_message = __( 'Keine Studenten gefunden!', 'brainpress' );
+							$error_message = __( 'No students found!', 'cp' );
 							$students = array();
 						}
 					}
@@ -500,13 +500,13 @@ class BrainPress_Admin_Controller_Course {
 					$valid_stati = array( 'draft', 'pending', 'auto-draft' );
 
 					if ( in_array( $post->post_status, $valid_stati ) ) {
-						$course_address = BrainPress_Core::get_slug( 'course/', true ) . $post->post_name . '/';
+						$course_address = CoursePress_Core::get_slug( 'course/', true ) . $post->post_name . '/';
 					} else {
 						$course_address = get_permalink( $course_id );
 					}
 
-					if ( BrainPress_Core::get_setting( 'general/use_custom_login', true ) ) {
-						$login_url = BrainPress_Core::get_slug( 'login', true );
+					if ( CoursePress_Core::get_setting( 'general/use_custom_login', true ) ) {
+						$login_url = CoursePress_Core::get_slug( 'login', true );
 					} else {
 						$login_url = wp_login_url();
 					}
@@ -523,7 +523,7 @@ class BrainPress_Admin_Controller_Course {
 						'COURSE_EXCERPT' => $course_summary,
 						'COURSE_NAME' => $course_name,
 						'COURSE_OVERVIEW' => $course_summary,
-						'COURSES_ADDRESS' => BrainPress_Core::get_slug( 'course', true ),
+						'COURSES_ADDRESS' => CoursePress_Core::get_slug( 'course', true ),
 						'LOGIN_ADDRESS' => esc_url( $login_url ),
 						'WEBSITE_ADDRESS' => home_url(),
 						'WEBSITE_NAME' => get_bloginfo( 'name' ),
@@ -536,13 +536,13 @@ class BrainPress_Admin_Controller_Course {
 						$vars['STUDENT_FIRST_NAME'] = empty( $student->first_name ) && empty( $student->last_name ) ? $student->display_name : $student->first_name;
 						$vars['STUDENT_LAST_NAME'] = $student->last_name;
 						$vars['STUDENT_LOGIN'] = $student->data->user_login;
-						$body = BrainPress_Helper_Utility::replace_vars( $data->data->body, $vars );
+						$body = CoursePress_Helper_Utility::replace_vars( $data->data->body, $vars );
 						$args = array(
 							'subject' => $data->data->subject,
 							'to' => $student->user_email,
 							'message' => $body,
 						);
-						if ( BrainPress_Helper_Email::send_email( '', $args ) ) {
+						if ( CoursePress_Helper_Email::send_email( '', $args ) ) {
 							$count++;
 						}
 					}
@@ -553,10 +553,10 @@ class BrainPress_Admin_Controller_Course {
 						$success = true;
 						$json_data['message']['info'] = sprintf(
 							_n(
-								'%d E-Mail wurde erfolgreich gesendet.',
+								'%d email have been sent successfully.',
 								'%d emails have been sent successfully.',
 								$count,
-								'brainpress'
+								'cp'
 							),
 							$count
 						);
@@ -566,7 +566,7 @@ class BrainPress_Admin_Controller_Course {
 					}
 				} else {
 					$json_data['message']['to'] = 0;
-					$json_data['message']['info'] = __( 'Etwas ist schief gelaufen.', 'brainpress' );
+					$json_data['message']['info'] = __( 'Something went wrong.', 'cp' );
 				}
 				break;
 

@@ -1,24 +1,24 @@
 <?php
 /**
- * BrainPress Comments
+ * CoursePress Comments
  *
  * This comments only works with CP export.
  *
  * @since 2.0
  **/
-class BrainPress_Admin_Comments extends BrainPress_Admin_Controller_Menu {
-	var $parent_slug = 'brainpress';
-	var $slug = 'brainpress_comments';
+class CoursePress_Admin_Comments extends CoursePress_Admin_Controller_Menu {
+	var $parent_slug = 'coursepress';
+	var $slug = 'coursepress_comments';
 	private static $start_time = 0;
 	private static $current_time = 0;
 	private static $time_limit_reached = false;
-	protected $cap = 'brainpress_settings_cap';
+	protected $cap = 'coursepress_settings_cap';
 	var $comments_list = null;
 
 	public function get_labels() {
 		return array(
-			'title' => __( 'BrainPress Kommentare', 'brainpress' ),
-			'menu_title' => __( 'Kommentare', 'brainpress' ),
+			'title' => __( 'CoursePress Comments', 'cp' ),
+			'menu_title' => __( 'Comments', 'cp' ),
 		);
 	}
 
@@ -45,7 +45,7 @@ class BrainPress_Admin_Comments extends BrainPress_Admin_Controller_Menu {
 					$url = add_query_arg(
 						array(
 						'page' => $this->slug,
-						'post_type' => BrainPress_Data_Course::get_post_type_name(),
+						'post_type' => CoursePress_Data_Course::get_post_type_name(),
 						),
 						admin_url( 'edit.php' )
 					);
@@ -71,9 +71,9 @@ class BrainPress_Admin_Comments extends BrainPress_Admin_Controller_Menu {
 			break;
 
 			default:
-				$this->comments_list = new BrainPress_Admin_Table_Comments;
+				$this->comments_list = new CoursePress_Admin_Table_Comments;
 				$this->comments_list->prepare_items();
-				add_screen_option( 'per_page', array( 'default' => 20, 'option' => 'brainpress_comments_per_page', 'label' => __( 'Anzahl der Kommentare pro Seite:', 'brainpress' ) ) );
+				add_screen_option( 'per_page', array( 'default' => 20, 'option' => 'coursepress_comments_per_page', 'label' => __( 'Number of comments per page:', 'cp' ) ) );
 			break;
 		}
 	}

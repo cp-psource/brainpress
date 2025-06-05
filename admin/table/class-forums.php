@@ -2,23 +2,23 @@
 /**
  * A sub-class of WP_Posts_List_Table
  *
- * @package ClassicPress
- * @subpackage BrainPress
+ * @package WordPress
+ * @subpackage CoursePress
  **/
-class BrainPress_Admin_Table_Forums extends BrainPress_Admin_Table_Notifications {
+class CoursePress_Admin_Table_Forums extends CoursePress_Admin_Table_Notifications {
 	private $count = array();
 	private $_categories;
-	protected $page = 'brainpress_discussions';
+	protected $page = 'coursepress_discussions';
 
 	public function __construct() {
-		$post_format = BrainPress_Data_Discussion::get_format();
+		$post_format = CoursePress_Data_Discussion::get_format();
 		parent::__construct( array(
 			'singular' => $post_format['post_args']['labels']['singular_name'],
 			'plural' => $post_format['post_args']['labels']['name'],
 			'ajax' => false,
 		) );
 
-		$this->post_type = BrainPress_Data_Discussion::get_post_type_name();
+		$this->post_type = CoursePress_Data_Discussion::get_post_type_name();
 		$this->count = wp_count_posts( $this->post_type );
 	}
 
@@ -39,7 +39,7 @@ class BrainPress_Admin_Table_Forums extends BrainPress_Admin_Table_Notifications
 				$per_page = 20;
 			}
 		}
-		$per_page = $this->get_items_per_page( 'brainpress_discussions_per_page', $per_page );
+		$per_page = $this->get_items_per_page( 'coursepress_discussions_per_page', $per_page );
 		/**
 		 * Post statsu
 		 */
@@ -101,9 +101,9 @@ class BrainPress_Admin_Table_Forums extends BrainPress_Admin_Table_Notifications
 		$wp_query = new WP_Query( $post_args );
 		$this->items = array();
 		foreach ( $wp_query->posts as $post ) {
-			$post->user_can_edit = BrainPress_Data_Capabilities::can_update_discussion( $post->ID );
-			$post->user_can_delete  = BrainPress_Data_Capabilities::can_delete_discussion( $post->ID );
-			$post->user_can_change_status = BrainPress_Data_Capabilities::can_change_status_discussion( $post->ID );
+			$post->user_can_edit = CoursePress_Data_Capabilities::can_update_discussion( $post->ID );
+			$post->user_can_delete  = CoursePress_Data_Capabilities::can_delete_discussion( $post->ID );
+			$post->user_can_change_status = CoursePress_Data_Capabilities::can_change_status_discussion( $post->ID );
 			$post->user_can_change = $post->user_can_edit || $post->user_can_delete || $post->user_can_change_status;
 			$this->items[] = $post;
 		}
@@ -123,10 +123,10 @@ class BrainPress_Admin_Table_Forums extends BrainPress_Admin_Table_Notifications
 	public function get_columns() {
 		$columns = array(
 			'cb' => '<input type="checkbox" />',
-			'title' => __( 'Thema', 'brainpress' ),
-			'course' => __( 'Kurs', 'brainpress' ),
-			'comments' => '<span class="vers comment-grey-bubble" title="' . esc_attr__( 'Bemerkungen', 'brainpress' ) . '"><span class="screen-reader-text">' . __( 'Bemerkungen', 'brainpress' ) . '</span></span>',
-			'status' => __( 'Status', 'brainpress' ),
+			'title' => __( 'Topic', 'cp' ),
+			'course' => __( 'Course', 'cp' ),
+			'comments' => '<span class="vers comment-grey-bubble" title="' . esc_attr__( 'Comments', 'cp' ) . '"><span class="screen-reader-text">' . __( 'Comments', 'cp' ) . '</span></span>',
+			'status' => __( 'Status', 'cp' ),
 		);
 		return $columns;
 	}
@@ -143,12 +143,12 @@ class BrainPress_Admin_Table_Forums extends BrainPress_Admin_Table_Notifications
 			if ( $this->is_trash ) {
 				$url = add_query_arg(
 					array(
-						'_wpnonce' => wp_create_nonce( 'brainpress_untrash_discussion' ),
+						'_wpnonce' => wp_create_nonce( 'coursepress_untrash_discussion' ),
 						'action' => 'untrash',
 						'id' => $item->ID,
 					)
 				);
-				$row_actions['untrash'] = sprintf( '<a href="%s">%s</a>', esc_url( $url ), __( 'Wiederherstellen', 'brainpress' ) );
+				$row_actions['untrash'] = sprintf( '<a href="%s">%s</a>', esc_url( $url ), __( 'Restore', 'cp' ) );
 			} else {
 				$url = add_query_arg(
 					array(
@@ -156,34 +156,34 @@ class BrainPress_Admin_Table_Forums extends BrainPress_Admin_Table_Notifications
 						'id' => $item->ID,
 					)
 				);
-				$row_actions['edit'] = sprintf( '<a href="%s">%s</a>', esc_url( $url ), __( 'Bearbeiten', 'brainpress' ) );
+				$row_actions['edit'] = sprintf( '<a href="%s">%s</a>', esc_url( $url ), __( 'Edit', 'cp' ) );
 			}
 		}
 		if ( $item->user_can_delete ) {
 			if ( $this->is_trash ) {
 				$url = add_query_arg(
 					array(
-						'_wpnonce' => wp_create_nonce( 'brainpress_delete_discussion' ),
+						'_wpnonce' => wp_create_nonce( 'coursepress_delete_discussion' ),
 						'id' => $item->ID,
 						'action' => 'delete',
 					)
 				);
-				$row_actions['delete'] = sprintf( '<a href="%s">%s</a>', esc_url( $url ), __( 'Dauerhaft löschen', 'brainpress' ) );
+				$row_actions['delete'] = sprintf( '<a href="%s">%s</a>', esc_url( $url ), __( 'Delete Permanently', 'cp' ) );
 			} else {
 				$url = add_query_arg(
 					array(
-						'_wpnonce' => wp_create_nonce( 'brainpress_trash_discussion' ),
+						'_wpnonce' => wp_create_nonce( 'coursepress_trash_discussion' ),
 						'id' => $item->ID,
 						'action' => 'trash',
 					)
 				);
-				$row_actions['trash'] = sprintf( '<a href="%s">%s</a>', esc_url( $url ), __( 'Müll', 'brainpress' ) );
+				$row_actions['trash'] = sprintf( '<a href="%s">%s</a>', esc_url( $url ), __( 'Trash', 'cp' ) );
 			}
 		}
 		if ( 'publish' == $item->post_status ) {
-			$url = BrainPress_Data_Discussion::get_url( $item );
+			$url = CoursePress_Data_Discussion::get_url( $item );
 			if ( ! empty( $url ) ) {
-				$row_actions['view'] = sprintf( '<a href="%s">%s</a>', esc_url( $url ), __( 'Ansehen', 'brainpress' ) );
+				$row_actions['view'] = sprintf( '<a href="%s">%s</a>', esc_url( $url ), __( 'View', 'cp' ) );
 			}
 		}
 		return $this->row_actions( $row_actions );
@@ -203,10 +203,10 @@ class BrainPress_Admin_Table_Forums extends BrainPress_Admin_Table_Notifications
 ?>
 		<div class="alignleft actions category-filter">
 			<?php $this->course_filter( $which ); ?>
-			<input type="submit" class="button" name="action" value="<?php esc_attr_e( 'Filter', 'brainpress' ); ?>" />
+			<input type="submit" class="button" name="action" value="<?php esc_attr_e( 'Filter', 'cp' ); ?>" />
 		</div>
 <?php
-		$this->search_box( __( 'Suche Diskussionen', 'brainpress' ), 'search_discussions' );
+		$this->search_box( __( 'Search Forums', 'cp' ), 'search_discussions' );
 	}
 
 	/**
@@ -236,7 +236,7 @@ class BrainPress_Admin_Table_Forums extends BrainPress_Admin_Table_Notifications
 			),
 		);
 		$ui['class'] = 'discussion-' . $item->ID;
-		$publish_toggle = ! empty( $item->ID ) ? BrainPress_Helper_UI::toggle_switch( 'publish-discussion-toggle-' . $item->ID, 'publish-discussion-toggle-' . $item->ID, $ui ) : '';
+		$publish_toggle = ! empty( $item->ID ) ? CoursePress_Helper_UI::toggle_switch( 'publish-discussion-toggle-' . $item->ID, 'publish-discussion-toggle-' . $item->ID, $ui ) : '';
 		return $publish_toggle;
 	}
 }

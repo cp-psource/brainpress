@@ -2,13 +2,13 @@
 /**
  * Courses Table
  *
- * @package ClassicPress
- * @subpackage BrainPress
+ * @package WordPress
+ * @subpackage CoursePress
  **/
 if ( ! class_exists( 'WP_Posts_List_Table' ) ) {
 	require_once ABSPATH . 'wp-admin/includes/class-wp-posts-list-table.php';
 }
-class BrainPress_Admin_Table_Courses extends WP_Posts_List_Table {
+class CoursePress_Admin_Table_Courses extends WP_Posts_List_Table {
 	protected $student_id = 0;
 	static $student_progress = null;
 
@@ -17,7 +17,7 @@ class BrainPress_Admin_Table_Courses extends WP_Posts_List_Table {
 			$this->student_id = $student_id;
 		}
 
-		$post_format = BrainPress_Data_Course::get_format();
+		$post_format = CoursePress_Data_Course::get_format();
 		parent::__construct( array(
 			'singular' => $post_format['post_args']['labels']['singular_name'],
 			'plural' => $post_format['post_args']['labels']['name'],
@@ -31,7 +31,7 @@ class BrainPress_Admin_Table_Courses extends WP_Posts_List_Table {
 
 		$post_status = 'any';
 		$per_page = get_post( 'per_page' );
-		$student_courses = BrainPress_Data_Student::get_enrolled_courses_ids( $this->student_id );
+		$student_courses = CoursePress_Data_Student::get_enrolled_courses_ids( $this->student_id );
 
 		/**
 		 * Do not continue if user is not enrolled.
@@ -42,7 +42,7 @@ class BrainPress_Admin_Table_Courses extends WP_Posts_List_Table {
 		}
 
 		$args = array(
-			'post_type' => BrainPress_Data_Course::get_post_type_name(),
+			'post_type' => CoursePress_Data_Course::get_post_type_name(),
 			'post_status' => $post_status,
 			'post__in' => $student_courses,
 			'ignore_sticky_posts' => true,
@@ -69,17 +69,17 @@ class BrainPress_Admin_Table_Courses extends WP_Posts_List_Table {
 
 	public function get_columns() {
 		$columns = array(
-			'title' => __( 'Kurs-Titel', 'brainpress' ),
+			'title' => __( 'Title', 'cp' ),
 		);
 
 		if ( ! empty( $this->student_id ) ) {
 			$columns = array_merge(
 				$columns,
 				array(
-					'date_enrolled' => __( 'Einschreibungsdatum', 'brainpress' ),
-					'last_login' => __( 'Letzte Akitivtät', 'brainpress' ),
-					'average' => __( 'Durchschnitt', 'brainpress' ),
-					'certificate' => __( 'Zertifikat', 'brainpress' ),
+					'date_enrolled' => __( 'Date Enrolled', 'cp' ),
+					'last_login' => __( 'Last Active', 'cp' ),
+					'average' => __( 'Average', 'cp' ),
+					'certificate' => __( 'Certificate', 'cp' ),
 				)
 			);
 		}
@@ -94,24 +94,24 @@ class BrainPress_Admin_Table_Courses extends WP_Posts_List_Table {
 
 		$actions = array();
 
-		$course_url = BrainPress_Data_Course::get_course_url( $item->ID );
-		$actions['course_id'] = sprintf( __( 'Kurs-ID: %d', 'brainpress' ), $item->ID );
+		$course_url = CoursePress_Data_Course::get_course_url( $item->ID );
+		$actions['course_id'] = sprintf( __( 'Course ID: %d', 'cp' ), $item->ID );
 
 		if ( ! empty( $this->student_id ) ) {
-			$actions['view'] = sprintf( '<a href="%s" target="_blank">%s</a>', $course_url, __( 'Kurs ansehen', 'brainpress' ) );
+			$actions['view'] = sprintf( '<a href="%s" target="_blank">%s</a>', $course_url, __( 'View Course', 'cp' ) );
 
 			$workbook_url = add_query_arg(
 				array(
-						'page' => 'brainpress_assessments',
+						'page' => 'coursepress_assessments',
 						'student_id' => $this->student_id,
 						'course_id' => $item->ID,
 						'view_answer' => 1,
 						'display' => 'all_answered',
 					)
 			);
-			$can_update = BrainPress_Data_Capabilities::can_update_course( $item->ID );
+			$can_update = CoursePress_Data_Capabilities::can_update_course( $item->ID );
 			if ( $can_update ) {
-				$actions['workbook'] = sprintf( '<a href="%s">%s</a>', $workbook_url, __( 'Arbeitsmappe', 'brainpress' ) );
+				$actions['workbook'] = sprintf( '<a href="%s">%s</a>', $workbook_url, __( 'Workbook', 'cp' ) );
 			}
 		}
 
@@ -130,11 +130,11 @@ class BrainPress_Admin_Table_Courses extends WP_Posts_List_Table {
 		if ( empty( $date_enrolled ) ) {
 			return sprintf(
 				'<span aria-hidden="true">&#8212;</span><span class="screen-reader-text">%s</span>',
-				__( 'Unbekanntes Einschreibedatum.', 'brainpress' )
+				__( 'Unknown enrolled date.', 'cp' )
 			);
 		}
 
-		$date_enrolled = date_i18n( $date_format . ' ' . $time_format, BrainPress_Data_Course::strtotime( $date_enrolled ) );
+		$date_enrolled = date_i18n( $date_format . ' ' . $time_format, CoursePress_Data_Course::strtotime( $date_enrolled ) );
 
 		return $date_enrolled;
 	}
@@ -148,25 +148,25 @@ class BrainPress_Admin_Table_Courses extends WP_Posts_List_Table {
 		if ( empty( $last_activity ) ) {
 			$return = '-';
 		} else {
-			$return = date_i18n( $date_format . ' ' . $time_format, BrainPress_Data_Course::strtotime( $last_activity ) );
+			$return = date_i18n( $date_format . ' ' . $time_format, CoursePress_Data_Course::strtotime( $last_activity ) );
 		}
 
 		return $return;
 	}
 
 	public function column_average( $course ) {
-		$average = BrainPress_Data_Student::average_course_responses( $this->student_id, $course->ID );
+		$average = CoursePress_Data_Student::average_course_responses( $this->student_id, $course->ID );
 
 		return (float) $average . '%';
 	}
 
 	public function column_certificate( $course ) {
-		$completed = BrainPress_Data_Student::is_course_complete( $this->student_id, $course->ID );
-		$download_certificate = __( 'Nicht verfügbar', 'brainpress' );
+		$completed = CoursePress_Data_Student::is_course_complete( $this->student_id, $course->ID );
+		$download_certificate = __( 'Not available', 'cp' );
 
 		if ( $completed ) {
-			$certificate_link = BrainPress_Data_Certificate::get_encoded_url( $course->ID, $this->student_id );
-			$download_certificate = sprintf( '<a href="%s" class="button-primary">%s</a>', $certificate_link, __( 'Download', 'brainpress' ) );
+			$certificate_link = CoursePress_Data_Certificate::get_encoded_url( $course->ID, $this->student_id );
+			$download_certificate = sprintf( '<a href="%s" class="button-primary">%s</a>', $certificate_link, __( 'Download', 'cp' ) );
 		}
 
 		return $download_certificate;

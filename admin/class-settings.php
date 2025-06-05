@@ -1,8 +1,8 @@
 <?php
-class BrainPress_Admin_Settings extends BrainPress_Admin_Controller_Menu {
-	var $parent_slug = 'brainpress_course';
-	var $slug = 'brainpress_settings';
-	protected $cap = 'brainpress_settings_cap';
+class CoursePress_Admin_Settings extends CoursePress_Admin_Controller_Menu {
+	var $parent_slug = 'coursepress_course';
+	var $slug = 'coursepress_settings';
+	protected $cap = 'coursepress_settings_cap';
 	private static $tabs = array();
 	private static $settings_classes = array(
 		'General',
@@ -11,22 +11,22 @@ class BrainPress_Admin_Settings extends BrainPress_Admin_Controller_Menu {
 		'BasicCertificate',
 		'Shortcodes',
 		'Extensions',
-		'PSeCommerce',
+		'MarketPress',
 		'WooCommerce',
 		'Setup',
 	);
 
 	public function get_labels() {
 		return array(
-			'title' => __( 'BrainPress Einstellungen', 'brainpress' ),
-			'menu_title' => __( 'Einstellungen', 'brainpress' )
+			'title' => __( 'CoursePress Settings', 'cp' ),
+			'menu_title' => __( 'Settings', 'cp' )
 		);
 	}
 
 	public function before_page_load() {
 		// Init all the settings classes
 		foreach ( self::$settings_classes as $page ) {
-			$class = 'BrainPress_View_Admin_Setting_' . $page;
+			$class = 'CoursePress_View_Admin_Setting_' . $page;
 
 			if ( method_exists( $class, 'init' ) ) {
 				call_user_func( $class . '::init' );
@@ -51,7 +51,7 @@ class BrainPress_Admin_Settings extends BrainPress_Admin_Controller_Menu {
 		}
 
 		// Order the tabs
-		$tabs = BrainPress_Helper_Utility::sort_on_key( $tabs, 'order' );
+		$tabs = CoursePress_Helper_Utility::sort_on_key( $tabs, 'order' );
 
 		return $tabs;
 	}
@@ -90,12 +90,12 @@ class BrainPress_Admin_Settings extends BrainPress_Admin_Controller_Menu {
 		$hidden_args = $_GET;
 		unset( $hidden_args['_wpnonce'] );
 
-		$output = '<div class="brainpress_settings_wrapper wrap">';
-		$output .= BrainPress_Helper_UI::get_admin_page_title( $labels['menu_title'] );
-		$output .= BrainPress_Helper_Tabs::render_tabs( $tabs, $content, $hidden_args, $this->slug, $tab, false );
+		$output = '<div class="coursepress_settings_wrapper wrap">';
+		$output .= CoursePress_Helper_UI::get_admin_page_title( $labels['menu_title'] );
+		$output .= CoursePress_Helper_Tabs::render_tabs( $tabs, $content, $hidden_args, $this->slug, $tab, false );
 		$output .= '</div>';
 
-		echo apply_filters( 'brainpress_settings_page_main', $output );
+		echo apply_filters( 'coursepress_settings_page_main', $output );
 
 	}
 

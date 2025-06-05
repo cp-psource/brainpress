@@ -4,13 +4,13 @@
  *
  * This class extends WP_Users_List_Table to manage course instructors.
  *
- * @package ClassicPress
- * @subpackage BrainPress
+ * @package WordPress
+ * @subpackage CoursePress
  **/
 if ( ! class_exists( 'WP_Users_List_Table' ) ) {
 	require_once ABSPATH . 'wp-admin/includes/class-wp-users-list-table.php';
 }
-class BrainPress_Admin_Table_Instructors extends WP_Users_List_Table {
+class CoursePress_Admin_Table_Instructors extends WP_Users_List_Table {
 	var $course_id = 0;
 
 	public function __construct() {
@@ -47,7 +47,7 @@ class BrainPress_Admin_Table_Instructors extends WP_Users_List_Table {
 		 * Per Page
 		 */
 		$per_page = $this->get_per_page();
-		$users_per_page = $per_page = $this->get_items_per_page( 'brainpress_instructors_per_page', $per_page );
+		$users_per_page = $per_page = $this->get_items_per_page( 'coursepress_instructors_per_page', $per_page );
 
 		/**
 		 * pagination
@@ -57,7 +57,7 @@ class BrainPress_Admin_Table_Instructors extends WP_Users_List_Table {
 		/**
 		 * Query args
 		 */
-		$role_name = BrainPress_Data_Capabilities::get_role_instructor_name();
+		$role_name = CoursePress_Data_Capabilities::get_role_instructor_name();
 
 		$args = array(
 			'number' => $users_per_page,
@@ -71,7 +71,7 @@ class BrainPress_Admin_Table_Instructors extends WP_Users_List_Table {
 		if ( ! empty( $_GET['course_id'] ) ) {
 			// Show only students of current course
 			$course_id = (int) $_GET['course_id'];
-			$instructor_ids = BrainPress_Data_Course::get_instructors( $course_id );
+			$instructor_ids = CoursePress_Data_Course::get_instructors( $course_id );
 			$args['include'] = $instructor_ids;
 		}
 
@@ -105,7 +105,7 @@ class BrainPress_Admin_Table_Instructors extends WP_Users_List_Table {
 		$actions = array();
 
 		// @todo: Add sanity check/filter
-		$actions['withdraw'] = __( 'Als Kursleiter entfernen', 'brainpress' );
+		$actions['withdraw'] = __( 'Remove as Instructors', 'cp' );
 
 		return $actions;
 	}
@@ -113,10 +113,10 @@ class BrainPress_Admin_Table_Instructors extends WP_Users_List_Table {
 	public function get_columns() {
 		$columns = array(
 			'cb' => '<input type="checkbox" />',
-			'user_id' => __( 'ID', 'brainpress' ),
-			'instructor_name' => __( 'Name', 'brainpress' ),
-			'registered' => __( 'Registriert', 'brainpress' ),
-			'courses' => __( 'Kurse', 'brainpress' ),
+			'user_id' => __( 'ID', 'cp' ),
+			'instructor_name' => __( 'Name', 'cp' ),
+			'registered' => __( 'Registered', 'cp' ),
+			'courses' => __( 'Courses', 'cp' ),
 		);
 
 		return $columns;
@@ -131,23 +131,23 @@ class BrainPress_Admin_Table_Instructors extends WP_Users_List_Table {
 		$options['value'] = $this->course_id;
 		$options['class'] = 'medium dropdown';
 		$options['first_option'] = array(
-			'text' => __( 'Alle Kurse', 'brainpress' ),
+			'text' => __( 'All courses', 'cp' ),
 			'value' => 'all',
 		);
 
 		if ( current_user_can( 'manage_options' ) ) {
 			$assigned_courses = false;
 		} else {
-			$assigned_courses = BrainPress_Data_Instructor::get_assigned_courses_ids( get_current_user_id() );
+			$assigned_courses = CoursePress_Data_Instructor::get_assigned_courses_ids( get_current_user_id() );
 			$assigned_courses = array_filter( $assigned_courses );
 			$assigned_courses = array_map( 'get_post', $assigned_courses );
 		}
 
-		$courses = BrainPress_Helper_UI::get_course_dropdown( 'course_id', 'course_id', $assigned_courses, $options );
+		$courses = CoursePress_Helper_UI::get_course_dropdown( 'course_id', 'course_id', $assigned_courses, $options );
 		?>
 		<div class="alignleft actions category-filter">
 			<?php echo $courses; ?>
-			<input type="submit" class="button" name="action" value="<?php esc_attr_e( 'Filter', 'brainpress' ); ?>" />
+			<input type="submit" class="button" name="action" value="<?php esc_attr_e( 'Filter', 'cp' ); ?>" />
 		</div>
 		<?php
 	}
@@ -157,7 +157,7 @@ class BrainPress_Admin_Table_Instructors extends WP_Users_List_Table {
 		if ( 'top' !== $which ) {
 			parent::pagination( $which );
 		} else {
-			$this->search_box( __( 'Suche Kursleiter', 'brainpress' ), 'search' );
+			$this->search_box( __( 'Search Instructors', 'cp' ), 'search' );
 		}
 	}
 
@@ -180,11 +180,11 @@ class BrainPress_Admin_Table_Instructors extends WP_Users_List_Table {
 	public function column_instructor_name( $user_id ) {
 		$user = get_userdata( $user_id );
 		$actions = array();
-		$actions['user_id'] = sprintf( __( 'Benutzer ID: %d', 'brainpress' ), $user_id );
+		$actions['user_id'] = sprintf( __( 'User ID: %d', 'cp' ), $user_id );
 
 		// User avatar
 		$avatar = get_avatar( $user->user_email, 32 );
-		$name = BrainPress_Helper_Utility::get_user_name( $user_id, true );
+		$name = CoursePress_Helper_Utility::get_user_name( $user_id, true );
 
 		// Generate row actions
 		$url = remove_query_arg(
@@ -202,17 +202,17 @@ class BrainPress_Admin_Table_Instructors extends WP_Users_List_Table {
 				'instructor_id' => $user_id,
 			)
 		);
-		$actions['courses'] = sprintf( '<a href="%s">%s</a>', esc_url( $courses_url ), __( 'Kurse anzeigen', 'brainpress' ) );
+		$actions['courses'] = sprintf( '<a href="%s">%s</a>', esc_url( $courses_url ), __( 'View Courses', 'cp' ) );
 
 		// @todo: Add sanity check/validation
 		$delete_url = add_query_arg(
 			array(
-				'_wpnonce' => wp_create_nonce( 'brainpress_remove_instructor' ),
+				'_wpnonce' => wp_create_nonce( 'coursepress_remove_instructor' ),
 				'instructor_id' => $user_id,
 				'action' => 'delete',
 			)
 		);
-		$actions['delete'] = sprintf( '<a class="remove_instructor_action" href="%s">%s</a>', esc_url( $delete_url ), __( 'Als Kursleiter entfernen', 'brainpress' ) );
+		$actions['delete'] = sprintf( '<a class="remove_instructor_action" href="%s">%s</a>', esc_url( $delete_url ), __( 'Remove as Instructor', 'cp' ) );
 
 		return $avatar . $name . $this->row_actions( $actions );
 	}
@@ -220,17 +220,18 @@ class BrainPress_Admin_Table_Instructors extends WP_Users_List_Table {
 	public function column_registered( $user_id ) {
 		$instructor = get_userdata( $user_id );
 		$date_format = get_option( 'date_format' );
-		return date_i18n( $date_format, BrainPress_Data_Course::strtotime( $instructor->user_registered ) );
+		return date_i18n( $date_format, CoursePress_Data_Course::strtotime( $instructor->user_registered ) );
 	}
 
 	public function column_courses( $user_id ) {
-		$count = BrainPress_Data_Instructor::count_courses( $user_id, true );
+		$count = CoursePress_Data_Instructor::count_courses( $user_id );
 		$courses_link = add_query_arg(
 			array(
 				'view' => 'courses',
 				'instructor_id' => $user_id,
 			)
 		);
+
 		return $count > 0 ? sprintf( '<a href="%s">%s</a>', $courses_link, $count ) : 0;
 	}
 
@@ -243,11 +244,11 @@ class BrainPress_Admin_Table_Instructors extends WP_Users_List_Table {
 	 * @return string List of courses or information about nothing.
 	 */
 	public function column_courses_list( $user_id ) {
-		$assigned_courses_ids = BrainPress_Data_Instructor::get_assigned_courses_ids( $user_id );
+		$assigned_courses_ids = CoursePress_Data_Instructor::get_assigned_courses_ids( $user_id );
 		if ( empty( $assigned_courses_ids ) ) {
 			return sprintf(
 				'<span aria-hidden="true">&#8212;</span><span class="screen-reader-text">%s</span>',
-				__( 'Der Kursleiter ist keinem Kurs zugeordnet.', 'brainpress' )
+				__( 'Instructor is not assigned to any course.', 'cp' )
 			);
 		}
 		$content = '<ul>';
@@ -257,8 +258,8 @@ class BrainPress_Admin_Table_Instructors extends WP_Users_List_Table {
 					'title' => get_the_title( $course_id ),
 					'link' => add_query_arg(
 						array(
-							'post_type' => BrainPress_Data_Course::get_post_type_name(),
-							'page' => 'brainpress_instructors',
+							'post_type' => CoursePress_Data_Course::get_post_type_name(),
+							'page' => 'coursepress_instructors',
 							'course_id' => $course_id,
 						),
 						admin_url( 'edit.php' )

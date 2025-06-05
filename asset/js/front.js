@@ -1,32 +1,32 @@
-/*! BrainPress - v2.2.2
- * https://n3rds.work/piestingtal_source/ps-brainpress-classicpress-lms-online-akademie-plugin/
- * Copyright (c) 2019; * Licensed GPLv2+ */
-var BrainPress = {};
-BrainPress.Models = BrainPress.Models || {};
-BrainPress.Events = _.extend( {}, Backbone.Events );
-BrainPress.UI = BrainPress.UI || {};
-BrainPress.utility = BrainPress.utility || {};
+/*! CoursePress - v2.1.2
+ * https://cp-psource.github.io/coursepress/
+ * Copyright (c) 2017; * Licensed GPLv2+ */
+var CoursePress = {};
+CoursePress.Models = CoursePress.Models || {};
+CoursePress.Events = _.extend( {}, Backbone.Events );
+CoursePress.UI = CoursePress.UI || {};
+CoursePress.utility = CoursePress.utility || {};
 
 (function( $ ) {
 
-BrainPress.SendRequest = Backbone.Model.extend( {
-	url: _brainpress._ajax_url + '?action=brainpress_request',
+CoursePress.SendRequest = Backbone.Model.extend( {
+	url: _coursepress._ajax_url + '?action=coursepress_request',
 	parse: function( response ) {
 		var action = this.get( 'action' );
 
 		// Trigger course update events
 		if ( true === response.success ) {
 			this.set( 'response_data', response.data );
-			this.trigger( 'brainpress:' + action + '_success', response.data );
+			this.trigger( 'coursepress:' + action + '_success', response.data );
 		} else {
 			this.set( 'response_data', {} );
-			this.trigger( 'brainpress:' + action + '_error', response.data );
+			this.trigger( 'coursepress:' + action + '_error', response.data );
 		}
 	}
 } );
 
 /** Reset browser URL **/
-BrainPress.resetBrowserURL = function( url ) {
+CoursePress.resetBrowserURL = function( url ) {
 	if ( window.history.pushState ) {
 		// Reset browser url
 		window.history.pushState( {}, null, url );
@@ -34,7 +34,7 @@ BrainPress.resetBrowserURL = function( url ) {
 };
 
 /** Focus to the element **/
-BrainPress.Focus = function( selector ) {
+CoursePress.Focus = function( selector ) {
 	var el = $( selector ), top;
 
 	if ( 0 < el.length ) {
@@ -48,7 +48,7 @@ BrainPress.Focus = function( selector ) {
 };
 
 /** Error Box **/
-BrainPress.showError = function( error_message, container ) {
+CoursePress.showError = function( error_message, container ) {
 	var error_box = $( '<div class="cp-error cp-error-box"></div>' ),
 		error = $( '<p>' ),
 		closed = $( '<a class="cp-closed">&times;</a>' ),
@@ -70,10 +70,10 @@ BrainPress.showError = function( error_message, container ) {
 	container.prepend( error_box );
 
 	// Focus on the error box
-	BrainPress.Focus( '.cp-error-box' );
+	CoursePress.Focus( '.cp-error-box' );
 };
 
-BrainPress.WindowAlert = Backbone.View.extend({
+CoursePress.WindowAlert = Backbone.View.extend({
 	className: 'cp-mask cp-window-alert',
 	message: '',
 	callback: false,
@@ -107,7 +107,7 @@ BrainPress.WindowAlert = Backbone.View.extend({
 				class: 'button'
 			}
 		});
-		ok_button.$el.html( _brainpress.buttons.ok );
+		ok_button.$el.html( _coursepress.buttons.ok );
 		this.container.append( ok_button.$el );
 
 		if ( 'prompt' === this.type ) {
@@ -118,7 +118,7 @@ BrainPress.WindowAlert = Backbone.View.extend({
 					class: 'button button-cancel'
 				}
 			});
-			cancel_button.$el.html( _brainpress.buttons.cancel );
+			cancel_button.$el.html( _coursepress.buttons.cancel );
 			cancel_button.$el.insertBefore( ok_button.$el );
 
 			// Change the ok button class
@@ -136,7 +136,7 @@ BrainPress.WindowAlert = Backbone.View.extend({
 
 
 /** Loader Mask **/
-BrainPress.Mask = function( selector ) {
+CoursePress.Mask = function( selector ) {
 	selector = ! selector ? 'body' : selector;
 
 	var mask = $( '<div class="cp-mask mask"></div>' );
@@ -151,7 +151,7 @@ BrainPress.Mask = function( selector ) {
 };
 
 /** Unit Progress **/
-BrainPress.UnitProgressIndicator = function() {
+CoursePress.UnitProgressIndicator = function() {
 	var a_col = $( 'ul.units-archive-list a' ).css('color');
 	var p_col = $( 'body' ).css('color').replace('rgb(', '' ).replace(')', '' ).split( ',');
 	var emptyFill = 'rgba(' + p_col[0] + ', ' + p_col[1] + ', ' + p_col[2] + ', 1)';
@@ -248,16 +248,16 @@ BrainPress.UnitProgressIndicator = function() {
 	}
 };
 // Initialize unit progress
-BrainPress.unitProgressInit = function() {
+CoursePress.unitProgressInit = function() {
 	var discs = $( '.course-progress-disc' );
 
 	if ( 0 < discs.length ) {
-		discs.each( BrainPress.UnitProgressIndicator );
+		discs.each( CoursePress.UnitProgressIndicator );
 	}
 };
 
 /** Modal Dialog **/
-BrainPress.Modal = Backbone.Modal.extend( {
+CoursePress.Modal = Backbone.Modal.extend( {
 	//template: _.template( $( '#modal-template' ).html() ),
 	viewContainer: '.enrollment-modal-container',
 	submitEl: '.done',
@@ -323,52 +323,52 @@ BrainPress.Modal = Backbone.Modal.extend( {
 	}
 } );
 
-BrainPress.removeErrorHint = function() {
+CoursePress.removeErrorHint = function() {
 	$( this ).removeClass( 'has-error' );
 };
 
-// OlD BRAINPRESS-FRONT
+// OlD COURSEPRESS-FRONT
 
 	// Actions and Filters
-	BrainPress.actions = BrainPress.actions || {}; // Registered actions
-	BrainPress.filters = BrainPress.filters || {}; // Registered filters
+	CoursePress.actions = CoursePress.actions || {}; // Registered actions
+	CoursePress.filters = CoursePress.filters || {}; // Registered filters
 
 	/**
-	 * Add a new Action callback to BrainPress.actions
+	 * Add a new Action callback to CoursePress.actions
 	 *
 	 * @param tag The tag specified by do_action()
 	 * @param callback The callback function to call when do_action() is called
-	 * @param priority The order in which to call the callbacks. Default: 10 (like ClassicPress)
+	 * @param priority The order in which to call the callbacks. Default: 10 (like WordPress)
 	 */
-	BrainPress.add_action = function( tag, callback, priority ) {
+	CoursePress.add_action = function( tag, callback, priority ) {
 		if ( undefined === priority ) {
 			priority = 10;
 		}
 
 		// If the tag doesn't exist, create it.
-		BrainPress.actions[ tag ] = BrainPress.actions[ tag ] || [];
-		BrainPress.actions[ tag ].push( { priority: priority, callback: callback } );
+		CoursePress.actions[ tag ] = CoursePress.actions[ tag ] || [];
+		CoursePress.actions[ tag ].push( { priority: priority, callback: callback } );
 	};
 
 	/**
-	 * Add a new Filter callback to BrainPress.filters
+	 * Add a new Filter callback to CoursePress.filters
 	 *
 	 * @param tag The tag specified by apply_filters()
 	 * @param callback The callback function to call when apply_filters() is called
-	 * @param priority Priority of filter to apply. Default: 10 (like ClassicPress)
+	 * @param priority Priority of filter to apply. Default: 10 (like WordPress)
 	 */
-	BrainPress.add_filter = function( tag, callback, priority ) {
+	CoursePress.add_filter = function( tag, callback, priority ) {
 		if ( undefined === priority ) {
 			priority = 10;
 		}
 
 		// If the tag doesn't exist, create it.
-		BrainPress.filters[ tag ] = BrainPress.filters[ tag ] || [];
-		BrainPress.filters[ tag ].push( { priority: priority, callback: callback } );
+		CoursePress.filters[ tag ] = CoursePress.filters[ tag ] || [];
+		CoursePress.filters[ tag ].push( { priority: priority, callback: callback } );
 	};
 
 	/**
-	 * Remove an Anction callback from BrainPress.actions
+	 * Remove an Anction callback from CoursePress.actions
 	 *
 	 * Must be the exact same callback signature.
 	 * Warning: Anonymous functions can not be removed.
@@ -376,18 +376,18 @@ BrainPress.removeErrorHint = function() {
 	 * @param tag The tag specified by do_action()
 	 * @param callback The callback function to remove
 	 */
-	BrainPress.remove_action = function( tag, callback ) {
-		BrainPress.filters[ tag ] = BrainPress.filters[ tag ] || [];
+	CoursePress.remove_action = function( tag, callback ) {
+		CoursePress.filters[ tag ] = CoursePress.filters[ tag ] || [];
 
-		BrainPress.filters[ tag ].forEach( function( filter, i ) {
+		CoursePress.filters[ tag ].forEach( function( filter, i ) {
 			if ( filter.callback === callback ) {
-				BrainPress.filters[ tag ].splice(i, 1);
+				CoursePress.filters[ tag ].splice(i, 1);
 			}
 		} );
 	};
 
 	/**
-	 * Remove a Filter callback from BrainPress.filters
+	 * Remove a Filter callback from CoursePress.filters
 	 *
 	 * Must be the exact same callback signature.
 	 * Warning: Anonymous functions can not be removed.
@@ -395,28 +395,28 @@ BrainPress.removeErrorHint = function() {
 	 * @param tag The tag specified by apply_filters()
 	 * @param callback The callback function to remove
 	 */
-	BrainPress.remove_filter = function( tag, callback ) {
-		BrainPress.filters[ tag ] = BrainPress.filters[ tag ] || [];
+	CoursePress.remove_filter = function( tag, callback ) {
+		CoursePress.filters[ tag ] = CoursePress.filters[ tag ] || [];
 
-		BrainPress.filters[ tag ].forEach( function( filter, i ) {
+		CoursePress.filters[ tag ].forEach( function( filter, i ) {
 			if ( filter.callback === callback ) {
-				BrainPress.filters[ tag ].splice(i, 1);
+				CoursePress.filters[ tag ].splice(i, 1);
 			}
 		} );
 	};
 
 	/**
-	 * Calls actions that are stored in BrainPress.actions for a specific tag or nothing
+	 * Calls actions that are stored in CoursePress.actions for a specific tag or nothing
 	 * if there are no actions to call.
 	 *
 	 * @param tag A registered tag in Hook.actions
 	 * @options Optional JavaScript object to pass to the callbacks
 	 */
-	BrainPress.do_action = function( tag, options ) {
+	CoursePress.do_action = function( tag, options ) {
 		var actions = [];
 
-		if ( undefined !== BrainPress.actions[ tag ] && BrainPress.actions[ tag ].length > 0 ) {
-			BrainPress.actions[ tag ].forEach( function( hook ) {
+		if ( undefined !== CoursePress.actions[ tag ] && CoursePress.actions[ tag ].length > 0 ) {
+			CoursePress.actions[ tag ].forEach( function( hook ) {
 				actions[ hook.priority ] = actions[ hook.priority ] || [];
 				actions[ hook.priority ].push( hook.callback );
 			} );
@@ -430,19 +430,19 @@ BrainPress.removeErrorHint = function() {
 	};
 
 	/**
-	 * Calls filters that are stored in BrainPress.filters for a specific tag or return
+	 * Calls filters that are stored in CoursePress.filters for a specific tag or return
 	 * original value if no filters exist.
 	 *
 	 * @param tag A registered tag in Hook.filters
 	 * @options Optional JavaScript object to pass to the callbacks
 	 */
-	BrainPress.apply_filters = function( tag, value, options ) {
+	CoursePress.apply_filters = function( tag, value, options ) {
 
 		var filters = [];
 
-		if ( undefined !== BrainPress.filters[ tag ] && BrainPress.filters[ tag ].length > 0 ) {
+		if ( undefined !== CoursePress.filters[ tag ] && CoursePress.filters[ tag ].length > 0 ) {
 
-			BrainPress.filters[ tag ].forEach( function( hook ) {
+			CoursePress.filters[ tag ].forEach( function( hook ) {
 				filters[ hook.priority ] = filters[ hook.priority ] || [];
 				filters[ hook.priority ].push( hook.callback );
 			} );
@@ -460,7 +460,7 @@ BrainPress.removeErrorHint = function() {
 	/**
 	 * proceder data-link if exists
 	 */
-	BrainPress.procederDataLink = function( e ) {
+	CoursePress.procederDataLink = function( e ) {
 		var target = e.currentTarget;
 		if ( $( target ).data( 'link' ) ) {
 			window.location.href = $( target ).data( 'link' );
@@ -469,15 +469,15 @@ BrainPress.removeErrorHint = function() {
 
 // Hook into document
 $(document)
-	.ready( BrainPress.unitProgressInit ) // Call unit progress init
-	.on( 'focus', '.cp-mask .has-error, .cp .has-error', BrainPress.removeErrorHint )
-	.on( "click", ".single_show_cart_button, .featured-course-link button", BrainPress.procederDataLink );
+	.ready( CoursePress.unitProgressInit ) // Call unit progress init
+	.on( 'focus', '.cp-mask .has-error, .cp .has-error', CoursePress.removeErrorHint )
+	.on( "click", ".single_show_cart_button, .featured-course-link button", CoursePress.procederDataLink );
 
 })(jQuery);
 
 /** MODULES **/
 (function( $ ) {
-	BrainPress.timer = function( container ) {
+	CoursePress.timer = function( container ) {
 		var timer_span = container.find( '.quiz_timer' ).show(),
 			module_elements = container.find( '.module-elements' );
 
@@ -543,10 +543,10 @@ $(document)
 				clearInterval( timer );
 				expired();
 				// Send record data in silence
-				send = new BrainPress.SendRequest();
+				send = new CoursePress.SendRequest();
 				send.set({
-					cpnonce: _brainpress.cpnonce,
-					className: 'BrainPress_Module',
+					cpnonce: _coursepress.cpnonce,
+					className: 'CoursePress_Module',
 					method: 'record_expired_answer',
 					module_id: container.data( 'id' ),
 					course_id: container.find( '[name="course_id"]' ).val(),
@@ -559,7 +559,7 @@ $(document)
 				info.on( 'click', function() {
 					inputs.removeAttr( 'disabled' );
 					info.hide();
-					BrainPress.timer( container );
+					CoursePress.timer( container );
 				});
 			}
 			if ( _seconds < 0 ) {
@@ -592,7 +592,7 @@ $(document)
 		}, 1000);
 	};
 
-	BrainPress.MediaElements = function( container ) {
+	CoursePress.MediaElements = function( container ) {
 		if ( $.fn.mediaelementplayer ) {
 			var media = $( 'audio,video', container );
 
@@ -606,12 +606,12 @@ $(document)
 		}
 	};
 
-	BrainPress.LoadFocusModule = function() {
+	CoursePress.LoadFocusModule = function() {
 		var nav = $(this),
 			data = nav.data(),
-			container = $( '.brainpress-focus-view' ),
-			url = [ _brainpress.home_url, 'brainpress_focus' ],
-			parents = $( '.cp, .brainpress-focus-view' )
+			container = $( '.coursepress-focus-view' ),
+			url = [ _coursepress.home_url, 'coursepress_focus' ],
+			parents = $( '.cp, .coursepress-focus-view' )
 		;
 
 		if ( 'submit' === nav.attr( 'type' ) ) {
@@ -638,21 +638,21 @@ $(document)
 		url.push( data.course, data.unit, data.type, data.id );
 		url = url.join( '/' );
 		container.load( url, function() {
-			BrainPress.resetBrowserURL( data.url );
-			BrainPress.timer( container.find( '.cp-module-content' ) );
-			BrainPress.MediaElements( container.find( '.cp-module-content' ) );
+			CoursePress.resetBrowserURL( data.url );
+			CoursePress.timer( container.find( '.cp-module-content' ) );
+			CoursePress.MediaElements( container.find( '.cp-module-content' ) );
 		});
 
 		return false;
 	};
 
-	BrainPress.validateUploadModule = function() {
+	CoursePress.validateUploadModule = function() {
 		var input_file = $(this),
 			parentDiv = input_file.parents( '.module-elements' ).first(),
 			warningDiv = parentDiv.find( '.invalid-extension, .current-file' ),
 			filename = input_file.val(),
 			extension = filename.split( '.' ).pop(),
-			allowed_extensions = _.keys( _brainpress.allowed_student_extensions )
+			allowed_extensions = _.keys( _coursepress.allowed_student_extensions )
 		;
 
 		if ( 0 < warningDiv.length ) {
@@ -662,7 +662,7 @@ $(document)
 
 		if ( ! _.contains( allowed_extensions, extension ) ) {
 			warningDiv = $( '<div class="invalid-extension">' ).insertAfter( input_file.parent() );
-			warningDiv.html( _brainpress.invalid_upload_message )
+			warningDiv.html( _coursepress.invalid_upload_message )
 		} else {
 			var file = input_file.get(0);
 
@@ -677,15 +677,15 @@ $(document)
 		}
 	};
 
-	BrainPress.ModuleSubmit = function() {
+	CoursePress.ModuleSubmit = function() {
 		var form = $(this),
 			error_box = form.find( '.cp-error-box' ),
-			focus_box = form.parents( '.brainpress-focus-view, .cp.unit-wrapper' ),
+			focus_box = form.parents( '.coursepress-focus-view, .cp.unit-wrapper' ),
 			iframe = false,
 			timer = false,
 			module_elements = $( '.module-elements[data-required="1"]', form ),
 			module_response = module_elements.next( '.module-response' ),
-			is_focus = form.parents( '.brainpress-focus-view' ).length > 0,
+			is_focus = form.parents( '.coursepress-focus-view' ).length > 0,
 			error = 0, mask,
             validate = $('[name=save_progress_and_exit]').length < 1
 		;
@@ -720,15 +720,15 @@ $(document)
 			} );
 			if ( error > 0 ) {
 				// Don't submit if an error is found!
-				new BrainPress.WindowAlert({
-					message: _brainpress.module_error[ is_focus ? 'required' : 'normal_required' ]
+				new CoursePress.WindowAlert({
+					message: _coursepress.module_error[ is_focus ? 'required' : 'normal_required' ]
 				});
 				return false;
 			}
 		}
 
 		// Mask the page
-		mask = BrainPress.Mask();
+		mask = CoursePress.Mask();
 
 		// Insert ajax marker
 		form.append( '<input type="hidden" name="is_cp_ajax" value="1" />' );
@@ -761,9 +761,9 @@ $(document)
 								window.location = data.data.url;
 							} else {
 								focus_box.html( data.data.html );
-								BrainPress.resetBrowserURL( data.data.url );
-								BrainPress.timer( focus_box.find( '.cp-module-content' ) );
-								BrainPress.MediaElements( focus_box.find( '.cp-module-content' ) );
+								CoursePress.resetBrowserURL( data.data.url );
+								CoursePress.timer( focus_box.find( '.cp-module-content' ) );
+								CoursePress.MediaElements( focus_box.find( '.cp-module-content' ) );
 							}
 						}
 					} else {
@@ -771,7 +771,7 @@ $(document)
 						if ( data.data.html ) {
 							focus_box.html( data.data.html );
 						}
-						new BrainPress.WindowAlert({
+						new CoursePress.WindowAlert({
 							message: data.data.error_message
 						});
 					}
@@ -780,7 +780,7 @@ $(document)
 		});
 	};
 
-	BrainPress.toggleModuleState = function() {
+	CoursePress.toggleModuleState = function() {
 		var button = $(this),
 			parentDiv = button.closest( '.cp-module-content' ),
 			elementsDiv = $( '.module-elements', parentDiv ),
@@ -791,13 +791,13 @@ $(document)
 		responseDiv.hide();
 		elementsDiv.show();
 		moduleHidden.val(0);
-		BrainPress.timer( parentDiv );
+		CoursePress.timer( parentDiv );
 
 		return false;
 	};
 
 	// Recreate comment-reply js
-	BrainPress.commentReplyLink = function() {
+	CoursePress.commentReplyLink = function() {
 		var link = $(this),
 			datacom = link.parents( '[data-comid]' ).first(),
 			com_id = datacom.data( 'comid' ),
@@ -828,14 +828,14 @@ $(document)
 		});
 
 		// Focus to the form
-		BrainPress.Focus( form );
+		CoursePress.Focus( form );
 		// Focus to textarea
 		form.find( 'textarea[name="comment"]' ).focus();
 
 		return false;
 	};
 
-	BrainPress.addComment = function(ev) {
+	CoursePress.addComment = function(ev) {
 		var button = $(this),
 			module_content = button.parents( '.cp-module-content' ).first(),
 			form = $( '#respond', module_content ),
@@ -843,7 +843,7 @@ $(document)
 			comment = $( '[name="comment"]', form ),
 			comment_parent = $( '[name="comment_parent"]', form ),
 			comment_post_ID = $( '[name="comment_post_ID"]', form ),
-			subscribe = $( '[name="brainpress_subscribe"]', form ),
+			subscribe = $( '[name="coursepress_subscribe"]', form ),
 			student_id = $( '[name="student_id"]', module_content ),
 			course_id = $( '[name="course_id"]', module_content ),
 			unit_id = $( '[name="module_content"]', module_content ),
@@ -851,7 +851,7 @@ $(document)
 			comment_list = $( '.comment-list', module_content ),
 			params = {},
 			is_reply = 0 < parseInt( comment_parent.val() ),
-			request = new BrainPress.SendRequest(),
+			request = new CoursePress.SendRequest(),
 			restore_form,
 			mask
 		;
@@ -861,8 +861,8 @@ $(document)
 
 		if ( '' === comment.val() ) {
 			// Alert the user
-			new BrainPress.WindowAlert({
-				message: _brainpress.comments.require_valid_comment
+			new CoursePress.WindowAlert({
+				message: _coursepress.comments.require_valid_comment
 			});
 
 			// Prevent the form from submitting
@@ -875,16 +875,16 @@ $(document)
 			comment_parent: comment_parent.val(),
 			comment_post_ID: comment_post_ID.val(),
 			subscribe: subscribe.val(),
-			cpnonce: _brainpress.cpnonce,
+			cpnonce: _coursepress.cpnonce,
 			method: 'add_single_comment',
-			className: 'BrainPress_Module',
+			className: 'CoursePress_Module',
 			course_id: course_id,
 			unit_id: unit_id,
 			student_id: student_id.val(),
 			action: 'add_single_comment'
 		};
 
-		mask = BrainPress.Mask();
+		mask = CoursePress.Mask();
 		restore_form = function() {
 			var cancel_link = form.find( '#cancel-comment-reply-link' );
 
@@ -901,8 +901,8 @@ $(document)
 
 
 		request.set( params );
-		request.off( 'brainpress:add_single_comment_success' );
-		request.on( 'brainpress:add_single_comment_success', function( data ) {
+		request.off( 'coursepress:add_single_comment_success' );
+		request.on( 'coursepress:add_single_comment_success', function( data ) {
 			// Restore the form to it's orig position
 			restore_form();
 
@@ -931,13 +931,13 @@ $(document)
 			}
 
 			// Focus to the last inserted comment
-			BrainPress.Focus( '#comment-' + data.comment_id );
+			CoursePress.Focus( '#comment-' + data.comment_id );
 		} );
-		request.on( 'brainpress:add_single_comment_error', function() {
+		request.on( 'coursepress:add_single_comment_error', function() {
 			// Remove cover mask
 			mask.done();
 			// Alert the user
-			BrainPress.showError( _brainpress.server_error, form );
+			CoursePress.showError( _coursepress.server_error, form );
 		});
 		request.save();
 
@@ -947,7 +947,7 @@ $(document)
 		return false;
 	};
 
-	BrainPress.singleFolded = function() {
+	CoursePress.singleFolded = function() {
 			var target = $('>ul', $(this).parent() );
 			var unit = $('.unit-archive-single-title', $(this).parent());
 			var modules_container = $('.unit-archive-module-wrapper', $(this).parent());
@@ -992,7 +992,7 @@ $(document)
 			return false;
 	};
 
-	BrainPress.unitFolded = function() {
+	CoursePress.unitFolded = function() {
 			var span = $(this),
 				container = span.parents( 'li' ).first(),
 				module_wrapper = container.find( '.unit-structure-modules' ),
@@ -1013,14 +1013,14 @@ $(document)
 	/**
 	 * Save Progress & Exit
 	 */
-	BrainPress.saveProgressAndExit = function() {
+	CoursePress.saveProgressAndExit = function() {
 		var form = $(this).closest('form');
 		$("#respond", form).detach();
 		form.append( '<input type="hidden" name="save_progress_and_exit" value="1" />' );
 		form.submit();
 	}
 
-	BrainPress.hookModuleVideos = function() {
+	CoursePress.hookModuleVideos = function() {
 
 		$('.video-js').each(function(){
 			var video_id = $(this).attr('id');
@@ -1053,7 +1053,7 @@ $(document)
 				});
 
 				player.one('play', function(){
-					BrainPress.timer(player_element.closest('.cp-module-content'));
+					CoursePress.timer(player_element.closest('.cp-module-content'));
 				});
 
 				player.on('play', function(){
@@ -1073,39 +1073,39 @@ $(document)
 				var content = $(this);
 				if(content.data('type') !== 'video')
 				{
-					BrainPress.timer(content);
+					CoursePress.timer(content);
 				}
 			});
 
-			BrainPress.hookModuleVideos();
+			CoursePress.hookModuleVideos();
 		})
-		.on( 'submit', '.cp-form', BrainPress.ModuleSubmit )
-		.on( 'click', '.focus-nav-prev, .focus-nav-next', BrainPress.LoadFocusModule )
-		.on( 'click', '.button-reload-module', BrainPress.toggleModuleState )
-		.on( 'click', '.cp-module-content .comment-reply-link', BrainPress.commentReplyLink )
-		.on( 'click', '.cp-comment-submit', BrainPress.addComment )
-		.on( 'change', '.cp-module-content .file input', BrainPress.validateUploadModule )
-		.on( 'click', '.unit-archive-single .fold', BrainPress.singleFolded )
-		.on( 'click', '.course-structure-block .unit .fold, .unit-archive-list .fold', BrainPress.unitFolded )
-		.on( 'click', '.save-progress-and-exit', BrainPress.saveProgressAndExit );
+		.on( 'submit', '.cp-form', CoursePress.ModuleSubmit )
+		.on( 'click', '.focus-nav-prev, .focus-nav-next', CoursePress.LoadFocusModule )
+		.on( 'click', '.button-reload-module', CoursePress.toggleModuleState )
+		.on( 'click', '.cp-module-content .comment-reply-link', CoursePress.commentReplyLink )
+		.on( 'click', '.cp-comment-submit', CoursePress.addComment )
+		.on( 'change', '.cp-module-content .file input', CoursePress.validateUploadModule )
+		.on( 'click', '.unit-archive-single .fold', CoursePress.singleFolded )
+		.on( 'click', '.course-structure-block .unit .fold, .unit-archive-list .fold', CoursePress.unitFolded )
+		.on( 'click', '.save-progress-and-exit', CoursePress.saveProgressAndExit );
 
 
 })(jQuery);
 
-/* global BrainPress */
+/* global CoursePress */
 
 (function( $ ) {
-	BrainPress.Models.CourseFront = Backbone.Model.extend( {
-		url: _brainpress._ajax_url + '?action=course_front',
+	CoursePress.Models.CourseFront = Backbone.Model.extend( {
+		url: _coursepress._ajax_url + '?action=course_front',
 		parse: function( response ) {
 			// Trigger course update events
 			if ( true === response.success ) {
 				this.set( 'response_data', response.data );
-				this.trigger( 'brainpress:' + response.data.action + '_success', response.data );
+				this.trigger( 'coursepress:' + response.data.action + '_success', response.data );
 			} else {
 				this.set( 'response_data', {} );
 				if ( response.data ) {
-					this.trigger( 'brainpress:' + response.data.action + '_error', response.data );
+					this.trigger( 'coursepress:' + response.data.action + '_error', response.data );
 				}
 			}
 		},
@@ -1113,8 +1113,8 @@ $(document)
 	} );
 
 	// AJAX Posts
-	BrainPress.Models.Post = BrainPress.Models.Post || Backbone.Model.extend( {
-		url: _brainpress._ajax_url + '?action=',
+	CoursePress.Models.Post = CoursePress.Models.Post || Backbone.Model.extend( {
+		url: _coursepress._ajax_url + '?action=',
 		parse: function( response ) {
 			var context = this.get( 'context' );
 
@@ -1125,15 +1125,15 @@ $(document)
 				}
 
 				this.set( 'response_data', response.data );
-				var method = 'brainpress:' + context + response.data.action + '_success';
+				var method = 'coursepress:' + context + response.data.action + '_success';
 				this.trigger( method, response.data );
 			} else {
 				if ( 0 !== response ) {
 					this.set( 'response_data', {} );
-					this.trigger( 'brainpress:' + context + response.data.action + '_error', response.data );
+					this.trigger( 'coursepress:' + context + response.data.action + '_error', response.data );
 				}
 			}
-			BrainPress.Post.set( 'action', '' );
+			CoursePress.Post.set( 'action', '' );
 		},
 		prepare: function( action, context ) {
 			this.url = this.get( 'base_url' ) + action;
@@ -1143,14 +1143,14 @@ $(document)
 			}
 		},
 		defaults: {
-			base_url: _brainpress._ajax_url + '?action=',
+			base_url: _coursepress._ajax_url + '?action=',
 			context: 'response:'
 		}
 	} );
 
-	BrainPress.Post = new BrainPress.Models.Post();
+	CoursePress.Post = new CoursePress.Models.Post();
 
-	BrainPress.checkWeakPassword = function() {
+	CoursePress.checkWeakPassword = function() {
 		var container = $(this).closest('form'),
 			password_field = $('[name="password"]', container),
 			confirm_password_field = $('[name="password_confirmation"]', container),
@@ -1159,7 +1159,7 @@ $(document)
 			password_strength_input = $('[name="password_strength_level"]', container);
 
 		// If the password strength meter script has not been enqueued then we can't check strength
-		if(typeof wp.passwordStrength.meter === 'undefined' || !_brainpress.password_strength_meter_enabled)
+		if(typeof wp.passwordStrength.meter === 'undefined' || !_coursepress.password_strength_meter_enabled)
 		{
 			return;
 		}
@@ -1211,12 +1211,12 @@ $(document)
 		}
 	};
 
-	BrainPress.Dialogs = {
+	CoursePress.Dialogs = {
 		beforeSubmit: function() {
 			var step = this.currentIndex;
 			process_popup_enrollment( step );
 
-			if ( step === ( BrainPress.Enrollment.dialog.views.length - 1 ) ) {
+			if ( step === ( CoursePress.Enrollment.dialog.views.length - 1 ) ) {
 				$('.enrolment-container-div' ).addClass('hidden');
 			}
 
@@ -1227,7 +1227,7 @@ $(document)
 			$.each( steps, function( i, step ) {
 				var step_action = $( step ).attr('data-modal-action');
 				if ( undefined !== step_action && action === step_action ) {
-					BrainPress.Enrollment.dialog.openAt( i );
+					CoursePress.Enrollment.dialog.openAt( i );
 					if ( "login" == action ) {
 						$(window).scrollTop( $( "div.cp-mask.enrolment-container-div" ).offset().top - 100 );
 					}
@@ -1243,20 +1243,20 @@ $(document)
 			$("span.fa-circle-o-notch").detach();
 			if ( 0 === signup_errors.length && data['user_data']['logged_in'] === true ) {
 				// Check if the page is redirected from an invitation link
-				if ( _brainpress.invitation_data ) {
+				if ( _coursepress.invitation_data ) {
 					// Add user as instructor
-					BrainPress.Enrollment.dialog.add_instructor( data );
+					CoursePress.Enrollment.dialog.add_instructor( data );
 				} else {
 					$.each( steps, function( i, step ) {
 						var action = $( step ).attr( 'data-modal-action' );
-						if ( 'yes' === _brainpress.current_course_is_paid && 'paid_enrollment' === action ) {
-							BrainPress.Enrollment.dialog.openAt( i );
+						if ( 'yes' === _coursepress.current_course_is_paid && 'paid_enrollment' === action ) {
+							CoursePress.Enrollment.dialog.openAt( i );
 						} else if ( 'enrolled' === action ) {
 							if ( ! data['already_enrolled'] ) {
 								// We're in! Now lets enroll
-								BrainPress.Enrollment.dialog.attempt_enroll( data );
+								CoursePress.Enrollment.dialog.attempt_enroll( data );
 							} else {
-								location.href = _brainpress.course_url;
+								location.href = _coursepress.course_url;
 							}
 						}
 					});
@@ -1280,7 +1280,7 @@ $(document)
 					$.each( steps, function( i, step ) {
 						var action = step.attr('data-modal-action');
 						if ( 'login' === action ) {
-							BrainPress.Enrollment.dialog.openAt( i );
+							CoursePress.Enrollment.dialog.openAt( i );
 						}
 					});
 				}
@@ -1291,20 +1291,20 @@ $(document)
 			var steps = $( '[data-type="modal-step"]' );
 			if ( 0 === signup_errors.length && data['logged_in'] === true ) {
 				// Check if the page is redirected from an invitation link
-				if ( _brainpress.invitation_data ) {
+				if ( _coursepress.invitation_data ) {
 					// Add user as instructor
-					BrainPress.Enrollment.dialog.add_instructor( data );
+					CoursePress.Enrollment.dialog.add_instructor( data );
 				} else {
 					$.each( steps, function( i, step ) {
 						var action = $( step ).attr( 'data-modal-action' );
-						if ( 'yes' === _brainpress.current_course_is_paid && 'paid_enrollment' === action ) {
-							BrainPress.Enrollment.dialog.openAt( i );
+						if ( 'yes' === _coursepress.current_course_is_paid && 'paid_enrollment' === action ) {
+							CoursePress.Enrollment.dialog.openAt( i );
 						} else if ( 'enrolled' === action ) {
 							if ( ! data['already_enrolled'] ) {
 								// We're in! Now lets enroll
-								BrainPress.Enrollment.dialog.attempt_enroll( data );
+								CoursePress.Enrollment.dialog.attempt_enroll( data );
 							} else {
-								location.href = _brainpress.course_url;
+								location.href = _coursepress.course_url;
 							}
 						}
 					});
@@ -1328,17 +1328,17 @@ $(document)
 			if ( true === data['success'] ) {
 				$.each( steps, function( i, step ) {
 					var action = $( step ).attr( 'data-modal-action' );
-					if ( 'yes' === _brainpress.current_course_is_paid && 'paid_enrollment' === action ) {
-						BrainPress.Enrollment.dialog.openAt( i );
+					if ( 'yes' === _coursepress.current_course_is_paid && 'paid_enrollment' === action ) {
+						CoursePress.Enrollment.dialog.openAt( i );
 					} else if ( 'enrolled' === action ) {
-						BrainPress.Enrollment.dialog.openAt( i );
+						CoursePress.Enrollment.dialog.openAt( i );
 					}
 				});
 			} else {
 				$.each( steps, function( i, step ) {
 					var action = $( step ).attr( 'data-modal-action' );
-					if ( 'passcode' == _brainpress.current_course_type && 'passcode' === action ) {
-						BrainPress.Enrollment.dialog.openAt( i );
+					if ( 'passcode' == _coursepress.current_course_type && 'passcode' === action ) {
+						CoursePress.Enrollment.dialog.openAt( i );
 					}
 				});
 			}
@@ -1349,33 +1349,32 @@ $(document)
 			var valid = true; // we're optimists
 			$('.bbm-wrapper #error-messages' ).html('');
 
-			var container = 'div.enrolment-container-div ';
 			var errors = [];
-			var password = $( container + '[name="password"]' ).val().trim();
-			var password_confirmed = $( container + '[name="password_confirmation"]' ).val().trim();
 			// All fields required
 			if (
-				'' === $( container + 'input[name=first_name]' ).val().trim() ||
-				'' === $( container + 'input[name=last_name]' ).val().trim() ||
-				'' === $( container + 'input[name=username]' ).val().trim() ||
-				'' === $( container + 'input[name=email]' ).val().trim() ||
-				'' === password ||
-				'' === password_confirmed
+				'' === $( 'input[name=first_name]' ).val().trim() ||
+				'' === $( 'input[name=last_name]' ).val().trim() ||
+				'' === $( 'input[name=username]' ).val().trim() ||
+				'' === $( 'input[name=email]' ).val().trim() ||
+				'' === $( 'input[name=password]' ).val().trim() ||
+				'' === $( 'input[name=password_confirmation]' ).val().trim()
 			) {
 				valid = false;
-				errors.push( _brainpress.signup_errors['all_fields'] );
+				errors.push( _coursepress.signup_errors['all_fields'] );
 			}
 
+			var password = $('[name="password"]').val();
+			var password_confirmed = $('[name="password_confirmation"]').val();
 
 			// Passwords must match
 			if ( password !== password_confirmed ) {
 				valid = false;
-				errors.push( _brainpress.signup_errors['mismatch_password'] );
+				errors.push( _coursepress.signup_errors['mismatch_password'] );
 			}
 
-			if( typeof wp.passwordStrength.meter !== "undefined" && _brainpress.password_strength_meter_enabled )
+			if( typeof wp.passwordStrength.meter !== "undefined" && _coursepress.password_strength_meter_enabled )
 			{
-				var confirm_weak = $( container + '[name="confirm_weak_password"]'),
+				var confirm_weak = $( '[name="confirm_weak_password"]'),
 					strength = wp.passwordStrength.meter(
 						password,
 						[],
@@ -1385,7 +1384,7 @@ $(document)
 				// Can't have a weak password
 				if ( strength <= 2 && !confirm_weak.is( ':checked' ) ) {
 					valid = false;
-					errors.push( _brainpress.signup_errors['weak_password'] );
+					errors.push( _coursepress.signup_errors['weak_password'] );
 				}
 			}
 
@@ -1403,10 +1402,9 @@ $(document)
 		},
 		login_validation: function() {
 			var valid = true,
-				container = 'div.enrolment-container-div ',
 				error_wrapper = $('.bbm-wrapper #error-messages' ),
-				log = $( container + 'input[name="log"]' ),
-				pwd = $( container + 'input[name="pwd"]' )
+				log = $( 'input[name="log"]' ),
+				pwd = $( 'input[name="pwd"]' )
 			;
 
 			error_wrapper.html( '' );
@@ -1425,21 +1423,19 @@ $(document)
 			return valid;
 		},
 		signup_data: function( data ) {
-			var container = 'div.enrolment-container-div ';
-			data.first_name = $( container + 'input[name=first_name]' ).val();
-			data.last_name = $( container + 'input[name=last_name]' ).val();
-			data.username = $( container + 'input[name=username]' ).val();
-			data.email = $( container + 'input[name=email]' ).val();
-			data.password = $( container + 'input[name=password]' ).val();
+			data.first_name = $( 'input[name=first_name]' ).val();
+			data.last_name = $( 'input[name=last_name]' ).val();
+			data.username = $( 'input[name=username]' ).val();
+			data.email = $( 'input[name=email]' ).val();
+			data.password = $( 'input[name=password]' ).val();
 			data.nonce = $( '.bbm-modal-nonce.signup' ).attr('data-nonce');
 
 			return data;
 		},
 		login_data: function( data ) {
-			var container = 'div.enrolment-container-div ';
 			var course_id = $( '.enrollment-modal-container.bbm-modal__views' ).attr('data-course');
-			data.username = $( container + 'input[name=log]' ).val();
-			data.password = $( container + 'input[name=pwd]' ).val();
+			data.username = $( 'input[name=log]' ).val();
+			data.password = $( 'input[name=pwd]' ).val();
 			data.course_id = course_id;
 			data.nonce = $( '.bbm-modal-nonce.login' ).attr('data-nonce');
 			return data;
@@ -1457,8 +1453,8 @@ $(document)
 				course_id = $(temp).attr('data-course');
 			}
 
-			BrainPress.Post.prepare( 'course_enrollment', 'enrollment:' );
-			BrainPress.Post.set( 'action', 'enroll_student' );
+			CoursePress.Post.prepare( 'course_enrollment', 'enrollment:' );
+			CoursePress.Post.set( 'action', 'enroll_student' );
 
 			var data = {
 				nonce: nonce,
@@ -1466,30 +1462,30 @@ $(document)
 				course_id: course_id,
 				step: ''
 			};
-			BrainPress.Post.set( 'data', data );
-			BrainPress.Post.save();
+			CoursePress.Post.set( 'data', data );
+			CoursePress.Post.save();
 
 			// Manual hook here as this is not a step in the modal templates
-			BrainPress.Post.off( 'brainpress:enrollment:enroll_student_error' );
-			BrainPress.Post.on( 'brainpress:enrollment:enroll_student_error', function( data ) {
+			CoursePress.Post.off( 'coursepress:enrollment:enroll_student_error' );
+			CoursePress.Post.on( 'coursepress:enrollment:enroll_student_error', function( data ) {
 
 				if ( undefined !== data['callback'] ) {
-					var fn = BrainPress.Enrollment.dialog[ data['callback'] ];
+					var fn = CoursePress.Enrollment.dialog[ data['callback'] ];
 					if ( typeof fn === 'function' ) {
 						fn( data );
 						return;
 					}
 				}
 			});
-			BrainPress.Post.off( 'brainpress:enrollment:enroll_student_success' );
-			BrainPress.Post.on( 'brainpress:enrollment:enroll_student_success', function( data ) {
+			CoursePress.Post.off( 'coursepress:enrollment:enroll_student_success' );
+			CoursePress.Post.on( 'coursepress:enrollment:enroll_student_success', function( data ) {
 				cpmask.removeClass( 'loading' );
 
 				// Update nonce
 				$( '.enrollment-modal-container.bbm-modal__views' ).attr('data-nonce', data['nonce'] );
 
 				if ( undefined !== data['callback'] ) {
-					var fn = BrainPress.Enrollment.dialog[ data['callback'] ];
+					var fn = CoursePress.Enrollment.dialog[ data['callback'] ];
 					if ( typeof fn === 'function' ) {
 						fn( data );
 						return;
@@ -1498,8 +1494,8 @@ $(document)
 			} );
 		},
 		new_nonce: function( nonce_name, callback ) {
-			BrainPress.Post.prepare( 'course_enrollment', 'enrollment:' );
-			BrainPress.Post.set( 'action', 'get_nonce' );
+			CoursePress.Post.prepare( 'course_enrollment', 'enrollment:' );
+			CoursePress.Post.set( 'action', 'get_nonce' );
 
 			var data = {
 				action: 'get_nonce',
@@ -1507,97 +1503,97 @@ $(document)
 				step: ''
 			};
 
-			BrainPress.Post.set( 'data', data );
-			BrainPress.Post.save();
+			CoursePress.Post.set( 'data', data );
+			CoursePress.Post.save();
 
-			BrainPress.Post.off( 'brainpress:enrollment:get_nonce_success' );
-			BrainPress.Post.on( 'brainpress:enrollment:get_nonce_success', callback );
+			CoursePress.Post.off( 'coursepress:enrollment:get_nonce_success' );
+			CoursePress.Post.on( 'coursepress:enrollment:get_nonce_success', callback );
 		},
 		add_instructor: function( return_data ) {
 
-			BrainPress.Enrollment.dialog.new_nonce( 'brainpress_add_instructor', function( nonce ) {
-				var course_id = _brainpress.invitation_data.course_id;
+			CoursePress.Enrollment.dialog.new_nonce( 'coursepress_add_instructor', function( nonce ) {
+				var course_id = _coursepress.invitation_data.course_id;
 
-				BrainPress.Post.prepare( 'course_enrollment', 'enrollment:' );
-				BrainPress.Post.set( 'action', 'add_instructor' );
+				CoursePress.Post.prepare( 'course_enrollment', 'enrollment:' );
+				CoursePress.Post.set( 'action', 'add_instructor' );
 
 				var data = {
 					action: 'add_instructor',
 					nonce: nonce.nonce,
 					course_id: course_id,
-					invite_code: _brainpress.invitation_data.code,
+					invite_code: _coursepress.invitation_data.code,
 					instructor_id: return_data.user_data.ID,
 					step: ''
 				};
 
-				BrainPress.Post.set( 'data', data );
-				BrainPress.Post.save();
+				CoursePress.Post.set( 'data', data );
+				CoursePress.Post.save();
 
-				BrainPress.Post.off( 'brainpress:enrollment:add_instructor_success' );
-				BrainPress.Post.on( 'brainpress:enrollment:add_instructor_success', function() {
-					BrainPress.Enrollment.dialog.openAtAction( 'instructor-verified' );
+				CoursePress.Post.off( 'coursepress:enrollment:add_instructor_success' );
+				CoursePress.Post.on( 'coursepress:enrollment:add_instructor_success', function() {
+					CoursePress.Enrollment.dialog.openAtAction( 'instructor-verified' );
 				} );
 
-				BrainPress.Post.off( 'brainpress:enrollment:add_instructor_error' );
-				BrainPress.Post.on( 'brainpress:enrollment:add_instructor_error', function() {
-					BrainPress.Enrollment.dialog.openAtAction( 'verification-failed' );
+				CoursePress.Post.off( 'coursepress:enrollment:add_instructor_error' );
+				CoursePress.Post.on( 'coursepress:enrollment:add_instructor_error', function() {
+					CoursePress.Enrollment.dialog.openAtAction( 'verification-failed' );
 				});
 
 			});
 		},
 		init: function() {
-			if ( ! BrainPress.Enrollment.dialog ) {
-				BrainPress.Enrollment.dialog = new BrainPress.Modal();
-				_.extend( BrainPress.Enrollment.dialog, BrainPress.Dialogs );
+			if ( ! CoursePress.Enrollment.dialog ) {
+				CoursePress.Enrollment.dialog = new CoursePress.Modal();
+				_.extend( CoursePress.Enrollment.dialog, CoursePress.Dialogs );
 			}
 		}
 	};
 
-	BrainPress.Enrollment = BrainPress.Enrollment || {};
+	CoursePress.Enrollment = CoursePress.Enrollment || {};
 
-	BrainPress.CustomLoginHook = function() {
+	CoursePress.CustomLoginHook = function() {
 		$(this).attr( 'href', '#');
 		var newDiv = $( '<div class="cp-mask enrolment-container-div">' );
 
 		newDiv.appendTo( 'body' );
 
 		// Set modal
-		BrainPress.Dialogs.init();
+		CoursePress.Dialogs.init();
 
-		newDiv.html( BrainPress.Enrollment.dialog.render().el );
-		BrainPress.Enrollment.dialog.openAtAction( 'login' );
+		newDiv.html( CoursePress.Enrollment.dialog.render().el );
+		CoursePress.Enrollment.dialog.openAtAction( 'login' );
 
 		return false;
 	};
-	BrainPress.EnrollStudent = function() {
+	CoursePress.EnrollStudent = function() {
 		var newDiv = $( '<div class="cp-mask enrolment-container-div">' );
 
 		newDiv.appendTo( 'body' );
 
 		// Set modal
-		BrainPress.Dialogs.init();
+		CoursePress.Dialogs.init();
 
 		// Is paid course?
-		if ( 'yes' === _brainpress.current_course_is_paid ) {
-			$(newDiv).html(BrainPress.Enrollment.dialog.render().el);
-			BrainPress.Enrollment.dialog.openAtAction('paid_enrollment');
+		if ( 'yes' === _coursepress.current_course_is_paid ) {
+			$(newDiv).html(CoursePress.Enrollment.dialog.render().el);
+			CoursePress.Enrollment.dialog.openAtAction('paid_enrollment');
 		} else {
 			$(newDiv ).addClass('loading');
 			var enroll_data = {
 				user_data: {
-					ID: parseInt( _brainpress.current_student )
+					ID: parseInt( _coursepress.current_student )
 				}
 			};
 			
 			// We're logged in, so lets try to enroll
-			BrainPress.Enrollment.dialog.attempt_enroll( enroll_data );
-			$(newDiv).html(BrainPress.Enrollment.dialog.render().el);
+			CoursePress.Enrollment.dialog.attempt_enroll( enroll_data );
+			$(newDiv).html(CoursePress.Enrollment.dialog.render().el);
 		}
 
 		return false;
 	};
 
-	BrainPress.validateEnrollment = function() {
+	CoursePress.validateEnrollment = function() {
 		var form = $(this);
 
 		return false;
@@ -1612,18 +1608,18 @@ $(document)
 		var nonce = $( '.enrollment-modal-container.bbm-modal__views' ).attr('data-nonce');
 		var fn;
 
-		BrainPress.Post.prepare( 'course_enrollment', 'enrollment:' );
-		BrainPress.Post.set( 'action', action );
+		CoursePress.Post.prepare( 'course_enrollment', 'enrollment:' );
+		CoursePress.Post.set( 'action', action );
 
 		if ( action === 'signup' ) {
-			fn = BrainPress.Enrollment.dialog[ 'signup_validation' ];
+			fn = CoursePress.Enrollment.dialog[ 'signup_validation' ];
 			if ( typeof fn === 'function' && true !== fn() ) {
 				return;
 			}
 		}
 
 		if ( action === 'login' ) {
-			fn = BrainPress.Enrollment.dialog[ 'login_validation' ];
+			fn = CoursePress.Enrollment.dialog[ 'login_validation' ];
 			if ( typeof fn === 'function' && true !== fn() ) {
 				return;
 			}
@@ -1634,7 +1630,7 @@ $(document)
 			step: step
 		};
 
-		fn = BrainPress.Enrollment.dialog[ action + '_data' ];
+		fn = CoursePress.Enrollment.dialog[ action + '_data' ];
 		if ( typeof fn === 'function' ) {
 			data = fn( data );
 		}
@@ -1646,31 +1642,31 @@ $(document)
 			$("input.signup").after('<span class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></span>');
 		}
 
-		BrainPress.Post.set( 'data', data );
-		BrainPress.Post.save();
+		CoursePress.Post.set( 'data', data );
+		CoursePress.Post.save();
 
-		BrainPress.Post.on( 'brainpress:enrollment:' + action + '_success', function( data ) {
+		CoursePress.Post.on( 'coursepress:enrollment:' + action + '_success', function( data ) {
 
 			// Update nonce
 			$( '.enrollment-modal-container.bbm-modal__views' ).attr('data-nonce', data['nonce'] );
 
 			if ( undefined !== data['callback'] ) {
-				fn = BrainPress.Enrollment.dialog[ data['callback'] ];
+				fn = CoursePress.Enrollment.dialog[ data['callback'] ];
 				if ( typeof fn === 'function' ) {
 					fn( data );
 					return;
 				}
 			}
-			if ( undefined !== data.last_step && parseInt( data.last_step ) < ( BrainPress.Enrollment.dialog.views.length -1 ) ) {
-				BrainPress.Enrollment.dialog.openAt( parseInt( data.last_step ) + 1 );
+			if ( undefined !== data.last_step && parseInt( data.last_step ) < ( CoursePress.Enrollment.dialog.views.length -1 ) ) {
+				CoursePress.Enrollment.dialog.openAt( parseInt( data.last_step ) + 1 );
 				$('.enrolment-container-div' ).removeClass('hidden');
 			}
 
 		} );
 
-		BrainPress.Post.on( 'brainpress:enrollment:' + action + '_error', function( data ) {
+		CoursePress.Post.on( 'coursepress:enrollment:' + action + '_error', function( data ) {
 			if ( undefined !== data['callback'] ) {
-				fn = BrainPress.Enrollment.dialog[ data['callback'] ];
+				fn = CoursePress.Enrollment.dialog[ data['callback'] ];
 				if ( typeof fn === 'function' ) {
 					fn( data );
 					return;
@@ -1680,7 +1676,7 @@ $(document)
 		} );
 	};
 
-	BrainPress.validatePassCode = function() {
+	CoursePress.validatePassCode = function() {
 		var form = $(this),
 			passcode = form.find( '[name="passcode"]' )
 			student_id = form.find( '[name="student_id"]' ).val(),
@@ -1688,36 +1684,36 @@ $(document)
 		;
 
 		if ( '' === passcode.val() ) {
-			new BrainPress.WindowAlert({
-				message: _brainpress.module_error.passcode_required
+			new CoursePress.WindowAlert({
+				message: _coursepress.module_error.passcode_required
 			});
 			return false;
 		} else {
-			BrainPress.Post.prepare( 'course_enrollment', 'enrollment:' );
-			BrainPress.Post.set( 'action', 'enroll_with_passcode' );
-			BrainPress.Post.set( 'data', {
+			CoursePress.Post.prepare( 'course_enrollment', 'enrollment:' );
+			CoursePress.Post.set( 'action', 'enroll_with_passcode' );
+			CoursePress.Post.set( 'data', {
 				passcode: passcode.val(),
 				student_id: student_id,
 				course_id: course_id,
 				step: 0
 			});
-			BrainPress.Post.off( 'brainpress:enrollment:enroll_with_passcode_success' );
-			BrainPress.Post.on( 'brainpress:enrollment:enroll_with_passcode_success', function(data){
+			CoursePress.Post.off( 'coursepress:enrollment:enroll_with_passcode_success' );
+			CoursePress.Post.on( 'coursepress:enrollment:enroll_with_passcode_success', function(data){
 				var newDiv = $( '<div class="cp-mask enrolment-container-div">' );
 
 				newDiv.appendTo( 'body' );
 				// Set modal
-				BrainPress.Dialogs.init();
-				$(newDiv).html(BrainPress.Enrollment.dialog.render().el);
-				BrainPress.Enrollment.dialog.openAtAction( 'enrolled' );
+				CoursePress.Dialogs.init();
+				$(newDiv).html(CoursePress.Enrollment.dialog.render().el);
+				CoursePress.Enrollment.dialog.openAtAction( 'enrolled' );
 			});
-			BrainPress.Post.off( 'brainpress:enrollment:enroll_with_passcode_error' );
-			BrainPress.Post.on( 'brainpress:enrollment:enroll_with_passcode_error', function(data){
-				new BrainPress.WindowAlert({
+			CoursePress.Post.off( 'coursepress:enrollment:enroll_with_passcode_error' );
+			CoursePress.Post.on( 'coursepress:enrollment:enroll_with_passcode_error', function(data){
+				new CoursePress.WindowAlert({
 					message: data.message
 				});
 			});
-			BrainPress.Post.save();
+			CoursePress.Post.save();
 		}
 
 		return false;
@@ -1725,22 +1721,22 @@ $(document)
 
 	// Hook the events
 	$( document )
-		.on( 'click', '.cp-custom-login', BrainPress.CustomLoginHook )
-		.on( 'click', '.apply-button.enroll', BrainPress.EnrollStudent )
-		.on( 'submit', '[name="enrollment-process"][data-type="passcode"]', BrainPress.validatePassCode )
-		.on( 'keyup', '.signup-form [name="password"], .signup-form [name="password_confirmation"], .student-settings [name="password"], .student-settings [name="password_confirmation"]', BrainPress.checkWeakPassword )
-		.on( 'submit', '.apply-box .enrollment-process', BrainPress.validateEnrollment );
+		.on( 'click', '.cp-custom-login', CoursePress.CustomLoginHook )
+		.on( 'click', '.apply-button.enroll', CoursePress.EnrollStudent )
+		.on( 'submit', '[name="enrollment-process"][data-type="passcode"]', CoursePress.validatePassCode )
+		.on( 'keyup', '.signup-form [name="password"], .signup-form [name="password_confirmation"], .student-settings [name="password"], .student-settings [name="password_confirmation"]', CoursePress.checkWeakPassword )
+		.on( 'submit', '.apply-box .enrollment-process', CoursePress.validateEnrollment );
 
 })(jQuery);
 
-/* global BrainPress */
+/* global CoursePress */
 
 (function($){
 	var confirmWithdrawal = function() {
 		var href = $(this).attr( 'href' ),
-			win = new BrainPress.WindowAlert({
+			win = new CoursePress.WindowAlert({
 			type: 'prompt',
-			message: _brainpress.confirmed_withdraw,
+			message: _coursepress.confirmed_withdraw,
 			callback: function() {
 				window.location = href;
 			}
@@ -1750,9 +1746,9 @@ $(document)
 
 	var confirmManage= function() {
 		var href = $(this).data( 'link' ),
-			win = new BrainPress.WindowAlert({
+			win = new CoursePress.WindowAlert({
 			type: 'prompt',
-			message: _brainpress.confirmed_edit,
+			message: _coursepress.confirmed_edit,
 			callback: function() {
 				window.location = href;
 			}
@@ -1763,6 +1759,6 @@ $(document)
 
 	$(document)
 		.on( 'click', '.cp-withdraw-student', confirmWithdrawal )
-		.on( 'click', '.brainpress-course-link', confirmManage );
+		.on( 'click', '.coursepress-course-link', confirmManage );
 
 })(jQuery);

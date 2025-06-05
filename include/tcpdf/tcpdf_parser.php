@@ -131,7 +131,7 @@ class TCPDF_PARSER {
 	/**
 	 * Set the configuration parameters.
 	 * @param $cfg (array) Array of configuration parameters:
-	 * 			'die_for_errors' : if true termitate the program execution in case of error, otherwise thows an exception;
+	 * 			'die_for_errors' : if true termitate the program execution in case of error, otherwise thows an exception;	 	     		    		 	 		
 	 * 			'ignore_filter_decoding_errors' : if true ignore filter decoding errors;
 	 * 			'ignore_missing_filter_decoders' : if true ignore missing filter decoding errors.
 	 * @public

@@ -1,15 +1,15 @@
-<div class="wrap brainpress_wrapper brainpress-export">
-	<h2><?php esc_html_e( 'Exportieren', 'brainpress' ); ?></h2>
+<div class="wrap coursepress_wrapper coursepress-export">
+	<h2><?php esc_html_e( 'Export', 'cp' ); ?></h2>
 	<p class="description page-tagline">
-		<?php esc_html_e( 'Wähle Kurse aus, die auf eine andere Webseite exportiert werden sollen.', 'brainpress' ); ?>
+		<?php esc_html_e( 'Select courses to export to another site.', 'cp' ); ?>
 	</p>
 	<form method="post" class="has-disabled">
-		<?php wp_nonce_field( 'brainpress_export', 'brainpress_export' ); ?>
+		<?php wp_nonce_field( 'coursepress_export', 'coursepress_export' ); ?>
 		<div class="cp-left">
 			<p>
 				<label>
-					<input type="checkbox" class="input-key" name="brainpress[all]" value="1" />
-					<?php esc_html_e( 'Alle Kurse', 'brainpress' ); ?>
+					<input type="checkbox" class="input-key" name="coursepress[all]" value="1" />
+					<?php esc_html_e( 'All courses', 'cp' ); ?>
 				</label>
 			</p>
 			<?php
@@ -17,7 +17,7 @@
 			$paged = ! empty( $_REQUEST['paged'] ) ? (int) $_REQUEST['paged'] : 1;
 
 			$args = array(
-				'post_type' => BrainPress_Data_Course::get_post_type_name(),
+				'post_type' => CoursePress_Data_Course::get_post_type_name(),
 				'post_status' => array( 'publish', 'draft', 'private' ),
 				'posts_per_page' => $per_page,
 				'paged' => $paged,
@@ -30,7 +30,7 @@
 			?>
 				<p>
 					<label>
-						<input type="checkbox" class="input-key" name="brainpress[courses][<?php the_ID(); ?>]" value="<?php the_ID(); ?>" />
+						<input type="checkbox" class="input-key" name="coursepress[courses][<?php the_ID(); ?>]" value="<?php the_ID(); ?>" />
 						<?php the_title(); ?>
 					</label>
 				</p>
@@ -40,34 +40,34 @@
 			?>
 		</div>
 		<div>
-			<h3><?php esc_html_e( 'Export Optionen', 'brainpress' ); ?></h3>
+			<h3><?php esc_html_e( 'Export Options', 'cp' ); ?></h3>
 			<div>
 				<label>
-					<input type="checkbox" name="brainpress[students]" class="input-requiredby" value="1" />
-					<?php esc_html_e( 'Studenten einbeziehen', 'brainpress' ); ?>
+					<input type="checkbox" name="coursepress[students]" class="input-requiredby" value="1" />
+					<?php esc_html_e( 'Include students', 'cp' ); ?>
 				</label>
 				<p class="description">
-					<?php esc_html_e( 'Umfasst die Kursteilnehmer und ihren Fortschritt bei der Einreichung von Kursen.', 'brainpress' ); ?>
+					<?php esc_html_e( 'Will include course students and their course submission progress.', 'cp' ); ?>
 				</p>
 			</div><br />
 			<div>
 				<label>
-					<input type="checkbox" name="brainpress[comments]" data-required-imput="brainpress[students]" disabled="disabled" value="1" />
-					<?php esc_html_e( 'Thread/Kommentare einschließen', 'brainpress' ); ?>
+					<input type="checkbox" name="coursepress[comments]" data-required-imput="coursepress[students]" disabled="disabled" value="1" />
+					<?php esc_html_e( 'Include thread/comments', 'cp' ); ?>
 				</label>
 				<p class="description">
-					<?php esc_html_e( 'Enthält Kommentare aus dem Kursforum und Diskussionsmodulen.', 'brainpress' ); ?>
+					<?php esc_html_e( 'Will include comments from Course forum and discussion modules.', 'cp' ); ?>
 				</p>
 			</div>
 		</div>
 		<div class="cp-right">
 		<?php
 			// Show paginate
-			echo BrainPress_Helper_UI::admin_paginate( $paged, $courses->found_posts, $per_page, '', __( 'Kurse', 'brainpress' ) );
+			echo CoursePress_Helper_UI::admin_paginate( $paged, $courses->found_posts, $per_page, '', __( 'Course', 'cp' ) );
 		?>
 		</div>
 		<div class="clear cp-submit">
-			<?php submit_button( __( 'Exportiere Kurse', 'brainpress' ), 'button-primary disabled' ); ?>
+			<?php submit_button( __( 'Export Courses', 'cp' ), 'button-primary disabled' ); ?>
 		</div>
 	</form>
 </div>

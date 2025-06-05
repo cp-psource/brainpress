@@ -93,7 +93,7 @@
 		/**
 		 * bind dismissible notices
 		 */
-		$('div.notice.is-dismissible[data-dismissible] button.notice-dismiss').click(function (event) {
+		$('div.notice.is-dismissible[data-dismissible] button.notice-dismiss').on('click', function (event) {
 			event.preventDefault();
 			option_name = $(this).parent().attr('data-option-name');
 			data = {

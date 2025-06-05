@@ -566,7 +566,7 @@ class CoursePress_Data_Course {
 
 		$setting = CoursePress_Helper_Utility::get_array_val( $settings, $key );
 		$setting = is_null( $setting ) ? $default : $setting;
-		$setting = ! is_array( $setting ) ? trim( $setting ) : $setting;
+		$setting = ! is_array( $setting ) ? ( is_null( $setting ) ? '' : trim( $setting ) ) : $setting;
 
 		return apply_filters(
 			'coursepress_get_course_setting_' . $key,

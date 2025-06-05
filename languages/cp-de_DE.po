@@ -6588,7 +6588,7 @@ msgstr "Es gibt keine bewertbaren Schüler!"
 
 #: include/coursepress/view/admin/assessment/class-list.php:25
 msgid "Assessments/CoursePress"
-msgstr "Beurteilungen/KursPresse"
+msgstr "Beurteilungen/CoursePress"
 
 #: include/coursepress/view/admin/assessment/class-list.php:173
 msgid "Back"
@@ -6612,7 +6612,7 @@ msgstr "Feedback senden"
 
 #: include/coursepress/view/admin/assessment/class-report.php:10
 msgid "Reports/CoursePress"
-msgstr "Berichte/KursPresse"
+msgstr "Berichte/CoursePress"
 
 #: include/coursepress/view/admin/assessment/class-report.php:239
 msgid "You do not currently have any courses assigned."
@@ -6666,7 +6666,7 @@ msgstr "Profil bearbeiten"
 
 #: include/coursepress/view/admin/class-setting.php:24
 msgid "Settings/CoursePress"
-msgstr "Einstellungen/KursPresse"
+msgstr "Einstellungen/CoursePress"
 
 #: include/coursepress/view/admin/class-student.php:10
 msgid "Courses/Students"
@@ -6701,7 +6701,7 @@ msgstr "Anfangs-Update!"
 
 #: include/coursepress/view/admin/course/class-edit.php:21
 msgid "Edit Course/CoursePress"
-msgstr "Kurs bearbeiten/KursPresse"
+msgstr "Kurs bearbeiten/CoursePress"
 
 #: include/coursepress/view/admin/course/class-edit.php:199
 msgid "Step 1 – Course Overview"
@@ -10207,7 +10207,7 @@ msgstr "Meta"
 
 #. Plugin Name of the plugin/theme
 msgid "CoursePress"
-msgstr "KursPresse"
+msgstr "CoursePress"
 
 #. Description of the plugin/theme
 msgid ""

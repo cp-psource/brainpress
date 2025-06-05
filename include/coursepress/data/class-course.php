@@ -1756,6 +1756,10 @@ class CoursePress_Data_Course {
 
 	public static function previewability( $course_id ) {
 
+		if ( ! is_array( self::$previewability ) ) {
+			self::$previewability = [];
+		}
+
 		if ( empty( self::$previewability ) ) {
 			$units = array_filter(
 				CoursePress_Data_Course::get_setting(

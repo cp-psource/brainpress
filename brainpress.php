@@ -117,7 +117,7 @@ class BrainPress {
 		/**
 		 * Translate plugin name
 		 */
-		self::$name = _x( 'BrainPress', 'plugin name', 'brainpress' ); // Translated by grunt.
+		//self::$name = _x( 'BrainPress', 'plugin name', 'brainpress' ); // Translated by grunt.
 		// Initialise the autoloader.
 		spl_autoload_register( array( __CLASS__, 'class_loader' ) );
 
@@ -164,6 +164,8 @@ class BrainPress {
 
 		// Define custom theme directory for BrainPress theme
 		self::register_cp_theme_directory();
+
+		add_action( 'init', array( __CLASS__, 'set_translated_name' ) );
 	}
 
 	/**
@@ -324,6 +326,10 @@ class BrainPress {
 	public static function get_file() {
 		return self::$file;
 	}
+
+	public static function set_translated_name() {
+        self::$name = _x( 'BrainPress', 'plugin name', 'brainpress' );
+    }
 
 }
 

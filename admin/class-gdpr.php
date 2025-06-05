@@ -12,10 +12,9 @@ class BrainPress_Admin_GDPR {
 		if ( $is_less_496 ) {
 			return;
 		}
-		/**
-		 * Add information to privacy policy page (only during creation).
-		 */
-		add_filter( 'wp_get_default_privacy_policy_content', array( $this, 'add_policy' ) );
+
+		// Privacy-Policy-Content erst nach init hinzufügen!
+		add_action( 'admin_init', array( $this, 'add_privacy_policy_content' ) );
 		/**
 		 * Adding the Personal Data Exporter
 		 */
@@ -208,5 +207,17 @@ Bitte sieh Dir die <a href="https://www.paypal.com/us/webapps/mpp/ua/privacy-ful
 ', 'brainpress' ) ) ) );
 		return $content;
 	}
+	/**
+	 * Fügt den Privacy-Text erst nach init hinzu.
+	 */
+	public function add_privacy_policy_content() {
+		if ( function_exists( 'wp_add_privacy_policy_content' ) ) {
+			wp_add_privacy_policy_content(
+				'BrainPress',
+				$this->get_privacy_message()
+			);
+		}
+	}
+
 }
 

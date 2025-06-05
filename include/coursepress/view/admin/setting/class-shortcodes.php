@@ -1864,10 +1864,10 @@ class CoursePress_View_Admin_Setting_Shortcodes {
 			$content .= '<div class="cp-shortcode-examples">';
 			$content .= sprintf( '<p class="cp-shortcode-subheading">%s</p>', esc_attr__( 'Examples:', 'cp' ) );
 			$content .= '<code>';
-			$content .= join( $data['examples'], '<br />' );
+			$content .= join( '<br />', $data['examples'] );
 			$content .= '</code>';
-					$content .= '</div>';
+			$content .= '</div>';
 		}
-			return $content;
+		return $content;
 	}
 }
